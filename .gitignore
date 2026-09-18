@@ -1,0 +1,90 @@
+# ---------------------------------------------------------------------------
+# Secrets - never commit any of these
+# ---------------------------------------------------------------------------
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.*
+credential.*
+token.*
+tokens.*
+cookies.*
+cookie.*
+secrets.*
+secret.*
+*_credentials.json
+service-account*.json
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+sdist/
+wheels/
+*.egg-info/
+*.egg
+.eggs/
+pip-wheel-metadata/
+.installed.cfg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+venv.bak/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.pytype/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.tox/
+.nox/
+.hypothesis/
+
+# ---------------------------------------------------------------------------
+# Project data - raw and derived datasets are NOT versioned here.
+# Keep the directory placeholders, ignore the payloads.
+# See docs/data-policy.md
+# ---------------------------------------------------------------------------
+data/*
+!data/README.md
+!data/.gitkeep
+
+results/*
+!results/README.md
+!results/.gitkeep
+
+# Local scratch that must never leak into history
+*.log
+*.tmp
+*.bak
+scratch/
+local/
+
+# ---------------------------------------------------------------------------
+# Editors / OS
+# ---------------------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini

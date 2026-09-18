@@ -1,0 +1,25 @@
+# Normalise line endings so that a checkout on Windows and a checkout on the CI
+# runner produce byte-identical source files.
+* text=auto eol=lf
+
+# Binary assets must never be line-ending translated.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.parquet binary
+
+# Windows-only scripts keep CRLF so they stay runnable in cmd.exe and PowerShell.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# GitHub keeps its own YAML formatting.
+.github/workflows/*.yml text eol=lf
+
+# Documentation diffs are easier to read when prose is not re-wrapped by tooling.
+*.md text eol=lf diff=markdown
