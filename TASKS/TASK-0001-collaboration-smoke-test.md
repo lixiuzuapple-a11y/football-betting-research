@@ -1,7 +1,7 @@
 # TASK-0001 — Collaboration smoke test
 
 - Task ID: TASK-0001
-- Status: REVIEW
+- Status: ACCEPTED
 - Owner: WorkBuddy
 - Reviewer: ChatGPT
 - Risk: Low
