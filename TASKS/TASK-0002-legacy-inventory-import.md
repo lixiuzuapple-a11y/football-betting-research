@@ -1,7 +1,7 @@
 # TASK-0002 — Register Legacy Inventory baseline
 
 - Task ID: TASK-0002
-- Status: REVIEW
+- Status: ACCEPTED
 - Owner: Li
 - Reviewer: ChatGPT
 - Source executor: WorkBuddy (legacy inventory task `INVENTORY-20260921-01`)
