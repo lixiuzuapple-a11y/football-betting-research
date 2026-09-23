@@ -65,7 +65,16 @@ A citation without a stated relevance is a bookmark, not research.
 
 ## Status
 
-Empty. No hypothesis has been raised yet, because stage 1 builds the machinery
-that will test them. Prior football research from earlier projects is **not**
-imported here as a premise - it may later be added as an explicitly-labelled
-prior, in its own file, with its provenance.
+The hypothesis/experiment registries remain empty: no new confirmatory
+hypothesis has been raised yet.
+
+Legacy football work is now available as **evidence to audit**, not as a
+premise to inherit. The reviewer records are:
+
+- [External-AI Edge Space synthesis](literature/EDGE_SPACE_PANEL_SYNTHESIS_20260922_v1.md)
+- [Legacy evidence ingestion record](LEGACY_EVIDENCE_INGESTION_20260923.md)
+- [Edge Exhaustion Matrix v1](EDGE_EXHAUSTION_MATRIX_20260923_v1.md)
+
+The source legacy bundles live under `../history/`. Bulk archives and local
+review extracts are intentionally ignored by Git; only provenance/index files
+and reviewer conclusions belong in repository history.

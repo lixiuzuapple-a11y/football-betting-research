@@ -71,6 +71,11 @@ results/*
 !results/README.md
 !results/.gitkeep
 
+# Local legacy evidence bundles. The manifests/index files may be versioned,
+# but bulk archives and temporary review extracts must stay local.
+history/**/*.zip
+history/_review/
+
 # Local scratch that must never leak into history
 *.log
 *.tmp
