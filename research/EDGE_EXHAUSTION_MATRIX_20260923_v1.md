@@ -76,7 +76,7 @@ Legacy clustering evidence also means nominal n must not automatically be treate
 
 | ID | Strategy family | Legacy evidence | Evidence | Bug exposure | v1 status | Why | Reopen condition |
 |---|---|---|---|---|---|---|---|
-| C01 | Same-event cross-play probability consistency | E30/E30b; E53; E58; later E30 interpretation in 信息差路线_框架_v1 | L1/L2 partial | E30 output lineage MEDIUM; E53 BUG-001/002/003; E58 BUG-005 | **SURVIVES / REVALIDATE** | old cross-play “裂缝” was later largely explained as pricing-style difference, not proven edge; cheap deterministic consistency audit remains valuable | rerun on canonical corrected all-play rows, same timestamp/ruleset, enforce single availability |
+| C01 | Same-event cross-play probability consistency | E30/E30b; E53; E58; 2026-09-23 local deterministic audits | L1/L2 partial | E30 output lineage MEDIUM; E53 BUG-001/002/003; E58 BUG-005 | **DOMINATED as pure arbitrage / REVALIDATE as probabilistic residual** | exact-update and carry-forward single-eligible HAD+CRS, TTG+CRS and HAD+HAFU scans found zero full-cover arbitrages; some synthetic components were cheaper than direct quotes, so only probabilistic relative-mispricing remains open | only reopen the profit thesis with a pre-specified probabilistic consistency test under same timestamp/ruleset and actual single availability |
 | C02 | Basic M串1 pricing consistency | E58 availability + parlay arithmetic discussions | L1 | rule/version mapping needed | **DOMINATED as edge source** | ordinary parlay packaging does not create edge; forced parlay usually increases friction | only reopen for a documented payout inconsistency, not because of parlay shape alone |
 | C03 | M串N component-set pricing | no decisive canonical legacy audit located | L0/L1 | unknown | **UNKNOWN** | may be mechanically auditable at low cost; must expand into component contracts | obtain current M串N rules/quotes and verify component payout exactly |
 | C04 | Cross-match dependence / correlated legs | no decisive legacy family-wide test located | L0 | unknown | **UNTESTED** | dependence exists in principle but economic residual was not established | pre-specify causal dependence and show joint mispricing survives compound friction |
@@ -92,7 +92,7 @@ Legacy clustering evidence also means nominal n must not automatically be treate
 
 | ID | Strategy family | Legacy evidence | Evidence | Bug exposure | v1 status | Why | Reopen condition |
 |---|---|---|---|---|---|---|---|
-| D01 | Sharp lead-lag / stale quote | E28 proxy; E44 Sporttery movement; E54/E56 market comparisons | L1/L2 proxy | timestamp equivalence not proven | **SURVIVES / HIGHEST PRIORITY** | old timing studies mainly test Sporttery open→close or derived CLV; they do not fully observe “sharp moved first, Sporttery stayed stale, ticket executable” | exact dual-market timestamp data; preregister move threshold and executable window |
+| D01 | Sharp lead-lag / stale quote | E28 proxy; E44 Sporttery movement; legacy latency feasibility; E54/E56 market comparisons | L1/L2 proxy | exact external timestamp equivalence not proven | **DOMINATED for generic lag / REVALIDATE exact event-driven stale window** | legacy timing/latency evidence is strongly negative for generic stale harvesting, but the archive never measures the exact same-time sharp residual tail or a proven sharp-move→still-executable-Sporttery window | synchronized dual-market timestamps + executable Sporttery cutoff/lock evidence; no closing-price substitution |
 | D02 | Lineup/news/event reaction lag | no decisive timestamped legacy test located | L0 | n/a | **UNTESTED** | mechanism distinct from generic news modelling because value is latency | timestamped source event + Sporttery repricing/cutoff log |
 | D03 | Early quote / price-lock timing | E52 open→close ttg | L2 | repaired E52 defects documented | **DOMINATED for ttg** | historical open-price improvement was far too small | other play/ruleset with materially different movement distribution |
 | D04 | Pre-close / cutoff drift | E44/E52 | L2 | historical truncation in 2016–2019 explicitly documented | **DOMINATED for generic ttg timing / REVALIDATE execution** | generic drift insufficient; actual last executable quote vs final observed quote still needs execution mapping | verified cutoff + purchase-lock timestamp dataset |
@@ -143,21 +143,21 @@ filter must attach to a named underlying mechanism and must be evaluated with:
 
 ### P0 — do next
 
-1. **B01 + D01 combined audit**
-   - exact Sporttery quote timestamp;
-   - exact sharp/reference quote timestamp;
-   - same event / market / selection / line / settlement;
-   - later reference move;
-   - actual Sporttery availability/cutoff;
-   - residual distribution and lead-lag event study.
+1. **B01 synchronized dual-market feasibility / capture**
+   - the legacy archive has Sporttery-side timestamps but no exact timestamped sharp quote stream;
+   - do not substitute Pinnacle closing odds for decision-time quotes;
+   - require same event / market / selection / line / settlement;
+   - preserve Sporttery availability/cutoff and quote-lock semantics;
+   - first deliverable is a tiny synchronized smoke capture or an explicit source blocker.
 
-2. **C01 deterministic cross-play re-audit**
-   - corrected E58 dataset;
-   - same timestamp;
-   - current ruleset;
-   - single availability;
-   - synthetic state-payoff consistency;
-   - no post-hoc model fitting required.
+2. **D01-B event-driven stale-window test — only after B01 data exists**
+   - sharp/reference move must be observed first;
+   - Sporttery quote must still be executable afterward;
+   - generic open→close drift is already dominated in the legacy scope.
+
+3. **C01 probabilistic residual — lower priority**
+   - deterministic exact-update/carry-forward scans already found zero full-cover arbitrage in tested HAD+CRS, TTG+CRS and HAD+HAFU constructions;
+   - any further test must target probabilistic relative mispricing, not rediscover synthetic price differences.
 
 ### P1 — only after P0
 
@@ -193,9 +193,9 @@ filter must attach to a named underlying mechanism and must be evaluated with:
 ### Not exhausted
 
 - exact **same-time** Sporttery-vs-sharp executable residual;
-- exact **lead-lag** stale window after sharp moves;
+- exact **lead-lag** stale window after sharp moves, conditional on synchronized data;
 - lineup/news event-to-reprice latency;
-- corrected all-play deterministic cross-play consistency under actual availability;
+- probabilistic cross-play relative mispricing under actual availability (pure deterministic arbitrage is negative in tested constructions);
 - M串N component and dependence pricing;
 - currently effective official promotion/subsidy edge.
 

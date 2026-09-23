@@ -72,8 +72,10 @@ Legacy football work is now available as **evidence to audit**, not as a
 premise to inherit. The reviewer records are:
 
 - [External-AI Edge Space synthesis](literature/EDGE_SPACE_PANEL_SYNTHESIS_20260922_v1.md)
+- [Open-source and theory reconnaissance v3.0](literature/GITHUB_OPEN_SOURCE_SCOUT_20260922_v3_0.md)
 - [Legacy evidence ingestion record](LEGACY_EVIDENCE_INGESTION_20260923.md)
 - [Edge Exhaustion Matrix v1](EDGE_EXHAUSTION_MATRIX_20260923_v1.md)
+- [P0 evidence reconstruction](P0_EVIDENCE_RECONSTRUCTION_20260923.md)
 
 The source legacy bundles live under `../history/`. Bulk archives and local
 review extracts are intentionally ignored by Git; only provenance/index files
