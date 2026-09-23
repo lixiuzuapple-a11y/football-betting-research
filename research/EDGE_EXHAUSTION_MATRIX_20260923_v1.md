@@ -1,8 +1,8 @@
 # EDGE EXHAUSTION MATRIX v1
 
-**Date:** 2026-09-23  
-**Framework:** Applied Edge Taxonomy v1.0  
-**Scope:** China Sports Lottery football betting research under the current project charter  
+**Date:** 2026-09-23
+**Framework:** Applied Edge Taxonomy v1.0
+**Scope:** China Sports Lottery football betting research under the current project charter
 **Purpose:** map the frozen 32 strategy families to real legacy evidence before any new experiment is authorized.
 
 ---
@@ -212,4 +212,3 @@ It is:
 `P0 evidence reconstruction -> exact contract/timestamp alignment -> falsification`
 
 If P0 is closed negatively with adequate data and a credible upper bound, the project should substantially reduce or stop further positive-EV search rather than proliferate models.
-

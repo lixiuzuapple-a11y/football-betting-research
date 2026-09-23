@@ -1,8 +1,8 @@
 # EDGE SPACE 外部 AI 联合审阅与最终合并 v1.0
 
-**项目**：中国体育彩票竞彩足球长期正期望收益研究  
-**日期**：2026-09-22  
-**性质**：外部 AI panel review + 第一原理裁决 + 旧研究证据交叉核对  
+**项目**：中国体育彩票竞彩足球长期正期望收益研究
+**日期**：2026-09-22
+**性质**：外部 AI panel review + 第一原理裁决 + 旧研究证据交叉核对
 **状态**：FRAMEWORK SYNTHESIS COMPLETE / READY FOR LEGACY-EVIDENCE MAPPING
 
 ---
@@ -391,7 +391,7 @@ Pricing：
 
 在冻结以下计数规则后：
 
-> 数据需求、decision timestamp、合同、动作方式中至少有一项实质不同，才算新 strategy family；  
+> 数据需求、decision timestamp、合同、动作方式中至少有一项实质不同，才算新 strategy family；
 > 仅算法名字不同不计；仅联赛/赔率桶不同不计；仅 threshold 不同不计。
 
 当前合并六份外部 AI 后得到：
