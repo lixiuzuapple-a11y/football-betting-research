@@ -111,6 +111,97 @@ Required reading for this revision:
 
 `research/DATA_SOURCE_ALTERNATIVES_RECONSTRUCTION_20260923.md`
 
+### Legacy external-data method supplement (2026-09-23)
+
+A second legacy reconstruction found additional execution details that matter for this revision. Treat **later legacy corrections as superseding earlier interim source verdicts**. Do not stop at an early note saying a source was unavailable if a later section/collector records the working route.
+
+#### A. Sporttery official routes — use the proven endpoints, not the old dead ends
+
+When probing official Sporttery, prefer the endpoints already proven in the legacy project:
+
+1. Current/on-sale collection: the existing current Sporttery collector / `getMatchCalculatorV1.qry` path.
+2. Historical/index route: `getUniformMatchResultV1.qry` with the full parameter set including `matchBeginDate`, `matchEndDate`, `leagueId`, `pageSize`, `pageNo`, `isFix`, `matchPage`, `pcOrWap`, plus normal UA and `Referer: https://www.lottery.gov.cn/`.
+3. Fixed-bonus detail route: `getFixedBonusV1.qry?clientCode=3001&matchId=<id>`. Legacy evidence says this route exposes `had/hhad/ttg/crs/hafu` `oddsHistory` with `updateDate` + `updateTime`; `oddsHistory.singleList` also carries single-bet availability.
+
+If these endpoints now return 567 from the current environment, record the current blocker and move to the permitted mirror path. Do **not** spend the task rediscovering the older `getMatchResultV1/getMatchListV1` dead-end path.
+
+#### B. 500.com mirror — silent fallback detection is mandatory
+
+For the permitted Sporttery mirror:
+
+- `trade.500.com/jczq/?date=<YYYY-MM-DD>` historically has a rolling ~30-day valid window.
+- Requests beyond the valid window may return HTTP 200 while **silently falling back to current listings**.
+- Therefore HTTP 200 is not evidence that the requested historical date was honored.
+- Validate the requested date using the page's `data-processdate` / expected event set; do not use `data-matchdate` as the sole sales-date check for overnight matches.
+- If TTG or another alternate pool is needed, the legacy route uses `playid`, not the previously disproven `vtype` switch: `270` = TTG, `271` = correct score, `272` = half/full, `273` = handicap 1X2.
+- Known TTG pattern: `?playid=270&g=2&date=<YYYY-MM-DD>`.
+
+For this TASK-0004 smoke test, use only the pool needed for event/contract matching. Do not broaden into historical backfill work.
+
+#### C. BetExplorer — distinguish page semantics
+
+Do not call a BetExplorer record "live" merely because it was fetched now.
+
+- `results` pages are historical/result-side observations and were previously treated as closing-style data; they are **not** valid for the live-reference leg of this task.
+- The revision path is the **current fixture / pre-match page** only, with our collector-generated `observed_at`.
+- Label this source `reference_proxy`; do not rename it Pinnacle/Betfair or imply provider update timestamps that are not exposed.
+- If the page structure returns odds but the requested fixture/date is ambiguous, treat mapping as failed rather than guessing.
+
+#### D. football-data — accept only genuinely current BFE rows
+
+- Prefer the no-`www` `football-data.co.uk` route if the `www` host is unhealthy.
+- Use BFE rows only when the file actually contains the target current/future fixture.
+- A reachable file containing only stale dates is **not** a point-in-time reference source for this smoke.
+- Historical `PS*` / opening-closing fields are not a substitute for a current synchronized quote.
+
+#### E. OddsPortal — tertiary bounded probe only
+
+If BetExplorer cannot provide a mappable current fixture, one bounded unauthenticated OddsPortal probe is allowed before declaring the free-reference side exhausted.
+
+Legacy evidence says league pages were reachable and contained 1X2, while historical/detail-page AH/OU remained unverified. Therefore:
+
+- use it only as a tertiary feasibility probe;
+- do not build a new scraper in this task;
+- do not claim AH/OU support unless directly observed in this run.
+
+#### F. Validation against silent failure
+
+For every candidate source used in the smoke:
+
+1. HTTP success alone is insufficient.
+2. Verify event identity, requested date, home/away, kickoff and market/selection semantics against the payload/page itself.
+3. Keep raw payload/page hash and our `observed_at`.
+4. If feasible for the same fixture, take **two bounded collection rounds** a few minutes apart. Odds may remain unchanged; the purpose is to prove repeated point-in-time observation and preserve two hashes/timestamps, not to force a price move.
+5. If two requested dates/fixtures unexpectedly return the same event set or same fallback content, flag `SILENT_FALLBACK_SUSPECTED` and do not use that source as evidence.
+6. Manually/structurally sanity-check at least one captured event before calling the smoke successful.
+
+#### G. Access-method priority and safety boundary
+
+Use this escalation order:
+
+`existing collector / requests -> inspect HTML/JS/XHR when needed -> bounded browser rendering only if genuinely required`
+
+Legacy records show that inspecting the page's own XHR/JS often exposed the real API faster than scraping rendered UI. However:
+
+- do not bypass WAF/access controls;
+- do not rotate IPs/proxies/VPNs;
+- do not reuse the historical IP-rotation workaround as current authorization;
+- do not deploy Cloudflare Workers in TASK-0004 without separate Reviewer authorization.
+
+The historical mention of IP rotation is evidence about an old environment, **not permission to reproduce it**.
+
+#### H. Revision acceptance nuance
+
+A mirror/proxy pair can satisfy **feasibility smoke** if the pair is honestly labelled and observed concurrently.
+
+It does **not** by itself validate D01-B lead/lag timing. D01-B still requires enough timestamp precision to distinguish our observation time, provider update times when exposed, and the actual executable window.
+
+If the smoke succeeds but provider update timestamps remain unavailable, report:
+
+`SMOKE CAPTURED / D01 TIMING PRECISION STILL UNRESOLVED`
+
+rather than promoting the route to a completed timing test.
+
 ## Phase C — tiny smoke capture only if feasible
 
 If an acceptable external source is already accessible **without Owner supplying new credentials or spending money**, make only the smallest useful smoke capture.
