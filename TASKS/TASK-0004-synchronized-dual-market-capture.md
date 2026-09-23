@@ -1,12 +1,13 @@
 # TASK-0004 — Synchronized Sporttery + sharp quote capture feasibility smoke test
 
 - Task ID: TASK-0004
-- Status: ACCEPTED
+- Status: REJECTED
 - Owner: Li
 - Reviewer: ChatGPT
 - Executor: WorkBuddy
 - Risk: Medium
 - Type: data-source / collector feasibility only
+- Reviewer correction (2026-09-23): previous ACCEPTED decision was revoked after deeper legacy review found previously validated free fallback paths that the submission did not exhaust. Read `research/DATA_SOURCE_ALTERNATIVES_RECONSTRUCTION_20260923.md` before revising this task.
 
 ## Objective
 
@@ -91,6 +92,24 @@ Sporttery side must retain:
 - pool status
 - kickoff
 - raw payload hash
+
+### Reviewer revision exception / fallback hierarchy (2026-09-23)
+
+The first submission was rejected because it missed previously validated free fallbacks. For the **revision smoke test only**, use this order before returning BLOCKED:
+
+1. Try the official Sporttery endpoint first.
+2. If official Sporttery remains 567, a **500.com Sporttery mirror** is permitted for the smoke test, provided it is explicitly labelled `sporttery_mirror_500`, has our own `observed_at`, raw hash/provenance, and is **not** represented as official. `official_update_time` may be null for this fallback; that missing precision must be reported.
+3. External reference priority:
+   - football-data `fixtures.csv` **Betfair Exchange (BFE)** when current/future rows are actually present;
+   - otherwise **BetExplorer current fixture 1X2** as a `reference_proxy`, using our own `observed_at`. Legacy exp09 supports its use as a proxy in tested European leagues; do not call it Pinnacle or a named sharp book.
+4. BetExplorer league fixture 1X2 pages are historically server-rendered and do **not** require Playwright for this narrow smoke path. Do not escalate to browser automation before trying the requests/HTML route recorded in `fetch_betexplorer.py`.
+5. Cloudflare Workers is an archived zero-cost design option but was never implemented; do not start that path in this revision unless the above free direct paths fail and Reviewer authorizes a separate step.
+
+Revision goal is **feasibility**, not production-grade D01 timing precision. A mirror/proxy paired observation can pass the smoke test if both sides are observed in the same bounded collection window and the source-quality / timestamp limitations are explicit.
+
+Required reading for this revision:
+
+`research/DATA_SOURCE_ALTERNATIVES_RECONSTRUCTION_20260923.md`
 
 ## Phase C — tiny smoke capture only if feasible
 

@@ -76,6 +76,7 @@ premise to inherit. The reviewer records are:
 - [Legacy evidence ingestion record](LEGACY_EVIDENCE_INGESTION_20260923.md)
 - [Edge Exhaustion Matrix v1](EDGE_EXHAUSTION_MATRIX_20260923_v1.md)
 - [P0 evidence reconstruction](P0_EVIDENCE_RECONSTRUCTION_20260923.md)
+- [Legacy data-source alternatives reconstruction](DATA_SOURCE_ALTERNATIVES_RECONSTRUCTION_20260923.md)
 
 The source legacy bundles live under `../history/`. Bulk archives and local
 review extracts are intentionally ignored by Git; only provenance/index files
