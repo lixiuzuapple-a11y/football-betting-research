@@ -1,12 +1,15 @@
 # TASK-0003 — Collect legacy football-research assets into local staging
 
 - Task ID: TASK-0003
-- Status: TODO
+- Status: ACCEPTED
 - Owner: Li
 - Reviewer: ChatGPT
 - Executor: WorkBuddy
 - Risk: Medium
 - Type: local file collection / manifest only
+- Closure mode: SUPERSEDED_BY_OWNER_HISTORY_BUNDLE
+
+> Reviewer closure note (2026-09-23): the originally specified external staging workflow was not executed. The Owner instead placed a complete legacy export under `history/`, with a package manifest and hashes, and Reviewer verified direct access and began evidence reconstruction from those assets. TASK-0003 is therefore closed as **ACCEPTED via superseding Owner-provided evidence**, not as a claim that the original staging acceptance steps were performed.
 
 ## Objective
 
