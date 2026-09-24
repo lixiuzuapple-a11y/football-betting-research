@@ -1,13 +1,14 @@
 # TASK-0004 — Synchronized Sporttery + sharp quote capture feasibility smoke test
 
 - Task ID: TASK-0004
-- Status: REVIEW
+- Status: REJECTED
 - Owner: Li
 - Reviewer: ChatGPT
 - Executor: WorkBuddy
 - Risk: Medium
 - Type: data-source / collector feasibility only
 - Reviewer correction (2026-09-23): previous ACCEPTED decision was revoked after deeper legacy review found previously validated free fallback paths that the submission did not exhaust. Read `research/DATA_SOURCE_ALTERNATIVES_RECONSTRUCTION_20260923.md` before revising this task.
+- Reviewer second review (2026-09-24): the revised smoke evidence is accepted, but the committed provider model collapses per-pool provider timestamps and omits required per-pool availability/status. No new capture is required; perform only the narrow correction specified in `REVIEWS/TASK-0004.md`.
 
 ## Objective
 
