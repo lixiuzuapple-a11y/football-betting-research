@@ -84,6 +84,23 @@ Before a new source is wired into `data.loader`, it must have:
 
 A source missing any of 1-5 is not usable for a formal experiment.
 
+### 4A. Parsing and encoding integrity are mandatory
+
+Raw transport bytes are the authoritative capture. A page or response's declared charset is a **claim to validate**, not a fact to trust.
+
+For any field that can affect identity, odds, timing, availability or settlement:
+
+- preserve the raw bytes and content hash before decoding;
+- use explicit, testable decoding rules;
+- **do not use permissive `errors='ignore'` or `errors='replace'` as the canonical parse path** for research-critical fields;
+- if a document contains mixed encodings, segment or extract the required byte regions deterministically and document the rule;
+- fail closed when a critical field cannot be decoded unambiguously;
+- keep representative raw fixtures / golden tests for brittle HTML or undocumented endpoints.
+
+Provider identifiers must be preserved in full unless a transformed key has a demonstrated uniqueness invariant. Truncating a provider identifier because it "looks unique" is not allowed.
+
+Likewise, presence in HTML is not proof of current executability. Hidden, ended, stale or duplicated rows must be distinguished from currently available rows using explicit source semantics or authoritative status fields.
+
 ## 5. Absence of a source is not a data set
 
 There is currently no source. That is not an inconvenience to be papered over:

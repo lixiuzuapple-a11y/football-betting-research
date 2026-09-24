@@ -44,6 +44,7 @@
 | `GitSimaao/proofodds` | 新发现 | **SCOUTED+** | 赛前封存、hash chain、独立重算 score 的思想高度相关，待源码审计 |
 | `gcunharodrigues/sports-betting-ml-audit` | 新发现 | **SCOUTED+** | 负结果与方法论审计极相关，已读完整研究说明但尚未逐实验脚本审计 |
 | `mberk/shin` | 新发现 | **AUDITED CORE** | 已读 Python 核心实现与 `test_shin.py`；Python/Rust 路径均有数值测试。发现默认调用会丢弃未收敛诊断，必须由我们包装 fail-closed |
+| `D4Vinci/Scrapling` | 新发现 | **SCOUTED / NOT ADOPTED (CURRENT SCOPE)** | 已完成 README/文档级能力与边界侦察，并在本地用现有 `lxml` 复现其声明式解析思路；当前不安装、不采用。反检测/挑战求解/代理轮换不解决当前 provider-timestamp 瓶颈，且触及项目红线。若未来出现具体唯一用例，先对所需组件做 PARTIAL AUDIT，再讨论采用。 |
 
 ## 高价值项目
 
