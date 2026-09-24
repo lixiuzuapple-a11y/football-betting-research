@@ -133,6 +133,75 @@ def _payload() -> dict[str, object]:
     }
 
 
+#: The real ``周三003`` (Seattle vs Salt Lake) row, captured 2026-09-24 09:18:37 in
+#: ``data/raw/p0_dual_market_smoke/v3r4_official_sporttery_091837.json``. Two of its
+#: properties are exactly why a collapsed provider model is wrong:
+#:
+#: * the five pools carry five **different** provider update times; and
+#: * ``poolList`` allows single betting for TTG/CRS/HAFU (``bettingSingle=1``)
+#:   but not for HAD/HHAD (``bettingSingle=0``).
+_POOL_TIMES: dict[str, tuple[str, str]] = {
+    "had": ("2026-09-23", "18:51:22"),
+    "hhad": ("2026-09-23", "18:51:31"),
+    "ttg": ("2026-09-23", "21:50:41"),
+    "crs": ("2026-09-23", "20:06:47"),
+    "hafu": ("2026-09-23", "21:38:47"),
+}
+
+_POOL_LIST: list[dict[str, object]] = [
+    {"poolCode": "HHAD", "bettingSingle": 0, "bettingAllup": 1,
+     "poolStatus": "Selling", "poolCloseDate": "", "poolCloseTime": ""},
+    {"poolCode": "HAFU", "bettingSingle": 1, "bettingAllup": 1,
+     "poolStatus": "Selling", "poolCloseDate": "", "poolCloseTime": ""},
+    {"poolCode": "CRS", "bettingSingle": 1, "bettingAllup": 1,
+     "poolStatus": "Selling", "poolCloseDate": "", "poolCloseTime": ""},
+    {"poolCode": "TTG", "bettingSingle": 1, "bettingAllup": 1,
+     "poolStatus": "Selling", "poolCloseDate": "", "poolCloseTime": ""},
+    {"poolCode": "HAD", "bettingSingle": 0, "bettingAllup": 1,
+     "poolStatus": "Selling", "poolCloseDate": "", "poolCloseTime": ""},
+]
+
+
+def _pool_payload() -> dict[str, object]:
+    pools: dict[str, dict[str, str]] = {
+        "had": {"h": "1.31", "d": "5.35", "a": "6.20"},
+        "hhad": {"h": "1.78", "d": "3.75", "a": "3.45", "goalLine": "-1"},
+        "ttg": {f"s{i}": "5.00" for i in range(8)},
+        "crs": {"s00s00": "9.00"},
+        "hafu": {"hh": "1.95", "hd": "4.00"},
+    }
+    for code, (date_part, time_part) in _POOL_TIMES.items():
+        pools[code]["updateDate"] = date_part
+        pools[code]["updateTime"] = time_part
+    return {
+        "errorCode": "0",
+        "value": {
+            "lastUpdateTime": "2026-09-23 21:50:41",
+            "matchInfoList": [
+                {
+                    "businessDate": "2026-09-24",
+                    "matchWeek": "周三",
+                    "subMatchList": [
+                        {
+                            "matchId": 2041601,
+                            "matchNumStr": "周三003",
+                            "leagueAbbName": "美职",
+                            "homeTeamAbbName": "西雅图",
+                            "awayTeamAbbName": "盐湖城",
+                            "matchDate": "2026-09-24",
+                            "matchTime": "10:30:00",
+                            "matchStatus": "Selling",
+                            "sellStatus": 2,
+                            "poolList": _POOL_LIST,
+                            **pools,
+                        }
+                    ],
+                }
+            ],
+        },
+    }
+
+
 @pytest.fixture
 def captured_at() -> datetime:
     return datetime(2026, 9, 24, 9, 18, 37, tzinfo=BEIJING)
@@ -197,8 +266,9 @@ def test_our_clock_is_never_overwritten_by_the_provider_clock(captured_at: datet
     dutch = next(q for q in quotes if q.match_num_str == "周四006")
 
     assert dutch.observed_at == captured_at
-    assert dutch.odds_updated_at == datetime(2026, 9, 23, 9, 17, 36, tzinfo=BEIJING)
-    assert dutch.odds_updated_at < dutch.observed_at
+    assert dutch.pool_updated_at["had"] == datetime(2026, 9, 23, 9, 17, 36, tzinfo=BEIJING)
+    assert dutch.latest_pool_updated_at == datetime(2026, 9, 23, 9, 17, 36, tzinfo=BEIJING)
+    assert dutch.latest_pool_updated_at < dutch.observed_at
     assert meta.observed_at == captured_at
     assert meta.provider_last_update_time == datetime(2026, 9, 23, 21, 50, 41, tzinfo=BEIJING)
 
@@ -207,15 +277,20 @@ def test_missing_provider_time_stays_absent(captured_at: datetime) -> None:
     quotes, _ = _parse(captured_at)
     synthetic = next(q for q in quotes if q.match_num_str == "周四099")
     # every pool block in that row has no updateDate/updateTime
-    assert synthetic.odds_updated_at is None
+    assert synthetic.latest_pool_updated_at is None
+    assert set(synthetic.pool_updated_at.values()) == {None}
     assert synthetic.had == (1.90, 3.30, 3.60)
 
 
-def test_odds_updated_at_is_the_latest_pool_stamp(captured_at: datetime) -> None:
+def test_latest_pool_stamp_is_an_explicitly_named_aggregate(captured_at: datetime) -> None:
     quotes, _ = _parse(captured_at)
     china = next(q for q in quotes if q.match_num_str == "周四003")
-    # hhad moved at 09:17:36, ttg carries no stamp -> the stamp that exists wins
-    assert china.odds_updated_at == datetime(2026, 9, 23, 9, 17, 36, tzinfo=BEIJING)
+    # hhad moved at 09:17:36, ttg carries no stamp -> the stamp that exists wins.
+    # The aggregate is deliberately *not* called "odds_updated_at": it is a
+    # maximum over pools, so it must never be read as a market's own clock.
+    assert china.latest_pool_updated_at == datetime(2026, 9, 23, 9, 17, 36, tzinfo=BEIJING)
+    assert china.pool_updated_at["hhad"] == datetime(2026, 9, 23, 9, 17, 36, tzinfo=BEIJING)
+    assert china.pool_updated_at["ttg"] is None
 
 
 def test_parse_provider_time_rejects_incomplete_input() -> None:
@@ -238,3 +313,71 @@ def test_payload_hash_is_recorded(captured_at: datetime) -> None:
     quotes, meta = _parse(captured_at)
     assert len(meta.payload_sha256) == 64
     assert {q.payload_sha256 for q in quotes} == {meta.payload_sha256}
+
+
+# --------------------------------------------------------------------------- #
+# F1 / F2 regressions - REVIEWS/TASK-0004.md, 2026-09-24 second review
+# --------------------------------------------------------------------------- #
+
+
+def _parse_pools(captured_at: datetime):
+    return parse_match_calculator(
+        json.dumps(_pool_payload(), ensure_ascii=False), observed_at=captured_at
+    )
+
+
+def test_per_pool_provider_times_survive_separately(captured_at: datetime) -> None:
+    """F1: HAD / HHAD / TTG must never be collapsed into one market timestamp.
+
+    ``周三003`` moved its pools at five different times. A single maximum would
+    date the HAD quote (18:51:22) with the TTG clock (21:50:41) - an error of
+    2h59m19s in the very interval D01-B is trying to measure.
+    """
+    quotes, _ = _parse_pools(captured_at)
+    seat = next(q for q in quotes if q.match_num_str == "周三003")
+
+    assert seat.pool_updated_at["had"] == datetime(2026, 9, 23, 18, 51, 22, tzinfo=BEIJING)
+    assert seat.pool_updated_at["hhad"] == datetime(2026, 9, 23, 18, 51, 31, tzinfo=BEIJING)
+    assert seat.pool_updated_at["ttg"] == datetime(2026, 9, 23, 21, 50, 41, tzinfo=BEIJING)
+    assert seat.pool_updated_at["crs"] == datetime(2026, 9, 23, 20, 6, 47, tzinfo=BEIJING)
+    assert seat.pool_updated_at["hafu"] == datetime(2026, 9, 23, 21, 38, 47, tzinfo=BEIJING)
+
+    three = {seat.pool_updated_at[c] for c in ("had", "hhad", "ttg")}
+    assert len(three) == 3, "the three stamps must survive as three distinct values"
+    assert seat.pool_updated_at["ttg"] - seat.pool_updated_at["had"] == timedelta(
+        hours=2, minutes=59, seconds=19
+    )
+
+    # the aggregate is a maximum, so it is explicitly NOT the HAD pool's stamp
+    assert seat.latest_pool_updated_at == seat.pool_updated_at["ttg"]
+    assert seat.latest_pool_updated_at != seat.pool_updated_at["had"]
+
+
+def test_per_pool_availability_is_retained(captured_at: datetime) -> None:
+    """F2: one match can answer "can this be bet singly?" differently per pool."""
+    quotes, _ = _parse_pools(captured_at)
+    seat = next(q for q in quotes if q.match_num_str == "周三003")
+    availability = seat.pool_availability
+
+    assert set(availability) == {"had", "hhad", "ttg", "crs", "hafu"}
+    assert availability["had"].pool_code == "HAD"
+    assert availability["had"].betting_single == 0
+    assert availability["hhad"].betting_single == 0
+    assert availability["ttg"].betting_single == 1
+    assert availability["crs"].betting_single == 1
+    assert availability["hafu"].betting_single == 1
+    assert availability["ttg"].betting_allup == 1
+    assert availability["ttg"].pool_status == "Selling"
+
+    singles = {availability[c].betting_single for c in ("had", "ttg")}
+    assert singles == {0, 1}, "single-bet eligibility must differ within one match"
+
+    # empty provider strings must stay absent rather than become ""
+    assert availability["ttg"].pool_close_date is None
+    assert availability["ttg"].pool_close_time is None
+
+
+def test_absent_pool_list_stays_absent(captured_at: datetime) -> None:
+    """No ``poolList`` in the payload -> no invented availability."""
+    quotes, _ = _parse(captured_at)
+    assert all(q.pool_availability == {} for q in quotes)

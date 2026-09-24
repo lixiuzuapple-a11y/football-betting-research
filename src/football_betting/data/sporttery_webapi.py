@@ -47,6 +47,7 @@ import urllib.request
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
+from types import MappingProxyType
 
 __all__ = [
     "CHALLENGE_STATUS",
@@ -55,6 +56,7 @@ __all__ = [
     "POOL_CODES",
     "SUPPORTED_POOLS",
     "CaptureMeta",
+    "PoolAvailability",
     "SportteryQuote",
     "build_request",
     "fetch_match_calculator",
@@ -183,6 +185,65 @@ def _ttg_buckets(pool: Mapping[str, object]) -> tuple[float, ...] | None:
     return values
 
 
+def _as_int(value: object) -> int | None:
+    """Coerce a payload flag to ``int``; anything else (incl. ``bool``) is absent."""
+    if isinstance(value, bool) or not isinstance(value, int):
+        return None
+    return value
+
+
+def _as_text(value: object) -> str | None:
+    """Empty provider strings become ``None`` - absent stays absent."""
+    if value is None:
+        return None
+    text = str(value).strip()
+    return text or None
+
+
+def _pool_updated_times(match: Mapping[str, object]) -> dict[str, datetime | None]:
+    """Provider update time **per pool**, never collapsed into one value.
+
+    On the captured ``周三003`` (Seattle vs Salt Lake) the five pools carry five
+    different stamps - HAD ``18:51:22``, HHAD ``18:51:31``, CRS ``20:06:47``,
+    HAFU ``21:38:47``, TTG ``21:50:41``. Keeping only their maximum would date a
+    HAD quote with TTG's clock and shift the measured staleness by hours, which
+    is exactly the quantity D01-B is trying to measure.
+    """
+    stamps: dict[str, datetime | None] = {}
+    for code in POOL_CODES:
+        block = match.get(code)
+        if not isinstance(block, Mapping):
+            continue
+        stamps[code] = parse_provider_time(
+            _as_text(block.get("updateDate")), _as_text(block.get("updateTime"))
+        )
+    return stamps
+
+
+def _pool_availability(match: Mapping[str, object]) -> dict[str, PoolAvailability]:
+    """Read ``poolList`` into per-pool executability facts.
+
+    Returns ``{}`` when the payload carries no usable ``poolList``: an absent
+    fact must stay absent rather than default to "sellable".
+    """
+    result: dict[str, PoolAvailability] = {}
+    for entry in match.get("poolList") or []:
+        if not isinstance(entry, Mapping):
+            continue
+        raw_code = _as_text(entry.get("poolCode"))
+        if not raw_code:
+            continue
+        result[raw_code.lower()] = PoolAvailability(
+            pool_code=raw_code,
+            betting_single=_as_int(entry.get("bettingSingle")),
+            betting_allup=_as_int(entry.get("bettingAllup")),
+            pool_status=_as_text(entry.get("poolStatus")),
+            pool_close_date=_as_text(entry.get("poolCloseDate")),
+            pool_close_time=_as_text(entry.get("poolCloseTime")),
+        )
+    return result
+
+
 @dataclass(frozen=True, slots=True)
 class CaptureMeta:
     """Per-payload facts that belong to the update, not to a single quote."""
@@ -197,12 +258,46 @@ class CaptureMeta:
 
 
 @dataclass(frozen=True, slots=True)
-class SportteryQuote:
-    """One match's on-sale quotes, with both clocks kept separate.
+class PoolAvailability:
+    """Per-pool executability facts the provider publishes in ``poolList``.
 
-    ``odds_updated_at`` is the *provider's* claim for the pool that moved last;
-    ``observed_at`` is ours. Comparing them is exactly what TASK-0004's D01-B
-    question needs, so they are never merged into one field.
+    D01-B asks whether a stale price can **still be bet**. Price plus timestamp
+    cannot answer that on its own: on the captured ``周三003`` the provider allows
+    single betting for TTG / CRS / HAFU (``bettingSingle=1``) while forbidding it
+    for HAD / HHAD (``bettingSingle=0``), and status can leave ``Selling``
+    independently per pool. Aggregating these onto the match would destroy the
+    distinction the question needs.
+    """
+
+    pool_code: str
+    betting_single: int | None = None
+    betting_allup: int | None = None
+    pool_status: str | None = None
+    pool_close_date: str | None = None
+    pool_close_time: str | None = None
+
+
+@dataclass(frozen=True, slots=True)
+class SportteryQuote:
+    """One match's on-sale quotes, with every clock kept separate.
+
+    TASK-0004's D01-B question needs three different facts to stay different:
+
+    ``observed_at``
+        **our** clock, injected by the caller and never invented here.
+    ``pool_updated_at``
+        the **provider's** clock *per pool*. On the captured ``周三003`` the
+        five pools carry five different stamps - HAD ``18:51:22``, HHAD
+        ``18:51:31``, CRS ``20:06:47``, HAFU ``21:38:47``, TTG ``21:50:41``.
+        Collapsing them into one value would date a HAD quote with TTG's clock
+        and move measured staleness by hours.
+    ``latest_pool_updated_at``
+        an **explicitly named aggregate** (the maximum of ``pool_updated_at``).
+        It exists for convenience and must never be read as any particular
+        market's update time.
+    ``pool_availability``
+        the provider's per-pool executability facts, so "this quote is old" can
+        be told apart from "this quote can still be bet".
     """
 
     match_id: str
@@ -216,7 +311,9 @@ class SportteryQuote:
     hhad: tuple[float, float, float] | None
     goal_line: str | None
     ttg: tuple[float, ...] | None
-    odds_updated_at: datetime | None
+    pool_updated_at: Mapping[str, datetime | None]
+    latest_pool_updated_at: datetime | None
+    pool_availability: Mapping[str, PoolAvailability]
     observed_at: datetime
     payload_sha256: str
     match_status: str | None = None
@@ -255,12 +352,8 @@ def parse_match_calculator(
             hhad_pool = match.get("hhad") or {}
             ttg_pool = match.get("ttg") or {}
 
-            stamps = [
-                parse_provider_time(p.get("updateDate"), p.get("updateTime"))
-                for p in (had_pool, hhad_pool, ttg_pool)
-                if isinstance(p, Mapping)
-            ]
-            present = [s for s in stamps if s is not None]
+            pool_times = _pool_updated_times(match)
+            present = [s for s in pool_times.values() if s is not None]
 
             quotes.append(
                 SportteryQuote(
@@ -276,7 +369,9 @@ def parse_match_calculator(
                     goal_line=(str(hhad_pool["goalLine"])
                                if hhad_pool.get("goalLine") not in (None, "") else None),
                     ttg=_ttg_buckets(ttg_pool),
-                    odds_updated_at=max(present) if present else None,
+                    pool_updated_at=MappingProxyType(pool_times),
+                    latest_pool_updated_at=max(present) if present else None,
+                    pool_availability=MappingProxyType(_pool_availability(match)),
                     observed_at=observed_at,
                     payload_sha256=digest,
                     match_status=(str(match["matchStatus"])
