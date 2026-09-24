@@ -1,7 +1,7 @@
 # TASK-0004 — Synchronized Sporttery + sharp quote capture feasibility smoke test
 
 - Task ID: TASK-0004
-- Status: REJECTED
+- Status: REVIEW
 - Owner: Li
 - Reviewer: ChatGPT
 - Executor: WorkBuddy
