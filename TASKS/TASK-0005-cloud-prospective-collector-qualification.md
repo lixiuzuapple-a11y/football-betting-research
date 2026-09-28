@@ -1,7 +1,7 @@
 # TASK-0005 — Cloud prospective collector build + deployment qualification
 
 - Task ID: TASK-0005
-- Status: REVIEW
+- Status: ACCEPTED
 - Owner: Li
 - Reviewer: ChatGPT
 - Executor: WorkBuddy
