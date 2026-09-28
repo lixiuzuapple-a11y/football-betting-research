@@ -33,6 +33,7 @@ import threading
 import time
 import urllib.error
 import urllib.request
+import uuid
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -40,8 +41,11 @@ from typing import Any
 
 from football_betting.data.betexplorer import (
     BETEXPLORER_HOME_URL,
+    PageVariant,
     build_home_request,
+    decode_strict_utf8,
     parse_homepage,
+    parse_page_variant,
 )
 from football_betting.data.sporttery_webapi import (
     MATCH_CALCULATOR_URL,
@@ -98,6 +102,10 @@ class LegOutcome:
     failure_class: str | None
     raw: bytes | None
     text: str | None
+    #: Set when the canonical UTF-8 decode failed. The raw bytes and their hash
+    #: are still persisted, but no normalised fact may be produced from them
+    #: (TASK-0005 F2, ``docs/data-policy.md``).
+    decode_failure: str | None = None
 
 
 class ProspectiveCollector:
@@ -106,9 +114,22 @@ class ProspectiveCollector:
     def __init__(self, config: CollectorConfig, *, store: LedgerStore | None = None) -> None:
         self.config = config
         self.store = store or LedgerStore(config.data_root, deployed_commit=config.deployed_commit)
-        #: Last successful BetExplorer observation per event, for change detection.
-        self._last_reference: dict[str, tuple[tuple[float, float, float], datetime]] = {}
+        #: Last successful BetExplorer observation per **(event, declared variant)**.
+        #: Keying on the variant is what makes the comparison like-for-like: two
+        #: renderings of the same page are not two market observations
+        #: (TASK-0005 F3).
+        self._last_reference: dict[
+            tuple[tuple[str, str] | None, str],
+            tuple[tuple[float, float, float], datetime],
+        ] = {}
+        #: Globally unique run identity. Combined with a monotonic round number it
+        #: makes ``round_id`` survive a process restart (TASK-0005 F5).
+        self.run_session_id = uuid.uuid4().hex[:12]
         self._round_index = 0
+        #: Variant of the most recent successful reference capture, so a switch can
+        #: be recorded as a source fact rather than silently resetting baselines.
+        self._last_variant: PageVariant | None = None
+        self._last_variant_capture_id: int | None = None
         self._stop = threading.Event()
 
     @property
@@ -153,7 +174,22 @@ class ProspectiveCollector:
             LOGGER.warning("%s os error: %s", source, exc)
 
         received = datetime.now(timezone.utc)
-        text = raw.decode("utf-8", "replace") if raw is not None else None
+
+        # Canonical decoding is strict and fail-closed (TASK-0005 F2). A permissive
+        # ``errors="replace"`` can silently corrupt identity/odds text while still
+        # yielding a plausible parse, so a decode failure is recorded as a failure
+        # and no normalised facts are produced from that payload.
+        text: str | None = None
+        decode_failed = False
+        if raw is not None:
+            try:
+                text = decode_strict_utf8(raw)
+            except UnicodeDecodeError as exc:
+                decode_failed = True
+                LOGGER.warning("%s canonical utf-8 decode failed: %s", source, exc)
+
+        if failure is None and decode_failed:
+            failure = "decode_error"
 
         # A 200 that is actually a challenge page is a failure, not data.
         if (
@@ -173,10 +209,12 @@ class ProspectiveCollector:
             failure_class=failure,
             raw=raw,
             text=text,
+            decode_failure="decode_error" if decode_failed else None,
         )
 
     def _persist_leg(self, outcome: LegOutcome, *, round_id: str, kind: str,
-                     change_event_id: str | None = None) -> int:
+                     change_event_id: str | None = None,
+                     source_variant: str | None = None) -> int:
         """Write the capture row plus its raw bytes. Returns the capture id."""
         digest: str | None = None
         rel_path: str | None = None
@@ -209,6 +247,9 @@ class ProspectiveCollector:
             parser_version=self.config.parser_version,
             deployed_commit=self._commit,
             change_event_id=change_event_id,
+            run_session_id=self.run_session_id,
+            round_seq=self._round_index,
+            source_variant=source_variant,
         )
         return self.store.record_capture(record)
 
@@ -274,18 +315,66 @@ class ProspectiveCollector:
 
         return capture_id
 
-    def _capture_betexplorer(self, *, round_id: str, kind: str) -> tuple[int, list[tuple[str, tuple[float, float, float], tuple[float, float, float], datetime]]]:
+    def _capture_betexplorer(
+        self, *, round_id: str, kind: str
+    ) -> tuple[
+        int,
+        list[tuple[str, tuple[float, float, float], tuple[float, float, float], datetime]],
+        datetime,
+        str | None,
+    ]:
         """Capture the reference leg.
 
-        Returns ``(capture_id, changes)`` where each change is
-        ``(event_id, previous_tuple, current_tuple, previous_received_at)``.
+        Returns ``(capture_id, changes, response_received_at, variant_label)``.
 
-        The previous tuple and its receive time are captured **before** the
+        ``response_received_at`` is the receive time of **this** payload, and it is
+        the only legitimate upper bound for every change the payload carries: the
+        quote was not knowable any earlier, and a later confirmation fetch must
+        never move it (TASK-0005 F1).
+
+        ``changes`` holds only **like-for-like** differences. An entry exists only
+        when the same event was previously observed *within the same page-declared
+        variant*, so a variant transition cannot masquerade as a market move
+        (TASK-0005 F3). The previous tuple and its receive time are read before the
         baseline is refreshed, so the recorded interval describes the real
         transition rather than the value it moved to.
         """
-        outcome = self._fetch(SOURCE_REFERENCE_BETEXPLORER, build_home_request(self.config.betexplorer_url))
-        capture_id = self._persist_leg(outcome, round_id=round_id, kind=kind)
+        outcome = self._fetch(
+            SOURCE_REFERENCE_BETEXPLORER, build_home_request(self.config.betexplorer_url)
+        )
+
+        # Resolve the variant before persisting so the capture row always carries
+        # it, even if the full parse later fails.
+        variant = parse_page_variant(outcome.text) if outcome.text is not None else None
+        variant_key = variant.key if variant is not None else None
+        variant_label = (
+            variant.label
+            if variant is not None
+            else (outcome.decode_failure or outcome.failure_class or "unknown")
+        )
+        capture_id = self._persist_leg(
+            outcome, round_id=round_id, kind=kind, source_variant=variant_label
+        )
+
+        # A change of declared rendering is a *source* fact, recorded on its own
+        # so it can never be read as a market movement (TASK-0005 F3).
+        if (
+            variant_key is not None
+            and self._last_variant is not None
+            and variant_key != self._last_variant.key
+        ):
+            self.store.record_variant_transition(
+                round_id=round_id,
+                previous_variant=self._last_variant.label,
+                current_variant=variant_label,
+                previous_capture_id=self._last_variant_capture_id,
+                current_capture_id=capture_id,
+                round_seq=self._round_index,
+                run_session_id=self.run_session_id,
+            )
+        if variant_key is not None:
+            self._last_variant = variant
+            self._last_variant_capture_id = capture_id
 
         changes: list[tuple[str, tuple[float, float, float], tuple[float, float, float], datetime]] = []
         if outcome.failure_class is None and outcome.text is not None:
@@ -297,6 +386,7 @@ class ProspectiveCollector:
             rows = [
                 {
                     "event_id": q.event_id,
+                    "source_variant": variant_label,
                     "event_url": q.event_url,
                     "home": q.home,
                     "away": q.away,
@@ -312,27 +402,30 @@ class ProspectiveCollector:
             ]
             self.store.record_betexplorer_facts(capture_id, rows)
 
-            # Compare against the previous observation, then refresh the
-            # baseline so a change is reported exactly once per transition.
+            # Compare against the previous observation of the *same* event within
+            # the *same* declared variant, then refresh that baseline. Comparing
+            # across variants would report a different rendering of the page as a
+            # market move, which is exactly the false-positive class TASK-0005 F3
+            # requires to be eliminated.
             for quote in result.quotes:
-                previous = self._last_reference.get(quote.event_id)
+                previous = self._last_reference.get((variant_key, quote.event_id))
                 if previous is not None and previous[0] != quote.odds_tuple:
                     changes.append(
                         (quote.event_id, previous[0], quote.odds_tuple, previous[1])
                     )
             for quote in result.quotes:
-                self._last_reference[quote.event_id] = (
+                self._last_reference[(variant_key, quote.event_id)] = (
                     quote.odds_tuple,
                     outcome.response_received_at,
                 )
 
             LOGGER.info(
-                "betexplorer %s: %d quotes, %d issues, %d rows w/o odds, %d changes",
+                "betexplorer %s: %d quotes, %d issues, %d rows w/o odds, %d changes, variant=%s",
                 kind, len(result.quotes), len(result.issues),
-                result.rows_without_odds, len(changes),
+                result.rows_without_odds, len(changes), variant_label,
             )
 
-        return capture_id, changes
+        return capture_id, changes, outcome.response_received_at, variant_label
 
     # -- rounds -------------------------------------------------------------
 
@@ -340,36 +433,54 @@ class ProspectiveCollector:
                   round_id: str | None = None) -> dict[str, Any]:
         """Execute one round: two concurrent legs, then any confirmations."""
         self._round_index += 1
-        rid = round_id or f"r{self._round_index:05d}"
+        # Globally unique identity: the readable sequence is kept, but it is
+        # namespaced by the run session so a restart can never reuse an
+        # identifier (TASK-0005 F5).
+        rid = round_id or f"{self.run_session_id}-r{self._round_index:05d}"
         summary: dict[str, Any] = {"round_id": rid, "kind": kind}
 
         with ThreadPoolExecutor(max_workers=2) as pool:
             fut_sp = pool.submit(self._capture_sporttery, round_id=rid, kind=kind)
             fut_be = pool.submit(self._capture_betexplorer, round_id=rid, kind=kind)
             sp_capture = fut_sp.result()
-            be_capture, changes = fut_be.result()
+            be_capture, changes, reference_received_at, variant_label = fut_be.result()
 
         summary["sporttery_capture_id"] = sp_capture
         summary["betexplorer_capture_id"] = be_capture
+        summary["reference_variant"] = variant_label
         summary["changes"] = len(changes)
 
-        for event_id, previous_tuple, current_tuple, previous_received in changes:
-            # One extra official fetch per changed event, marked distinctly.
+        # At most **one** official confirmation snapshot per reference capture that
+        # carries accepted changes (TASK-0005 F4). Zero changes means zero
+        # confirmation fetches; N changes still means exactly one, and every one of
+        # those N rows links to it.
+        if changes:
             confirm_capture = self._capture_sporttery(
                 round_id=rid,
                 kind=CAPTURE_KIND_CHANGE_CONFIRMATION,
-                change_event_id=event_id,
             )
-            self.store.record_reference_change(
-                event_id=event_id,
-                previous_tuple=previous_tuple,
-                current_tuple=current_tuple,
-                previous_response_received_at=previous_received,
-                current_response_received_at=datetime.now(timezone.utc),
-                confirmation_capture_id=confirm_capture,
-                round_id=rid,
+            for event_id, previous_tuple, current_tuple, previous_received in changes:
+                self.store.record_reference_change(
+                    event_id=event_id,
+                    source_variant=variant_label,
+                    previous_tuple=previous_tuple,
+                    current_tuple=current_tuple,
+                    previous_response_received_at=previous_received,
+                    # The exact BetExplorer receive time that carried the new
+                    # tuple - never a clock read taken after the confirmation
+                    # fetch, which would push the upper bound seconds past the
+                    # truth (TASK-0005 F1).
+                    current_response_received_at=reference_received_at,
+                    confirmation_capture_id=confirm_capture,
+                    round_id=rid,
+                    round_seq=self._round_index,
+                    run_session_id=self.run_session_id,
+                )
+            summary["confirmation_capture_id"] = confirm_capture
+            LOGGER.info(
+                "%d reference change(s) confirmed by capture %d",
+                len(changes), confirm_capture,
             )
-            LOGGER.info("reference change %s -> confirmation capture %d", event_id, confirm_capture)
 
         return summary
 

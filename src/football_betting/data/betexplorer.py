@@ -27,6 +27,15 @@ Only the **homepage** dialect carries machine-readable kickoff
 (``data-dt`` / ``data-ts``). League fixture pages render kickoff as prose and are
 therefore unusable for timing work; this module does not attempt them.
 
+Reference-series note (added 2026-09-28, TASK-0005 F3)
+-----------------------------------------------------
+The homepage is a *multi-variant* document: the same URL returns renderings that
+differ in declared ``currentGeoLocation``, in asset-version serial, in the number
+of fixtures shown, and in the odds attached to the same ``data-event-id``.
+:func:`parse_page_variant` reads the two page-declared tokens so the collector can
+compare like-for-like. Variant transitions are a *source* fact, never a market
+move.
+
 How a fixture is identified
 ---------------------------
 TASK-0004 measured that the homepage renders many fixtures **twice** (desktop +
@@ -50,8 +59,11 @@ __all__ = [
     "BetExplorerParseResult",
     "BetExplorerQuote",
     "BetExplorerRowIssue",
+    "PageVariant",
     "build_home_request",
+    "decode_strict_utf8",
     "parse_homepage",
+    "parse_page_variant",
 ]
 
 #: The only dialect that exposes a machine-readable kickoff.
@@ -82,6 +94,86 @@ _AWAY_RE = re.compile(r'table-main__participantAway[^>]*>.*?<p[^>]*>([^<]*)</p>'
 #: The page's own timezone basis. ``data-dt`` is UK local (BST in September);
 #: ``data-ts`` is an unambiguous epoch, which is why it is preferred below.
 _UK_TZ = timezone.utc
+
+# ---------------------------------------------------------------------------
+# Page-declared variant tokens (TASK-0005 F3 remediation, 2026-09-28)
+# ---------------------------------------------------------------------------
+#
+# The homepage is *not* one document. It is served from a multi-variant CDN
+# cache, and different renderings of the same URL carry different fixtures and
+# different odds for the same ``data-event-id``. Diagnostic evidence from the
+# retained TASK-0005 qualification captures (452 BetExplorer payloads, 2026-09-24
+# to 2026-09-28) showed:
+#
+#   * 20 distinct payloads, 9 distinct declared ``currentGeoLocation`` values,
+#     2 distinct asset-version serials, and 92 / 93 / 107 / 108 fixtures
+#     depending on the variant;
+#   * 2281 cross-round odds differences collapsed into
+#     1180 (geo differs, serial differs) + 843 (geo differs, serial same)
+#     + 216 (geo same, serial differs) + 42 (geo same, serial same).
+#
+# In other words the pair (geo, serial) - both declared by the page itself -
+# accounts for ~98% of the observed cross-round "changes". Neither token is a
+# provider quote-update time; they only identify *which rendering* this is.
+#
+# The reference series must therefore be compared like-for-like. This module
+# extracts the two tokens so the collector can key its baselines on them.
+_VARIANT_GEO_RE = re.compile(r"currentGeoLocation\s*=\s*'([^']*)'")
+_VARIANT_SERIAL_RE = re.compile(r"betexplorer\.svg\?serial=(\d+)")
+
+
+@dataclass(frozen=True, slots=True)
+class PageVariant:
+    """Which rendering of the homepage this payload is, per the page itself.
+
+    Both fields are read verbatim out of the served document; neither is
+    inferred, and neither is a quote timestamp. ``None`` means the page did not
+    declare that token, which is recorded as ``"?"`` in :attr:`key` rather than
+    being guessed.
+    """
+
+    geo_location: str | None = None
+    asset_serial: str | None = None
+
+    @property
+    def key(self) -> tuple[str, str]:
+        """Stable, hashable identity used to key reference baselines."""
+        return (self.geo_location or "?", self.asset_serial or "?")
+
+    @property
+    def label(self) -> str:
+        """Human-readable form for logs and the ledger."""
+        return f"geo={self.geo_location or '?'}|serial={self.asset_serial or '?'}"
+
+    def __str__(self) -> str:  # pragma: no cover - convenience
+        return self.label
+
+
+def parse_page_variant(text: str) -> PageVariant:
+    """Extract the page-declared variant tokens from a homepage body.
+
+    Deliberately tolerant of *absence*: a page that does not declare them is
+    reported as unknown, never back-filled from a previous observation.
+    """
+    geo = _VARIANT_GEO_RE.search(text)
+    serial = _VARIANT_SERIAL_RE.search(text)
+    return PageVariant(
+        geo_location=geo.group(1).strip() if geo else None,
+        asset_serial=serial.group(1).strip() if serial else None,
+    )
+
+
+def decode_strict_utf8(raw: bytes) -> str:
+    """Decode a UTF-8 source strictly, or raise.
+
+    ``docs/data-policy.md`` (post-500.com finding) requires that research-critical
+    parsing never uses permissive ``errors='ignore'`` / ``errors='replace'``:
+    silently replacing bytes can corrupt identity/odds text while still
+    producing a plausible-looking parse. Callers must treat a raised
+    :class:`UnicodeDecodeError` as a recorded failure, not as "no data".
+    """
+    return raw.decode("utf-8", "strict")
+
 
 
 @dataclass(frozen=True, slots=True)
@@ -151,6 +243,10 @@ class BetExplorerParseResult:
     rows_without_odds: int = 0
     parser_version: str = "task0005-be/0.1"
     extras: Mapping[str, int] = field(default_factory=dict)
+    #: Which rendering this payload was, per the page's own tokens. The collector
+    #: keys its reference baselines on this so a variant transition can never be
+    #: mistaken for a market move (TASK-0005 F3).
+    variant: PageVariant = field(default_factory=PageVariant)
 
 
 def build_home_request(
@@ -326,4 +422,5 @@ def parse_homepage(
             "collapsed_copies": duplicates_collapsed,
             "rows_without_odds": rows_without_odds,
         },
+        variant=parse_page_variant(text),
     )

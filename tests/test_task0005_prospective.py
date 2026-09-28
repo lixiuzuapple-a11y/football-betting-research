@@ -31,6 +31,7 @@ from football_betting.data.betexplorer import (
     REFERENCE_PROXY_LABEL,
     BetExplorerQuote,
     parse_homepage,
+    parse_page_variant,
 )
 from football_betting.prospective.collector import (
     CollectorConfig,
@@ -42,6 +43,7 @@ from football_betting.prospective.ledger import (
     CAPTURE_KIND_REGULAR,
     DATASET_PHASE,
     SOURCE_OFFICIAL_SPORTTERY,
+    SOURCE_REFERENCE_BETEXPLORER,
     LedgerStore,
 )
 
@@ -81,8 +83,20 @@ def _be_row(
     )
 
 
-def _be_page(rows: list[str]) -> str:
-    return "<html><body><ul>" + "".join(rows) + "</ul></body></html>"
+def _be_page(rows: list[str], *, geo: str | None = None, serial: str | None = None) -> str:
+    """A homepage body, optionally declaring its rendering variant.
+
+    ``geo`` / ``serial`` reproduce the two tokens measured on 2026-09-28
+    (TASK-0005 F3): the page's own ``currentGeoLocation`` constant and the
+    asset-version serial on ``betexplorer.svg``. Omit them to exercise the
+    "page declares nothing" path.
+    """
+    head = ""
+    if geo is not None:
+        head += f"<script>const currentGeoLocation = '{geo}';</script>"
+    if serial is not None:
+        head += f'<link rel="stylesheet" href="/res/betexplorer.svg?serial={serial}">'
+    return "<html><head>" + head + "</head><body><ul>" + "".join(rows) + "</ul></body></html>"
 
 
 def _sporttery_payload(*, had: tuple[str, str, str]) -> str:
@@ -276,7 +290,7 @@ def test_request_and_response_clocks_stay_distinct(store: LedgerStore) -> None:
         return _outcome(source, text=page, started=started, received=received)
 
     collector._fetch = fake_fetch  # type: ignore[method-assign]
-    capture_id, _changes = collector._capture_betexplorer(
+    capture_id, _changes, _received, _variant = collector._capture_betexplorer(
         round_id="r00001", kind=CAPTURE_KIND_REGULAR
     )
 
@@ -431,13 +445,15 @@ def test_changed_reference_triggers_exactly_one_confirmation(store: LedgerStore)
     assert change["event_id"] == "evt001"
     assert json.loads(change["previous_tuple"]) == [2.00, 3.30, 3.60]
     assert json.loads(change["current_tuple"]) == [1.85, 3.40, 3.90]
-    # The confirmation capture is linked by id.
+    # The confirmation capture is linked by id. It is a *round-level* snapshot
+    # (one capture can confirm many fixtures), so it carries no single
+    # ``change_event_id`` - the link lives on the change rows instead (F4).
     linked = store._conn.execute(
         "SELECT capture_kind, change_event_id FROM captures WHERE capture_id = ?",
         (change["confirmation_capture_id"],),
     ).fetchone()
     assert linked["capture_kind"] == CAPTURE_KIND_CHANGE_CONFIRMATION
-    assert linked["change_event_id"] == "evt001"
+    assert linked["change_event_id"] is None
 
 
 def test_unchanged_reference_triggers_no_confirmation(store: LedgerStore) -> None:
@@ -538,7 +554,7 @@ def test_raw_hash_and_provenance_are_recorded(store: LedgerStore) -> None:
         return _outcome(source, text=page, started=started, received=received)
 
     collector._fetch = fake_fetch  # type: ignore[method-assign]
-    capture_id, _changes = collector._capture_betexplorer(
+    capture_id, _changes, _received, _variant = collector._capture_betexplorer(
         round_id="r00009", kind=CAPTURE_KIND_REGULAR
     )
 
@@ -677,3 +693,321 @@ def test_dataset_phase_is_qualification_everywhere(store: LedgerStore) -> None:
     for table in ("captures", "sporttery_facts", "betexplorer_facts"):
         rows = store._conn.execute(f"SELECT DISTINCT dataset_phase FROM {table}").fetchall()
         assert [r["dataset_phase"] for r in rows] == [DATASET_PHASE], table
+
+
+# ==========================================================================
+# Correction-cycle regression tests (REVIEWS/TASK-0005.md F1..F5)
+# ==========================================================================
+
+# --------------------------------------------------------------------------
+# F1 - the reference-change upper bound is the BetExplorer receive time, and a
+#      later confirmation must not be able to move it.
+# --------------------------------------------------------------------------
+
+def test_delayed_confirmation_cannot_move_reference_change_interval(
+    store: LedgerStore,
+) -> None:
+    """F1: the interval upper bound is fixed at the reference response time.
+
+    The confirmation fetch is deliberately slow, so if the implementation read a
+    fresh clock after it the recorded upper bound would drift. It must not.
+    """
+    collector = ProspectiveCollector(
+        CollectorConfig(data_root=str(store.data_root)), store=store
+    )
+    page_round1 = _be_page([_be_row("f1evt", dt_raw="24,9,2026,20,0",
+                                    ts="1790276400", odds=("2.00", "3.30", "3.60"))])
+    page_round2 = _be_page([_be_row("f1evt", dt_raw="24,9,2026,20,0",
+                                    ts="1790276400", odds=("1.85", "3.40", "3.90"))])
+    payload = _sporttery_payload(had=("2.23", "3.56", "2.50"))
+    base = dt.datetime(2026, 9, 25, 3, 0, tzinfo=UTC)
+
+    calls = {"sporttery": 0, "betexplorer": 0}
+    reference_received: dict[str, dt.datetime] = {}
+
+    def fake_fetch(source: str, request: object) -> LegOutcome:
+        if source == SOURCE_OFFICIAL_SPORTTERY:
+            calls["sporttery"] += 1
+            # A deliberately slow confirmation: 30s after the reference arrived.
+            offset = dt.timedelta(seconds=1) if calls["sporttery"] == 1 else dt.timedelta(seconds=30)
+            return _outcome(
+                source, text=payload,
+                started=base + offset, received=base + offset + dt.timedelta(milliseconds=500),
+            )
+        calls["betexplorer"] += 1
+        pages = [page_round1, page_round2]
+        body = pages[min(calls["betexplorer"] - 1, 1)]
+        received = base + dt.timedelta(seconds=calls["betexplorer"], milliseconds=700)
+        if calls["betexplorer"] == 2:
+            reference_received["at"] = received
+        return _outcome(
+            source, text=body,
+            started=base + dt.timedelta(seconds=calls["betexplorer"]),
+            received=received,
+        )
+
+    collector._fetch = fake_fetch  # type: ignore[method-assign]
+
+    collector.run_round()
+    collector.run_round()
+
+    change = store._conn.execute("SELECT * FROM reference_changes").fetchone()
+    assert change is not None
+    expected = reference_received["at"]
+    # Upper bound == the exact reference receive time, not the confirmation clock.
+    assert change["change_interval_upper"] == expected.isoformat()
+    assert change["current_response_received_at"] == expected.isoformat()
+    # And the bracket is non-degenerate.
+    assert change["change_interval_lower"] != change["change_interval_upper"]
+    # The confirmation happened much later than the upper bound - proving no
+    # post-confirmation clock leaked into the row.
+    confirm = store._conn.execute(
+        "SELECT response_received_at FROM captures WHERE capture_id = ?",
+        (change["confirmation_capture_id"],),
+    ).fetchone()
+    assert confirm["response_received_at"] > change["change_interval_upper"]
+
+
+# --------------------------------------------------------------------------
+# F2 - canonical decode is strict and fail-closed.
+# --------------------------------------------------------------------------
+
+def test_strict_decode_is_fail_closed_on_invalid_bytes(store: LedgerStore) -> None:
+    """F2: invalid UTF-8 is a recorded failure, and yields no normalised facts."""
+    collector = ProspectiveCollector(
+        CollectorConfig(data_root=str(store.data_root)), store=store
+    )
+
+    # A lone 0xFF is never valid UTF-8. Old behaviour decoded it to U+FFFD with
+    # errors='replace' and could still produce a plausible-looking parse.
+    bad_bytes = b'<html><li data-event-id="\xff\xfe"></li></html>'
+
+    # Feed the raw bytes through the real _fetch decode path by stubbing urlopen.
+    class _Resp:
+        status = 200
+
+        def __enter__(self) -> _Resp:
+            return self
+
+        def __exit__(self, *exc: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return bad_bytes
+
+    import urllib.request as _u
+
+    original_urlopen = _u.urlopen
+    _u.urlopen = lambda *a, **k: _Resp()  # type: ignore[assignment]
+    try:
+        outcome = collector._fetch(
+            SOURCE_REFERENCE_BETEXPLORER, _u.Request("https://example.invalid/")
+        )
+    finally:
+        _u.urlopen = original_urlopen  # type: ignore[assignment]
+
+    assert outcome.text is None
+    assert outcome.decode_failure == "decode_error"
+    assert outcome.failure_class == "decode_error"
+    # Raw bytes survive for later forensic re-derivation.
+    assert outcome.raw == bad_bytes
+
+    capture_id = collector._persist_leg(
+        outcome, round_id="f2round", kind=CAPTURE_KIND_REGULAR
+    )
+    row = store._conn.execute(
+        "SELECT * FROM captures WHERE capture_id = ?", (capture_id,)
+    ).fetchone()
+    assert row["failure_class"] == "decode_error"
+    assert row["raw_sha256"] is not None
+    # No facts were produced from a payload that failed canonical decoding.
+    assert store._conn.execute(
+        "SELECT COUNT(*) AS n FROM betexplorer_facts WHERE capture_id = ?", (capture_id,)
+    ).fetchone()["n"] == 0
+
+
+def test_decode_strict_utf8_rejects_replacement_candidates() -> None:
+    """The strict helper must raise rather than silently substitute bytes."""
+    import pytest as _pytest
+
+    from football_betting.data.betexplorer import decode_strict_utf8
+
+    assert decode_strict_utf8("café".encode()) == "café"
+    with _pytest.raises(UnicodeDecodeError):
+        decode_strict_utf8(b"\xff\xfe\xfd")
+
+
+# --------------------------------------------------------------------------
+# F3 - variant transitions must never be reported as market movement.
+# --------------------------------------------------------------------------
+
+def test_variant_tokens_are_read_verbatim() -> None:
+    page = _be_page(
+        [_be_row("v1", dt_raw="24,9,2026,20,0", ts="1790276400",
+                 odds=("1.9", "3.4", "3.8"))],
+        geo="cn",
+        serial="2609081259",
+    )
+    variant = parse_page_variant(page)
+    assert variant.geo_location == "cn"
+    assert variant.asset_serial == "2609081259"
+    assert variant.key == ("cn", "2609081259")
+    # Absence is reported, never back-filled.
+    blank = parse_page_variant(_be_page([]))
+    assert blank.geo_location is None and blank.asset_serial is None
+    assert blank.key == ("?", "?")
+
+
+def test_alternating_variants_do_not_produce_reference_changes(store: LedgerStore) -> None:
+    """F3: the same odds under two renderings must not read as a market move.
+
+    This reproduces the qualification failure directly: identical event, identical
+    odds, alternating declared variants. The old detector emitted a change on
+    every flip; the corrected one must emit none, and must log the switch as a
+    variant transition instead.
+    """
+    collector = ProspectiveCollector(
+        CollectorConfig(data_root=str(store.data_root)), store=store
+    )
+    same_odds = ("2.00", "3.30", "3.60")
+    page_cn = _be_page([_be_row("vtrev", dt_raw="24,9,2026,20,0", ts="1790276400",
+                                odds=same_odds)], geo="cn", serial="2609081259")
+    page_sa = _be_page([_be_row("vtrev", dt_raw="24,9,2026,20,0", ts="1790276400",
+                                odds=same_odds)], geo="sa", serial="2608290548")
+
+    _patch_legs(
+        collector,
+        sporttery_bodies=[_sporttery_payload(had=("2.23", "3.56", "2.50"))],
+        betexplorer_bodies=[page_cn, page_sa, page_cn, page_sa],
+        base=dt.datetime(2026, 9, 25, 3, 0, tzinfo=UTC),
+    )
+
+    for _ in range(4):
+        collector.run_round()
+
+    assert store._conn.execute(
+        "SELECT COUNT(*) AS n FROM reference_changes"
+    ).fetchone()["n"] == 0, "variant flips were reported as market changes"
+    assert store.count_captures(kind=CAPTURE_KIND_CHANGE_CONFIRMATION) == 0
+    # The flips are recorded, but as source facts, not market facts.
+    assert store.count_variant_transitions() == 3
+
+
+def test_same_variant_real_move_is_still_detected(store: LedgerStore) -> None:
+    """F3 must not over-suppress: a real move inside one variant still counts."""
+    collector = ProspectiveCollector(
+        CollectorConfig(data_root=str(store.data_root)), store=store
+    )
+    before = _be_page([_be_row("realmv", dt_raw="24,9,2026,20,0", ts="1790276400",
+                               odds=("2.00", "3.30", "3.60"))],
+                      geo="cn", serial="2609081259")
+    after = _be_page([_be_row("realmv", dt_raw="24,9,2026,20,0", ts="1790276400",
+                              odds=("1.85", "3.40", "3.90"))],
+                     geo="cn", serial="2609081259")
+
+    _patch_legs(
+        collector,
+        sporttery_bodies=[_sporttery_payload(had=("2.23", "3.56", "2.50"))],
+        betexplorer_bodies=[before, after],
+        base=dt.datetime(2026, 9, 25, 3, 0, tzinfo=UTC),
+    )
+
+    collector.run_round()
+    collector.run_round()
+
+    change = store._conn.execute("SELECT * FROM reference_changes").fetchone()
+    assert change is not None
+    assert change["event_id"] == "realmv"
+    assert change["source_variant"] == "geo=cn|serial=2609081259"
+    assert store.count_variant_transitions() == 0
+
+
+# --------------------------------------------------------------------------
+# F4 - at most one confirmation capture per changed reference capture.
+# --------------------------------------------------------------------------
+
+def test_many_changes_trigger_exactly_one_confirmation(store: LedgerStore) -> None:
+    """F4: N changed fixtures in one response -> exactly one confirmation fetch."""
+    collector = ProspectiveCollector(
+        CollectorConfig(data_root=str(store.data_root)), store=store
+    )
+    n_events = 5
+
+    def page_with(odds: tuple[str, str, str]) -> str:
+        return _be_page(
+            [
+                _be_row(f"multi{index}", dt_raw="24,9,2026,20,0", ts="1790276400", odds=odds)
+                for index in range(n_events)
+            ],
+            geo="cn", serial="2609081259",
+        )
+
+    calls = _patch_legs(
+        collector,
+        sporttery_bodies=[_sporttery_payload(had=("2.23", "3.56", "2.50"))],
+        betexplorer_bodies=[page_with(("2.00", "3.30", "3.60")),
+                            page_with(("1.85", "3.40", "3.90"))],
+        base=dt.datetime(2026, 9, 25, 3, 0, tzinfo=UTC),
+    )
+
+    collector.run_round()
+    collector.run_round()
+
+    assert store.count_captures(kind=CAPTURE_KIND_CHANGE_CONFIRMATION) == 1
+    # 2 regular Sporttery fetches + exactly 1 confirmation, not 5.
+    assert calls["sporttery"] == 3
+
+    rows = store._conn.execute(
+        "SELECT confirmation_capture_id FROM reference_changes"
+    ).fetchall()
+    assert len(rows) == n_events
+    assert len({r["confirmation_capture_id"] for r in rows}) == 1, "rows link to different confirmations"
+
+
+# --------------------------------------------------------------------------
+# F5 - round identity survives a restart.
+# --------------------------------------------------------------------------
+
+def test_round_ids_are_unique_across_restarts(tmp_path: Path) -> None:
+    """F5: a restarted process must not reuse a round identifier."""
+    data_root = tmp_path / "data"
+    page = _be_page([_be_row("f5evt", dt_raw="24,9,2026,20,0", ts="1790276400",
+                             odds=("1.9", "3.4", "3.8"))],
+                    geo="cn", serial="2609081259")
+    payload = _sporttery_payload(had=("2.23", "3.56", "2.50"))
+    base = dt.datetime(2026, 9, 25, 3, 0, tzinfo=UTC)
+
+    for offset_minutes in (0, 1, 2):
+        with LedgerStore(data_root, deployed_commit="c1") as store:
+            collector = ProspectiveCollector(
+                CollectorConfig(data_root=str(data_root)), store=store
+            )
+            _patch_legs(collector, sporttery_bodies=[payload],
+                        betexplorer_bodies=[page],
+                        base=base + dt.timedelta(minutes=offset_minutes))
+            collector.run_round()
+            integrity = store.round_identity_integrity()
+
+    assert integrity["distinct_round_ids"] == integrity["total_round_ids"], (
+        "round_id was reused across a restart"
+    )
+    assert integrity["total_round_ids"] == 3
+    # The store above is closed; read the sealed ledger back independently.
+    import sqlite3
+
+    conn = sqlite3.connect(str(data_root / "ledger.sqlite3"))
+    conn.row_factory = sqlite3.Row
+    try:
+        # Readable sequence is preserved alongside the session namespace.
+        sample = conn.execute(
+            "SELECT round_id, run_session_id, round_seq FROM captures LIMIT 1"
+        ).fetchone()
+        sessions = conn.execute(
+            "SELECT COUNT(DISTINCT run_session_id) AS n FROM captures"
+        ).fetchone()["n"]
+    finally:
+        conn.close()
+
+    assert sample["round_id"].startswith(sample["run_session_id"])
+    assert sample["round_seq"] == 1
+    assert sessions == 3

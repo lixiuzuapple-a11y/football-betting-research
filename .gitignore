@@ -83,6 +83,11 @@ history/_review/
 scratch/
 local/
 
+# Deployment marker written into the worktree by the installer. Kept out of Git
+# so a deployed source tree can be audited cleanly (REVIEWS/TASK-0005.md 8.4).
+# The service receives the commit via EVLAB_DEPLOYED_COMMIT instead.
+.deployed_commit
+
 # ---------------------------------------------------------------------------
 # Editors / OS
 # ---------------------------------------------------------------------------

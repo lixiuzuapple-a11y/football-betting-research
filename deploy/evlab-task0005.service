@@ -1,0 +1,41 @@
+# EV-Lab TASK-0005 prospective collector (qualification) - systemd unit template.
+#
+# This file is the auditable source of truth for the deployed unit. The cloud
+# host carries a copy at /etc/systemd/system/evlab-task0005.service; the two are
+# kept identical so a reviewer can diff them.
+#
+# TASK-0005 F6: StartLimitIntervalSec / StartLimitBurst are [Unit] keys. The
+# rejected revision placed StartLimitIntervalSec in [Service], where systemd
+# silently ignored it ("Unknown key name ... ignoring"), leaving the effective
+# interval at the 10s default instead of the intended 300s. They are declared in
+# [Unit] here; tests/test_task0005_unit_file.py guards the section.
+#
+# Placeholder: replace %DEPLOYED_COMMIT% with the implementation commit hash when
+# installing on a host. Deployment metadata is injected through the environment
+# rather than read from an untracked marker inside the worktree
+# (REVIEWS/TASK-0005.md section 8.4).
+
+[Unit]
+Description=EV-Lab TASK-0005 prospective dual-market collector (qualification)
+Documentation=https://github.com/lixiuzuapple-a11y/football-betting-research
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/football-betting-research
+Environment=PYTHONPATH=/home/ubuntu/football-betting-research/src
+Environment=PYTHONUNBUFFERED=1
+Environment=EVLAB_DEPLOYED_COMMIT=%DEPLOYED_COMMIT%
+ExecStart=/home/ubuntu/venv311/bin/python -m football_betting.prospective --data-root /home/ubuntu/evlab-data/task0005 --round-interval 60 --http-timeout 50
+Restart=on-failure
+RestartSec=15
+StandardOutput=append:/home/ubuntu/evlab-data/task0005/logs/service.log
+StandardError=append:/home/ubuntu/evlab-data/task0005/logs/service.log
+
+[Install]
+WantedBy=multi-user.target
