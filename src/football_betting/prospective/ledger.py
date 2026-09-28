@@ -32,17 +32,32 @@ from pathlib import Path
 
 __all__ = [
     "DATASET_PHASE",
+    "PHASE_QUALIFICATION",
+    "PHASE_PROSPECTIVE_SEALED",
+    "SCHEMA_VERSION",
+    "VALID_DATASET_PHASES",
     "CAPTURE_KIND_REGULAR",
     "CAPTURE_KIND_CHANGE_CONFIRMATION",
     "CaptureRecord",
     "LedgerStore",
     "SOURCE_OFFICIAL_SPORTTERY",
     "SOURCE_REFERENCE_BETEXPLORER",
+    "schema_hash",
     "source_display_name",
 ]
 
-#: Marks every row this collector writes. TASK-0006 collects the real thing.
+#: Default phase, preserved as a module constant so the qualified TASK-0005
+#: behaviour (and its regression tests) is unchanged. TASK-0006 passes
+#: :data:`PHASE_PROSPECTIVE_SEALED` explicitly through the collector config.
 DATASET_PHASE = "QUALIFICATION"
+PHASE_QUALIFICATION = "QUALIFICATION"
+PHASE_PROSPECTIVE_SEALED = "PROSPECTIVE_SEALED"
+VALID_DATASET_PHASES = frozenset({PHASE_QUALIFICATION, PHASE_PROSPECTIVE_SEALED})
+
+#: Storage-contract label. The sealed run manifest pins this label *and*
+#: :func:`schema_hash`, so a later reader can prove which schema produced the
+#: formal dataset without trusting either party's chat log.
+SCHEMA_VERSION = "task0006-ledger/1"
 
 CAPTURE_KIND_REGULAR = "regular"
 CAPTURE_KIND_CHANGE_CONFIRMATION = "change_confirmation"
@@ -165,6 +180,15 @@ CREATE INDEX IF NOT EXISTS idx_vt_session ON variant_transitions(run_session_id)
 """
 
 
+def schema_hash() -> str:
+    """SHA-256 of the canonical schema text.
+
+    Recorded in the sealed run manifest so a reviewer can pin the exact storage
+    contract the formal dataset was written under.
+    """
+    return hashlib.sha256(_SCHEMA.encode("utf-8")).hexdigest()
+
+
 def _now_iso(moment: datetime | None = None) -> str:
     """ISO-8601 with an explicit offset. Naive input is a programming error."""
     stamp = moment or datetime.now(timezone.utc)
@@ -203,7 +227,18 @@ class CaptureRecord:
 class LedgerStore:
     """Append-only ledger plus a content-addressed raw-capture directory."""
 
-    def __init__(self, data_root: str | Path, *, deployed_commit: str = "unknown") -> None:
+    def __init__(
+        self,
+        data_root: str | Path,
+        *,
+        deployed_commit: str = "unknown",
+        dataset_phase: str = DATASET_PHASE,
+    ) -> None:
+        if dataset_phase not in VALID_DATASET_PHASES:
+            raise ValueError(
+                f"unknown dataset_phase {dataset_phase!r}; "
+                f"expected one of {sorted(VALID_DATASET_PHASES)}"
+            )
         self.data_root = Path(data_root)
         self.data_root.mkdir(parents=True, exist_ok=True)
         self.raw_root = self.data_root / "raw"
@@ -212,6 +247,10 @@ class LedgerStore:
         self.log_root.mkdir(parents=True, exist_ok=True)
         self.db_path = self.data_root / "ledger.sqlite3"
         self.deployed_commit = deployed_commit
+        #: The phase stamped on every row this store writes. TASK-0006 sets it
+        #: to ``PROSPECTIVE_SEALED`` explicitly; everything else defaults to the
+        #: qualified ``QUALIFICATION`` behaviour.
+        self.dataset_phase = dataset_phase
         # The two collection legs run in separate threads, so the connection is
         # opened for cross-thread use and every write is serialised by a lock.
         # Writes are tiny and infrequent, so this costs nothing measurable.
@@ -223,7 +262,14 @@ class LedgerStore:
         self._conn.executescript(_SCHEMA)
         # Durability over throughput: this writes a handful of rows a minute.
         self._conn.execute("PRAGMA journal_mode=WAL")
-        self._verify_schema()
+        try:
+            self._verify_schema()
+            self._guard_phase_consistency()
+        except Exception:
+            # A refused root must not leak an open handle: the refusal is the
+            # point, not a stray connection to a root we declined to use.
+            self._conn.close()
+            raise
 
     def _verify_schema(self) -> None:
         """Fail loudly if this data root predates the current schema.
@@ -254,6 +300,34 @@ class LedgerStore:
         }
         if "variant_transitions" not in tables:
             raise RuntimeError(f"{self.db_path} is missing the variant_transitions table")
+
+    def _guard_phase_consistency(self) -> None:
+        """Refuse to mix dataset phases inside one data root (fail closed).
+
+        TASK-0006 §6 requires a brand-new formal root and §17.11 requires the
+        guard to fail closed on incompatible pre-existing state. If this root
+        already holds rows from a *different* phase, the honest behaviour is to
+        refuse rather than to interleave qualification and sealed evidence in a
+        single ledger, which no later reader could unpick.
+        """
+        if "captures" not in {
+            row["name"]
+            for row in self._conn.execute("SELECT name FROM sqlite_master WHERE type='table'")
+        }:  # pragma: no cover - schema always creates it
+            return
+        foreign = self._conn.execute(
+            "SELECT dataset_phase, COUNT(*) AS n FROM captures WHERE dataset_phase != ? "
+            "GROUP BY dataset_phase",
+            (self.dataset_phase,),
+        ).fetchall()
+        if foreign:
+            observed = ", ".join(f"{row['dataset_phase']}={int(row['n'])}" for row in foreign)
+            raise RuntimeError(
+                f"{self.db_path} already contains rows from another dataset phase "
+                f"({observed}) while this store is configured for "
+                f"{self.dataset_phase!r}. Use a fresh --data-root; formal sealed data "
+                f"and qualification data must never share a ledger."
+            )
 
     # -- lifecycle ---------------------------------------------------------
 
@@ -327,7 +401,7 @@ class LedgerStore:
                 record.raw_file_path,
                 record.parser_version,
                 record.deployed_commit,
-                DATASET_PHASE,
+                self.dataset_phase,
                 record.change_event_id,
                 _now_iso(),
             ),
@@ -366,7 +440,7 @@ class LedgerStore:
                 row.get("had_close_time"),
                 row.get("observed_at"),
                 row.get("payload_sha256"),
-                DATASET_PHASE,
+                self.dataset_phase,
             )
             for row in rows
         ]
@@ -410,7 +484,7 @@ class LedgerStore:
                 row.get("response_received_at"),
                 row.get("duplicate_copies_collapsed"),
                 row.get("parser_status"),
-                DATASET_PHASE,
+                self.dataset_phase,
             )
             for row in rows
         ]
@@ -510,7 +584,7 @@ class LedgerStore:
                 round_id,
                 round_seq,
                 run_session_id,
-                DATASET_PHASE,
+                self.dataset_phase,
                 _now_iso(),
             ),
         )
@@ -553,7 +627,7 @@ class LedgerStore:
                     current_variant,
                     previous_capture_id,
                     current_capture_id,
-                    DATASET_PHASE,
+                    self.dataset_phase,
                     _now_iso(),
                 ),
             )
@@ -638,6 +712,94 @@ class LedgerStore:
             (SOURCE_REFERENCE_BETEXPLORER,),
         ).fetchall()
         return {row["v"]: int(row["n"]) for row in rows}
+
+    # -- restart-safe baseline hydration (TASK-0006 §5.4) ------------------
+
+    def latest_reference_observations(
+        self,
+    ) -> dict[tuple[str | None, str], tuple[tuple[float, float, float], datetime]]:
+        """Latest successful 1X2 observation per ``(source_variant, event_id)``.
+
+        TASK-0006 §5.4: a restarted process must hydrate its reference baseline
+        from the ledger. Starting the comparison from an empty table would make
+        a real price move that happened across the restart invisible, which is
+        exactly the kind of silent gap a sealed dataset must not contain.
+
+        Rows written by failed captures are excluded, mirroring the live
+        comparison path: only an observation that actually parsed counts as a
+        baseline.
+        """
+        rows = self._conn.execute(
+            """
+            SELECT bf.source_variant AS variant, bf.event_id AS event_id,
+                   bf.home_odds AS h, bf.draw_odds AS d, bf.away_odds AS a,
+                   bf.response_received_at AS received
+            FROM betexplorer_facts AS bf
+            WHERE bf.fact_id IN (
+                SELECT MAX(inner_bf.fact_id)
+                FROM betexplorer_facts AS inner_bf
+                JOIN captures AS c ON c.capture_id = inner_bf.capture_id
+                WHERE c.failure_class IS NULL AND c.capture_kind = ?
+                GROUP BY inner_bf.source_variant, inner_bf.event_id
+            )
+            """,
+            (CAPTURE_KIND_REGULAR,),
+        ).fetchall()
+        restored: dict[
+            tuple[str | None, str], tuple[tuple[float, float, float], datetime]
+        ] = {}
+        for row in rows:
+            if row["h"] is None or row["d"] is None or row["a"] is None:
+                continue
+            restored[(row["variant"], row["event_id"])] = (
+                (float(row["h"]), float(row["d"]), float(row["a"])),
+                datetime.fromisoformat(row["received"]),
+            )
+        return restored
+
+    def latest_reference_context(self) -> tuple[str | None, int] | None:
+        """Variant label and capture id of the last successful regular reference.
+
+        Restoring this keeps a post-restart variant transition honest: the first
+        capture after a restart is compared against the rendering actually served
+        before it, not against "nothing" (TASK-0006 §5.4).
+        """
+        row = self._conn.execute(
+            """
+            SELECT capture_id, source_variant FROM captures
+            WHERE source = ? AND capture_kind = ? AND failure_class IS NULL
+            ORDER BY capture_id DESC LIMIT 1
+            """,
+            (SOURCE_REFERENCE_BETEXPLORER, CAPTURE_KIND_REGULAR),
+        ).fetchone()
+        if row is None:
+            return None
+        return (row["source_variant"], int(row["capture_id"]))
+
+    # -- sealed-run inspection helpers (TASK-0006 §11/§15) -----------------
+
+    def phase_distribution(self) -> dict[str, int]:
+        """Capture counts by ``dataset_phase`` - a provenance fact, not an outcome."""
+        rows = self._conn.execute(
+            "SELECT dataset_phase AS p, COUNT(*) AS n FROM captures GROUP BY p"
+        ).fetchall()
+        return {row["p"]: int(row["n"]) for row in rows}
+
+    def capture_time_bounds(self) -> tuple[str | None, str | None]:
+        """Earliest/latest ``response_received_at`` across all captures."""
+        row = self._conn.execute(
+            "SELECT MIN(response_received_at) AS first, MAX(response_received_at) AS last "
+            "FROM captures"
+        ).fetchone()
+        return (row["first"], row["last"])
+
+    def raw_file_stats(self) -> dict[str, int]:
+        """Count and compressed size of retained raw payloads."""
+        files = [path for path in self.raw_root.rglob("*.gz") if path.is_file()]
+        return {
+            "count": len(files),
+            "bytes": sum(path.stat().st_size for path in files),
+        }
 
 
 def source_display_name(source: str) -> str:

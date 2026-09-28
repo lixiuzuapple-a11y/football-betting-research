@@ -64,6 +64,7 @@ __all__ = [
     "decode_strict_utf8",
     "parse_homepage",
     "parse_page_variant",
+    "variant_key_from_label",
 ]
 
 #: The only dialect that exposes a machine-readable kickoff.
@@ -161,6 +162,29 @@ def parse_page_variant(text: str) -> PageVariant:
         geo_location=geo.group(1).strip() if geo else None,
         asset_serial=serial.group(1).strip() if serial else None,
     )
+
+
+def variant_key_from_label(label: str | None) -> tuple[str, str] | None:
+    """Reverse :attr:`PageVariant.label` into the tuple used to key baselines.
+
+    A restarted collector hydrates its reference baseline from the ledger, where
+    the variant is stored in its human-readable ``label`` form (TASK-0006 §5.4).
+    A label that is not a declared variant - ``"decode_error"``, say - has no
+    key, and ``None`` is the honest answer rather than a fabricated one.
+    """
+    if label is None:
+        return None
+    geo: str | None = None
+    serial: str | None = None
+    for part in label.split("|"):
+        name, _, value = part.partition("=")
+        if name.strip() == "geo":
+            geo = value
+        elif name.strip() == "serial":
+            serial = value
+    if geo is None or serial is None:
+        return None
+    return (geo, serial)
 
 
 def decode_strict_utf8(raw: bytes) -> str:

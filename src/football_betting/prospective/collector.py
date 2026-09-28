@@ -41,11 +41,11 @@ from typing import Any
 
 from football_betting.data.betexplorer import (
     BETEXPLORER_HOME_URL,
-    PageVariant,
     build_home_request,
     decode_strict_utf8,
     parse_homepage,
     parse_page_variant,
+    variant_key_from_label,
 )
 from football_betting.data.sporttery_webapi import (
     MATCH_CALCULATOR_URL,
@@ -59,15 +59,23 @@ from football_betting.data.sporttery_webapi import (
 from .ledger import (
     CAPTURE_KIND_CHANGE_CONFIRMATION,
     CAPTURE_KIND_REGULAR,
+    DATASET_PHASE,
+    PHASE_PROSPECTIVE_SEALED,
     SOURCE_OFFICIAL_SPORTTERY,
     SOURCE_REFERENCE_BETEXPLORER,
     CaptureRecord,
     LedgerStore,
 )
 
-__all__ = ["CollectorConfig", "ProspectiveCollector", "run_forever"]
+__all__ = ["COLLECTOR_VERSION", "CollectorConfig", "ProspectiveCollector", "run_forever"]
 
 LOGGER = logging.getLogger("task0005.collector")
+
+#: Identifies the collector/parser pair in the sealed run manifest (§5.2). The
+#: per-row ``parser_version`` is deliberately left at its TASK-0005 value so
+#: existing provenance and regression tests are unchanged; this labels the
+#: deployed collector as a whole.
+COLLECTOR_VERSION = "task0006-collector/0.2"
 
 ROUND_INTERVAL_SECONDS = 60.0
 HTTP_TIMEOUT_SECONDS = 50.0
@@ -78,7 +86,12 @@ BACKOFF_STEPS_SECONDS = (5.0, 15.0, 45.0, 90.0)
 
 @dataclass(frozen=True, slots=True)
 class CollectorConfig:
-    """Runtime configuration. Defaults match the TASK-0005 contract."""
+    """Runtime configuration. Defaults match the TASK-0005 contract.
+
+    TASK-0006 adds exactly two knobs: the dataset phase every row must carry,
+    and the immutable wall-clock deadline of a sealed run. Nothing else about
+    the accepted TASK-0005 collection behaviour changes.
+    """
 
     data_root: str
     deployed_commit: str = "unknown"
@@ -88,6 +101,11 @@ class CollectorConfig:
     sporttery_url: str = MATCH_CALCULATOR_URL
     max_rounds: int | None = None
     parser_version: str = "task0005-collector/0.1"
+    #: ``QUALIFICATION`` by default, so TASK-0005 behaviour is untouched.
+    dataset_phase: str = DATASET_PHASE
+    #: Absolute UTC stop time for a sealed run, read from the run manifest. The
+    #: loop stops at or after it; a restart can never push it later (§5.3).
+    planned_end_utc: datetime | None = None
 
 
 @dataclass(frozen=True, slots=True)
@@ -113,7 +131,14 @@ class ProspectiveCollector:
 
     def __init__(self, config: CollectorConfig, *, store: LedgerStore | None = None) -> None:
         self.config = config
-        self.store = store or LedgerStore(config.data_root, deployed_commit=config.deployed_commit)
+        self.store = store or LedgerStore(
+            config.data_root,
+            deployed_commit=config.deployed_commit,
+            dataset_phase=config.dataset_phase,
+        )
+        #: Sealed mode keeps ordinary logs operational and free of anything that
+        #: could act as a low-bandwidth results feed (TASK-0006 §5.5).
+        self.sealed = config.dataset_phase == PHASE_PROSPECTIVE_SEALED
         #: Last successful BetExplorer observation per **(event, declared variant)**.
         #: Keying on the variant is what makes the comparison like-for-like: two
         #: renderings of the same page are not two market observations
@@ -128,9 +153,17 @@ class ProspectiveCollector:
         self._round_index = 0
         #: Variant of the most recent successful reference capture, so a switch can
         #: be recorded as a source fact rather than silently resetting baselines.
-        self._last_variant: PageVariant | None = None
+        #: Stored as a key + label pair so a restart can restore both from the
+        #: ledger without re-deriving a ``PageVariant`` (TASK-0006 §5.4).
+        self._last_variant_key: tuple[str, str] | None = None
+        self._last_variant_label: str | None = None
         self._last_variant_capture_id: int | None = None
         self._stop = threading.Event()
+        #: Restore the reference baseline before any round can run. Doing it here
+        #: rather than lazily guarantees no round ever compares against empty
+        #: state, which is what makes a price move across a restart detectable
+        #: (TASK-0006 §5.4).
+        self._hydrate_reference_baseline()
 
     @property
     def _commit(self) -> str:
@@ -141,6 +174,50 @@ class ProspectiveCollector:
         provenance of a row.
         """
         return self.store.deployed_commit or self.config.deployed_commit
+
+    # -- restart safety ----------------------------------------------------
+
+    def _hydrate_reference_baseline(self) -> None:
+        """Restore the previous reference state from the ledger (TASK-0006 §5.4).
+
+        A fresh process would otherwise begin with an empty baseline and quietly
+        treat the first post-restart observation as "first ever", losing any real
+        move that happened while it was down. Hydrating the latest successful
+        observation per ``(source_variant, event_id)`` - plus the last declared
+        variant - keeps the comparison continuous, and the honest bracket stays
+        wide instead of being invented tighter.
+        """
+        restored = self.store.latest_reference_observations()
+        for (variant_label, event_id), (tuple_, received) in restored.items():
+            self._last_reference[(variant_key_from_label(variant_label), event_id)] = (
+                tuple_,
+                received,
+            )
+        context = self.store.latest_reference_context()
+        if context is not None:
+            variant_label, capture_id = context
+            self._last_variant_label = variant_label
+            self._last_variant_key = variant_key_from_label(variant_label)
+            self._last_variant_capture_id = capture_id
+        if restored or context is not None:
+            if self.sealed:
+                LOGGER.info("hydrated reference baseline from ledger")
+            else:
+                LOGGER.info(
+                    "hydrated reference baseline: %d event/variant observations, "
+                    "last_variant=%s",
+                    len(restored),
+                    self._last_variant_label if context is not None else None,
+                )
+
+    def _planned_end_reached(self) -> bool:
+        """Whether the immutable sealed-run deadline has passed (TASK-0006 §5.3).
+
+        Wall-clock, not process uptime: the deadline is read once from the run
+        manifest and never recomputed, so a restart cannot extend the run.
+        """
+        end = self.config.planned_end_utc
+        return end is not None and datetime.now(timezone.utc) >= end
 
     # -- HTTP ---------------------------------------------------------------
 
@@ -311,7 +388,12 @@ class ProspectiveCollector:
                     }
                 )
             self.store.record_sporttery_facts(capture_id, rows)
-            LOGGER.info("sporttery %s: %d match rows", kind, len(rows))
+            if self.sealed:
+                # §5.5: the shape of the payload is not one of the permitted
+                # operational fields, so a sealed run logs the capture itself.
+                LOGGER.info("sporttery %s: capture ok", kind)
+            else:
+                LOGGER.info("sporttery %s: %d match rows", kind, len(rows))
 
         return capture_id
 
@@ -360,12 +442,12 @@ class ProspectiveCollector:
         # so it can never be read as a market movement (TASK-0005 F3).
         if (
             variant_key is not None
-            and self._last_variant is not None
-            and variant_key != self._last_variant.key
+            and self._last_variant_key is not None
+            and variant_key != self._last_variant_key
         ):
             self.store.record_variant_transition(
                 round_id=round_id,
-                previous_variant=self._last_variant.label,
+                previous_variant=self._last_variant_label,
                 current_variant=variant_label,
                 previous_capture_id=self._last_variant_capture_id,
                 current_capture_id=capture_id,
@@ -373,7 +455,8 @@ class ProspectiveCollector:
                 run_session_id=self.run_session_id,
             )
         if variant_key is not None:
-            self._last_variant = variant
+            self._last_variant_key = variant_key
+            self._last_variant_label = variant_label
             self._last_variant_capture_id = capture_id
 
         changes: list[tuple[str, tuple[float, float, float], tuple[float, float, float], datetime]] = []
@@ -419,11 +502,21 @@ class ProspectiveCollector:
                     outcome.response_received_at,
                 )
 
-            LOGGER.info(
-                "betexplorer %s: %d quotes, %d issues, %d rows w/o odds, %d changes, variant=%s",
-                kind, len(result.quotes), len(result.issues),
-                result.rows_without_odds, len(changes), variant_label,
-            )
+            if self.sealed:
+                # §5.5: quote counts, the served variant and the number of
+                # accepted changes would each function as a results channel.
+                # Only the parser failure count is permitted here.
+                LOGGER.info(
+                    "betexplorer %s: capture ok parser_issues=%d",
+                    kind, len(result.issues),
+                )
+            else:
+                LOGGER.info(
+                    "betexplorer %s: %d quotes, %d issues, %d rows w/o odds, "
+                    "%d changes, variant=%s",
+                    kind, len(result.quotes), len(result.issues),
+                    result.rows_without_odds, len(changes), variant_label,
+                )
 
         return capture_id, changes, outcome.response_received_at, variant_label
 
@@ -477,26 +570,50 @@ class ProspectiveCollector:
                     run_session_id=self.run_session_id,
                 )
             summary["confirmation_capture_id"] = confirm_capture
-            LOGGER.info(
-                "%d reference change(s) confirmed by capture %d",
-                len(changes), confirm_capture,
-            )
+            if not self.sealed:
+                LOGGER.info(
+                    "%d reference change(s) confirmed by capture %d",
+                    len(changes), confirm_capture,
+                )
 
         return summary
 
     def stop(self) -> None:
         self._stop.set()
 
+    def _log_round_summary(self, summary: dict[str, Any]) -> None:
+        """Log one completed round at a level that matches the run's phase.
+
+        In sealed mode the summary must not expose anything readable as a
+        result. How many changes were accepted, which rendering was served, or
+        whether a confirmation fired would each act as a low-bandwidth results
+        channel an idle observer could read off the journal (TASK-0006 §5.5/§11).
+        """
+        if self.sealed:
+            LOGGER.info(
+                "round done: round_id=%s kind=%s",
+                summary.get("round_id"), summary.get("kind"),
+            )
+        else:
+            LOGGER.info("round done: %s", summary)
+
     def run_forever(self) -> None:
         """Run rounds on a start-to-start cadence without overlapping."""
         while not self._stop.is_set():
+            if self._planned_end_reached():
+                planned_end = self.config.planned_end_utc
+                LOGGER.info(
+                    "planned end reached; stopping cleanly (deadline=%s)",
+                    planned_end.isoformat() if planned_end is not None else "unknown",
+                )
+                break
             if self.config.max_rounds is not None and self._round_index >= self.config.max_rounds:
                 LOGGER.info("reached max_rounds=%d, stopping", self.config.max_rounds)
                 break
             started = time.monotonic()
             try:
                 summary = self.run_round()
-                LOGGER.info("round done: %s", summary)
+                self._log_round_summary(summary)
             except Exception:  # noqa: BLE001 - a round must never kill the loop
                 LOGGER.exception("round failed; continuing")
 

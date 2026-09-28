@@ -1,0 +1,49 @@
+# EV-Lab TASK-0006 sealed five-day prospective capture - systemd unit template.
+#
+# This file is the auditable source of truth for the deployed unit. The cloud
+# host carries a generated copy at /etc/systemd/system/evlab-task0006.service,
+# with two placeholders substituted at install time:
+#
+#   %RUN_ID%           the sealed run identifier (also names the data root)
+#   %DEPLOYED_COMMIT%  the frozen run commit (commit recorded on every row)
+#
+# TASK-0006 §8 requirements carried here:
+#   * runs as the unprivileged `ubuntu` user;
+#   * no new inbound port, no Docker, no browser automation, no Scrapling,
+#     no proxy/VPN/IP rotation, no access-control bypass;
+#   * no credential anywhere in the unit;
+#   * Restart=on-failure with the bounded policy validated in TASK-0005 F6;
+#   * the dataset phase, the fresh data root and the frozen commit are all
+#     explicit - none is inferred at runtime.
+#
+# StartLimitIntervalSec / StartLimitBurst are [Unit] keys. systemd silently
+# ignores them in [Service], which is exactly the TASK-0005 F6 defect; the
+# section placement is guarded by tests/test_task0006_unit_file.py.
+#
+# The TASK-0005 unit stays installed but stopped and disabled (§8): the two runs
+# are separate datasets and must not be conflated.
+
+[Unit]
+Description=EV-Lab TASK-0006 sealed prospective dual-market capture (%RUN_ID%)
+Documentation=https://github.com/lixiuzuapple-a11y/football-betting-research
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/football-betting-research
+Environment=PYTHONPATH=/home/ubuntu/football-betting-research/src
+Environment=PYTHONUNBUFFERED=1
+Environment=EVLAB_DEPLOYED_COMMIT=%DEPLOYED_COMMIT%
+ExecStart=/home/ubuntu/venv311/bin/python -m football_betting.prospective --data-root /home/ubuntu/evlab-data/task0006-sealed-%RUN_ID% --round-interval 60 --http-timeout 50 --dataset-phase PROSPECTIVE_SEALED
+Restart=on-failure
+RestartSec=15
+StandardOutput=append:/home/ubuntu/evlab-data/task0006-sealed-%RUN_ID%/logs/service.log
+StandardError=append:/home/ubuntu/evlab-data/task0006-sealed-%RUN_ID%/logs/service.log
+
+[Install]
+WantedBy=multi-user.target
