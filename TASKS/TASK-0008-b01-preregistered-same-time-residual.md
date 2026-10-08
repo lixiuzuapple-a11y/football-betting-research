@@ -1,7 +1,7 @@
 # TASK-0008 — B01 pre-registered same-time Sporttery vs reference_proxy residual
 
 - Task ID: TASK-0008
-- Status: IN_PROGRESS
+- Status: ACCEPTED
 - Owner: Li
 - Lead / Executor / Reviewer-of-record: ChatGPT
 - Input dataset: TASK-0006 run `20260928a`
