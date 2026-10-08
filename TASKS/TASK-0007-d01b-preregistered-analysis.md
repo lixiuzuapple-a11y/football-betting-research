@@ -1,7 +1,7 @@
 # TASK-0007 — D01-B pre-registered prospective lead-lag analysis
 
 - Task ID: TASK-0007
-- Status: REVIEW
+- Status: ACCEPTED
 - Owner: Li
 - Lead / Executor / Reviewer-of-record: ChatGPT
 - Dataset: TASK-0006 run `20260928a`
