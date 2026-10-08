@@ -1,4 +1,4 @@
-# ChatGPT ↔ WorkBuddy Collaboration Protocol v2.0
+# ChatGPT ↔ WorkBuddy Collaboration Protocol v2.1
 
 This file is the operating contract for AI-to-AI work in this repository.
 
@@ -147,7 +147,24 @@ Existing project research rules remain authoritative, including:
 - prediction, recommendation, human betting decision and execution remain distinct;
 - an unimplemented capability must not return plausible fake output.
 
-## 12. Protocol acknowledgement
+## 12. Reusable asset and automation discipline
+
+**Reuse-first is mandatory.** Before writing a new script, downloader, parser, validator, analysis helper, report generator, deployment helper, configuration template, schema utility, or other repeatable artifact, first search the current WebCodex-managed repository for an existing implementation that can be reused or extended.
+
+Rules:
+
+1. Reusable automation and project tooling must live inside the corresponding WebCodex project repository (for example under `src/`, `scripts/`, `tools/`, `research/`, `deploy/`, or another clearly documented project path), not only in chat, a temporary shell command, Downloads, Desktop, or an untracked personal folder.
+2. Prefer extending or parameterising an existing tool over creating a near-duplicate.
+3. If a one-off diagnostic proves generally useful, promote it into a reusable tracked artifact before repeating the same work later.
+4. Data acquisition, cleaning, mapping, validation, hashing, reporting, deployment and monitoring helpers follow the same rule.
+5. Reusable templates, field mappings, schemas, dictionaries, endpoint knowledge and operational procedures should also be versioned in the repository when they materially reduce future rework.
+6. Every new reusable artifact should have enough naming/documentation/tests that a later ChatGPT, WorkBuddy, or other executor can discover and use it without reconstructing the original chat.
+7. Before starting new implementation work, record or report whether an existing asset was reused, extended, or why a new one was necessary.
+8. Do not repeatedly download, scrape, transform, or recompute the same asset when a verified cached/versioned copy already exists and remains valid. Preserve provenance and freshness metadata so reuse is auditable.
+9. Project-specific artifacts stay in that project's independent Git repository under the WebCodex workspace; do not create hidden cross-project coupling merely to share code. If an artifact genuinely becomes cross-project infrastructure, promote it deliberately into a separately versioned shared component.
+
+The intent is to turn completed work into cumulative project capability: **build once, verify once, reuse many times**.
+## 13. Protocol acknowledgement
 
 Whenever WorkBuddy is explicitly sent this protocol URL or told that the protocol changed, it must:
 
@@ -156,13 +173,13 @@ Whenever WorkBuddy is explicitly sent this protocol URL or told that the protoco
 3. reply to the Owner with exactly the following acknowledgement format:
 
 ```
-ACK COLLABORATION v2.0
+ACK COLLABORATION v2.1
 已同步 origin/main，并阅读 COLLABORATION.md。
-我知道：开始任务前先同步；只按 TASKS 范围执行；完成后写 REPORTS 并提交 REVIEW；提交后停止；收到审核通知后先同步再读 REVIEWS；只有 ChatGPT/Reviewer 可以 ACCEPTED/REJECTED。
+我知道：开始任务前先同步；先查已有可复用资产；只按 TASKS 范围执行；可复用脚本/工具/数据流程要沉淀进 WebCodex 项目仓库；完成后写 REPORTS 并提交 REVIEW；提交后停止；收到审核通知后先同步再读 REVIEWS；只有 ChatGPT/Reviewer 可以 ACCEPTED/REJECTED。
 ```
 
 This acknowledgement confirms receipt only; it does not start a task.
 
-## 13. Versioning
+## 14. Versioning
 
 Protocol changes must be deliberate, committed and pushed. New tasks use the current protocol. An already-running task keeps the protocol version under which it started unless explicitly migrated by the Owner/Reviewer.
