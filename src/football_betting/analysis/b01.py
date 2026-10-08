@@ -5,6 +5,7 @@ from __future__ import annotations
 import csv
 import json
 import sqlite3
+from bisect import bisect_left, bisect_right
 from collections import Counter, defaultdict
 from contextlib import closing
 from dataclasses import asdict
@@ -161,14 +162,19 @@ def _future_edge(
     sporttery_price: float,
     side: str,
 ) -> float | None:
-    candidates = [
-        (stamp, odds)
-        for stamp, odds in observations
-        if stamp > observed_at and stamp < kickoff and (target_at is None or stamp >= target_at)
-    ]
-    if not candidates:
+    if not observations:
         return None
-    _, odds = candidates[0]
+    if target_at is None:
+        probe = (observed_at, (float("inf"), float("inf"), float("inf")))
+        index = bisect_right(observations, probe)
+    else:
+        probe = (target_at, (float("-inf"), float("-inf"), float("-inf")))
+        index = bisect_left(observations, probe)
+    if index >= len(observations):
+        return None
+    stamp, odds = observations[index]
+    if stamp >= kickoff:
+        return None
     probs = devig_from_odds(dict(zip(SIDES, odds, strict=True)))
     return probs[side] * sporttery_price - 1.0
 
