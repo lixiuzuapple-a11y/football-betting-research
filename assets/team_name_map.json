@@ -9,7 +9,8 @@
     "E1_source": "en 取自 football-data.co.uk 2627/E1.csv 实读；cn 中 16 队取自竞彩接口实读（2026-09-01/02 快照），8 队按竞彩简称规则推断并标 _uncertain",
     "K1_note": "en 为 BetExplorer 实读（2026-09-02，K1 当季 155 场全部球队）；cn 为手写，全部 _uncertain，待竞彩实际开出韩 K 联后用真实赛程核对。写入时间 2026-09-02 10:36",
     "E2_source": "en 取自 football-data.co.uk data/fd_1718_extra/E2.csv 实读（2017-18 赛季 24 队全部）；cn 取自澳客竞彩 1718 赛季实抓队名（data/jc_okooo_1718.csv，league=英甲）。★ 不收录 2 字截断别名（如'布莱'），因会与同联赛多队前缀冲突造成错配——配合 team_map_index 的歧义拒绝机制处理。写入时间 2026-09-03",
-    "constraint_propagation": "2026-09-03 由 scripts/apply_constraint_propagation.py 写入 66 条。依据：留出验证准确率 98.7%（152对/2错），覆盖率 66.4%。约束 = 联赛一致 + 队友已知 + 比分一致 + 得票占比≥60%且≥2票。★ 未采用「仅用时间+比分做主键」的外部建议：实测该法唯一命中中 81.7% 为假唯一（源60+联赛 vs 目标22联赛互不包含），样例 浦项制铁→Monaco。★ 未采用拼音模糊匹配：实测阈值85时精确率 0%（波尔多→Bolton、兰斯→Lens）。全部条目 _uncertain=True，待人工抽检。"
+    "constraint_propagation": "2026-09-03 由 scripts/apply_constraint_propagation.py 写入 66 条。依据：留出验证准确率 98.7%（152对/2错），覆盖率 66.4%。约束 = 联赛一致 + 队友已知 + 比分一致 + 得票占比≥60%且≥2票。★ 未采用「仅用时间+比分做主键」的外部建议：实测该法唯一命中中 81.7% 为假唯一（源60+联赛 vs 目标22联赛互不包含），样例 浦项制铁→Monaco。★ 未采用拼音模糊匹配：实测阈值85时精确率 0%（波尔多→Bolton、兰斯→Lens）。全部条目 _uncertain=True，待人工抽检。",
+    "TASK0007_IDENTITY_ONLY_source": "2026-10-08: 38 Chinese-English team identities from 19 TASK-0006 fixtures, verified only by bilingual home/away identity plus exact kickoff in the full Sporttery/BetExplorer fixture universes before event-level D01-B analysis. No odds, change frequency, EV or outcomes used."
   },
   "E0": [
     {
@@ -3174,6 +3175,350 @@
       ],
       "_uncertain": true,
       "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=6/6"
+    }
+  ],
+  "TASK0007_IDENTITY_ONLY": [
+    {
+      "en": "South Korea",
+      "cn": "韩国",
+      "cn_full": "韩国",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041741/QFjGp8LP"
+    },
+    {
+      "en": "Uruguay",
+      "cn": "乌拉圭",
+      "cn_full": "乌拉圭",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041741/QFjGp8LP"
+    },
+    {
+      "en": "Armenia",
+      "cn": "亚美尼亚",
+      "cn_full": "亚美尼亚",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041742/lKvp6VgM"
+    },
+    {
+      "en": "Montenegro",
+      "cn": "黑山",
+      "cn_full": "黑山",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041742/lKvp6VgM"
+    },
+    {
+      "en": "Turkey",
+      "cn": "土耳其",
+      "cn_full": "土耳其",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041743/CbRrKL65"
+    },
+    {
+      "en": "Italy",
+      "cn": "意大利",
+      "cn_full": "意大利",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041743/CbRrKL65"
+    },
+    {
+      "en": "Belgium",
+      "cn": "比利时",
+      "cn_full": "比利时",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041744/40zZ9MQ7"
+    },
+    {
+      "en": "France",
+      "cn": "法国",
+      "cn_full": "法国",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041744/40zZ9MQ7"
+    },
+    {
+      "en": "Romania",
+      "cn": "罗马尼亚",
+      "cn_full": "罗马尼亚",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041745/jFVbVftH"
+    },
+    {
+      "en": "Bosnia & Herzegovina",
+      "cn": "波黑",
+      "cn_full": "波黑",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041745/jFVbVftH"
+    },
+    {
+      "en": "Sweden",
+      "cn": "瑞典",
+      "cn_full": "瑞典",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041746/rVycBZlo"
+    },
+    {
+      "en": "Poland",
+      "cn": "波兰",
+      "cn_full": "波兰",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041746/rVycBZlo"
+    },
+    {
+      "en": "Northern Ireland",
+      "cn": "北爱尔兰",
+      "cn_full": "北爱尔兰",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041747/tp6blFo3"
+    },
+    {
+      "en": "Hungary",
+      "cn": "匈牙利",
+      "cn_full": "匈牙利",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041747/tp6blFo3"
+    },
+    {
+      "en": "North Korea W",
+      "cn": "朝鲜女",
+      "cn_full": "朝鲜女",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041775/bcfoyOwg"
+    },
+    {
+      "en": "China W",
+      "cn": "中国女",
+      "cn_full": "中国女",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041775/bcfoyOwg"
+    },
+    {
+      "en": "Japan W",
+      "cn": "日本女",
+      "cn_full": "日本女",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041780/vgsM35E5"
+    },
+    {
+      "en": "South Korea W",
+      "cn": "韩国女",
+      "cn_full": "韩国女",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041780/vgsM35E5"
+    },
+    {
+      "en": "Scotland",
+      "cn": "苏格兰",
+      "cn_full": "苏格兰",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041781/KxQwPbIi"
+    },
+    {
+      "en": "Switzerland",
+      "cn": "瑞士",
+      "cn_full": "瑞士",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041781/KxQwPbIi"
+    },
+    {
+      "en": "Czech Republic",
+      "cn": "捷克",
+      "cn_full": "捷克",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041782/AeCCmlWQ"
+    },
+    {
+      "en": "England",
+      "cn": "英格兰",
+      "cn_full": "英格兰",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041782/AeCCmlWQ"
+    },
+    {
+      "en": "Slovenia",
+      "cn": "斯洛文尼",
+      "cn_full": "斯洛文尼",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041783/hOq1JfnT"
+    },
+    {
+      "en": "North Macedonia",
+      "cn": "北马其顿",
+      "cn_full": "北马其顿",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041783/hOq1JfnT"
+    },
+    {
+      "en": "Slovakia",
+      "cn": "斯洛伐克",
+      "cn_full": "斯洛伐克",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041784/xb24bvhD"
+    },
+    {
+      "en": "Kazakhstan",
+      "cn": "哈萨克",
+      "cn_full": "哈萨克",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041784/xb24bvhD"
+    },
+    {
+      "en": "Luxembourg",
+      "cn": "卢森堡",
+      "cn_full": "卢森堡",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041785/UsxpFQlm"
+    },
+    {
+      "en": "Iceland",
+      "cn": "冰岛",
+      "cn_full": "冰岛",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041785/UsxpFQlm"
+    },
+    {
+      "en": "Spain",
+      "cn": "西班牙",
+      "cn_full": "西班牙",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041786/2T1rwtCi"
+    },
+    {
+      "en": "Croatia",
+      "cn": "克罗地亚",
+      "cn_full": "克罗地亚",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041786/2T1rwtCi"
+    },
+    {
+      "en": "Bulgaria",
+      "cn": "保加利亚",
+      "cn_full": "保加利亚",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041787/hSJlvG55"
+    },
+    {
+      "en": "Estonia",
+      "cn": "爱沙尼亚",
+      "cn_full": "爱沙尼亚",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041787/hSJlvG55"
+    },
+    {
+      "en": "USA",
+      "cn": "美国",
+      "cn_full": "美国",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041788/My78L95t"
+    },
+    {
+      "en": "Chile",
+      "cn": "智利",
+      "cn_full": "智利",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041788/My78L95t"
+    },
+    {
+      "en": "South Korea U23",
+      "cn": "韩国亚",
+      "cn_full": "韩国亚",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041789/EeeHo1Y0"
+    },
+    {
+      "en": "China U23",
+      "cn": "中国亚",
+      "cn_full": "中国亚",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041789/EeeHo1Y0"
+    },
+    {
+      "en": "Uzbekistan U23",
+      "cn": "乌兹别亚",
+      "cn_full": "乌兹别亚",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041790/S2o8i9BD"
+    },
+    {
+      "en": "Japan U23",
+      "cn": "日本亚",
+      "cn_full": "日本亚",
+      "aliases": [],
+      "_uncertain": false,
+      "_source": "TASK-0007 full-fixture identity-only cross-check: exact home/away English identity + exact kickoff; no odds/change data",
+      "_verified_fixture": "2041790/S2o8i9BD"
     }
   ]
 }
