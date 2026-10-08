@@ -1,0 +1,751 @@
+event_id,home,away,kickoff_utc,match_id,kickoff_delta_seconds,status
+0ER4D89U,Columbus Crew,Inter Miami,2026-09-27T23:00:00+00:00,,,unmatched
+nPgd3LeT,Central Africa,Burkina Faso,2026-09-28T16:00:00+00:00,,,unmatched
+0lkl0eqK,Equatorial Guinea,Sierra Leone,2026-09-28T16:00:00+00:00,,,unmatched
+WWuKfZ6s,Zimbabwe,D.R. Congo,2026-09-28T16:00:00+00:00,,,unmatched
+UaJYk5M5,Tunisia,Botswana,2026-09-28T19:00:00+00:00,,,unmatched
+lKvp6VgM,Armenia,Montenegro,2026-09-28T16:00:00+00:00,2041742,0.0,matched
+jwbpuB8k,Georgia,Ukraine,2026-09-28T16:00:00+00:00,,,unmatched
+YBWWKeL8,Latvia,Cyprus,2026-09-28T16:00:00+00:00,,,unmatched
+40zZ9MQ7,Belgium,France,2026-09-28T18:45:00+00:00,2041744,0.0,matched
+tp6blFo3,Northern Ireland,Hungary,2026-09-28T18:45:00+00:00,2041747,0.0,matched
+jFVbVftH,Romania,Bosnia & Herzegovina,2026-09-28T18:45:00+00:00,2041745,0.0,matched
+rVycBZlo,Sweden,Poland,2026-09-28T18:45:00+00:00,2041746,0.0,matched
+CbRrKL65,Turkey,Italy,2026-09-28T18:45:00+00:00,2041743,0.0,matched
+8bHNn7BL,Denmark U21,Belarus U21,2026-09-28T16:30:00+00:00,,,unmatched
+Ugl2MeJr,Kenya U23,Tanzania U23,2026-09-28T12:00:00+00:00,,,unmatched
+Od5iFvCF,Mauritania U23,D.R. Congo U23,2026-09-28T17:00:00+00:00,,,unmatched
+2BRvDsYR,Gimnasia Jujuy,San Martin T.,2026-09-28T00:00:00+00:00,,,unmatched
+0YR3RYmU,Flandria,Dock Sud,2026-09-28T18:00:00+00:00,,,unmatched
+S4NGoEcC,CSR Espanol,Def. de Cambaceres,2026-09-28T18:00:00+00:00,,,unmatched
+6kZ7mzTa,Justo Jose de Urquiza,Leandro N. Alem,2026-09-28T18:00:00+00:00,,,unmatched
+rqzgdjL0,Leones de Rosario,Club Lujan,2026-09-28T18:00:00+00:00,,,unmatched
+hA0oBNYi,Social Atletico Television W,Gimnasia L.P. W,2026-09-28T12:00:00+00:00,,,unmatched
+SIXfC3qA,Tomayapo,Real Oruro,2026-09-27T23:30:00+00:00,,,unmatched
+6yXAIpfn,America MG,Juventude,2026-09-28T22:30:00+00:00,,,unmatched
+K4rNxMUG,Barra Mansa,Buzios,2026-09-28T17:45:00+00:00,,,unmatched
+ObzERHEL,Clube 1992,Futvida,2026-09-27T23:30:00+00:00,,,unmatched
+pj8xTqb4,QFC U20,America RN U20,2026-09-28T18:00:00+00:00,,,unmatched
+xGPbHqt1,Planalto EC W,Anapolina W,2026-09-28T18:30:00+00:00,,,unmatched
+0r2vHhJP,CD Santa Cruz,O'Higgins,2026-09-27T23:00:00+00:00,,,unmatched
+bq1tgD2s,Fortaleza,Deportes Tolima,2026-09-27T23:05:00+00:00,,,unmatched
+S6sivyJO,Dep. Cali,Aguilas,2026-09-28T01:10:00+00:00,,,unmatched
+C8KmUqsI,Ind. Valle del Cauca,Orsomarso,2026-09-28T20:30:00+00:00,,,unmatched
+GvnLByRj,Inter Palmira,Leones,2026-09-28T21:00:00+00:00,,,unmatched
+fH3VnkS8,Municipal Limeno,FAS,2026-09-27T23:00:00+00:00,,,unmatched
+OAAMHNW9,Swansea U21,QPR U21,2026-09-28T18:00:00+00:00,,,unmatched
+voDeyrM7,Keski-Uusimaa W,HJK Akatemia W,2026-09-28T16:00:00+00:00,,,unmatched
+GOukuFwI,Athens Kallithea,Asteras Tripolis B,2026-09-28T13:00:00+00:00,,,unmatched
+hSeOtSEM,Marko,Panthrakikos,2026-09-28T13:00:00+00:00,,,unmatched
+YVveEKSq,Ario Eslamshahr,Havadar SC,2026-09-28T13:30:00+00:00,,,unmatched
+SWCNWSrB,Kara Gostar,Mes Kerman,2026-09-28T13:30:00+00:00,,,unmatched
+tGEFYlEb,Saipa,Niroye Zamini,2026-09-28T13:30:00+00:00,,,unmatched
+6qw3Cbcd,Pars Janoobi Jam,Naft M.I.S,2026-09-28T15:30:00+00:00,,,unmatched
+UB9zH4SH,Hapoel Kfar Saba,Bnei Yehuda,2026-09-28T16:00:00+00:00,,,unmatched
+jRwnOLZp,Hapoel Kfar Shalem,Maccabi Jaffa,2026-09-28T16:00:00+00:00,,,unmatched
+xxDrFrcU,Kiryat Gat,MS Kafr Qasim,2026-09-28T16:00:00+00:00,,,unmatched
+nVl8V3sB,Maccabi Bnei Raina,H. Raanana,2026-09-28T16:45:00+00:00,,,unmatched
+xEh7vF16,Waterhouse,Treasure Beach,2026-09-28T01:05:00+00:00,,,unmatched
+nelb1QCt,Club Leon,Juarez,2026-09-28T01:00:00+00:00,,,unmatched
+fLi6a4sg,Necaxa,Club America,2026-09-28T03:10:00+00:00,,,unmatched
+bLdZxJSQ,Tigres UANL W,Atl. San Luis W,2026-09-28T00:06:00+00:00,,,unmatched
+f5c4Xdjl,Atlante W,UNAM Pumas W,2026-09-28T21:45:00+00:00,,,unmatched
+OtPR2SBc,Haiti,Costa Rica,2026-09-27T23:00:00+00:00,,,unmatched
+dfNZ06tA,Curacao,Nicaragua,2026-09-28T00:00:00+00:00,,,unmatched
+fcmMwDzJ,Dominica,Puerto Rico,2026-09-28T00:00:00+00:00,,,unmatched
+ULzsapBM,Trinidad & Tobago,Dominican Republic,2026-09-28T01:00:00+00:00,,,unmatched
+UTWw1tYq,Guadeloupe,Barbados,2026-09-28T19:00:00+00:00,,,unmatched
+Sp4LXv9L,Cuba,Bonaire,2026-09-28T21:00:00+00:00,,,unmatched
+YHPKi23d,Suriname,Martinique,2026-09-28T22:00:00+00:00,,,unmatched
+n9lXoYJl,Haugesund 2,Hinna,2026-09-28T17:00:00+00:00,,,unmatched
+pCUAE7Er,Raelingen,Lyn 2,2026-09-28T16:00:00+00:00,,,unmatched
+vksqPcaD,Veraguas,Miguelito,2026-09-27T23:15:00+00:00,,,unmatched
+ncLYFSqS,Libertad Asuncion,Olimpia Asuncion,2026-09-28T22:00:00+00:00,,,unmatched
+lxjPv04l,Atl. Tembetary,Paraguari AC,2026-09-28T20:00:00+00:00,,,unmatched
+fZhXxvZ0,Guairena,Fernando de la Mora,2026-09-28T22:15:00+00:00,,,unmatched
+06xOS314,Leixoes U23,Vizela U23,2026-09-28T15:00:00+00:00,,,unmatched
+nHilOugC,Al-Kharitiyath,Al Wakra,2026-09-28T15:00:00+00:00,,,unmatched
+zeu5tN8t,Al Sailiya,Al Rayyan,2026-09-28T17:15:00+00:00,,,unmatched
+KUkdMJNO,Al-Shahaniya,Al-Duhail,2026-09-28T17:15:00+00:00,,,unmatched
+jcCn5bgt,Graficar Beograd,Teleoptik,2026-09-28T13:00:00+00:00,,,unmatched
+bNFf3xOh,Bor 1919,Metalac,2026-09-28T16:00:00+00:00,,,unmatched
+xAh7BD8b,Dubocica,Javor,2026-09-28T16:00:00+00:00,,,unmatched
+MNVMlw9a,Proleter 023,Jedinstvo U.,2026-09-28T16:00:00+00:00,,,unmatched
+EcSEjavm,Loznica,Sp. Subotica,2026-09-28T18:00:00+00:00,,,unmatched
+nabtQzsS,Zilina B,FK Humenne,2026-09-28T15:00:00+00:00,,,unmatched
+Oz0GKsf5,Rudar,Dravinja,2026-09-28T17:00:00+00:00,,,unmatched
+8vS0PJz1,Leganes,Castellon,2026-09-28T18:30:00+00:00,,,unmatched
+COYISB3m,Al Arabi,Al Thaid,2026-09-28T14:40:00+00:00,,,unmatched
+Yw3pRbSr,Al-Ittifaq,Al Urooba,2026-09-28T14:40:00+00:00,,,unmatched
+d4fzlwvp,Huracan FC,Miramar,2026-09-27T23:00:00+00:00,,,unmatched
+4llx8bVF,Paysandu FC,Tacuarembo,2026-09-28T22:00:00+00:00,,,unmatched
+Y5MkeBop,One Knoxville,Westchester SC,2026-09-27T23:00:00+00:00,,,unmatched
+Iqw29zSh,Utah Royals W,North Carolina Courage W,2026-09-27T23:00:00+00:00,,,unmatched
+lUH8T9oR,Japan,Venezuela,2026-09-28T10:25:00+00:00,,,unmatched
+QFjGp8LP,South Korea,Uruguay,2026-09-28T11:00:00+00:00,2041741,0.0,matched
+nwkq7Eup,Tajikistan,Palestine,2026-09-28T12:00:00+00:00,,,unmatched
+I3Ixrhct,Croatia U19,France U19,2026-09-28T13:30:00+00:00,,,unmatched
+vZf3rvt9,Italy U19,Turkey U19,2026-09-28T13:30:00+00:00,,,unmatched
+W6t6Ek2C,Kyrgyzstan,Maldives,2026-09-28T14:00:00+00:00,,,unmatched
+MuJPe2QN,North Macedonia U21,Russia U21,2026-09-28T14:00:00+00:00,,,unmatched
+2FzNJ8Ci,Slovakia U19,Poland U19,2026-09-28T15:00:00+00:00,,,unmatched
+2e8hnBz3,Maribor,Gorica,2026-09-28T14:00:00+00:00,,,unmatched
+pt9GwWv9,Petrovac,Mladost DG,2026-09-28T15:00:00+00:00,,,unmatched
+Wz2KLX8r,Singapore,Bangladesh,2026-09-28T09:00:00+00:00,,,unmatched
+AF8SYdBk,Tensung,RTC,2026-09-28T09:00:00+00:00,,,unmatched
+Ey9ZMvNs,Faroe Islands U19,Ireland U19,2026-09-28T09:00:00+00:00,,,unmatched
+OpPe9aWh,Kazakhstan U19,Switzerland U19,2026-09-28T09:30:00+00:00,,,unmatched
+8YY8vaHd,Vitesse,ASFA Yennega,2026-09-28T15:30:00+00:00,,,unmatched
+QFORXk0D,Zhytomyr 2,Kolos Kovalivka 2,2026-09-28T10:00:00+00:00,,,unmatched
+UyDtVBLb,Slovenia U19,United Arab Emirates U19,2026-09-28T14:30:00+00:00,,,unmatched
+UsS37w15,Brazil U20,Denmark U20,2026-09-28T16:00:00+00:00,,,unmatched
+bPQv11KN,Exeter U21,Norwich U21,2026-09-28T18:00:00+00:00,,,unmatched
+Aw7Wv0V1,Burundi,Algeria,2026-09-29T13:00:00+00:00,,,unmatched
+hfQ8McEs,Ethiopia,Senegal,2026-09-29T13:00:00+00:00,,,unmatched
+AqO6yclT,Lesotho,Morocco,2026-09-29T13:00:00+00:00,,,unmatched
+OvzwSJjK,Mozambique,Sudan,2026-09-29T13:00:00+00:00,,,unmatched
+UqJp68gK,South Sudan,Egypt,2026-09-29T13:00:00+00:00,,,unmatched
+MVuwX5YG,Cape Verde,Rwanda,2026-09-29T16:00:00+00:00,,,unmatched
+QDuyQ2pg,Ghana,Gambia,2026-09-29T16:00:00+00:00,,,unmatched
+hWcNCsn9,Guinea Bissau,Nigeria,2026-09-29T16:00:00+00:00,,,unmatched
+MZFQiRig,Uganda,Libya,2026-09-29T16:00:00+00:00,,,unmatched
+2D3OtM0k,Zambia,Togo,2026-09-29T16:00:00+00:00,,,unmatched
+UuDYpJv9,Congo,Cameroon,2026-09-29T19:00:00+00:00,,,unmatched
+4nLbwJJG,Gabon,Niger,2026-09-29T19:00:00+00:00,,,unmatched
+UeqoVq3T,Liberia,Mali,2026-09-29T19:00:00+00:00,,,unmatched
+YwqqOtF5,Somalia,Ivory Coast,2026-09-29T19:00:00+00:00,,,unmatched
+lbP1YpZq,Finland,Belarus,2026-09-29T16:00:00+00:00,,,unmatched
+rFy9RxMa,Moldova,Faroe Islands,2026-09-29T16:00:00+00:00,,,unmatched
+hSJlvG55,Bulgaria,Estonia,2026-09-29T18:45:00+00:00,2041787,0.0,matched
+AeCCmlWQ,Czech Republic,England,2026-09-29T18:45:00+00:00,2041782,0.0,matched
+UsxpFQlm,Luxembourg,Iceland,2026-09-29T18:45:00+00:00,2041785,0.0,matched
+IB2UjgkB,San Marino,Albania,2026-09-29T18:45:00+00:00,,,unmatched
+KxQwPbIi,Scotland,Switzerland,2026-09-29T18:45:00+00:00,2041781,0.0,matched
+xb24bvhD,Slovakia,Kazakhstan,2026-09-29T18:45:00+00:00,2041784,0.0,matched
+hOq1JfnT,Slovenia,North Macedonia,2026-09-29T18:45:00+00:00,2041783,0.0,matched
+2T1rwtCi,Spain,Croatia,2026-09-29T18:45:00+00:00,2041786,0.0,matched
+6w15TO97,Slovenia U21,Israel U21,2026-09-29T14:00:00+00:00,,,unmatched
+6NCt5Ei2,Iceland U21,Switzerland U21,2026-09-29T15:00:00+00:00,,,unmatched
+Wjqz2DjD,Estonia U21,France U21,2026-09-29T16:00:00+00:00,,,unmatched
+KM2cVpue,Norway U21,Bosnia & Herzegovina U21,2026-09-29T16:00:00+00:00,,,unmatched
+z912uP3e,Belgium U21,Wales U21,2026-09-29T18:00:00+00:00,,,unmatched
+ny1sxsvK,Ireland U21,Kazakhstan U21,2026-09-29T18:00:00+00:00,,,unmatched
+v7jPYP85,Tunisia U23,Benin U23,2026-09-29T18:00:00+00:00,,,unmatched
+IuOL27tT,Banfield 2,Atl. Tucuman 2,2026-09-29T18:00:00+00:00,,,unmatched
+4YqJXRu3,Estudiantes L.P. 2,Defensa y Justicia 2,2026-09-29T18:00:00+00:00,,,unmatched
+0dsbp5P8,San Lorenzo 2,Aldosivi 2,2026-09-29T18:00:00+00:00,,,unmatched
+Yk9gMhwJ,Tigre 2,Gimnasia L.P. 2,2026-09-29T18:00:00+00:00,,,unmatched
+A74f14k2,Oman,Kuwait,2026-09-29T17:30:00+00:00,,,unmatched
+QsHElR5d,Saudi Arabia,Iraq,2026-09-29T17:30:00+00:00,,,unmatched
+bcfoyOwg,North Korea W,China W,2026-09-29T06:00:00+00:00,2041775,0.0,matched
+vgsM35E5,Japan W,South Korea W,2026-09-29T10:30:00+00:00,2041780,0.0,matched
+KhlUDGKE,Universitario de Vinto,Guabira,2026-09-29T19:00:00+00:00,,,unmatched
+SIixCfkR,Real Potosi,Academia del Balompie,2026-09-29T22:00:00+00:00,,,unmatched
+ragg03vI,Botafogo SP,Ponte Preta,2026-09-29T22:30:00+00:00,,,unmatched
+0bziNzzR,CA Juventus U20,Gremio Prudente U20,2026-09-29T18:00:00+00:00,,,unmatched
+UZXFFkYO,D. Puerto Montt,Colo Colo,2026-09-29T21:00:00+00:00,,,unmatched
+2sLJeQnJ,Wuxi Wugou,Ningbo Professional,2026-09-29T11:00:00+00:00,,,unmatched
+rJH0bv4t,Pereira,Santa Fe,2026-09-29T20:30:00+00:00,,,unmatched
+nqpfrzRe,Cariari Pococi,CS Uruguay,2026-09-29T01:00:00+00:00,,,unmatched
+A5sb3bu0,Odense Q W,Aarhus W,2026-09-29T16:00:00+00:00,,,unmatched
+CGh9u7Kr,Atletico Balboa,Cacahuatique,2026-09-29T21:00:00+00:00,,,unmatched
+zVepEqTb,Boreham Wood,Kidderminster,2026-09-29T18:00:00+00:00,,,unmatched
+nXsWag8l,AFC Fylde,Carlisle,2026-09-29T18:45:00+00:00,,,unmatched
+fcovbXx1,Barrow,Scunthorpe,2026-09-29T18:45:00+00:00,,,unmatched
+SAqndB7D,FC Halifax,Boston Utd,2026-09-29T18:45:00+00:00,,,unmatched
+hj0c3SEt,Forest Green,Wealdstone,2026-09-29T18:45:00+00:00,,,unmatched
+bm3516qg,Gateshead,Altrincham,2026-09-29T18:45:00+00:00,,,unmatched
+W01DapE5,Hartlepool,Harrogate,2026-09-29T18:45:00+00:00,,,unmatched
+vR4LcOrI,Hornchurch,Aldershot,2026-09-29T18:45:00+00:00,,,unmatched
+ni8Te2DU,Woking,Solihull Moors,2026-09-29T18:45:00+00:00,,,unmatched
+23rwG5bn,Yeovil,Worthing,2026-09-29T18:45:00+00:00,,,unmatched
+Mm5zEA33,Brackley Town,South Shields,2026-09-29T18:45:00+00:00,,,unmatched
+Wx5FQvCb,Slough,Ebbsfleet,2026-09-29T18:45:00+00:00,,,unmatched
+vTqgNrio,Alfreton,Guiseley,2026-09-29T18:45:00+00:00,,,unmatched
+vLe2urDT,Emley,Workington,2026-09-29T18:45:00+00:00,,,unmatched
+zisYZLzi,Ilkeston,Warrington Rylands,2026-09-29T18:45:00+00:00,,,unmatched
+fw93YTGq,Warrington,Gainsborough,2026-09-29T18:45:00+00:00,,,unmatched
+23CBW7od,Whitby,Lancaster,2026-09-29T18:45:00+00:00,,,unmatched
+EyFzIyUI,Alvechurch,Stourbridge,2026-09-29T18:45:00+00:00,,,unmatched
+tr7MuuMP,Banbury,Stratford,2026-09-29T18:45:00+00:00,,,unmatched
+xEhhzJqm,Bishop's Stortford,Bury Town,2026-09-29T18:45:00+00:00,,,unmatched
+OUj0YdEa,Bromsgrove,Leamington,2026-09-29T18:45:00+00:00,,,unmatched
+Wff8WzqC,Halesowen,Rushall,2026-09-29T18:45:00+00:00,,,unmatched
+48hGUEDO,Hitchin,Leighton Town,2026-09-29T18:45:00+00:00,,,unmatched
+fXXPlIbt,Kettering,Anstey Nomads,2026-09-29T18:45:00+00:00,,,unmatched
+nujXndTh,Needham Market,Stamford,2026-09-29T18:45:00+00:00,,,unmatched
+Khluozb5,Peterborough Sports,Redditch,2026-09-29T18:45:00+00:00,,,unmatched
+SIimqESH,Racing Club Warwick,Worcester,2026-09-29T18:45:00+00:00,,,unmatched
+zqeeshcU,Real Bedford,Leiston,2026-09-29T18:45:00+00:00,,,unmatched
+dfJwrLMj,Wimborne,Yate Town,2026-09-29T18:30:00+00:00,,,unmatched
+ll6P5OEc,Bath,Malvern Town,2026-09-29T18:45:00+00:00,,,unmatched
+0r44I1b3,Chertsey,Poole,2026-09-29T18:45:00+00:00,,,unmatched
+dE9X32qA,Evesham,Chippenham,2026-09-29T18:45:00+00:00,,,unmatched
+4vDu2tEM,Gloucester,Plymouth Parkway,2026-09-29T18:45:00+00:00,,,unmatched
+0AbBdKyp,Hanworth,Chichester,2026-09-29T18:45:00+00:00,,,unmatched
+YyCIfb6d,Havant & W,Hanwell Town,2026-09-29T18:45:00+00:00,,,unmatched
+Ye2CGuTF,Sholing,Berkhamsted,2026-09-29T18:45:00+00:00,,,unmatched
+tM5KEJcS,Uxbridge,Basingstoke,2026-09-29T18:45:00+00:00,,,unmatched
+rsQj0cpo,Dartford,Whitehawk,2026-09-29T18:45:00+00:00,,,unmatched
+zyDxO0xh,Dulwich Hamlet,Aveley,2026-09-29T18:45:00+00:00,,,unmatched
+4x60S0Bm,Maldon & Tiptree,Cray Wanderers,2026-09-29T18:45:00+00:00,,,unmatched
+WzEUF11M,Charlton U21,Millwall U21,2026-09-29T12:00:00+00:00,,,unmatched
+zX288Jgd,Coventry U21,Colchester U21,2026-09-29T12:00:00+00:00,,,unmatched
+8I69SvoS,Hull U21,Bolton U21,2026-09-29T12:00:00+00:00,,,unmatched
+z581U0GF,Peterborough U21,Fleetwood U21,2026-09-29T12:00:00+00:00,,,unmatched
+Sv5gWMo3,Wigan U21,Huddersfield U21,2026-09-29T12:00:00+00:00,,,unmatched
+8YY6ZvJc,Quindio,Bogota,2026-09-28T23:00:00+00:00,,,unmatched
+MocKaPRh,Deportivo Muniz,El Porvenir,2026-09-29T18:00:00+00:00,,,unmatched
+IuCzXzt2,Drukpa,Transport United,2026-09-29T12:00:00+00:00,,,unmatched
+WUlqTSd2,Eritrea,South Africa,2026-09-30T16:00:00+00:00,,,unmatched
+fTMMm2E5,Czech Republic U21,Bulgaria U21,2026-09-30T16:00:00+00:00,,,unmatched
+IcvgEIUF,Faroe Islands U21,Luxembourg U21,2026-09-30T16:00:00+00:00,,,unmatched
+tbj7FQL5,Malta U21,Germany U21,2026-09-30T16:00:00+00:00,,,unmatched
+EPXWrki4,Poland U21,Sweden U21,2026-09-30T16:00:00+00:00,,,unmatched
+nmRs1ImT,Romania U21,Finland U21,2026-09-30T16:00:00+00:00,,,unmatched
+2FNhKjdD,Kosovo U21,Cyprus U21,2026-09-30T17:00:00+00:00,,,unmatched
+jkqMfXXP,Scotland U21,Azerbaijan U21,2026-09-30T18:30:00+00:00,,,unmatched
+OftCveuR,Rwanda U23,Sudan U23,2026-09-30T16:00:00+00:00,,,unmatched
+tdfV7d4k,Togo U23,Libya U23,2026-09-30T16:00:00+00:00,,,unmatched
+xSiX9Omd,Ind. Rivadavia 2,Belgrano 2,2026-09-30T18:00:00+00:00,,,unmatched
+0xi4ON2k,Instituto 2,Racing Club 2,2026-09-30T18:00:00+00:00,,,unmatched
+jBgPBpJq,Platense 2,Huracan 2,2026-09-30T18:00:00+00:00,,,unmatched
+dSnBvzgm,Quilmes 2,Estudiantes Rio Cuarto 2,2026-09-30T18:00:00+00:00,,,unmatched
+nF4oJSQ9,Rosario Central 2,Union de Santa Fe 2,2026-09-30T18:00:00+00:00,,,unmatched
+v97wQzvf,Central Cordoba 2,Newells Old Boys 2,2026-09-30T22:00:00+00:00,,,unmatched
+2VWQzIyQ,River Plate W,Boca Juniors W,2026-09-30T18:00:00+00:00,,,unmatched
+MFD86Ubf,Timor-Leste,Cambodia,2026-09-30T09:00:00+00:00,,,unmatched
+EkA08jUs,Hong Kong,Brunei,2026-09-30T12:00:00+00:00,,,unmatched
+EeeHo1Y0,South Korea U23,China U23,2026-09-30T06:00:00+00:00,2041789,0.0,matched
+S2o8i9BD,Uzbekistan U23,Japan U23,2026-09-30T10:30:00+00:00,2041790,0.0,matched
+CSlLyoRE,Bahrain,Yemen,2026-09-30T17:30:00+00:00,,,unmatched
+21itP7s9,United Arab Emirates,Qatar,2026-09-30T17:30:00+00:00,,,unmatched
+OpTdAfKq,Charleroi B,Habay La Neuve,2026-09-30T18:00:00+00:00,,,unmatched
+MHvJHxS9,Flenu,OC Charleroi,2026-09-30T18:00:00+00:00,,,unmatched
+jFcg1HsT,RWDM Brussels,Union Rochefortoise,2026-09-30T18:00:00+00:00,,,unmatched
+ELUyXMKP,Belisia Bilzen,Heist,2026-09-30T18:00:00+00:00,,,unmatched
+E1vrBub6,Houtvenne,Mandel United,2026-09-30T18:00:00+00:00,,,unmatched
+2aYEPvDa,Merelbeke,Dessel,2026-09-30T18:00:00+00:00,,,unmatched
+Y1Fvt0ct,SK Roeselare,Thes Sport,2026-09-30T18:00:00+00:00,,,unmatched
+Uoz7R0rm,Zelzate,Knokke,2026-09-30T18:00:00+00:00,,,unmatched
+APyNNIsC,KRC Harelbeke,Hoogstraten,2026-09-30T18:30:00+00:00,,,unmatched
+Ohw4ITNp,Hutoise,Schaerbeek-Evere,2026-09-30T18:00:00+00:00,,,unmatched
+Iq6epdR7,St. Truiden 2,Nijlen,2026-09-30T18:00:00+00:00,,,unmatched
+h0NFXIs2,Wellen,KRC Mechelen,2026-09-30T18:00:00+00:00,,,unmatched
+Olw86YCl,Aurora,SA Bulo Bulo,2026-09-30T00:00:00+00:00,,,unmatched
+OMbN2jCD,Tomayapo,Nacional Potosi,2026-09-30T22:30:00+00:00,,,unmatched
+tvXO5e9a,Futvida,Panambi,2026-09-30T18:00:00+00:00,,,unmatched
+MVmv2D8O,Real SC,GA Farroupilha,2026-09-30T18:00:00+00:00,,,unmatched
+8QYG7Hvm,Cruz A.,SC Rio Grande,2026-09-30T22:30:00+00:00,,,unmatched
+QZbfiDw1,Madureira U20,Vasco U20,2026-09-30T13:00:00+00:00,,,unmatched
+jsvfdHAO,Nautico U20,Petrolina U20,2026-09-30T18:00:00+00:00,,,unmatched
+hhXm6JJD,Confianca U20,Sergipe U20,2026-09-30T18:00:00+00:00,,,unmatched
+0l3lyKWi,Itabirito W,America Mineiro W,2026-09-30T18:00:00+00:00,,,unmatched
+Khg606iL,San Felipe,San Luis,2026-09-30T21:00:00+00:00,,,unmatched
+lMmAPwrm,U. Espanola W,U. Catolica W,2026-09-30T21:00:00+00:00,,,unmatched
+tGbl9eIb,Ind. Medellin,Millonarios,2026-09-30T01:05:00+00:00,,,unmatched
+rJZiegxo,Vsetin,Bohemians,2026-09-30T13:30:00+00:00,,,unmatched
+2utFXbzG,Salcedo,Delfines Del Este,2026-09-30T20:00:00+00:00,,,unmatched
+pUjHwoke,Aguila,Inter Santa Tecla,2026-09-30T21:30:00+00:00,,,unmatched
+reahCNcB,Eastleigh,Southend,2026-09-30T18:45:00+00:00,,,unmatched
+G8c0A1SN,Tamworth,Sutton,2026-09-30T18:45:00+00:00,,,unmatched
+Aydj9cLk,Frome,Taunton,2026-09-30T18:45:00+00:00,,,unmatched
+rkfb7yj2,Gosport,Bracknell,2026-09-30T18:45:00+00:00,,,unmatched
+4YVC7uhB,Whyteleafe,Brentwood,2026-09-30T18:45:00+00:00,,,unmatched
+jcU10kSr,Birmingham W,Liverpool W,2026-09-30T18:00:00+00:00,,,unmatched
+fRrW5B4L,Crystal Palace W,Charlton W,2026-09-30T18:00:00+00:00,,,unmatched
+WloHd7R7,Durham W,Manchester Utd W,2026-09-30T18:00:00+00:00,,,unmatched
+OOs9bTde,West Ham W,Southampton W,2026-09-30T18:00:00+00:00,,,unmatched
+W8yBIllR,Aston Villa W,Newcastle Utd W,2026-09-30T18:30:00+00:00,,,unmatched
+OrY2KAJE,Ipswich W,London City Lionesses W,2026-09-30T18:30:00+00:00,,,unmatched
+0ORtDSBl,Brighton W,Tottenham W,2026-09-30T18:45:00+00:00,,,unmatched
+0KLy20Fk,Leicester U21,Real Sociedad B,2026-09-30T18:00:00+00:00,,,unmatched
+YXJq0vp2,Middlesbrough U21,Juventus U21,2026-09-30T18:00:00+00:00,,,unmatched
+fLg4K8VG,Nottingham U21,Sporting CP B,2026-09-30T18:00:00+00:00,,,unmatched
+hId6OEA7,AS Roma W,Barcelona W,2026-09-30T16:45:00+00:00,,,unmatched
+nDDSzq0U,Hacken W,Juventus W,2026-09-30T16:45:00+00:00,,,unmatched
+dQyBdaMj,Paris FC W,Arsenal W,2026-09-30T16:45:00+00:00,,,unmatched
+jm7Spm5l,OL Lyonnes W,Chelsea W,2026-09-30T19:00:00+00:00,,,unmatched
+AH3rs54D,SL Benfica W,Bayern Munich W,2026-09-30T19:00:00+00:00,,,unmatched
+ry9yYveA,Aktobe W,Ajax W,2026-09-30T14:00:00+00:00,,,unmatched
+MTSG8ORb,Brann W,HJK W,2026-09-30T16:00:00+00:00,,,unmatched
+0Et7yZIa,Fortuna Hjorring W,PSV W,2026-09-30T16:00:00+00:00,,,unmatched
+IZpKQH4s,Myjava W,PAOK W,2026-09-30T16:00:00+00:00,,,unmatched
+vm8lNNth,Rosenborg W,Liberec W,2026-09-30T16:00:00+00:00,,,unmatched
+0KkajsCU,Eintracht Frankfurt W,Hafnarfjordur W,2026-09-30T16:30:00+00:00,,,unmatched
+Kp228zkD,Sturm Graz W,Wolfsburg W,2026-09-30T16:30:00+00:00,,,unmatched
+2Nz7Wny3,Czarni Sosnowiec W,Breidablik W,2026-09-30T17:00:00+00:00,,,unmatched
+OYnTrHQP,Malmo FF W,St. Polten W,2026-09-30T17:00:00+00:00,,,unmatched
+KQ94JutH,Real Sociedad W,Hearts W,2026-09-30T17:00:00+00:00,,,unmatched
+OEdZMZ36,Rangers W,Hammarby W,2026-09-30T18:00:00+00:00,,,unmatched
+xKZW4tRN,Sporting W,Brondby W,2026-09-30T18:45:00+00:00,,,unmatched
+nXcFQdmp,Torreense W,FC Kharkiv W,2026-09-30T19:00:00+00:00,,,unmatched
+Ywk2NMbq,Medeama,Port City,2026-09-30T15:00:00+00:00,,,unmatched
+8bEXyLzC,Gyor W,Ferencvaros W,2026-09-30T17:00:00+00:00,,,unmatched
+Qwy5ZEQc,East Bengal,Punjab,2026-09-30T09:00:00+00:00,,,unmatched
+E58R6tpg,Maccabi Neve Shaanan Eldad,MS Tira,2026-09-30T12:00:00+00:00,,,unmatched
+r3R1jLaC,Araba,H. Migdal HaEmek,2026-09-30T12:30:00+00:00,,,unmatched
+6u5J82Ft,Hapoel Bnei Musmus,M. Kiryat Ata-Bialik,2026-09-30T14:30:00+00:00,,,unmatched
+nJ6Z4KE5,Ironi Nesher,Nahariya,2026-09-30T14:30:00+00:00,,,unmatched
+vgN86XkA,Nof Hagalil,Tzeirey Tamra,2026-09-30T16:55:00+00:00,,,unmatched
+WSJ08gLc,Beit Shean,Ironi Baka,2026-09-30T17:30:00+00:00,,,unmatched
+ENu651jJ,Shimshon Tel Aviv,Ramat Hasharon,2026-09-30T12:30:00+00:00,,,unmatched
+GpkdPesh,M. Ironi Kiryat Malachi,Hapoel Herzliya,2026-09-30T13:00:00+00:00,,,unmatched
+KtbX8zcB,Nordia Jerusalem,Hapoel Hadera,2026-09-30T16:50:00+00:00,,,unmatched
+lbm4NZB4,Hapoel Mahane Yehuda,SC Dimona,2026-09-30T17:00:00+00:00,,,unmatched
+CGfPAdSb,M. Ironi Ashdod,Holon Yermiyahu,2026-09-30T17:00:00+00:00,,,unmatched
+lvcA1hko,Tzeirei Tira,Jerusalem FC,2026-09-30T18:00:00+00:00,,,unmatched
+EDtyzbmK,Alessandria,Imperia,2026-09-30T13:00:00+00:00,,,unmatched
+4dMmGXhB,Metta W,Riga FC W,2026-09-30T13:00:00+00:00,,,unmatched
+YLJjtVtS,Khovd,FC Ulaanbaatar,2026-09-30T08:00:00+00:00,,,unmatched
+SGGdeXnm,Budva,Lovcen,2026-09-30T13:00:00+00:00,,,unmatched
+4vwuwjXI,Iskra,Grbalj,2026-09-30T13:00:00+00:00,,,unmatched
+zsK4gBHa,Rudar,Berane,2026-09-30T13:00:00+00:00,,,unmatched
+dYPQ0gPP,Zeta,Kom Podgorica,2026-09-30T15:00:00+00:00,,,unmatched
+8UKzKfNi,Enyimba,Shooting,2026-09-30T15:00:00+00:00,,,unmatched
+YsgWzLaE,Sporting Lagos,Ikorodu City,2026-09-30T15:00:00+00:00,,,unmatched
+pb85t9ig,Belize,Saint Vincent and the Grenadines,2026-09-30T02:00:00+00:00,,,unmatched
+pd1AYEIq,Follo,Sarpsborg 08,2026-09-30T14:00:00+00:00,,,unmatched
+UVWSEHzo,Arna-Bjornar W,Frigg W,2026-09-30T14:00:00+00:00,,,unmatched
+APdH2EoL,Bryne W,Kolbotn W,2026-09-30T14:00:00+00:00,,,unmatched
+pnbN2kRs,Independiente FBC,Nacional Asuncion,2026-09-30T20:00:00+00:00,,,unmatched
+0vfW0HA7,Cerro Porteno,Rubio Nu,2026-09-30T22:30:00+00:00,,,unmatched
+zgE6wHNh,Cienciano,Los Chankas,2026-09-30T20:00:00+00:00,,,unmatched
+p8VM07hm,Dobrovce,Hajdina,2026-09-30T16:30:00+00:00,,,unmatched
+MX0yu5g3,Sestao,Terrassa,2026-09-30T17:00:00+00:00,,,unmatched
+fR4Z516L,Navalcarnero,Murcia,2026-09-30T18:00:00+00:00,,,unmatched
+juZBQLBU,Orebro SK W,Eskilstuna Utd W,2026-09-30T17:00:00+00:00,,,unmatched
+tlhLBnd3,Kreuzlingen,Bruhl,2026-09-30T18:00:00+00:00,,,unmatched
+vT30wQhL,Wohlen,Schotz,2026-09-30T18:15:00+00:00,,,unmatched
+jmFoZ6D5,Cerro Largo,Rentistas,2026-09-30T19:00:00+00:00,,,unmatched
+IZGwyTrg,Defensor Sp.,Plaza Colonia,2026-09-30T19:00:00+00:00,,,unmatched
+0Ok1uNHd,El Vigia,Zamora 2,2026-09-30T19:30:00+00:00,,,unmatched
+My78L95t,USA,Chile,2026-09-30T00:00:00+00:00,2041788,0.0,matched
+CrVr5lLa,Mexico,Peru,2026-09-30T01:00:00+00:00,,,unmatched
+dlfn4tBb,Papua New Guinea,Solomon Islands,2026-09-30T04:00:00+00:00,,,unmatched
+U1hf2KuB,Fiji,New Caledonia,2026-09-30T07:00:00+00:00,,,unmatched
+UN3sOxkA,Scotland U19,Ukraine U19,2026-09-30T09:00:00+00:00,,,unmatched
+8jnaEm3S,Finland U19,Germany U19,2026-09-30T09:15:00+00:00,,,unmatched
+KWlHTjlU,Austria U19,Denmark U19,2026-09-30T12:00:00+00:00,,,unmatched
+WYKVhfpg,Mauritius,Djibouti,2026-09-30T12:00:00+00:00,,,unmatched
+GzttpCYA,Albania U19,Lithuania U19,2026-09-30T13:30:00+00:00,,,unmatched
+CxvPkJTD,Lithuania,Andorra,2026-09-30T16:00:00+00:00,,,unmatched
+CngBtIAL,Portugal U19,Netherlands U19,2026-09-30T16:30:00+00:00,,,unmatched
+rwMXpIMk,Spain U20,Mexico U20,2026-09-30T18:30:00+00:00,,,unmatched
+4f5xitQQ,San Antonio,Darmstadt,2026-09-30T00:30:00+00:00,,,unmatched
+pb4AMQeB,Kalsdorf,Grazer AK,2026-09-30T16:00:00+00:00,,,unmatched
+n3JEkOqg,Portugal U21,Gibraltar U21,2026-09-30T19:00:00+00:00,,,unmatched
+O4FPZmDt,U. Magdalena,Cartagena,2026-09-29T23:00:00+00:00,,,unmatched
+fTBrFlFF,Anguilla,Aruba,2026-09-29T23:00:00+00:00,,,unmatched
+KEikvCdd,Wetteren,Londerzeel,2026-09-30T18:00:00+00:00,,,unmatched
+KtlqfPC5,Farul Constanta W,Sparta Prague W,2026-09-30T14:00:00+00:00,,,unmatched
+Is5BhzAF,Honefoss,KFUM Oslo,2026-09-30T16:00:00+00:00,,,unmatched
+rHIsCcYj,Valerenga W,Feyenoord W,2026-09-30T16:00:00+00:00,,,unmatched
+tz1nCIkl,Fenerbahce W,Minsk FK W,2026-09-30T17:00:00+00:00,,,unmatched
+hYtg3gcJ,River-PI,Picos,2026-09-30T21:30:00+00:00,,,unmatched
+E5pW3ZwC,EC Novo Horizonte,Clube 1992,2026-09-30T18:00:00+00:00,,,unmatched
+6RZICxe5,Sport Recife U20,Academica Vitoria U20,2026-09-30T18:00:00+00:00,,,unmatched
+xUWjswTG,Hong Kong FC U22,Hong Kong Rangers U22,2026-09-30T11:00:00+00:00,,,unmatched
+WWTrqab4,Eastern AA U22,Lee Man Warriors U22,2026-09-30T12:30:00+00:00,,,unmatched
+WEtG4Cs1,Real Oruro,Always Ready,2026-09-30T19:00:00+00:00,,,unmatched
+6VEYBeYP,New York Red Bulls,St. Louis City,2026-09-30T23:30:00+00:00,,,unmatched
+vNWyVlSk,Guinea,Kenya,2026-10-01T16:00:00+00:00,,,unmatched
+YqQQiKHE,Azerbaijan,Liechtenstein,2026-10-01T16:00:00+00:00,,,unmatched
+Y5Bq2moK,Denmark,Portugal,2026-10-01T18:45:00+00:00,,,unmatched
+zu9F9DWO,Germany,Serbia,2026-10-01T18:45:00+00:00,,,unmatched
+UcYKxC0B,Greece,Netherlands,2026-10-01T18:45:00+00:00,,,unmatched
+lUmO9MDt,Ireland,Austria,2026-10-01T18:45:00+00:00,,,unmatched
+A1VYxtqJ,Israel,Kosovo,2026-10-01T18:45:00+00:00,,,unmatched
+GnYwWZJt,Malta,Gibraltar,2026-10-01T18:45:00+00:00,,,unmatched
+zasB5MiC,Wales,Norway,2026-10-01T18:45:00+00:00,,,unmatched
+8MRJTCng,Greece U21,Latvia U21,2026-10-01T15:00:00+00:00,,,unmatched
+6syglpTq,North Macedonia U21,Montenegro U21,2026-10-01T16:00:00+00:00,,,unmatched
+YcWkjAhf,Armenia U21,Italy U21,2026-10-01T16:30:00+00:00,,,unmatched
+zivPADb4,Hungary U21,Lithuania U21,2026-10-01T17:00:00+00:00,,,unmatched
+j5qAvU0B,Northern Ireland U21,Georgia U21,2026-10-01T18:45:00+00:00,,,unmatched
+QqdupdVP,Barracas Central 2,Gimnasia Mendoza 2,2026-10-01T18:00:00+00:00,,,unmatched
+pCoZTquS,Colon Santa Fe 2,Deportivo Riestra 2,2026-10-01T18:00:00+00:00,,,unmatched
+vk1wLldc,Independiente 2,Boca Juniors 2,2026-10-01T18:00:00+00:00,,,unmatched
+xnrRV5AF,San Martin S.J. 2,Lanus 2,2026-10-01T18:00:00+00:00,,,unmatched
+fu8gH6eM,Velez Sarsfield 2,Argentinos Jrs 2,2026-10-01T18:45:00+00:00,,,unmatched
+QP5oOE86,Talleres Cordoba 2,Godoy Cruz 2,2026-10-01T20:00:00+00:00,,,unmatched
+6e9VRd9s,River Plate 2,Sarmiento Junin 2,2026-10-01T22:00:00+00:00,,,unmatched
+lEoyeSVa,St. Polten (Am),Zwettl,2026-10-01T17:30:00+00:00,,,unmatched
+GGo9Qg4K,Oriente Petrolero,The Strongest,2026-10-01T00:30:00+00:00,,,unmatched
+naxuLXRs,Bolivar,GV San Jose,2026-10-01T22:30:00+00:00,,,unmatched
+j7PngsFc,Belford Roxo,Santa Cruz RJ,2026-10-01T18:00:00+00:00,,,unmatched
+xONfiLqA,Buzios,Paraty,2026-10-01T18:00:00+00:00,,,unmatched
+0YMR5Kb3,Cardoso Moreira,Serra Macaense,2026-10-01T18:00:00+00:00,,,unmatched
+lpGtrH6d,FC Rio de Janeiro,Barra Mansa,2026-10-01T18:00:00+00:00,,,unmatched
+vBzw7ybf,Flamengo PI,Comercial PI,2026-10-01T22:00:00+00:00,,,unmatched
+tE3EdhCi,Fortaleza U20,Ceara U20,2026-10-01T22:00:00+00:00,,,unmatched
+UyulX15s,Atl. Nacional,Junior,2026-10-01T01:00:00+00:00,,,unmatched
+Qe28zR2b,Envigado,Orsomarso,2026-10-01T20:30:00+00:00,,,unmatched
+KKObaAxA,Cumbaya,Dep. Santo Domingo,2026-10-01T20:30:00+00:00,,,unmatched
+Iw3UB1Fr,El Mansoura,Masar,2026-10-01T12:30:00+00:00,,,unmatched
+neCbHNiL,La Viena,Al Nasr,2026-10-01T12:30:00+00:00,,,unmatched
+ji1xAupe,Pharco,Tersana,2026-10-01T12:30:00+00:00,,,unmatched
+hffPyPJ7,Alianza FC,Platense Municipal,2026-10-01T00:00:00+00:00,,,unmatched
+4r1AaSBE,FAS,Metapan,2026-10-01T02:00:00+00:00,,,unmatched
+xdaIc6tR,Fuerte San Francisco,Luis Angel Firpo,2026-10-01T21:30:00+00:00,,,unmatched
+bDzQAks1,Austria Vienna W,Inter W,2026-10-01T16:45:00+00:00,,,unmatched
+ARObqAmQ,Koge W,Servette Geneve FC W,2026-10-01T16:45:00+00:00,,,unmatched
+CKtOWiLH,Manchester City W,Real Madrid W,2026-10-01T19:00:00+00:00,,,unmatched
+jPQvLu4F,PSG W,Leuven W,2026-10-01T19:00:00+00:00,,,unmatched
+YwyPFSfL,Bastia,Orleans,2026-10-01T18:45:00+00:00,,,unmatched
+2etY2AZk,Asante Kotoko,Karela,2026-10-01T16:00:00+00:00,,,unmatched
+UcvaEruC,North District,Southern District,2026-10-01T08:00:00+00:00,,,unmatched
+SjgIJwHi,Shatin,Hong Kong FC,2026-10-01T11:00:00+00:00,,,unmatched
+lhEKPYAk,Bnei Yehuda,Kiryat Gat,2026-10-01T16:00:00+00:00,,,unmatched
+vPi0xCfe,Hapoel Afula,H. Ironi Rishon,2026-10-01T16:00:00+00:00,,,unmatched
+zT2Mqf2L,H. Raanana,MS Kafr Qasim,2026-10-01T16:00:00+00:00,,,unmatched
+Aulup3d4,Kiryat Yam,Hapoel Kfar Saba,2026-10-01T16:00:00+00:00,,,unmatched
+6BghvYPr,Maccabi Bnei Raina,Hapoel Kfar Shalem,2026-10-01T16:00:00+00:00,,,unmatched
+lC4EoGX8,Maccabi Jaffa,H. Akko,2026-10-01T16:00:00+00:00,,,unmatched
+rgnmrsRG,M. Nazareth,Ironi Modiin,2026-10-01T16:00:00+00:00,,,unmatched
+dIHSNCu2,SC Ashdod,M. Herzliya,2026-10-01T16:00:00+00:00,,,unmatched
+GGP9laUO,Hapoel Ihud Bnei Jatt,Maccabi Nujeidat Ahmad,2026-10-01T13:30:00+00:00,,,unmatched
+YZ4s3bqI,Hapoel Umm al-Fahm,Hapoel Karmiel,2026-10-01T16:30:00+00:00,,,unmatched
+0SktoQqJ,Maccabi Yavne,Ironi Beit Shemesh,2026-10-01T15:30:00+00:00,,,unmatched
+dOjCLDtH,Hapoel Sderot,Hapoel Azor,2026-10-01T16:00:00+00:00,,,unmatched
+4jiHCIcn,Kfar Saba 1928,H. Marmorek,2026-10-01T16:30:00+00:00,,,unmatched
+ITV9tAdk,Mombasa United,Kariobangi Sharks,2026-10-01T11:00:00+00:00,,,unmatched
+44AMz94k,Khovd Western,Deren,2026-10-01T05:00:00+00:00,,,unmatched
+dCSTYnZ1,Khaan Khuns-Erchim,Central Stallions,2026-10-01T08:00:00+00:00,,,unmatched
+jaHe9Jrf,United States Virgin Islands,Saint Martin,2026-10-01T20:00:00+00:00,,,unmatched
+WxRwdfjm,Dominica,Guyana,2026-10-01T21:00:00+00:00,,,unmatched
+vZIMBNfS,Curacao,Trinidad & Tobago,2026-10-01T22:00:00+00:00,,,unmatched
+6XhDZAL0,Baerum Sportsklubb,Lillestrom,2026-10-01T16:00:00+00:00,,,unmatched
+hliLXljD,Madla IL,Viking,2026-10-01T16:00:00+00:00,,,unmatched
+YeQWWtQs,Rana FK,Bodo/Glimt,2026-10-01T16:00:00+00:00,,,unmatched
+lEHMOfy2,Al Nasr,Al-Samail,2026-10-01T13:30:00+00:00,,,unmatched
+lY7GpxbL,Al-Msnaa,Ibri,2026-10-01T14:25:00+00:00,,,unmatched
+t848nbT8,Bahla,Fanja SC,2026-10-01T14:25:00+00:00,,,unmatched
+Yk3ocoeJ,Olimpia Asuncion,Sp. Luqueno,2026-10-01T22:00:00+00:00,,,unmatched
+Qm6GStlR,Sporting Cristal,AD Tarma,2026-10-01T20:00:00+00:00,,,unmatched
+rg0tghU1,Biala Podlaska,Star Starachowice,2026-10-01T16:00:00+00:00,,,unmatched
+UemyZd7U,Al-Gharafa,Al Mesaimeer,2026-10-01T15:00:00+00:00,,,unmatched
+hYQhivNb,Qatar SC,Al Bidda,2026-10-01T17:15:00+00:00,,,unmatched
+p8Npg0hn,Shamal,Muaither SC,2026-10-01T17:15:00+00:00,,,unmatched
+fR8kH11d,Santa Marta Tormes,Salamanca,2026-10-01T17:30:00+00:00,,,unmatched
+YZxmTElU,Al Sharjah,Al Dhafra,2026-10-01T13:15:00+00:00,,,unmatched
+0MvuVzKH,United FC,Hatta,2026-10-01T13:15:00+00:00,,,unmatched
+ObIdmIZo,Bani Yas,Al Wahda,2026-10-01T15:45:00+00:00,,,unmatched
+8A11Z063,Rhode Island,Indy Eleven,2026-09-30T23:30:00+00:00,,,unmatched
+KlL6DJqp,FC Tulsa,New Mexico,2026-10-01T00:00:00+00:00,,,unmatched
+29fAXvyG,Sacramento Republic,Las Vegas Lights,2026-10-01T02:00:00+00:00,,,unmatched
+r39xUtQa,Argentina,Bolivia,2026-10-01T00:00:00+00:00,,,unmatched
+AunSeTrm,Cook Islands,Tahiti,2026-10-01T02:00:00+00:00,,,unmatched
+fNhUHns4,Poland U19,Kazakhstan U19,2026-10-01T09:30:00+00:00,,,unmatched
+QajwMoRs,Slovakia U19,Switzerland U19,2026-10-01T09:30:00+00:00,,,unmatched
+jHGptWRh,France U19,Turkey U19,2026-10-01T10:45:00+00:00,,,unmatched
+CSjy2skK,Croatia U19,Italy U19,2026-10-01T13:30:00+00:00,,,unmatched
+Iq0q571T,Azerbaijan U19,United Arab Emirates U19,2026-10-01T14:00:00+00:00,,,unmatched
+M1CsLIif,Faroe Islands U19,Slovenia U19,2026-10-01T14:00:00+00:00,,,unmatched
+x4qECTWO,Maldives,Lebanon,2026-10-01T14:00:00+00:00,,,unmatched
+hGJFIBeB,Qatar U19,Ireland U19,2026-10-01T14:00:00+00:00,,,unmatched
+8rdjUDIq,Uzbekistan,Syria,2026-10-01T14:00:00+00:00,,,unmatched
+6VZLOJyA,Brazil U20,USA U20,2026-10-01T16:00:00+00:00,,,unmatched
+IDV2PG2N,DC United,Paderborn,2026-09-30T23:30:00+00:00,,,unmatched
+vsXgh0UF,Alianza Lima,Palestino,2026-10-01T01:00:00+00:00,,,unmatched
+CfV1jvaS,O. Ljubljana,Slaven Belupo,2026-10-01T10:00:00+00:00,,,unmatched
+n5J9nGKH,Regensburg,Tirol,2026-10-01T12:00:00+00:00,,,unmatched
+6NR0ofs2,Juve Stabia,Palmese 1914,2026-10-01T13:00:00+00:00,,,unmatched
+lOOcmrIa,Wolfsburg,TSV Havelse,2026-10-01T14:00:00+00:00,,,unmatched
+n3Y8S6z0,Stuttgart,Greuther Furth,2026-10-01T15:30:00+00:00,,,unmatched
+Yc7yMxGb,Betis,Ceuta,2026-10-01T18:00:00+00:00,,,unmatched
+fyd87sX0,Panama,New Zealand,2026-10-01T06:10:00+00:00,,,unmatched
+SlfG5L1D,Japan,Ecuador,2026-10-01T10:10:00+00:00,,,unmatched
+2iMF21TH,Atl. Ottawa,Cavalry,2026-09-30T23:00:00+00:00,,,unmatched
+KSnfl9p3,D. Concepcion,O'Higgins,2026-09-30T23:00:00+00:00,,,unmatched
+I5Tkp0z9,Correcaminos 2,Heroes de Zaci,2026-09-30T23:00:00+00:00,,,unmatched
+fTceqXxK,Montevideo City,Penarol,2026-09-30T23:00:00+00:00,,,unmatched
+l6UzJuMM,Brooklyn,Detroit,2026-09-30T23:00:00+00:00,,,unmatched
+t49FBcEd,Miami FC,Sporting Jax,2026-09-30T23:00:00+00:00,,,unmatched
+AcMohxGi,Chattanooga Red Wolves,Spokane Velocity,2026-09-30T23:00:00+00:00,,,unmatched
+AyW0qizS,Lara,Frontera,2026-09-30T23:00:00+00:00,,,unmatched
+SK2pDe3U,Auto Esporte,Picuiense,2026-09-30T23:15:00+00:00,,,unmatched
+dYaEsCLa,Stuttgart II,Wurzburger Kickers,2026-10-01T11:30:00+00:00,,,unmatched
+EoGzkfTP,Eupen,Alemannia Aachen,2026-10-01T11:30:00+00:00,,,unmatched
+GAQkk4mm,Dun. Streda,Puskas Academy,2026-10-01T13:00:00+00:00,,,unmatched
+dlS5oMnC,Trabzonspor,Drogheda,2026-10-01T16:00:00+00:00,,,unmatched
+beuyV8ge,Morocco U23,Mali U23,2026-10-01T16:00:00+00:00,,,unmatched
+GQmhHUwR,San Marino U21,Spain U21,2026-10-01T18:15:00+00:00,,,unmatched
+rBkX3EGl,Altach,Wil,2026-10-01T12:30:00+00:00,,,unmatched
+vijXQsI8,Bissen,RFC Liege,2026-10-01T17:00:00+00:00,,,unmatched
+IH9cp2bD,Weisskirchen,Vocklamarkt,2026-10-01T16:45:00+00:00,,,unmatched
+tGoizjbf,Seattle Sounders,Sporting Kansas City,2026-10-02T01:30:00+00:00,,,unmatched
+UXbd00N0,Kazakhstan,Moldova,2026-10-02T14:00:00+00:00,,,unmatched
+44z9Mjv3,Cyprus,Armenia,2026-10-02T16:00:00+00:00,,,unmatched
+txzuJZkL,Latvia,Montenegro,2026-10-02T16:00:00+00:00,,,unmatched
+2gkhFH2m,Belgium,Turkey,2026-10-02T18:45:00+00:00,,,unmatched
+rkSjXGB4,Bosnia & Herzegovina,Sweden,2026-10-02T18:45:00+00:00,,,unmatched
+nBppBHyJ,Faroe Islands,Slovakia,2026-10-02T18:45:00+00:00,,,unmatched
+6NquLnZ8,France,Italy,2026-10-02T18:45:00+00:00,,,unmatched
+OQQQZFW9,Hungary,Georgia,2026-10-02T18:45:00+00:00,,,unmatched
+pho3Macn,Poland,Romania,2026-10-02T18:45:00+00:00,,,unmatched
+Kf7EpXpS,Ukraine,Northern Ireland,2026-10-02T18:45:00+00:00,,,unmatched
+I94gwfvP,Austria U21,Denmark U21,2026-10-02T16:00:00+00:00,,,unmatched
+lpTJg4Gq,Slovenia U21,Netherlands U21,2026-10-02T16:00:00+00:00,,,unmatched
+6DHEf186,Ukraine U21,Croatia U21,2026-10-02T16:00:00+00:00,,,unmatched
+Q3ixN7Up,Andorra U21,Moldova U21,2026-10-02T17:30:00+00:00,,,unmatched
+Iolf78Sh,England U21,Slovakia U21,2026-10-02T18:45:00+00:00,,,unmatched
+6spCvcpo,Annaba,Paradou,2026-10-02T14:00:00+00:00,,,unmatched
+fLiQm1Nb,CA Batna,MSP Batna,2026-10-02T14:00:00+00:00,,,unmatched
+n1a9VJ7U,MO Bejaia,Nezla,2026-10-02T14:00:00+00:00,,,unmatched
+ABbtpJMN,MO Constantine,CR Beni Thour,2026-10-02T14:00:00+00:00,,,unmatched
+M7gIkNhn,Telaghema,Magra,2026-10-02T14:00:00+00:00,,,unmatched
+6NcgZ185,US Chaouia,Khroub,2026-10-02T14:00:00+00:00,,,unmatched
+8WQSXpbe,Independiente,Instituto,2026-10-02T22:15:00+00:00,,,unmatched
+vXKMew4s,Ferro,Deportivo Madryn,2026-10-02T22:00:00+00:00,,,unmatched
+QDUFGYdn,Def. de Cambaceres,Victoriano A.,2026-10-02T21:30:00+00:00,,,unmatched
+IPFyNp2m,Platense,Estudiantes L.P.,2026-10-02T00:15:00+00:00,,,unmatched
+fBvBCNl4,China W,South Korea W,2026-10-02T06:00:00+00:00,,,unmatched
+08sJA1JG,North Korea W,Japan W,2026-10-02T10:30:00+00:00,,,unmatched
+C2yxTcif,Favoritner,Marchfeld,2026-10-02T17:10:00+00:00,,,unmatched
+4xYTUJMs,Kremser,Wiener Sport-Club,2026-10-02T17:30:00+00:00,,,unmatched
+f3nbztaK,SV Oberwart,Horn,2026-10-02T17:30:00+00:00,,,unmatched
+C44E7i2s,Atus Velden,Treibach,2026-10-02T17:00:00+00:00,,,unmatched
+dGSjwUJU,Gleisdorf,Tillmitsch,2026-10-02T17:00:00+00:00,,,unmatched
+0ErTpJW0,Seekirchen,Union Gurten,2026-10-02T17:00:00+00:00,,,unmatched
+vL9Bv7oJ,Admira (Am),Wiener Neustadt,2026-10-02T18:00:00+00:00,,,unmatched
+nZbUb1D6,Edelweiss,Gmunden,2026-10-02T17:00:00+00:00,,,unmatched
+4GKCrsOH,SV Union Gnas,Furstenfeld,2026-10-02T17:00:00+00:00,,,unmatched
+ET2heK7N,TUS Bad Waltersdorf,Hohenhaus Schladming,2026-10-02T17:00:00+00:00,,,unmatched
+YuGy2BD7,Red Star-Penzing,TWL Elektra,2026-10-02T16:00:00+00:00,,,unmatched
+Ya6VNhzR,Stammersdorf,1980 Wien,2026-10-02T16:00:00+00:00,,,unmatched
+zeHVkfSq,Chattogram,Bangladesh Police,2026-10-02T09:00:00+00:00,,,unmatched
+KUB0eG4M,Fakirerpool YMC,Mohammedan,2026-10-02T09:00:00+00:00,,,unmatched
+88FwlYdd,PWD Sports Club,Brothers U.,2026-10-02T09:00:00+00:00,,,unmatched
+6kvXNrw1,Sp. Hasselt U21,Kortrijk U21,2026-10-02T18:30:00+00:00,,,unmatched
+fPumJBdf,Blooming,Independiente,2026-10-02T00:30:00+00:00,,,unmatched
+t0UlwXmQ,SA Bulo Bulo,Academia del Balompie,2026-10-02T19:00:00+00:00,,,unmatched
+tjqXUEq9,Athletic Club,Sport Recife,2026-10-01T23:30:00+00:00,,,unmatched
+hWDAR0fE,Novorizontino,Goias,2026-10-02T00:00:00+00:00,,,unmatched
+lrsn7Bi2,Sao Bernardo,CRB,2026-10-02T22:30:00+00:00,,,unmatched
+tKCYqwxp,7 de Abril,Friburguense,2026-10-02T18:00:00+00:00,,,unmatched
+dEaWsRM8,Bangu U20,Nova Iguacu U20,2026-10-02T13:00:00+00:00,,,unmatched
+KEFbTR7F,Flamengo RJ U20,Sampaio Correa FE U20,2026-10-02T18:00:00+00:00,,,unmatched
+xQCaMgdn,Boston City U20,Nacional de Muriae U20,2026-10-02T13:00:00+00:00,,,unmatched
+pjG7KXQb,America MG U20,Itabirito U20,2026-10-02T18:00:00+00:00,,,unmatched
+4O283cfm,Coimbra U20,Atletico-MG U20,2026-10-02T18:00:00+00:00,,,unmatched
+KOtrTJVi,Salitas,RDF,2026-10-02T15:30:00+00:00,,,unmatched
+E9rwETdc,Inter Bogotá,Once Caldas,2026-10-02T01:00:00+00:00,,,unmatched
+UuFRben9,Atletico F.C.,Real Cundinamarca,2026-10-02T22:00:00+00:00,,,unmatched
+4MFLIG28,FC Moravia,Carmelita,2026-10-02T20:00:00+00:00,,,unmatched
+dOxvH8bm,SK Hranice,Artis Brno B,2026-10-02T16:00:00+00:00,,,unmatched
+OxV7nPgD,Dukla Prague,Jablonec,2026-10-02T16:00:00+00:00,,,unmatched
+pnS2AGRq,Hluboka nad Vltavou,Krimice,2026-10-02T16:00:00+00:00,,,unmatched
+YwuMvulA,Hlucin,Novy Jicin,2026-10-02T16:00:00+00:00,,,unmatched
+Sv1fNrAc,F. Amager,B.93,2026-10-02T17:00:00+00:00,,,unmatched
+0Y88auIj,Naestved,Nykobing,2026-10-02T17:00:00+00:00,,,unmatched
+fZtyImYH,VSK Aarhus,Brabrand,2026-10-02T17:00:00+00:00,,,unmatched
+6cIk80OP,Cuenca Juniors,Ind. Juniors,2026-10-02T20:30:00+00:00,,,unmatched
+Ag7T0IGa,San Antonio,Vinotinto,2026-10-02T20:30:00+00:00,,,unmatched
+8AtAOval,Baladiyat El Mahalla,Team FC,2026-10-02T12:30:00+00:00,,,unmatched
+xSkvU0yR,El Daklyeh,Maleyeit Kafr El Zayiat,2026-10-02T12:30:00+00:00,,,unmatched
+E7qIMIT0,Kahrabaa Ismailia,Delta United,2026-10-02T12:30:00+00:00,,,unmatched
+4EiWVM6E,Proxy,WE SC,2026-10-02T12:30:00+00:00,,,unmatched
+x8ap8JE7,Tanta,Haras El Hodood,2026-10-02T12:30:00+00:00,,,unmatched
+8vjlhp4l,Inca Aruba,Municipal Limeno,2026-10-02T00:00:00+00:00,,,unmatched
+v1cuNI8k,Fleetwood U21,Sheffield Wed U21,2026-10-02T12:00:00+00:00,,,unmatched
+QZWBLS2M,Tammeka,Viimsi JK,2026-10-02T15:00:00+00:00,,,unmatched
+buHzX8C5,Portugal U20,Czech Republic U20,2026-10-02T14:00:00+00:00,,,unmatched
+jDAdcmWj,JBK,Honka,2026-10-02T15:00:00+00:00,,,unmatched
+SCfUBnop,Ilves 2,Huima / Urho,2026-10-02T15:30:00+00:00,,,unmatched
+tU3POx05,PK-35 Vantaa W,Honka W,2026-10-02T16:00:00+00:00,,,unmatched
+xCFChbXp,Stade Briochin,Lorient II,2026-10-02T17:00:00+00:00,,,unmatched
+ttUtbK9N,Chauray,Avranches,2026-10-02T18:00:00+00:00,,,unmatched
+bVVGmbET,VfB Lubeck,Eimsbutteler,2026-10-02T17:30:00+00:00,,,unmatched
+dIXmB88N,B. Monchengladbach II,Bochum II,2026-10-02T17:30:00+00:00,,,unmatched
+Yazo4Zft,Bonner,Westfalia Rhynern,2026-10-02T17:30:00+00:00,,,unmatched
+xMIBr4q2,Stutt. Kickers,Offenbach,2026-10-02T17:00:00+00:00,,,unmatched
+dQZvLbDO,Bayer Leverkusen W,Werder Bremen W,2026-10-02T16:30:00+00:00,,,unmatched
+zHpVWRj5,7th Wave,Home Stars,2026-10-02T15:00:00+00:00,,,unmatched
+KQcdz1cc,Accra Lions,Inter Allies,2026-10-02T15:00:00+00:00,,,unmatched
+Cvc0juJi,Nsuopun Fidelity,New Edubiase,2026-10-02T15:00:00+00:00,,,unmatched
+4AeZez3b,Yapei,Techiman Liberty,2026-10-02T15:00:00+00:00,,,unmatched
+tfkMytBb,Fram W,Valur W,2026-10-02T18:00:00+00:00,,,unmatched
+0QAH8ssC,Stjarnan W,Grindavik/Njardvik W,2026-10-02T18:00:00+00:00,,,unmatched
+YToEw2tn,Vikingur Reykjavik W,Thor/KA W,2026-10-02T18:00:00+00:00,,,unmatched
+29aCCx7D,Gloggnitz,Traiskirchen,2026-10-02T17:00:00+00:00,,,unmatched
+Y7xNBqsC,Atus Ferlach,Nussdorf,2026-10-02T17:00:00+00:00,,,unmatched
+ShbU0Own,Lebring,UFC Fehring,2026-10-02T17:00:00+00:00,,,unmatched
+Wl75p3g5,Stadtwerke Bruck/Mur,SV Wildon,2026-10-02T17:00:00+00:00,,,unmatched
+dUVJD2cc,Deutschkreutz,Leithaprodersdorf,2026-10-02T17:30:00+00:00,,,unmatched
+Aaj3xhkK,Schwechat,Simmeringer,2026-10-02T17:30:00+00:00,,,unmatched
+EyiCZXFi,BATE 2,Ostrovets,2026-10-02T14:00:00+00:00,,,unmatched
+xhZinBac,Volna Pinsk,Lida,2026-10-02T14:30:00+00:00,,,unmatched
+OU0Efyjn,Finland,Albania,2026-10-03T13:00:00+00:00,,,unmatched
+UXCE7NDT,Belarus,San Marino,2026-10-03T16:00:00+00:00,,,unmatched
+p8cVmcQ9,Croatia,England,2026-10-03T16:00:00+00:00,,,unmatched
+x8uhD4Ja,Estonia,Luxembourg,2026-10-03T16:00:00+00:00,,,unmatched
+juuHPGjC,Iceland,Bulgaria,2026-10-03T16:00:00+00:00,,,unmatched
+WSkBPP9e,North Macedonia,Scotland,2026-10-03T18:45:00+00:00,,,unmatched
+88DcZcBG,Spain,Czech Republic,2026-10-03T18:45:00+00:00,,,unmatched
+vggJN3v8,Switzerland,Slovenia,2026-10-03T18:45:00+00:00,,,unmatched
+ERinJPEs,Brentwood,Dag & Red,2026-10-03T11:30:00+00:00,,,unmatched
+hCNzC87E,AFC Rushden & Diamonds,Braintree,2026-10-03T14:00:00+00:00,,,unmatched
+tSKEEKVp,Barton Town,Chorley,2026-10-03T14:00:00+00:00,,,unmatched
+d8CE4Qal,Bedford,Wingate & Finchley,2026-10-03T14:00:00+00:00,,,unmatched
+YH93bmOk,Brackley Town,Chelmsford,2026-10-03T14:00:00+00:00,,,unmatched
+hMI9ITWI,Bury,Bromsgrove,2026-10-03T14:00:00+00:00,,,unmatched
+bLUzHGeE,Bury Town,Spalding United,2026-10-03T14:00:00+00:00,,,unmatched
+zqXL7CI0,Buxton,South Shields,2026-10-03T14:00:00+00:00,,,unmatched
+nutGKwuh,Cambridge City,Alvechurch,2026-10-03T14:00:00+00:00,,,unmatched
+2VnWGevH,Chesham,Real Bedford,2026-10-03T14:00:00+00:00,,,unmatched
+QPLrAnxR,Cray Wanderers,Chippenham,2026-10-03T14:00:00+00:00,,,unmatched
+rq1GOoiK,Crowborough,Wimborne,2026-10-03T14:00:00+00:00,,,unmatched
+02dADLrJ,Dorking,Chatham,2026-10-03T14:00:00+00:00,,,unmatched
+KSAetXOP,Ebbsfleet,Sholing,2026-10-03T14:00:00+00:00,,,unmatched
+4YFM24U0,Gainsborough,Anstey Nomads,2026-10-03T14:00:00+00:00,,,unmatched
+6oEoOX2s,Guiseley,Bradford PA,2026-10-03T14:00:00+00:00,,,unmatched
+nu0cKUp9,Hanwell Town,Dover,2026-10-03T14:00:00+00:00,,,unmatched
+tKWNWJiT,Harborough,St. Albans,2026-10-03T14:00:00+00:00,,,unmatched
+dYiqBQ7e,Kettering,Worcester,2026-10-03T14:00:00+00:00,,,unmatched
+2FfZYlHa,Leatherhead,Hanworth,2026-10-03T14:00:00+00:00,,,unmatched
+6oYrFfQQ,Leiston,Coventry United,2026-10-03T14:00:00+00:00,,,unmatched
+AubsXSoC,Macclesfield,Scarborough,2026-10-03T14:00:00+00:00,,,unmatched
+2HJE9Yml,Marine,Warrington,2026-10-03T14:00:00+00:00,,,unmatched
+pdF1Kk26,Morecambe,Darlington,2026-10-03T14:00:00+00:00,,,unmatched
+z3NFTguK,Mulbarton Wanderers,Gloucester,2026-10-03T14:00:00+00:00,,,unmatched
+C2NgRcFj,Oxford City,Enfield Town,2026-10-03T14:00:00+00:00,,,unmatched
+CrHgMBXg,Plymouth Parkway,Horsham FC,2026-10-03T14:00:00+00:00,,,unmatched
+Uoji94x8,Redditch,Berkhamsted,2026-10-03T14:00:00+00:00,,,unmatched
+f5qOIH94,Salisbury,Dulwich Hamlet,2026-10-03T14:00:00+00:00,,,unmatched
+YgTFYuNG,Sheppey United,Chertsey,2026-10-03T14:00:00+00:00,,,unmatched
+Khb5I8FL,Spennymoor,Chester,2026-10-03T14:00:00+00:00,,,unmatched
+0tV7z2h4,Stafford,Halesowen,2026-10-03T14:00:00+00:00,,,unmatched
+8YC0xONi,Tadley,Dartford,2026-10-03T14:00:00+00:00,,,unmatched
+Gb23RTkd,Thame,Eastbourne Boro,2026-10-03T14:00:00+00:00,,,unmatched
+KY7BdRh2,Tonbridge,Torquay,2026-10-03T14:00:00+00:00,,,unmatched
+r9zU5jmD,Trafford,Atherton,2026-10-03T14:00:00+00:00,,,unmatched
+nujfH3qf,Truro,Cirencester,2026-10-03T14:00:00+00:00,,,unmatched
+xnEU0raD,Uxbridge,Hungerford,2026-10-03T14:00:00+00:00,,,unmatched
+jykyDnwq,Weymouth,SE Dons,2026-10-03T14:00:00+00:00,,,unmatched
+f5g2FsE6,Worksop,FC United,2026-10-03T14:00:00+00:00,,,unmatched
+fTi9URXg,Egypt U20,Morocco U20,2026-10-03T13:00:00+00:00,,,unmatched
+8Cg1Wm3s,Tunisia U20,Libya U20,2026-10-03T13:00:00+00:00,,,unmatched
+vyd1XuwI,Djijel,Azazga,2026-10-03T14:00:00+00:00,,,unmatched
+CvXc20xh,GC Mascara,USM Blida,2026-10-03T14:00:00+00:00,,,unmatched
+K4z60v74,Harrach,Taghit,2026-10-03T14:00:00+00:00,,,unmatched
+xrMgBeLM,Hussein Dey,RC Kouba,2026-10-03T14:00:00+00:00,,,unmatched
+MiFwFwMc,Kolea,El Bayadh,2026-10-03T14:00:00+00:00,,,unmatched
+hIYDbIyH,Saida,ASM Oran,2026-10-03T14:00:00+00:00,,,unmatched
+UHIoDHjA,Sidi Benali,Mostaganem,2026-10-03T14:00:00+00:00,,,unmatched
+2oeYouhB,Skikda,Beni Oulbane,2026-10-03T14:00:00+00:00,,,unmatched
+0rxMdd6T,WA Mostaganem,JSM Tiaret,2026-10-03T14:00:00+00:00,,,unmatched
+ltZzWOS7,Boca Juniors,Union de Santa Fe,2026-10-03T00:30:00+00:00,,,unmatched
+UJIic1R6,Ind. Rivadavia,Gimnasia L.P.,2026-10-03T00:30:00+00:00,,,unmatched
+tzMMgSKE,Defensa y Justicia,San Lorenzo,2026-10-03T17:45:00+00:00,,,unmatched
+OMFqaNdf,Atl. Tucuman,Barracas Central,2026-10-03T20:00:00+00:00,,,unmatched
+8p61npDl,Newells Old Boys,Lanus,2026-10-03T20:00:00+00:00,,,unmatched
+rPHwhe36,Acassuso,Ciudad Bolivar,2026-10-03T18:00:00+00:00,,,unmatched
+Q3Bd8Gmm,Colon Santa Fe,CA Estudiantes,2026-10-03T18:00:00+00:00,,,unmatched
+nJa56fIa,Deportivo Moron,All Boys,2026-10-03T18:00:00+00:00,,,unmatched
+fLKQDxQP,San Miguel,CA Mitre,2026-10-03T18:00:00+00:00,,,unmatched
+rkBevKWQ,Temperley,Gimnasia Jujuy,2026-10-03T18:00:00+00:00,,,unmatched
+hvkgmc9s,Tristan Suarez,Quilmes,2026-10-03T18:00:00+00:00,,,unmatched
+CYl11uV0,Defensores Unidos,Argentino de Quilmes,2026-10-03T18:00:00+00:00,,,unmatched
+hOYRntG7,Deportivo Camioneros,Laferrere,2026-10-03T18:00:00+00:00,,,unmatched
+KzAM8NxR,Dock Sud,Deportivo Armenio,2026-10-03T18:00:00+00:00,,,unmatched
+CjrXc6O8,Liniers,Excursionistas,2026-10-03T18:00:00+00:00,,,unmatched
+ppjoz3W1,Real Pilar,Villa Dalmine,2026-10-03T18:00:00+00:00,,,unmatched
+lWyBjOGr,San Martin Burzaco,Argentino de Merlo,2026-10-03T18:00:00+00:00,,,unmatched
+h0judpgL,Villa San Carlos,Arsenal Sarandi,2026-10-03T18:00:00+00:00,,,unmatched
+lfv5frtp,Deportivo Paraguayo,Mercedes,2026-10-03T18:00:00+00:00,,,unmatched
+plAAAttB,El Porvenir,Canuelas,2026-10-03T18:00:00+00:00,,,unmatched
+Amu7dVBU,Juventud Unida S. M.,Berazategui,2026-10-03T18:00:00+00:00,,,unmatched
+IFz1NKJk,Defensores de Glew,Uribelarrea,2026-10-03T18:00:00+00:00,,,unmatched
+ryFE6kI6,Newells Old Boys W,River Plate W,2026-10-03T18:00:00+00:00,,,unmatched
+xvC68Bmf,Lanus W,Social Atletico Television W,2026-10-03T18:30:00+00:00,,,unmatched
+UD8bAXIs,Boca Juniors W,San Luis W,2026-10-03T20:00:00+00:00,,,unmatched
+YsNSFgeK,Talleres Cordoba W,Independiente W,2026-10-03T20:00:00+00:00,,,unmatched
+IZjZCD4m,Hong Kong,Cambodia,2026-10-03T10:00:00+00:00,,,unmatched
+lYm0NHUa,China U23,Uzbekistan U23,2026-10-03T06:00:00+00:00,,,unmatched
+ryohPw0m,South Korea U23,Japan U23,2026-10-03T10:30:00+00:00,,,unmatched
+0dNmEXVI,Saudi Arabia,Qatar,2026-10-03T15:55:00+00:00,,,unmatched
+6gAZyyOP,United Arab Emirates,Oman,2026-10-03T18:30:00+00:00,,,unmatched
+2382WWcn,Donaufeld Wien,Wienerberger,2026-10-03T13:30:00+00:00,,,unmatched
+zH6AUASb,Mattersburg SV 2020,Parndorf,2026-10-03T15:00:00+00:00,,,unmatched
+htwhPFjJ,Wiener Viktoria,SV Donau,2026-10-03T15:00:00+00:00,,,unmatched
+nFGxtIan,Lochau,FC Lustenau,2026-10-03T12:00:00+00:00,,,unmatched
+W2tTLEEU,SK St. Johann,Fugen,2026-10-03T12:30:00+00:00,,,unmatched
+drwcTvGt,Altach U21,Hohenems,2026-10-03T14:00:00+00:00,,,unmatched
+48t5RIpg,Dornbirn,Kitzbuhel,2026-10-03T14:00:00+00:00,,,unmatched
+0xNhxzaB,Kufstein,SC Imst,2026-10-03T14:00:00+00:00,,,unmatched
+pjOy2mWI,Bleiburg,Donau Klagenfurt,2026-10-03T13:00:00+00:00,,,unmatched
+xES0aIof,LASK (Am),Vorwarts Steyr,2026-10-03T14:00:00+00:00,,,unmatched
+UmPh1vHs,Wals-Grunau,Ried (Am),2026-10-03T14:00:00+00:00,,,unmatched
+vyMD2xkd,Pinkafeld,SV Eberau,2026-10-03T15:00:00+00:00,,,unmatched
+E7H7OJBF,Kohfidisch,Edelserpentin,2026-10-03T16:30:00+00:00,,,unmatched
+pCgOkbVp,Grossklein,Leoben,2026-10-03T15:00:00+00:00,,,unmatched
+rgbHElcD,Kagran,First Vienna (Am),2026-10-03T12:00:00+00:00,,,unmatched
+QFCT3Xre,Sportunion Mauer,Slovan HAC,2026-10-03T12:00:00+00:00,,,unmatched
+2Fd1IWcl,Floridsdorfer AC (Am),A XIII-Auhof Center,2026-10-03T14:00:00+00:00,,,unmatched
+QZ2NPE5E,Post Wien,Lac Inter,2026-10-03T14:00:00+00:00,,,unmatched
+ID1FFgmC,LASK W,Sudburgenland W,2026-10-03T12:00:00+00:00,,,unmatched
+OA4NDXHO,SCR Altach W,Kleinmunchen W,2026-10-03T12:00:00+00:00,,,unmatched
+ruBX9FJF,Arambagh,Rahmatgonj MFS,2026-10-03T09:00:00+00:00,,,unmatched
+Gh9u8glS,Fortis,City Club,2026-10-03T09:00:00+00:00,,,unmatched
+WAW48Yld,Royal Union SG 2,RWDM Brussels,2026-10-03T13:00:00+00:00,,,unmatched
+bHOjWys3,OC Charleroi,Meux,2026-10-03T18:00:00+00:00,,,unmatched
+WUMbUFBF,Renaissance Mons,Flenu,2026-10-03T18:00:00+00:00,,,unmatched
+zuRyNX3k,Tubize-Braine,Habay La Neuve,2026-10-03T18:00:00+00:00,,,unmatched
+4dz6SgtS,Union Rochefortoise,St. Liege U23,2026-10-03T18:00:00+00:00,,,unmatched
+KIDnvvSh,Dessel,KRC Harelbeke,2026-10-03T17:30:00+00:00,,,unmatched
+dIcKhwsn,Heist,Cercle Brugge KSV 2,2026-10-03T18:00:00+00:00,,,unmatched
+UVeSjHBb,Hoogstraten,Houtvenne,2026-10-03T18:00:00+00:00,,,unmatched
+0dF2zdRH,Lyra-Lierse,SK Roeselare,2026-10-03T18:00:00+00:00,,,unmatched
+8MIAYZeU,Mandel United,Belisia Bilzen,2026-10-03T18:00:00+00:00,,,unmatched
+SrHfxId5,Thes Sport,Zelzate,2026-10-03T18:00:00+00:00,,,unmatched
+YFQvTPbU,Club Brugge W,RSC Anderlecht W,2026-10-03T11:30:00+00:00,,,unmatched
+dh4do7Eb,Gent W,Waregem W,2026-10-03T17:30:00+00:00,,,unmatched
+lS0lmTqn,St. Liege W,Genk W,2026-10-03T17:30:00+00:00,,,unmatched
+0rIn3r8j,Olsa Brakel W,Femina Woluwe W,2026-10-03T12:15:00+00:00,,,unmatched
+nJ6lN3aM,Mechelen W,Genk II W,2026-10-03T15:00:00+00:00,,,unmatched
+ldfEnmeo,AS Cotonou,Dragons,2026-10-03T15:00:00+00:00,,,unmatched
+xWFKXABm,Real Potosi,Aurora,2026-10-03T00:00:00+00:00,,,unmatched
+jgMzUSAC,Nacional Potosi,Real Oruro,2026-10-03T21:15:00+00:00,,,unmatched
+M3Vz9CKM,Bratstvo Gracanica,TOSK Tesanj,2026-10-03T13:00:00+00:00,,,unmatched
+EwSSAYkA,Capljina,Tomislav,2026-10-03T13:00:00+00:00,,,unmatched
+I7MaPX43,Travnik,GOSK Gabela,2026-10-03T13:00:00+00:00,,,unmatched
+boOFLk4S,Posusje,Sloboda,2026-10-03T16:00:00+00:00,,,unmatched
+SMcWRSVo,Drina Zvornik,Kozara,2026-10-03T13:00:00+00:00,,,unmatched
+YJ0vQ60b,Prijedor,Omarska,2026-10-03T16:00:00+00:00,,,unmatched
+dKNS3gge,Atletico-MG,Bragantino,2026-10-03T21:30:00+00:00,,,unmatched
+lGnuThEL,Londrina,Criciuma,2026-10-02T23:30:00+00:00,,,unmatched
+Wv8lKInl,Juventude,Operario-PR,2026-10-02T23:45:00+00:00,,,unmatched
+pnYANWyq,Fortaleza,Nautico,2026-10-03T00:35:00+00:00,,,unmatched
+b9vRJly8,Avai,Ceara,2026-10-03T14:00:00+00:00,,,unmatched
+hCyJLA6e,Atletico GO,America MG,2026-10-03T19:00:00+00:00,,,unmatched
+0dHIPvPQ,Cuiaba,Ponte Preta,2026-10-03T20:00:00+00:00,,,unmatched
+GUrv9XMk,Botafogo SP,Vila Nova FC,2026-10-03T21:30:00+00:00,,,unmatched
+dWrLQOFL,Floresta EC,Botafogo PB,2026-10-03T20:00:00+00:00,,,unmatched
+h2UjL2wq,Santa Cruz,Maringa FC,2026-10-03T20:00:00+00:00,,,unmatched
+QTsbJt8e,Inter de Limeira,Brusque,2026-10-03T22:30:00+00:00,,,unmatched
+Ygo6HKx8,Paysandu PA,Ferroviaria,2026-10-03T22:30:00+00:00,,,unmatched
+U3fuDcW8,Sao Paulo,Santos,2026-10-02T23:00:00+00:00,,,unmatched
+jRHfQrd5,TSV Grafenstein,Dellach/Gail,2026-10-03T13:30:00+00:00,,,unmatched
+ngJYasUO,Oss,Maastricht,2026-10-03T14:30:00+00:00,,,unmatched
+xtygm4pJ,Vitesse,NAC Breda,2026-10-03T14:30:00+00:00,,,unmatched
+UZNvB7xQ,Almere City,FC Volendam,2026-10-03T18:00:00+00:00,,,unmatched
+0IEA5o0m,Den Bosch,Dordrecht,2026-10-03T18:00:00+00:00,,,unmatched
+6FHI3PUa,Eindhoven FC,De Graafschap,2026-10-03T18:00:00+00:00,,,unmatched
+vTFQ13aC,Waalwijk,FC Emmen,2026-10-03T18:00:00+00:00,,,unmatched
+UcSiizUj,Tlemcen,Arba,2026-10-03T14:00:00+00:00,,,unmatched
+x8XZ9KdM,Neudorf/Parndorf,Bad Sauerbrunn,2026-10-03T14:00:00+00:00,,,unmatched
+xz0aJylm,Salzburg W,First Vienna W,2026-10-03T15:00:00+00:00,,,unmatched
+fcy7FRsm,Matrei,KAC 1909,2026-10-03T17:00:00+00:00,,,unmatched
+CEs6O77j,Orsha,Niva Dolbizno,2026-10-03T10:00:00+00:00,,,unmatched
+Ms4QBUNp,FC Slonim,Soligorsk,2026-10-03T11:00:00+00:00,,,unmatched
+tWjzUTqT,FC Gomel 2,SKA-1938,2026-10-03T12:00:00+00:00,,,unmatched
+8IhSVkFG,Molodechno,Slutsk,2026-10-03T12:30:00+00:00,,,unmatched
+A5XapkU9,Smorgon,Osipovichi,2026-10-03T13:00:00+00:00,,,unmatched
+fgFokSbM,La Calamine,Aywaille,2026-10-03T17:30:00+00:00,,,unmatched
+I3dk6wlR,Hades,Bocholter,2026-10-03T17:30:00+00:00,,,unmatched
+WMkSRVTO,Strommen,Sandnes,2026-10-03T12:30:00+00:00,,,unmatched
+Mm0rSvO7,Haugesund,Stabaek,2026-10-03T14:00:00+00:00,,,unmatched
+2qwVkrGE,Hodd,Odd,2026-10-03T14:00:00+00:00,,,unmatched
+MoVynZEt,Stromsgodset,Asane,2026-10-03T14:00:00+00:00,,,unmatched
+I1cKHsNq,St. Liege II W,RSC Anderlecht II W,2026-10-03T15:00:00+00:00,,,unmatched

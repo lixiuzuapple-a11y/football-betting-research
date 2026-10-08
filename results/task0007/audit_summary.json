@@ -1,0 +1,73 @@
+{
+  "analyzable_by_batch_stratum": {
+    ">20": 504
+  },
+  "analyzable_change_rows": 504,
+  "crosswalk_events": 19,
+  "matched_by_batch_stratum": {
+    ">20": 580
+  },
+  "matched_change_rows": 580,
+  "primary_by_batch_stratum": {
+    ">20": 438
+  },
+  "primary_candidate_days": 3,
+  "primary_candidate_event_ids": 17,
+  "primary_candidate_matches": 17,
+  "primary_candidate_rows": 438,
+  "primary_confirmation_captures": 109,
+  "primary_exact_batch_sizes": {
+    "31": 125,
+    "33": 5,
+    "35": 124,
+    "42": 34,
+    "47": 6,
+    "49": 3,
+    "50": 2,
+    "52": 1,
+    "54": 2,
+    "55": 2,
+    "56": 41,
+    "57": 2,
+    "58": 7,
+    "59": 7,
+    "63": 3,
+    "65": 28,
+    "66": 7,
+    "68": 7,
+    "78": 1,
+    "84": 5,
+    "87": 5,
+    "89": 2,
+    "90": 9,
+    "91": 2,
+    "95": 6,
+    "98": 2
+  },
+  "primary_reference_next_state": {
+    "one_step_reversion": 170,
+    "persists_next_observation": 268
+  },
+  "proxy_ev_threshold_confirmation_captures": {
+    "0.0": 39,
+    "0.02": 20,
+    "0.05": 3,
+    "0.1": 2
+  },
+  "proxy_ev_threshold_matches": {
+    "0.0": 7,
+    "0.02": 5,
+    "0.05": 3,
+    "0.1": 2
+  },
+  "proxy_ev_threshold_rows": {
+    "0.0": 49,
+    "0.02": 20,
+    "0.05": 3,
+    "0.1": 2
+  },
+  "reference_next_state": {
+    "one_step_reversion": 178,
+    "persists_next_observation": 402
+  }
+}
