@@ -1,7 +1,7 @@
 # TASK-0006 — Five-day sealed prospective D01-B capture
 
 - Task ID: TASK-0006
-- Status: IN_PROGRESS
+- Status: REVIEW
 - Owner: Li
 - Reviewer: ChatGPT
 - Executor: WorkBuddy
