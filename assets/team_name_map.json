@@ -1,0 +1,3179 @@
+{
+  "_meta": {
+    "source": "football-data.co.uk 2025/26 + 2026/27 升班马补充",
+    "generated": "2026-09-01",
+    "note": "cn 为竞彩官方简称，cn_full 为通用全称。英文队名全部来自 CSV 实读。",
+    "en_spelling_source": "E0/SP1/I1/D1/F1 取自 2526/*.csv；升班马取自同级 E1/SP2/I2/D2/F2/*.csv",
+    "cn_source": "竞彩官方接口 AbbName + 体彩中心全简称通知 + 上海体彩官方赛程图 + 竞彩网赛程",
+    "cn_rule": "全称≤4字原样保留，>4字按音译边界截断至≤4字；_uncertain=true 表示截断或译法存疑",
+    "E1_source": "en 取自 football-data.co.uk 2627/E1.csv 实读；cn 中 16 队取自竞彩接口实读（2026-09-01/02 快照），8 队按竞彩简称规则推断并标 _uncertain",
+    "K1_note": "en 为 BetExplorer 实读（2026-09-02，K1 当季 155 场全部球队）；cn 为手写，全部 _uncertain，待竞彩实际开出韩 K 联后用真实赛程核对。写入时间 2026-09-02 10:36",
+    "E2_source": "en 取自 football-data.co.uk data/fd_1718_extra/E2.csv 实读（2017-18 赛季 24 队全部）；cn 取自澳客竞彩 1718 赛季实抓队名（data/jc_okooo_1718.csv，league=英甲）。★ 不收录 2 字截断别名（如'布莱'），因会与同联赛多队前缀冲突造成错配——配合 team_map_index 的歧义拒绝机制处理。写入时间 2026-09-03",
+    "constraint_propagation": "2026-09-03 由 scripts/apply_constraint_propagation.py 写入 66 条。依据：留出验证准确率 98.7%（152对/2错），覆盖率 66.4%。约束 = 联赛一致 + 队友已知 + 比分一致 + 得票占比≥60%且≥2票。★ 未采用「仅用时间+比分做主键」的外部建议：实测该法唯一命中中 81.7% 为假唯一（源60+联赛 vs 目标22联赛互不包含），样例 浦项制铁→Monaco。★ 未采用拼音模糊匹配：实测阈值85时精确率 0%（波尔多→Bolton、兰斯→Lens）。全部条目 _uncertain=True，待人工抽检。"
+  },
+  "E0": [
+    {
+      "en": "Arsenal",
+      "cn": "阿森纳",
+      "cn_full": "阿森纳",
+      "aliases": [
+        "兵工厂",
+        "枪手"
+      ]
+    },
+    {
+      "en": "Aston Villa",
+      "cn": "维拉",
+      "cn_full": "阿斯顿维拉",
+      "aliases": [
+        "阿斯顿维拉"
+      ]
+    },
+    {
+      "en": "Bournemouth",
+      "cn": "伯恩茅斯",
+      "cn_full": "伯恩茅斯",
+      "aliases": [
+        "伯恩茅"
+      ]
+    },
+    {
+      "en": "Brentford",
+      "cn": "布伦特",
+      "cn_full": "布伦特福德",
+      "aliases": [
+        "布伦特福德"
+      ]
+    },
+    {
+      "en": "Brighton",
+      "cn": "布赖顿",
+      "cn_full": "布赖顿",
+      "aliases": [
+        "布莱顿"
+      ]
+    },
+    {
+      "en": "Burnley",
+      "cn": "伯恩利",
+      "cn_full": "伯恩利",
+      "aliases": []
+    },
+    {
+      "en": "Chelsea",
+      "cn": "切尔西",
+      "cn_full": "切尔西",
+      "aliases": [
+        "车路士",
+        "蓝军"
+      ]
+    },
+    {
+      "en": "Crystal Palace",
+      "cn": "水晶宫",
+      "cn_full": "水晶宫",
+      "aliases": []
+    },
+    {
+      "en": "Everton",
+      "cn": "埃弗顿",
+      "cn_full": "埃弗顿",
+      "aliases": [
+        "太妃糖"
+      ]
+    },
+    {
+      "en": "Fulham",
+      "cn": "富勒姆",
+      "cn_full": "富勒姆",
+      "aliases": []
+    },
+    {
+      "en": "Leeds",
+      "cn": "利兹联",
+      "cn_full": "利兹联",
+      "aliases": [
+        "利兹"
+      ]
+    },
+    {
+      "en": "Liverpool",
+      "cn": "利物浦",
+      "cn_full": "利物浦",
+      "aliases": [
+        "红军"
+      ]
+    },
+    {
+      "en": "Man City",
+      "cn": "曼城",
+      "cn_full": "曼彻斯特城",
+      "aliases": [
+        "曼彻斯特城",
+        "蓝月亮"
+      ]
+    },
+    {
+      "en": "Man United",
+      "cn": "曼联",
+      "cn_full": "曼彻斯特联",
+      "aliases": [
+        "曼彻斯特联",
+        "红魔"
+      ]
+    },
+    {
+      "en": "Newcastle",
+      "cn": "纽卡斯尔",
+      "cn_full": "纽卡斯尔联",
+      "aliases": [
+        "纽卡斯尔联",
+        "纽卡斯",
+        "喜鹊"
+      ]
+    },
+    {
+      "en": "Nott'm Forest",
+      "cn": "诺丁汉",
+      "cn_full": "诺丁汉森林",
+      "aliases": [
+        "诺丁汉森林"
+      ]
+    },
+    {
+      "en": "Sunderland",
+      "cn": "桑德兰",
+      "cn_full": "桑德兰",
+      "aliases": [
+        "黑猫"
+      ]
+    },
+    {
+      "en": "Tottenham",
+      "cn": "热刺",
+      "cn_full": "托特纳姆热刺",
+      "aliases": [
+        "托特纳姆热刺"
+      ]
+    },
+    {
+      "en": "West Ham",
+      "cn": "西汉姆联",
+      "cn_full": "西汉姆联",
+      "aliases": [
+        "西汉姆",
+        "铁锤帮"
+      ]
+    },
+    {
+      "en": "Wolves",
+      "cn": "伍尔弗",
+      "cn_full": "伍尔弗汉普顿",
+      "aliases": [
+        "狼队",
+        "伍尔弗汉普顿"
+      ]
+    },
+    {
+      "en": "Coventry",
+      "cn": "考文垂",
+      "cn_full": "考文垂",
+      "aliases": [],
+      "_promoted_2627": true
+    },
+    {
+      "en": "Ipswich",
+      "cn": "伊普斯",
+      "cn_full": "伊普斯维奇",
+      "aliases": [
+        "伊普斯维奇"
+      ],
+      "_promoted_2627": true,
+      "_uncertain": true
+    },
+    {
+      "en": "Hull",
+      "cn": "赫尔城",
+      "cn_full": "赫尔城",
+      "aliases": [
+        "老虎"
+      ],
+      "_promoted_2627": true
+    },
+    {
+      "en": "Huddersfield",
+      "cn": "哈德斯",
+      "cn_full": "哈德斯",
+      "aliases": [
+        "哈德斯"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=31/33"
+    }
+  ],
+  "SP1": [
+    {
+      "en": "Alaves",
+      "cn": "阿拉维斯",
+      "cn_full": "阿拉维斯",
+      "aliases": [
+        "阿拉维"
+      ]
+    },
+    {
+      "en": "Ath Bilbao",
+      "cn": "毕尔巴鄂",
+      "cn_full": "毕尔巴鄂竞技",
+      "aliases": [
+        "毕尔巴鄂竞技",
+        "毕尔巴"
+      ]
+    },
+    {
+      "en": "Ath Madrid",
+      "cn": "马竞",
+      "cn_full": "马德里竞技",
+      "aliases": [
+        "马德里竞技",
+        "马竞技"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Barcelona",
+      "cn": "巴萨",
+      "cn_full": "巴塞罗那",
+      "aliases": [
+        "巴塞罗那",
+        "巴塞"
+      ]
+    },
+    {
+      "en": "Betis",
+      "cn": "贝蒂斯",
+      "cn_full": "皇家贝蒂斯",
+      "aliases": [
+        "皇家贝蒂斯"
+      ]
+    },
+    {
+      "en": "Celta",
+      "cn": "塞尔塔",
+      "cn_full": "维戈塞尔塔",
+      "aliases": [
+        "维戈塞尔塔"
+      ]
+    },
+    {
+      "en": "Elche",
+      "cn": "埃尔切",
+      "cn_full": "埃尔切",
+      "aliases": []
+    },
+    {
+      "en": "Espanol",
+      "cn": "西班牙人",
+      "cn_full": "西班牙人",
+      "aliases": [
+        "西班人"
+      ]
+    },
+    {
+      "en": "Getafe",
+      "cn": "赫塔费",
+      "cn_full": "赫塔菲",
+      "aliases": [
+        "赫塔菲"
+      ]
+    },
+    {
+      "en": "Girona",
+      "cn": "赫罗纳",
+      "cn_full": "赫罗纳",
+      "aliases": [
+        "吉罗纳"
+      ]
+    },
+    {
+      "en": "Levante",
+      "cn": "莱万特",
+      "cn_full": "莱万特",
+      "aliases": []
+    },
+    {
+      "en": "Mallorca",
+      "cn": "马洛卡",
+      "cn_full": "马洛卡",
+      "aliases": [
+        "马略卡"
+      ]
+    },
+    {
+      "en": "Osasuna",
+      "cn": "奥萨苏纳",
+      "cn_full": "奥萨苏纳",
+      "aliases": [
+        "奥萨苏"
+      ]
+    },
+    {
+      "en": "Oviedo",
+      "cn": "奥维耶多",
+      "cn_full": "皇家奥维耶多",
+      "aliases": [
+        "皇家奥维耶多",
+        "奥维多"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Real Madrid",
+      "cn": "皇马",
+      "cn_full": "皇家马德里",
+      "aliases": [
+        "皇家马德里",
+        "银河战舰"
+      ]
+    },
+    {
+      "en": "Sevilla",
+      "cn": "塞维利亚",
+      "cn_full": "塞维利亚",
+      "aliases": [
+        "塞维利"
+      ]
+    },
+    {
+      "en": "Sociedad",
+      "cn": "皇家社会",
+      "cn_full": "皇家社会",
+      "aliases": [
+        "社会"
+      ]
+    },
+    {
+      "en": "Valencia",
+      "cn": "巴伦西亚",
+      "cn_full": "巴伦西亚",
+      "aliases": [
+        "瓦伦西亚",
+        "瓦伦西"
+      ]
+    },
+    {
+      "en": "Vallecano",
+      "cn": "巴列卡诺",
+      "cn_full": "巴列卡诺",
+      "aliases": [
+        "瓦莱卡诺"
+      ]
+    },
+    {
+      "en": "Villarreal",
+      "cn": "比利亚雷",
+      "cn_full": "比利亚雷亚尔",
+      "aliases": [
+        "比利亚雷亚尔",
+        "维拉利尔"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Santander",
+      "cn": "桑坦德",
+      "cn_full": "桑坦德竞技",
+      "aliases": [
+        "桑坦德竞技",
+        "桑德竞技"
+      ],
+      "_promoted_2627": true
+    },
+    {
+      "en": "La Coruna",
+      "cn": "拉科",
+      "cn_full": "拉科鲁尼亚",
+      "aliases": [
+        "拉科鲁尼亚",
+        "拉科鲁"
+      ],
+      "_promoted_2627": true,
+      "_uncertain": true
+    },
+    {
+      "en": "Malaga",
+      "cn": "马拉加",
+      "cn_full": "马拉加",
+      "aliases": [],
+      "_promoted_2627": true
+    },
+    {
+      "en": "Las Palmas",
+      "cn": "拉斯马斯",
+      "cn_full": "拉斯马斯",
+      "aliases": [
+        "拉斯马斯"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=22/23"
+    },
+    {
+      "en": "Eibar",
+      "cn": "埃瓦尔",
+      "cn_full": "埃瓦尔",
+      "aliases": [
+        "埃瓦尔"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=24/24"
+    },
+    {
+      "en": "Leganes",
+      "cn": "莱加内斯",
+      "cn_full": "莱加内斯",
+      "aliases": [
+        "莱加内斯"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=24/24"
+    }
+  ],
+  "I1": [
+    {
+      "en": "Atalanta",
+      "cn": "亚特兰大",
+      "cn_full": "亚特兰大",
+      "aliases": [
+        "亚特兰"
+      ]
+    },
+    {
+      "en": "Bologna",
+      "cn": "博洛尼亚",
+      "cn_full": "博洛尼亚",
+      "aliases": [
+        "博洛尼"
+      ]
+    },
+    {
+      "en": "Cagliari",
+      "cn": "卡利亚里",
+      "cn_full": "卡利亚里",
+      "aliases": [
+        "卡利亚"
+      ]
+    },
+    {
+      "en": "Como",
+      "cn": "科莫",
+      "cn_full": "科莫",
+      "aliases": []
+    },
+    {
+      "en": "Cremonese",
+      "cn": "克雷莫纳",
+      "cn_full": "克雷莫纳",
+      "aliases": []
+    },
+    {
+      "en": "Fiorentina",
+      "cn": "佛罗伦萨",
+      "cn_full": "佛罗伦萨",
+      "aliases": [
+        "佛罗伦",
+        "紫百合"
+      ]
+    },
+    {
+      "en": "Genoa",
+      "cn": "热那亚",
+      "cn_full": "热那亚",
+      "aliases": []
+    },
+    {
+      "en": "Inter",
+      "cn": "国际米兰",
+      "cn_full": "国际米兰",
+      "aliases": [
+        "国米",
+        "Internazionale",
+        "蓝黑军团"
+      ]
+    },
+    {
+      "en": "Juventus",
+      "cn": "尤文图斯",
+      "cn_full": "尤文图斯",
+      "aliases": [
+        "尤文",
+        "祖云达斯",
+        "斑马军团"
+      ]
+    },
+    {
+      "en": "Lazio",
+      "cn": "拉齐奥",
+      "cn_full": "拉齐奥",
+      "aliases": [
+        "蓝鹰"
+      ]
+    },
+    {
+      "en": "Lecce",
+      "cn": "莱切",
+      "cn_full": "莱切",
+      "aliases": []
+    },
+    {
+      "en": "Milan",
+      "cn": "AC米兰",
+      "cn_full": "AC米兰",
+      "aliases": [
+        "米兰",
+        "红黑军团"
+      ]
+    },
+    {
+      "en": "Napoli",
+      "cn": "那不勒斯",
+      "cn_full": "那不勒斯",
+      "aliases": [
+        "那不勒",
+        "拿坡里"
+      ]
+    },
+    {
+      "en": "Parma",
+      "cn": "帕尔马",
+      "cn_full": "帕尔马",
+      "aliases": [
+        "帕尔玛"
+      ]
+    },
+    {
+      "en": "Pisa",
+      "cn": "比萨",
+      "cn_full": "比萨",
+      "aliases": []
+    },
+    {
+      "en": "Roma",
+      "cn": "罗马",
+      "cn_full": "罗马",
+      "aliases": [
+        "红狼"
+      ]
+    },
+    {
+      "en": "Sassuolo",
+      "cn": "萨索洛",
+      "cn_full": "萨索洛",
+      "aliases": []
+    },
+    {
+      "en": "Torino",
+      "cn": "都灵",
+      "cn_full": "都灵",
+      "aliases": []
+    },
+    {
+      "en": "Udinese",
+      "cn": "乌迪内斯",
+      "cn_full": "乌迪内斯",
+      "aliases": [
+        "乌迪内"
+      ]
+    },
+    {
+      "en": "Verona",
+      "cn": "维罗纳",
+      "cn_full": "维罗纳",
+      "aliases": [
+        "赫拉斯维罗纳"
+      ]
+    },
+    {
+      "en": "Venezia",
+      "cn": "威尼斯",
+      "cn_full": "威尼斯",
+      "aliases": [],
+      "_promoted_2627": true
+    },
+    {
+      "en": "Frosinone",
+      "cn": "弗洛西诺",
+      "cn_full": "弗洛西诺内",
+      "aliases": [
+        "弗洛西诺内"
+      ],
+      "_promoted_2627": true
+    },
+    {
+      "en": "Monza",
+      "cn": "蒙扎",
+      "cn_full": "蒙扎",
+      "aliases": [],
+      "_promoted_2627": true
+    },
+    {
+      "en": "Benevento",
+      "cn": "贝内文托",
+      "cn_full": "贝内文托",
+      "aliases": [
+        "贝内文托"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=25/26"
+    },
+    {
+      "en": "Sampdoria",
+      "cn": "桑普多利亚",
+      "cn_full": "桑普多利亚",
+      "aliases": [
+        "桑普多利亚"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=23/25"
+    },
+    {
+      "en": "Chievo",
+      "cn": "切沃",
+      "cn_full": "切沃",
+      "aliases": [
+        "切沃"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=25/26"
+    },
+    {
+      "en": "Crotone",
+      "cn": "克罗托内",
+      "cn_full": "克罗托内",
+      "aliases": [
+        "克罗托内"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=24/25"
+    },
+    {
+      "en": "Spal",
+      "cn": "费拉拉",
+      "cn_full": "费拉拉",
+      "aliases": [
+        "费拉拉"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=25/25"
+    }
+  ],
+  "D1": [
+    {
+      "en": "Augsburg",
+      "cn": "奥格斯堡",
+      "cn_full": "奥格斯堡",
+      "aliases": [
+        "奥格斯"
+      ]
+    },
+    {
+      "en": "Bayern Munich",
+      "cn": "拜仁",
+      "cn_full": "拜仁慕尼黑",
+      "aliases": [
+        "拜仁慕尼黑",
+        "南部之星"
+      ]
+    },
+    {
+      "en": "Dortmund",
+      "cn": "多特蒙德",
+      "cn_full": "多特蒙德",
+      "aliases": [
+        "多特",
+        "大黄蜂"
+      ]
+    },
+    {
+      "en": "Ein Frankfurt",
+      "cn": "法兰克福",
+      "cn_full": "法兰克福",
+      "aliases": [
+        "法兰克"
+      ]
+    },
+    {
+      "en": "FC Koln",
+      "cn": "科隆",
+      "cn_full": "科隆",
+      "aliases": []
+    },
+    {
+      "en": "Freiburg",
+      "cn": "弗赖堡",
+      "cn_full": "弗赖堡",
+      "aliases": [
+        "弗莱堡"
+      ]
+    },
+    {
+      "en": "Hamburg",
+      "cn": "汉堡",
+      "cn_full": "汉堡",
+      "aliases": []
+    },
+    {
+      "en": "Heidenheim",
+      "cn": "海登海姆",
+      "cn_full": "海登海姆",
+      "aliases": []
+    },
+    {
+      "en": "Hoffenheim",
+      "cn": "霍芬海姆",
+      "cn_full": "霍芬海姆",
+      "aliases": [
+        "霍芬海"
+      ]
+    },
+    {
+      "en": "Leverkusen",
+      "cn": "勒沃库森",
+      "cn_full": "勒沃库森",
+      "aliases": [
+        "勒沃",
+        "药厂"
+      ]
+    },
+    {
+      "en": "M'gladbach",
+      "cn": "门兴",
+      "cn_full": "门兴格拉德巴赫",
+      "aliases": [
+        "门兴格拉德巴赫",
+        "慕逊加柏"
+      ]
+    },
+    {
+      "en": "Mainz",
+      "cn": "美因茨",
+      "cn_full": "美因茨",
+      "aliases": []
+    },
+    {
+      "en": "RB Leipzig",
+      "cn": "莱比锡",
+      "cn_full": "莱比锡红牛",
+      "aliases": [
+        "莱比锡红牛",
+        "RB莱比锡"
+      ]
+    },
+    {
+      "en": "St Pauli",
+      "cn": "圣保利",
+      "cn_full": "圣保利",
+      "aliases": []
+    },
+    {
+      "en": "Stuttgart",
+      "cn": "斯图加特",
+      "cn_full": "斯图加特",
+      "aliases": []
+    },
+    {
+      "en": "Union Berlin",
+      "cn": "柏林联合",
+      "cn_full": "柏林联合",
+      "aliases": [
+        "柏林联"
+      ]
+    },
+    {
+      "en": "Werder Bremen",
+      "cn": "不莱梅",
+      "cn_full": "云达不莱梅",
+      "aliases": [
+        "云达不莱梅",
+        "不来梅",
+        "云达不来梅"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Wolfsburg",
+      "cn": "沃尔夫",
+      "cn_full": "沃尔夫斯堡",
+      "aliases": [
+        "沃尔夫斯堡",
+        "沃夫斯堡",
+        "狼堡"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Schalke 04",
+      "cn": "沙尔克",
+      "cn_full": "沙尔克04",
+      "aliases": [
+        "沙尔克04"
+      ],
+      "_promoted_2627": true
+    },
+    {
+      "en": "Elversberg",
+      "cn": "埃沃斯堡",
+      "cn_full": "埃沃斯堡",
+      "aliases": [
+        "埃尔沃斯堡",
+        "艾禾斯堡"
+      ],
+      "_promoted_2627": true,
+      "_uncertain": true
+    },
+    {
+      "en": "Paderborn",
+      "cn": "帕德博恩",
+      "cn_full": "帕德博恩",
+      "aliases": [
+        "帕德博"
+      ],
+      "_promoted_2627": true
+    },
+    {
+      "en": "Hannover",
+      "cn": "汉诺威",
+      "cn_full": "汉诺威",
+      "aliases": [
+        "汉诺威"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=26/26"
+    },
+    {
+      "en": "Hertha",
+      "cn": "柏林赫塔",
+      "cn_full": "柏林赫塔",
+      "aliases": [
+        "柏林赫塔"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=26/26"
+    }
+  ],
+  "F1": [
+    {
+      "en": "Angers",
+      "cn": "昂热",
+      "cn_full": "昂热",
+      "aliases": []
+    },
+    {
+      "en": "Auxerre",
+      "cn": "欧塞尔",
+      "cn_full": "欧塞尔",
+      "aliases": []
+    },
+    {
+      "en": "Brest",
+      "cn": "布雷斯特",
+      "cn_full": "布雷斯特",
+      "aliases": [
+        "布雷斯"
+      ]
+    },
+    {
+      "en": "Le Havre",
+      "cn": "勒阿弗尔",
+      "cn_full": "勒阿弗尔",
+      "aliases": [
+        "勒阿弗"
+      ]
+    },
+    {
+      "en": "Lens",
+      "cn": "朗斯",
+      "cn_full": "朗斯",
+      "aliases": []
+    },
+    {
+      "en": "Lille",
+      "cn": "里尔",
+      "cn_full": "里尔",
+      "aliases": []
+    },
+    {
+      "en": "Lorient",
+      "cn": "洛里昂",
+      "cn_full": "洛里昂",
+      "aliases": []
+    },
+    {
+      "en": "Lyon",
+      "cn": "里昂",
+      "cn_full": "里昂",
+      "aliases": [
+        "奥林匹克里昂"
+      ]
+    },
+    {
+      "en": "Marseille",
+      "cn": "马赛",
+      "cn_full": "马赛",
+      "aliases": [
+        "奥林匹克马赛"
+      ]
+    },
+    {
+      "en": "Metz",
+      "cn": "梅斯",
+      "cn_full": "梅斯",
+      "aliases": []
+    },
+    {
+      "en": "Monaco",
+      "cn": "摩纳哥",
+      "cn_full": "摩纳哥",
+      "aliases": []
+    },
+    {
+      "en": "Nantes",
+      "cn": "南特",
+      "cn_full": "南特",
+      "aliases": []
+    },
+    {
+      "en": "Nice",
+      "cn": "尼斯",
+      "cn_full": "尼斯",
+      "aliases": []
+    },
+    {
+      "en": "Paris FC",
+      "cn": "巴黎FC",
+      "cn_full": "巴黎FC",
+      "aliases": []
+    },
+    {
+      "en": "Paris SG",
+      "cn": "巴黎圣曼",
+      "cn_full": "巴黎圣日耳曼",
+      "aliases": [
+        "巴黎圣日耳曼",
+        "巴黎圣日门",
+        "日尔曼",
+        "大巴黎"
+      ]
+    },
+    {
+      "en": "Rennes",
+      "cn": "雷恩",
+      "cn_full": "雷恩",
+      "aliases": []
+    },
+    {
+      "en": "Strasbourg",
+      "cn": "斯特堡",
+      "cn_full": "斯特拉斯堡",
+      "aliases": [
+        "斯特拉斯堡"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Toulouse",
+      "cn": "图卢兹",
+      "cn_full": "图卢兹",
+      "aliases": []
+    },
+    {
+      "en": "Troyes",
+      "cn": "特鲁瓦",
+      "cn_full": "特鲁瓦",
+      "aliases": [],
+      "_promoted_2627": true
+    },
+    {
+      "en": "Le Mans",
+      "cn": "勒芒",
+      "cn_full": "勒芒",
+      "aliases": [],
+      "_promoted_2627": true
+    },
+    {
+      "en": "Dijon",
+      "cn": "第戎",
+      "cn_full": "第戎",
+      "aliases": [
+        "第戎"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=20/20"
+    },
+    {
+      "en": "Guingamp",
+      "cn": "甘冈",
+      "cn_full": "甘冈",
+      "aliases": [
+        "甘冈"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=20/20"
+    },
+    {
+      "en": "St Etienne",
+      "cn": "圣埃蒂安",
+      "cn_full": "圣埃蒂安",
+      "aliases": [
+        "圣埃蒂安"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=19/19"
+    },
+    {
+      "en": "Bordeaux",
+      "cn": "波尔多",
+      "cn_full": "波尔多",
+      "aliases": [
+        "波尔多"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=22/22"
+    },
+    {
+      "en": "Montpellier",
+      "cn": "蒙彼利埃",
+      "cn_full": "蒙彼利埃",
+      "aliases": [
+        "蒙彼利埃"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=24/24"
+    },
+    {
+      "en": "Amiens",
+      "cn": "亚眠",
+      "cn_full": "亚眠",
+      "aliases": [
+        "亚眠"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=20/20"
+    },
+    {
+      "en": "Caen",
+      "cn": "卡昂",
+      "cn_full": "卡昂",
+      "aliases": [
+        "卡昂"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=21/21"
+    }
+  ],
+  "E1": [
+    {
+      "en": "Birmingham",
+      "cn": "伯明翰",
+      "cn_full": "伯明翰",
+      "aliases": [
+        "伯明翰城"
+      ]
+    },
+    {
+      "en": "Blackburn",
+      "cn": "布莱克本",
+      "cn_full": "布莱克本",
+      "aliases": [
+        "布莱克本流浪者"
+      ]
+    },
+    {
+      "en": "Bolton",
+      "cn": "博尔顿",
+      "cn_full": "博尔顿",
+      "aliases": [
+        "博尔顿漫游者"
+      ]
+    },
+    {
+      "en": "Bristol City",
+      "cn": "布城",
+      "cn_full": "布里斯托尔城",
+      "aliases": [
+        "布里斯托",
+        "布里斯托城"
+      ]
+    },
+    {
+      "en": "Burnley",
+      "cn": "伯恩利",
+      "cn_full": "伯恩利",
+      "aliases": []
+    },
+    {
+      "en": "Cardiff",
+      "cn": "卡迪夫城",
+      "cn_full": "卡迪夫城",
+      "aliases": [
+        "卡迪夫",
+        "加的夫"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Charlton",
+      "cn": "查尔顿",
+      "cn_full": "查尔顿",
+      "aliases": [
+        "查尔顿竞技"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Derby",
+      "cn": "德比郡",
+      "cn_full": "德比郡",
+      "aliases": [
+        "德比"
+      ]
+    },
+    {
+      "en": "Lincoln",
+      "cn": "林肯城",
+      "cn_full": "林肯城",
+      "aliases": [
+        "林肯"
+      ]
+    },
+    {
+      "en": "Middlesbrough",
+      "cn": "米德尔斯堡",
+      "cn_full": "米德尔斯堡",
+      "aliases": [
+        "米德尔斯",
+        "米堡"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Millwall",
+      "cn": "米尔沃尔",
+      "cn_full": "米尔沃尔",
+      "aliases": [
+        "米尔沃"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Norwich",
+      "cn": "诺维奇",
+      "cn_full": "诺维奇",
+      "aliases": [
+        "诺维奇城"
+      ]
+    },
+    {
+      "en": "Portsmouth",
+      "cn": "朴次茅斯",
+      "cn_full": "朴茨茅斯",
+      "aliases": [
+        "朴茨茅斯",
+        "朴次茅斯"
+      ]
+    },
+    {
+      "en": "Preston",
+      "cn": "普雷斯顿",
+      "cn_full": "普雷斯顿",
+      "aliases": [
+        "普雷斯顿北端"
+      ]
+    },
+    {
+      "en": "QPR",
+      "cn": "女王公园",
+      "cn_full": "女王公园巡游者",
+      "aliases": [
+        "女王公园巡游者",
+        "巡游者",
+        "QPR"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Sheffield United",
+      "cn": "谢菲联",
+      "cn_full": "谢菲尔德联",
+      "aliases": [
+        "谢菲尔德联",
+        "谢菲尔德"
+      ]
+    },
+    {
+      "en": "Southampton",
+      "cn": "南安普敦",
+      "cn_full": "南安普顿",
+      "aliases": [
+        "南安普顿",
+        "南安普敦"
+      ]
+    },
+    {
+      "en": "Stoke",
+      "cn": "斯托克城",
+      "cn_full": "斯托克城",
+      "aliases": [
+        "斯托克"
+      ]
+    },
+    {
+      "en": "Swansea",
+      "cn": "斯旺西",
+      "cn_full": "斯旺西",
+      "aliases": [
+        "斯旺西城"
+      ]
+    },
+    {
+      "en": "Watford",
+      "cn": "沃特福德",
+      "cn_full": "沃特福德",
+      "aliases": []
+    },
+    {
+      "en": "West Brom",
+      "cn": "西布罗姆",
+      "cn_full": "西布罗姆维奇",
+      "aliases": [
+        "西布罗姆维奇",
+        "西布朗"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "West Ham",
+      "cn": "西汉姆联",
+      "cn_full": "西汉姆联",
+      "aliases": [
+        "西汉姆",
+        "铁锤帮"
+      ]
+    },
+    {
+      "en": "Wolves",
+      "cn": "伍尔弗",
+      "cn_full": "伍尔弗汉普顿",
+      "aliases": [
+        "狼队",
+        "伍尔弗汉普顿"
+      ]
+    },
+    {
+      "en": "Wrexham",
+      "cn": "雷克瑟姆",
+      "cn_full": "雷克瑟姆",
+      "aliases": [
+        "雷克斯汉姆"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Barnsley",
+      "cn": "巴恩斯利",
+      "cn_full": "巴恩斯利",
+      "aliases": [
+        "巴恩斯利"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=28/29"
+    },
+    {
+      "en": "Burton",
+      "cn": "伯顿",
+      "cn_full": "伯顿",
+      "aliases": [
+        "伯顿"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=29/30"
+    },
+    {
+      "en": "Reading",
+      "cn": "雷丁",
+      "cn_full": "雷丁",
+      "aliases": [
+        "雷丁"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=31/32"
+    },
+    {
+      "en": "Sheffield Weds",
+      "cn": "谢周三",
+      "cn_full": "谢周三",
+      "aliases": [
+        "谢周三"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=28/28"
+    },
+    {
+      "en": "QPR",
+      "cn": "女王巡游",
+      "cn_full": "女王巡游",
+      "aliases": [
+        "女王巡游"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=30/31"
+    }
+  ],
+  "SC0": [
+    {
+      "en": "Aberdeen",
+      "cn": "阿伯丁",
+      "cn_full": "阿伯丁",
+      "aliases": [],
+      "_uncertain": true,
+      "_note": "苏超竞彩当前不开售，cn 为推断，未经竞彩接口实测"
+    },
+    {
+      "en": "Celtic",
+      "cn": "凯尔特人",
+      "cn_full": "凯尔特人",
+      "aliases": [
+        "塞尔提克"
+      ],
+      "_uncertain": true,
+      "_note": "苏超竞彩当前不开售，cn 为推断，未经竞彩接口实测"
+    },
+    {
+      "en": "Dundee",
+      "cn": "邓迪",
+      "cn_full": "邓迪",
+      "aliases": [
+        "登地"
+      ],
+      "_uncertain": true,
+      "_note": "苏超竞彩当前不开售，cn 为推断，未经竞彩接口实测"
+    },
+    {
+      "en": "Dundee United",
+      "cn": "邓迪联",
+      "cn_full": "邓迪联",
+      "aliases": [
+        "邓迪联队"
+      ],
+      "_uncertain": true,
+      "_note": "苏超竞彩当前不开售，cn 为推断，未经竞彩接口实测"
+    },
+    {
+      "en": "Falkirk",
+      "cn": "福尔柯克",
+      "cn_full": "福尔柯克",
+      "aliases": [],
+      "_uncertain": true,
+      "_note": "苏超竞彩当前不开售，cn 为推断，未经竞彩接口实测"
+    },
+    {
+      "en": "Hearts",
+      "cn": "哈茨",
+      "cn_full": "哈茨",
+      "aliases": [
+        "心脏"
+      ],
+      "_uncertain": true,
+      "_note": "苏超竞彩当前不开售，cn 为推断，未经竞彩接口实测"
+    },
+    {
+      "en": "Hibernian",
+      "cn": "希伯尼安",
+      "cn_full": "希伯尼安",
+      "aliases": [
+        "希伯年"
+      ],
+      "_uncertain": true,
+      "_note": "苏超竞彩当前不开售，cn 为推断，未经竞彩接口实测"
+    },
+    {
+      "en": "Kilmarnock",
+      "cn": "基尔马诺",
+      "cn_full": "基尔马诺克",
+      "aliases": [
+        "基马诺克"
+      ],
+      "_uncertain": true,
+      "_note": "苏超竞彩当前不开售，cn 为推断，未经竞彩接口实测"
+    },
+    {
+      "en": "Motherwell",
+      "cn": "马瑟韦尔",
+      "cn_full": "马瑟韦尔",
+      "aliases": [
+        "马瑟威尔"
+      ],
+      "_uncertain": true,
+      "_note": "苏超竞彩当前不开售，cn 为推断，未经竞彩接口实测"
+    },
+    {
+      "en": "Rangers",
+      "cn": "格拉斯哥",
+      "cn_full": "格拉斯哥流浪者",
+      "aliases": [
+        "流浪者",
+        "格拉斯哥流浪"
+      ],
+      "_uncertain": true,
+      "_note": "苏超竞彩当前不开售，cn 为推断，未经竞彩接口实测"
+    },
+    {
+      "en": "St Johnstone",
+      "cn": "圣约翰斯",
+      "cn_full": "圣约翰斯通",
+      "aliases": [
+        "圣约翰斯顿"
+      ],
+      "_uncertain": true,
+      "_note": "苏超竞彩当前不开售，cn 为推断，未经竞彩接口实测"
+    },
+    {
+      "en": "St Mirren",
+      "cn": "圣米伦",
+      "cn_full": "圣米伦",
+      "aliases": [],
+      "_uncertain": true,
+      "_note": "苏超竞彩当前不开售，cn 为推断，未经竞彩接口实测"
+    }
+  ],
+  "J1": [
+    {
+      "en": "Cerezo Osaka",
+      "cn": "大阪樱花",
+      "cn_full": "大阪樱花",
+      "aliases": []
+    },
+    {
+      "en": "Kashiwa Reysol",
+      "cn": "柏太阳神",
+      "cn_full": "柏太阳神",
+      "aliases": []
+    },
+    {
+      "en": "Mito",
+      "cn": "水户蜀葵",
+      "cn_full": "水户蜀葵",
+      "aliases": [
+        "水户霍利霍克"
+      ]
+    },
+    {
+      "en": "Kashima Antlers",
+      "cn": "鹿岛鹿角",
+      "cn_full": "鹿岛鹿角",
+      "aliases": []
+    },
+    {
+      "en": "Machida",
+      "cn": "町田泽维",
+      "cn_full": "町田泽维亚",
+      "aliases": [
+        "町田泽维亚"
+      ]
+    },
+    {
+      "en": "Kawasaki Frontale",
+      "cn": "川崎前锋",
+      "cn_full": "川崎前锋",
+      "aliases": []
+    },
+    {
+      "en": "Avispa Fukuoka",
+      "cn": "福冈黄蜂",
+      "cn_full": "福冈黄蜂",
+      "aliases": [],
+      "_uncertain": true
+    },
+    {
+      "en": "FC Tokyo",
+      "cn": "东京FC",
+      "cn_full": "东京FC",
+      "aliases": [
+        "FC东京"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Gamba Osaka",
+      "cn": "大阪钢巴",
+      "cn_full": "大阪钢巴",
+      "aliases": [],
+      "_uncertain": true
+    },
+    {
+      "en": "Kyoto",
+      "cn": "京都桑加",
+      "cn_full": "京都桑加",
+      "aliases": [
+        "京都不死鸟"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Nagoya Grampus",
+      "cn": "名古屋鲸",
+      "cn_full": "名古屋鲸八",
+      "aliases": [
+        "名古屋八鲸"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Okayama",
+      "cn": "冈山绿雉",
+      "cn_full": "冈山绿雉",
+      "aliases": [
+        "冈山法贾诺"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Sanfrecce Hiroshima",
+      "cn": "广岛三箭",
+      "cn_full": "广岛三箭",
+      "aliases": [],
+      "_uncertain": true
+    },
+    {
+      "en": "Shimizu S-Pulse",
+      "cn": "清水鼓动",
+      "cn_full": "清水心跳",
+      "aliases": [
+        "清水脉冲"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Urawa Reds",
+      "cn": "浦和红钻",
+      "cn_full": "浦和红钻",
+      "aliases": [
+        "浦和红宝石"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "V-Varen Nagasaki",
+      "cn": "长崎航海",
+      "cn_full": "长崎航海",
+      "aliases": [
+        "长崎成功丸"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Verdy",
+      "cn": "东京绿茵",
+      "cn_full": "东京绿茵",
+      "aliases": [
+        "东京日视"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Vissel Kobe",
+      "cn": "神户胜利",
+      "cn_full": "神户胜利船",
+      "aliases": [
+        "神户船"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Yokohama F. Marinos",
+      "cn": "横滨水手",
+      "cn_full": "横滨水手",
+      "aliases": [],
+      "_uncertain": true
+    },
+    {
+      "en": "Chiba",
+      "cn": "千叶市原",
+      "cn_full": "千叶市原",
+      "aliases": [
+        "市原千叶"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Yokohama FC",
+      "cn": "横滨FC",
+      "cn_full": "横滨FC",
+      "aliases": [
+        "FC横滨"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Albirex Niigata",
+      "cn": "新潟天鹅",
+      "cn_full": "新潟天鹅",
+      "aliases": [],
+      "_uncertain": true
+    },
+    {
+      "en": "Shonan Bellmare",
+      "cn": "湘南海洋",
+      "cn_full": "湘南比马",
+      "aliases": [
+        "湘南丽海"
+      ],
+      "_uncertain": true
+    }
+  ],
+  "SAU": [
+    {
+      "en": "Al Hilal",
+      "cn": "利雅新月",
+      "cn_full": "利雅得新月",
+      "aliases": [
+        "希拉尔"
+      ]
+    },
+    {
+      "en": "Al Ahli SC",
+      "cn": "吉达国民",
+      "cn_full": "吉达国民",
+      "aliases": [
+        "阿赫利"
+      ]
+    },
+    {
+      "en": "Al Nassr",
+      "cn": "利雅胜利",
+      "cn_full": "利雅得胜利",
+      "aliases": [
+        "纳斯尔"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Al Ittihad",
+      "cn": "吉达联合",
+      "cn_full": "吉达联合",
+      "aliases": [
+        "伊蒂哈德"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Al Shabab",
+      "cn": "利雅青年",
+      "cn_full": "利雅得青年",
+      "aliases": [
+        "沙巴布"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Al Ettifaq",
+      "cn": "达曼协作",
+      "cn_full": "达曼协作",
+      "aliases": [
+        "埃蒂法克"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Al Qadsiah",
+      "cn": "卡迪西亚",
+      "cn_full": "卡迪西亚",
+      "aliases": [
+        "卡迪斯亚"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Al Taawon",
+      "cn": "布赖代合",
+      "cn_full": "布赖代合作",
+      "aliases": [
+        "塔亚文"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Al Fateh",
+      "cn": "法特赫",
+      "cn_full": "法特赫",
+      "aliases": [
+        "阿尔法特赫"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Al Fayha",
+      "cn": "费哈",
+      "cn_full": "费哈",
+      "aliases": [
+        "阿尔费哈"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Al Khaleej",
+      "cn": "赛哈特海",
+      "cn_full": "赛哈特海湾",
+      "aliases": [
+        "哈利杰"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Al Kholood",
+      "cn": "胡卢德",
+      "cn_full": "胡卢德",
+      "aliases": [
+        "阿尔胡卢德"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Al Riyadh",
+      "cn": "利雅得",
+      "cn_full": "利雅得",
+      "aliases": [
+        "阿尔利雅得"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Al Hazem",
+      "cn": "哈森姆",
+      "cn_full": "哈森姆",
+      "aliases": [
+        "阿尔哈森姆"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Al-Faisaly",
+      "cn": "费萨里",
+      "cn_full": "费萨里",
+      "aliases": [
+        "阿尔费萨里"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Al Diriyah",
+      "cn": "迪里亚",
+      "cn_full": "迪里亚",
+      "aliases": [
+        "德尔伊亚"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Abha",
+      "cn": "艾卜哈",
+      "cn_full": "艾卜哈",
+      "aliases": [
+        "阿巴哈"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Neom SC",
+      "cn": "尼奥姆",
+      "cn_full": "尼奥姆",
+      "aliases": [],
+      "_uncertain": true
+    }
+  ],
+  "JCUP": [
+    {
+      "en": "Vanraure",
+      "cn": "八户南源",
+      "cn_full": "八户云罗里",
+      "aliases": [
+        "八户"
+      ]
+    },
+    {
+      "en": "Tochigi City",
+      "cn": "枥木城",
+      "cn_full": "枥木城",
+      "aliases": []
+    },
+    {
+      "en": "Sagamihara",
+      "cn": "相模原",
+      "cn_full": "相模原SC",
+      "aliases": [],
+      "_uncertain": true
+    },
+    {
+      "en": "Iwata",
+      "cn": "磐田喜悦",
+      "cn_full": "磐田喜悦",
+      "aliases": [
+        "磐田山叶"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Ehime",
+      "cn": "爱媛FC",
+      "cn_full": "爱媛FC",
+      "aliases": [],
+      "_uncertain": true
+    },
+    {
+      "en": "Blaublitz",
+      "cn": "秋田闪电",
+      "cn_full": "秋田蓝色闪电",
+      "aliases": [
+        "秋田"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Osaka",
+      "cn": "大阪FC",
+      "cn_full": "大阪FC",
+      "aliases": [],
+      "_uncertain": true
+    },
+    {
+      "en": "Kofu",
+      "cn": "甲府风林",
+      "cn_full": "甲府风林",
+      "aliases": [
+        "甲府"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Gainare Tottori",
+      "cn": "鸟取飞翔",
+      "cn_full": "鸟取飞翔",
+      "aliases": [
+        "鸟取"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Omiya Ardija",
+      "cn": "大宫松鼠",
+      "cn_full": "大宫阿尔迪加",
+      "aliases": [
+        "大宫"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Gifu",
+      "cn": "岐阜FC",
+      "cn_full": "岐阜FC",
+      "aliases": [],
+      "_uncertain": true
+    },
+    {
+      "en": "Tokushima",
+      "cn": "德岛漩涡",
+      "cn_full": "德岛漩涡",
+      "aliases": [
+        "德岛"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Giravanz Kitakyushu",
+      "cn": "北九州向",
+      "cn_full": "北九州向日葵",
+      "aliases": [
+        "北九州"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Iwaki",
+      "cn": "磐城FC",
+      "cn_full": "磐城FC",
+      "aliases": [],
+      "_uncertain": true
+    },
+    {
+      "en": "Kagoshima Utd",
+      "cn": "鹿儿岛联",
+      "cn_full": "鹿儿岛联",
+      "aliases": [
+        "鹿儿岛"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Hokkaido Consadole Sapporo",
+      "cn": "札幌冈萨",
+      "cn_full": "札幌冈萨多",
+      "aliases": [
+        "札幌"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Kanazawa",
+      "cn": "金泽塞维",
+      "cn_full": "金泽塞维根",
+      "aliases": [
+        "金泽"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Imabari",
+      "cn": "今治FC",
+      "cn_full": "今治FC",
+      "aliases": [],
+      "_uncertain": true
+    },
+    {
+      "en": "Kumamoto",
+      "cn": "熊本深红",
+      "cn_full": "熊本深红",
+      "aliases": [
+        "熊本"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Oita Trinita",
+      "cn": "大分三神",
+      "cn_full": "大分三神",
+      "aliases": [
+        "大分"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Nara Club",
+      "cn": "奈良club",
+      "cn_full": "奈良俱乐部",
+      "aliases": [
+        "奈良"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Sagan Tosu",
+      "cn": "鸟栖砂岩",
+      "cn_full": "鸟栖砂岩",
+      "aliases": [
+        "鸟栖"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Renofa Yamaguchi",
+      "cn": "山口雷诺",
+      "cn_full": "山口雷诺法",
+      "aliases": [
+        "山口"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Fujieda MYFC",
+      "cn": "藤枝MYFC",
+      "cn_full": "藤枝MYFC",
+      "aliases": [
+        "藤枝"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Ryukyu",
+      "cn": "琉球FC",
+      "cn_full": "琉球FC",
+      "aliases": [
+        "琉球"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Yokohama FC",
+      "cn": "横滨FC",
+      "cn_full": "横滨FC",
+      "aliases": [],
+      "_uncertain": true
+    },
+    {
+      "en": "Tegevajaro Miyazaki",
+      "cn": "宫崎特格",
+      "cn_full": "宫崎特格瓦雅罗",
+      "aliases": [
+        "宫崎"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Toyama",
+      "cn": "富山胜利",
+      "cn_full": "富山胜利",
+      "aliases": [
+        "富山"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Kusatsu",
+      "cn": "群马草津",
+      "cn_full": "群马草津温泉",
+      "aliases": [
+        "群马"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Albirex Niigata",
+      "cn": "新潟天鹅",
+      "cn_full": "新潟天鹅",
+      "aliases": [],
+      "_uncertain": true
+    }
+  ],
+  "I2": [
+    {
+      "en": "Palermo",
+      "cn": "巴勒莫",
+      "cn_full": "巴勒莫",
+      "aliases": [],
+      "_uncertain": true
+    },
+    {
+      "en": "Mantova",
+      "cn": "曼托瓦",
+      "cn_full": "曼托瓦",
+      "aliases": [],
+      "_uncertain": true
+    },
+    {
+      "en": "Frosinone",
+      "cn": "弗洛西诺",
+      "cn_full": "弗罗西诺内",
+      "aliases": [],
+      "_uncertain": true
+    },
+    {
+      "en": "Venezia",
+      "cn": "威尼斯",
+      "cn_full": "威尼斯",
+      "aliases": [],
+      "_uncertain": true
+    }
+  ],
+  "D2": [
+    {
+      "en": "VfL Osnabruck",
+      "cn": "奥斯纳布",
+      "cn_full": "奥斯纳布吕克",
+      "aliases": [
+        "奥斯纳布鲁克"
+      ],
+      "_uncertain": true
+    },
+    {
+      "en": "Sandhausen",
+      "cn": "桑德豪森",
+      "cn_full": "桑德豪森",
+      "aliases": [
+        "桑德豪森"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=5/6"
+    },
+    {
+      "en": "Ingolstadt",
+      "cn": "因戈尔施塔特",
+      "cn_full": "因戈尔施塔特",
+      "aliases": [
+        "因戈尔施塔特"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=4/5"
+    },
+    {
+      "en": "Kaiserslautern",
+      "cn": "凯泽斯劳滕",
+      "cn_full": "凯泽斯劳滕",
+      "aliases": [
+        "凯泽斯劳滕"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=5/6"
+    },
+    {
+      "en": "Darmstadt",
+      "cn": "达姆施塔特",
+      "cn_full": "达姆施塔特",
+      "aliases": [
+        "达姆施塔特"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=5/7"
+    },
+    {
+      "en": "Regensburg",
+      "cn": "雷根斯堡",
+      "cn_full": "雷根斯堡",
+      "aliases": [
+        "雷根斯堡"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=5/7"
+    },
+    {
+      "en": "Nurnberg",
+      "cn": "纽伦堡",
+      "cn_full": "纽伦堡",
+      "aliases": [
+        "纽伦堡"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=4/5"
+    },
+    {
+      "en": "Fortuna Dusseldorf",
+      "cn": "杜塞尔多夫",
+      "cn_full": "杜塞尔多夫",
+      "aliases": [
+        "杜塞尔多夫"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=5/7"
+    },
+    {
+      "en": "Greuther Furth",
+      "cn": "菲尔特",
+      "cn_full": "菲尔特",
+      "aliases": [
+        "菲尔特"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=5/7"
+    },
+    {
+      "en": "Bielefeld",
+      "cn": "比勒菲尔德",
+      "cn_full": "比勒菲尔德",
+      "aliases": [
+        "比勒菲尔德"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=5/7"
+    },
+    {
+      "en": "Dresden",
+      "cn": "德累斯顿",
+      "cn_full": "德累斯顿",
+      "aliases": [
+        "德累斯顿"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=4/5"
+    },
+    {
+      "en": "Erzgebirge Aue",
+      "cn": "奥厄",
+      "cn_full": "奥厄",
+      "aliases": [
+        "奥厄"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=6/7"
+    },
+    {
+      "en": "Braunschweig",
+      "cn": "不伦瑞克",
+      "cn_full": "不伦瑞克",
+      "aliases": [
+        "不伦瑞克"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=4/6"
+    },
+    {
+      "en": "Bochum",
+      "cn": "波鸿",
+      "cn_full": "波鸿",
+      "aliases": [
+        "波鸿"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=4/6"
+    },
+    {
+      "en": "Duisburg",
+      "cn": "杜伊斯堡",
+      "cn_full": "杜伊斯堡",
+      "aliases": [
+        "杜伊斯堡"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=6/8"
+    }
+  ],
+  "K1": [
+    {
+      "en": "Anyang",
+      "cn": "安养",
+      "cn_full": "安养",
+      "aliases": [
+        "安阳",
+        "安养FC",
+        "FC安养"
+      ],
+      "_uncertain": true,
+      "_src": "手写（竞彩未开韩K联，无法实读简称）；en 取自 BetExplorer"
+    },
+    {
+      "en": "Bucheon FC 1995",
+      "cn": "富川1995",
+      "cn_full": "富川1995",
+      "aliases": [
+        "富川FC",
+        "富川"
+      ],
+      "_uncertain": true,
+      "_src": "手写（竞彩未开韩K联，无法实读简称）；en 取自 BetExplorer"
+    },
+    {
+      "en": "Daejeon",
+      "cn": "大田市民",
+      "cn_full": "大田市民",
+      "aliases": [
+        "大田韩亚市民",
+        "大田"
+      ],
+      "_uncertain": true,
+      "_src": "手写（竞彩未开韩K联，无法实读简称）；en 取自 BetExplorer"
+    },
+    {
+      "en": "Gangwon",
+      "cn": "江原",
+      "cn_full": "江原",
+      "aliases": [
+        "江原FC",
+        "江原联"
+      ],
+      "_uncertain": true,
+      "_src": "手写（竞彩未开韩K联，无法实读简称）；en 取自 BetExplorer"
+    },
+    {
+      "en": "Gimcheon Sangmu",
+      "cn": "金泉尚武",
+      "cn_full": "金泉尚武",
+      "aliases": [
+        "金泉",
+        "尚武"
+      ],
+      "_uncertain": true,
+      "_src": "手写（竞彩未开韩K联，无法实读简称）；en 取自 BetExplorer"
+    },
+    {
+      "en": "Gwangju FC",
+      "cn": "光州",
+      "cn_full": "光州",
+      "aliases": [
+        "光州FC"
+      ],
+      "_uncertain": true,
+      "_src": "手写（竞彩未开韩K联，无法实读简称）；en 取自 BetExplorer"
+    },
+    {
+      "en": "Incheon",
+      "cn": "仁川联",
+      "cn_full": "仁川联",
+      "aliases": [
+        "仁川",
+        "仁川联合"
+      ],
+      "_uncertain": true,
+      "_src": "手写（竞彩未开韩K联，无法实读简称）；en 取自 BetExplorer"
+    },
+    {
+      "en": "Jeju SK",
+      "cn": "济州联",
+      "cn_full": "济州联",
+      "aliases": [
+        "济州SK",
+        "济州"
+      ],
+      "_uncertain": true,
+      "_src": "手写（竞彩未开韩K联，无法实读简称）；en 取自 BetExplorer"
+    },
+    {
+      "en": "Jeonbuk",
+      "cn": "全北现代",
+      "cn_full": "全北现代",
+      "aliases": [
+        "全北",
+        "全北现代汽车"
+      ],
+      "_uncertain": true,
+      "_src": "手写（竞彩未开韩K联，无法实读简称）；en 取自 BetExplorer"
+    },
+    {
+      "en": "Pohang",
+      "cn": "浦项制铁",
+      "cn_full": "浦项制铁",
+      "aliases": [
+        "浦项"
+      ],
+      "_uncertain": true,
+      "_src": "手写（竞彩未开韩K联，无法实读简称）；en 取自 BetExplorer"
+    },
+    {
+      "en": "Seoul",
+      "cn": "首尔",
+      "cn_full": "首尔",
+      "aliases": [
+        "首尔FC"
+      ],
+      "_uncertain": true,
+      "_src": "手写（竞彩未开韩K联，无法实读简称）；en 取自 BetExplorer"
+    },
+    {
+      "en": "Ulsan HD",
+      "cn": "蔚山HD",
+      "cn_full": "蔚山HD",
+      "aliases": [
+        "蔚山现代",
+        "蔚山"
+      ],
+      "_uncertain": true,
+      "_src": "手写（竞彩未开韩K联，无法实读简称）；en 取自 BetExplorer"
+    }
+  ],
+  "N1": [
+    {
+      "en": "AZ Alkmaar",
+      "cn": "阿尔克马",
+      "cn_full": "阿尔克马",
+      "aliases": [
+        "阿尔克马"
+      ]
+    },
+    {
+      "en": "Ajax",
+      "cn": "阿贾克斯",
+      "cn_full": "阿贾克斯",
+      "aliases": [
+        "阿贾克斯"
+      ]
+    },
+    {
+      "en": "Cambuur",
+      "cn": "坎布尔",
+      "cn_full": "坎布尔",
+      "aliases": [
+        "坎布尔"
+      ]
+    },
+    {
+      "en": "Den Haag",
+      "cn": "海牙",
+      "cn_full": "海牙",
+      "aliases": [
+        "海牙"
+      ]
+    },
+    {
+      "en": "Excelsior",
+      "cn": "SBV精英",
+      "cn_full": "SBV精英",
+      "aliases": [
+        "SBV精英"
+      ]
+    },
+    {
+      "en": "Feyenoord",
+      "cn": "费耶诺德",
+      "cn_full": "费耶诺德",
+      "aliases": [
+        "费耶诺德"
+      ]
+    },
+    {
+      "en": "For Sittard",
+      "cn": "福图纳",
+      "cn_full": "福图纳",
+      "aliases": [
+        "福图纳"
+      ]
+    },
+    {
+      "en": "Go Ahead Eagles",
+      "cn": "前进之鹰",
+      "cn_full": "前进之鹰",
+      "aliases": [
+        "前进之鹰"
+      ]
+    },
+    {
+      "en": "Groningen",
+      "cn": "格罗宁根",
+      "cn_full": "格罗宁根",
+      "aliases": [
+        "格罗宁根"
+      ]
+    },
+    {
+      "en": "Heerenveen",
+      "cn": "海伦芬",
+      "cn_full": "海伦芬",
+      "aliases": [
+        "海伦芬"
+      ]
+    },
+    {
+      "en": "Nijmegen",
+      "cn": "奈梅亨",
+      "cn_full": "奈梅亨",
+      "aliases": [
+        "奈梅亨"
+      ]
+    },
+    {
+      "en": "PSV Eindhoven",
+      "cn": "埃因霍温",
+      "cn_full": "埃因霍温",
+      "aliases": [
+        "埃因霍温"
+      ]
+    },
+    {
+      "en": "Sparta Rotterdam",
+      "cn": "鹿斯巴达",
+      "cn_full": "鹿斯巴达",
+      "aliases": [
+        "鹿斯巴达"
+      ]
+    },
+    {
+      "en": "Telstar",
+      "cn": "特尔斯达",
+      "cn_full": "特尔斯达",
+      "aliases": [
+        "特尔斯达"
+      ]
+    },
+    {
+      "en": "Twente",
+      "cn": "特温特",
+      "cn_full": "特温特",
+      "aliases": [
+        "特温特"
+      ]
+    },
+    {
+      "en": "Utrecht",
+      "cn": "乌德勒支",
+      "cn_full": "乌德勒支",
+      "aliases": [
+        "乌德勒支"
+      ]
+    },
+    {
+      "en": "Willem II",
+      "cn": "威廉二世",
+      "cn_full": "威廉二世",
+      "aliases": [
+        "威廉二世"
+      ]
+    },
+    {
+      "en": "Zwolle",
+      "cn": "兹沃勒",
+      "cn_full": "兹沃勒",
+      "aliases": [
+        "兹沃勒"
+      ]
+    },
+    {
+      "en": "Roda",
+      "cn": "罗达JC",
+      "cn_full": "罗达JC",
+      "aliases": [
+        "罗达JC"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=19/19"
+    },
+    {
+      "en": "Vitesse",
+      "cn": "维迪斯",
+      "cn_full": "维迪斯",
+      "aliases": [
+        "维迪斯"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=19/19"
+    },
+    {
+      "en": "NAC Breda",
+      "cn": "布雷达",
+      "cn_full": "布雷达",
+      "aliases": [
+        "布雷达"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=20/20"
+    },
+    {
+      "en": "Sparta Rotterdam",
+      "cn": "鹿特丹",
+      "cn_full": "鹿特丹",
+      "aliases": [
+        "鹿特丹"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=20/20"
+    },
+    {
+      "en": "Heracles",
+      "cn": "赫拉克勒斯",
+      "cn_full": "赫拉克勒斯",
+      "aliases": [
+        "赫拉克勒斯"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=18/18"
+    },
+    {
+      "en": "VVV Venlo",
+      "cn": "芬洛",
+      "cn_full": "芬洛",
+      "aliases": [
+        "芬洛"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=20/20"
+    }
+  ],
+  "P1": [
+    {
+      "en": "Academico Viseu",
+      "cn": "维塞乌",
+      "cn_full": "维塞乌",
+      "aliases": [
+        "维塞乌"
+      ]
+    },
+    {
+      "en": "Alverca",
+      "cn": "阿尔维卡",
+      "cn_full": "阿尔维卡",
+      "aliases": [
+        "阿尔维卡"
+      ]
+    },
+    {
+      "en": "Arouca",
+      "cn": "阿罗卡",
+      "cn_full": "阿罗卡",
+      "aliases": [
+        "阿罗卡"
+      ]
+    },
+    {
+      "en": "Benfica",
+      "cn": "本菲卡",
+      "cn_full": "本菲卡",
+      "aliases": [
+        "本菲卡"
+      ]
+    },
+    {
+      "en": "Casa Pia",
+      "cn": "卡萨皮亚",
+      "cn_full": "卡萨皮亚",
+      "aliases": [
+        "卡萨皮亚"
+      ]
+    },
+    {
+      "en": "Estoril",
+      "cn": "埃斯托里",
+      "cn_full": "埃斯托里",
+      "aliases": [
+        "埃斯托里"
+      ]
+    },
+    {
+      "en": "Estrela",
+      "cn": "阿马多拉",
+      "cn_full": "阿马多拉",
+      "aliases": [
+        "阿马多拉"
+      ]
+    },
+    {
+      "en": "Famalicao",
+      "cn": "法马利康",
+      "cn_full": "法马利康",
+      "aliases": [
+        "法马利康"
+      ]
+    },
+    {
+      "en": "Gil Vicente",
+      "cn": "吉维森特",
+      "cn_full": "吉维森特",
+      "aliases": [
+        "吉维森特"
+      ]
+    },
+    {
+      "en": "Guimaraes",
+      "cn": "吉马良斯",
+      "cn_full": "吉马良斯",
+      "aliases": [
+        "吉马良斯"
+      ]
+    },
+    {
+      "en": "Maritimo",
+      "cn": "马里迪莫",
+      "cn_full": "马里迪莫",
+      "aliases": [
+        "马里迪莫"
+      ]
+    },
+    {
+      "en": "Moreirense",
+      "cn": "摩雷伦斯",
+      "cn_full": "摩雷伦斯",
+      "aliases": [
+        "摩雷伦斯"
+      ]
+    },
+    {
+      "en": "Nacional",
+      "cn": "葡国民",
+      "cn_full": "葡国民",
+      "aliases": [
+        "葡国民"
+      ]
+    },
+    {
+      "en": "Porto",
+      "cn": "波尔图",
+      "cn_full": "波尔图",
+      "aliases": [
+        "波尔图"
+      ]
+    },
+    {
+      "en": "Rio Ave",
+      "cn": "里奥阿维",
+      "cn_full": "里奥阿维",
+      "aliases": [
+        "里奥阿维"
+      ]
+    },
+    {
+      "en": "Santa Clara",
+      "cn": "圣克拉拉",
+      "cn_full": "圣克拉拉",
+      "aliases": [
+        "圣克拉拉"
+      ]
+    },
+    {
+      "en": "Sp Braga",
+      "cn": "布拉加",
+      "cn_full": "布拉加",
+      "aliases": [
+        "布拉加"
+      ]
+    },
+    {
+      "en": "Sp Lisbon",
+      "cn": "里斯本",
+      "cn_full": "里斯本",
+      "aliases": [
+        "里斯本"
+      ]
+    },
+    {
+      "en": "Feirense",
+      "cn": "费伦斯",
+      "cn_full": "费伦斯",
+      "aliases": [
+        "费伦斯"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=16/16"
+    },
+    {
+      "en": "Tondela",
+      "cn": "通德拉",
+      "cn_full": "通德拉",
+      "aliases": [
+        "通德拉"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=12/12"
+    },
+    {
+      "en": "Setubal",
+      "cn": "塞图巴尔",
+      "cn_full": "塞图巴尔",
+      "aliases": [
+        "塞图巴尔"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=13/13"
+    },
+    {
+      "en": "Pacos Ferreira",
+      "cn": "费雷拉",
+      "cn_full": "费雷拉",
+      "aliases": [
+        "费雷拉"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=15/15"
+    },
+    {
+      "en": "Aves",
+      "cn": "阿维斯",
+      "cn_full": "阿维斯",
+      "aliases": [
+        "阿维斯"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=13/13"
+    },
+    {
+      "en": "Portimonense",
+      "cn": "波尔蒂芒斯",
+      "cn_full": "波尔蒂芒斯",
+      "aliases": [
+        "波尔蒂芒斯"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=14/14"
+    },
+    {
+      "en": "Chaves",
+      "cn": "沙维什",
+      "cn_full": "沙维什",
+      "aliases": [
+        "沙维什"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=13/13"
+    },
+    {
+      "en": "Belenenses",
+      "cn": "比兰尼塞斯",
+      "cn_full": "比兰尼塞斯",
+      "aliases": [
+        "比兰尼塞斯"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=12/12"
+    },
+    {
+      "en": "Boavista",
+      "cn": "博阿维斯塔",
+      "cn_full": "博阿维斯塔",
+      "aliases": [
+        "博阿维斯塔"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=13/13"
+    }
+  ],
+  "E2": [
+    {
+      "en": "AFC Wimbledon",
+      "cn": "温布尔登",
+      "cn_full": "AFC温布尔登",
+      "aliases": [
+        "温布尔登",
+        "AFC温布尔登"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Blackburn",
+      "cn": "布莱克本",
+      "cn_full": "布莱克本流浪者",
+      "aliases": [
+        "布莱克本",
+        "布莱克本流浪者"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Blackpool",
+      "cn": "布莱克浦",
+      "cn_full": "布莱克浦",
+      "aliases": [
+        "布莱克浦"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Bradford",
+      "cn": "布拉德福德",
+      "cn_full": "布拉德福德城",
+      "aliases": [
+        "布拉德福德",
+        "布拉德福德城"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Bristol Rvs",
+      "cn": "布里斯托流浪",
+      "cn_full": "布里斯托尔流浪者",
+      "aliases": [
+        "布里斯托流浪",
+        "布里斯托尔流浪者",
+        "布里斯托"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Bury",
+      "cn": "贝里",
+      "cn_full": "贝里",
+      "aliases": [
+        "贝里"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Charlton",
+      "cn": "查尔顿",
+      "cn_full": "查尔顿竞技",
+      "aliases": [
+        "查尔顿",
+        "查尔顿竞技"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Doncaster",
+      "cn": "唐卡斯特",
+      "cn_full": "唐卡斯特流浪者",
+      "aliases": [
+        "唐卡斯特",
+        "唐卡斯特流浪者"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Fleetwood Town",
+      "cn": "弗利特伍德",
+      "cn_full": "弗利特伍德镇",
+      "aliases": [
+        "弗利特伍德",
+        "弗利特伍德镇"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Gillingham",
+      "cn": "吉灵汉姆",
+      "cn_full": "吉灵汉姆",
+      "aliases": [
+        "吉灵汉姆"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Milton Keynes Dons",
+      "cn": "米尔顿凯恩斯",
+      "cn_full": "米尔顿凯恩斯",
+      "aliases": [
+        "米尔顿凯恩斯",
+        "米尔顿"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Northampton",
+      "cn": "北安普敦",
+      "cn_full": "北安普顿",
+      "aliases": [
+        "北安普敦",
+        "北安普顿"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Oldham",
+      "cn": "奥德汉姆",
+      "cn_full": "奥尔德姆竞技",
+      "aliases": [
+        "奥德汉姆",
+        "奥尔德姆"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Oxford",
+      "cn": "牛津联",
+      "cn_full": "牛津联",
+      "aliases": [
+        "牛津联",
+        "牛津"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Peterboro",
+      "cn": "彼得堡联",
+      "cn_full": "彼得伯勒联",
+      "aliases": [
+        "彼得堡联",
+        "彼得伯勒联",
+        "彼得堡"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Plymouth",
+      "cn": "普利茅斯",
+      "cn_full": "普利茅斯",
+      "aliases": [
+        "普利茅斯"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Portsmouth",
+      "cn": "朴次茅斯",
+      "cn_full": "朴茨茅斯",
+      "aliases": [
+        "朴次茅斯",
+        "朴茨茅斯"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Rochdale",
+      "cn": "罗奇代尔",
+      "cn_full": "罗奇代尔",
+      "aliases": [
+        "罗奇代尔"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Rotherham",
+      "cn": "罗瑟汉姆",
+      "cn_full": "罗瑟汉姆联",
+      "aliases": [
+        "罗瑟汉姆",
+        "罗瑟汉姆联"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Scunthorpe",
+      "cn": "斯肯索普",
+      "cn_full": "斯坎索普联",
+      "aliases": [
+        "斯肯索普",
+        "斯坎索普"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Shrewsbury",
+      "cn": "什鲁斯伯里",
+      "cn_full": "什鲁斯伯里镇",
+      "aliases": [
+        "什鲁斯伯里",
+        "什鲁斯伯里镇"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Southend",
+      "cn": "南安联",
+      "cn_full": "绍森德联",
+      "aliases": [
+        "南安联",
+        "绍森德联"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Walsall",
+      "cn": "沃尔索尔",
+      "cn_full": "沃尔索尔",
+      "aliases": [
+        "沃尔索尔"
+      ],
+      "_uncertain": false
+    },
+    {
+      "en": "Wigan",
+      "cn": "维冈竞技",
+      "cn_full": "维冈竞技",
+      "aliases": [
+        "维冈竞技",
+        "维冈"
+      ],
+      "_uncertain": false
+    }
+  ],
+  "F2": [
+    {
+      "en": "Ajaccio",
+      "cn": "阿雅克肖",
+      "cn_full": "阿雅克肖",
+      "aliases": [
+        "阿雅克肖"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=6/6"
+    },
+    {
+      "en": "Ajaccio GFCO",
+      "cn": "阿雅克GFCO",
+      "cn_full": "阿雅克GFCO",
+      "aliases": [
+        "阿雅克GFCO"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=7/7"
+    },
+    {
+      "en": "Nancy",
+      "cn": "南锡",
+      "cn_full": "南锡",
+      "aliases": [
+        "南锡"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=6/6"
+    },
+    {
+      "en": "Niort",
+      "cn": "尼奥尔",
+      "cn_full": "尼奥尔",
+      "aliases": [
+        "尼奥尔"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=6/6"
+    },
+    {
+      "en": "Clermont",
+      "cn": "克莱蒙",
+      "cn_full": "克莱蒙",
+      "aliases": [
+        "克莱蒙"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=5/5"
+    },
+    {
+      "en": "Tours",
+      "cn": "图尔",
+      "cn_full": "图尔",
+      "aliases": [
+        "图尔"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=5/5"
+    },
+    {
+      "en": "Chateauroux",
+      "cn": "沙托鲁",
+      "cn_full": "沙托鲁",
+      "aliases": [
+        "沙托鲁"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=5/5"
+    },
+    {
+      "en": "Valenciennes",
+      "cn": "瓦朗谢讷",
+      "cn_full": "瓦朗谢讷",
+      "aliases": [
+        "瓦朗谢讷"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=7/7"
+    },
+    {
+      "en": "Nimes",
+      "cn": "尼姆",
+      "cn_full": "尼姆",
+      "aliases": [
+        "尼姆"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=8/8"
+    },
+    {
+      "en": "Quevilly Rouen",
+      "cn": "克维伊",
+      "cn_full": "克维伊",
+      "aliases": [
+        "克维伊"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=5/5"
+    },
+    {
+      "en": "Sochaux",
+      "cn": "索肖",
+      "cn_full": "索肖",
+      "aliases": [
+        "索肖"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=7/7"
+    },
+    {
+      "en": "Bourg Peronnas",
+      "cn": "布尔格",
+      "cn_full": "布尔格",
+      "aliases": [
+        "布尔格"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=6/6"
+    },
+    {
+      "en": "Reims",
+      "cn": "兰斯",
+      "cn_full": "兰斯",
+      "aliases": [
+        "兰斯"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=7/8"
+    },
+    {
+      "en": "Orleans",
+      "cn": "奥尔良",
+      "cn_full": "奥尔良",
+      "aliases": [
+        "奥尔良"
+      ],
+      "_uncertain": true,
+      "_source": "constraint-propagation(联赛+队友+比分) 1718赛季 推断，票=6/6"
+    }
+  ]
+}
