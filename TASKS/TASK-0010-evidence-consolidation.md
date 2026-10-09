@@ -1,5 +1,5 @@
 # TASK-0010 — EV-Lab evidence consolidation and remaining-hypothesis audit
-- Status: IN_PROGRESS
+- Status: ACCEPTED
 - Date: 2026-10-09
 - Owner: Li; Lead/Executor/Reviewer-of-record: ChatGPT
 - Scope: review committed TASK/REPORT/REVIEW, legacy studies and tracked assets only. No new data acquisition, model, backtest, ROI mining, strategy selection or alteration of earlier verdicts.
