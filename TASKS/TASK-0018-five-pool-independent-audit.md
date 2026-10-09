@@ -1,5 +1,5 @@
 # TASK-0018 — Five-pool independent field and update-event validation
-- Status: IN_PROGRESS
+- Status: ACCEPTED
 - Date: 2026-10-09
 - Prerequisites: TASK-0015 raw reconstruction and TASK-0017 live bounded official-only collection.
 - Data: original **immutable** TASK-0006 cloud official regular gzip files and ledger. Do not touch active TASK-0017 service or any running SQLite.
