@@ -1,6 +1,6 @@
 # TASK-0017 — Bounded official-only cloud collector
 
-- Status: IN_PROGRESS
+- Status: RUNNING_BOUNDED — deployment ACCEPTED; 12h data outcome pending
 - Date: 2026-10-09
 - Owner: Li; Executor/Reviewer: ChatGPT
 - Trigger: TASK-0016 found current official Sporttery endpoint operational, but legacy dual-source rounds >60 sec and unqualified reference source.
