@@ -1,0 +1,4298 @@
+{
+  "accepted_regular_round_pairs": 6978,
+  "edge_distribution": {
+    "max": 0.2997109515712286,
+    "median": -0.09623039844980019,
+    "min": -0.37673210171567595
+  },
+  "fixture_selection_pairs": 57,
+  "fixtures": 19,
+  "forward_reference": {
+    "30m": {
+      "censored": 763,
+      "increases_residual": 145,
+      "reduces_residual": 558,
+      "unchanged": 1024
+    },
+    "5m": {
+      "censored": 163,
+      "increases_residual": 73,
+      "reduces_residual": 161,
+      "unchanged": 2093
+    },
+    "60m": {
+      "censored": 1294,
+      "increases_residual": 247,
+      "reduces_residual": 944,
+      "unchanged": 5
+    },
+    "next": {
+      "censored": 51,
+      "increases_residual": 53,
+      "reduces_residual": 79,
+      "unchanged": 2307
+    }
+  },
+  "identity": {
+    "ambiguous_reference_identities": 26,
+    "ambiguous_sporttery_identities": 0,
+    "matched_reference_events": 19,
+    "reference_events": 750,
+    "sporttery_matches": 24,
+    "unmatched_reference_events": 731
+  },
+  "multi_variant_fixture_sides": {
+    "2041741:A": {
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.1007328018271405,
+        "n": 15,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.08251582198369689,
+        "n": 13,
+        "positive_share": 0.0
+      }
+    },
+    "2041741:D": {
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.16373802525006864,
+        "n": 15,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.16517264948610189,
+        "n": 13,
+        "positive_share": 0.0
+      }
+    },
+    "2041741:H": {
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.08437566350159653,
+        "n": 15,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.10062882892005454,
+        "n": 13,
+        "positive_share": 0.0
+      }
+    },
+    "2041742:A": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.08989102540261085,
+        "n": 58,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.07713578919064268,
+        "n": 44,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.0750289659942932,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.09926474380839068,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.0769238405254602,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.07587451831344227,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.09010460882252047,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.07587481843390986,
+        "n": 54,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.0750289659942932,
+        "n": 31,
+        "positive_share": 0.0
+      }
+    },
+    "2041742:D": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.18704516432972573,
+        "n": 58,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.1963699919333155,
+        "n": 44,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.1945353706288524,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.18387436253670886,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.19367350652895954,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.19852968685697192,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.18978379741185136,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.19275716360755313,
+        "n": 54,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.1945353706288524,
+        "n": 31,
+        "positive_share": 0.0
+      }
+    },
+    "2041742:H": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.06652558237562145,
+        "n": 58,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.07178435063189015,
+        "n": 44,
+        "positive_share": 0.38636363636363635
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.07612596810652561,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.058871908355032754,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.0748061165823577,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.07103071570204644,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.0634585387829667,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.07697081737752542,
+        "n": 54,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.07612596810652561,
+        "n": 31,
+        "positive_share": 0.0
+      }
+    },
+    "2041743:A": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.16422463136500376,
+        "n": 98,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.17366594917595646,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.16382652550683463,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.14195967251537356,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.16277791395265662,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.16446291267743485,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=hn|serial=2608290548": {
+        "median_edge": -0.16422463136500376,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=hu|serial=2608290548": {
+        "median_edge": -0.1426879468476927,
+        "n": 7,
+        "positive_share": 0.0
+      },
+      "geo=lv|serial=2609081259": {
+        "median_edge": -0.16321882587914094,
+        "n": 20,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.14456708860759493,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.1595846286977981,
+        "n": 81,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.16382652550683463,
+        "n": 31,
+        "positive_share": 0.0
+      },
+      "geo=tr|serial=2608290548": {
+        "median_edge": -0.1595846286977981,
+        "n": 28,
+        "positive_share": 0.0
+      }
+    },
+    "2041743:D": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.10820270129118825,
+        "n": 98,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.10500208821923096,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.11526687613825126,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.10937994579509258,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.11096265816935424,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.11342868717335763,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=hn|serial=2608290548": {
+        "median_edge": -0.1055527215324612,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=hu|serial=2608290548": {
+        "median_edge": -0.08628583808767243,
+        "n": 7,
+        "positive_share": 0.0
+      },
+      "geo=lv|serial=2609081259": {
+        "median_edge": -0.08346695444533492,
+        "n": 20,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.11108860759493666,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.10804791631516797,
+        "n": 81,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.11526687613825126,
+        "n": 31,
+        "positive_share": 0.0
+      },
+      "geo=tr|serial=2608290548": {
+        "median_edge": -0.10162494791833598,
+        "n": 28,
+        "positive_share": 0.0
+      }
+    },
+    "2041743:H": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.06103539136966318,
+        "n": 98,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.04994008417129836,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.05360365841455361,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.0872433220440001,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.061524252299457904,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.05432393298491478,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=hn|serial=2608290548": {
+        "median_edge": -0.06103539136966318,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=hu|serial=2608290548": {
+        "median_edge": -0.10307431212537,
+        "n": 7,
+        "positive_share": 0.0
+      },
+      "geo=lv|serial=2609081259": {
+        "median_edge": -0.08026846367264084,
+        "n": 20,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.08295696202531655,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.0699105797891093,
+        "n": 81,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.05360365841455361,
+        "n": 31,
+        "positive_share": 0.0
+      },
+      "geo=tr|serial=2608290548": {
+        "median_edge": -0.0699105797891093,
+        "n": 28,
+        "positive_share": 0.0
+      }
+    },
+    "2041744:A": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.1501363651929729,
+        "n": 98,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.1379747940976348,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.14572693978366424,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.15011951399923318,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.15284581945698072,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.15175735446090255,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=hn|serial=2608290548": {
+        "median_edge": -0.1522905837768438,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=hu|serial=2608290548": {
+        "median_edge": -0.261040236876535,
+        "n": 7,
+        "positive_share": 0.0
+      },
+      "geo=lv|serial=2609081259": {
+        "median_edge": -0.26375300218758124,
+        "n": 20,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.14841341158823984,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.15066331782435072,
+        "n": 81,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.14572693978366424,
+        "n": 31,
+        "positive_share": 0.0
+      },
+      "geo=tr|serial=2608290548": {
+        "median_edge": -0.1501363651929729,
+        "n": 28,
+        "positive_share": 0.0
+      }
+    },
+    "2041744:D": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.0742779347758824,
+        "n": 98,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.08216585930597431,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.07331402776594831,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.0754968905813379,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.07606897195679907,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.0772785394419564,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=hn|serial=2608290548": {
+        "median_edge": -0.07305576839445826,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=hu|serial=2608290548": {
+        "median_edge": -2.0198774301594113e-05,
+        "n": 7,
+        "positive_share": 0.0
+      },
+      "geo=lv|serial=2609081259": {
+        "median_edge": -0.0018315256467132945,
+        "n": 20,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.07862141092770569,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.0742779347758824,
+        "n": 81,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.07331402776594831,
+        "n": 31,
+        "positive_share": 0.0
+      },
+      "geo=tr|serial=2608290548": {
+        "median_edge": -0.06827382623882738,
+        "n": 28,
+        "positive_share": 0.0
+      }
+    },
+    "2041744:H": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.08028060682853311,
+        "n": 98,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.0938431384496643,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.08519461715356424,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.07309558380362735,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.06636890867025624,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.06761653461935924,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=hn|serial=2608290548": {
+        "median_edge": -0.07063554846859543,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=hu|serial=2608290548": {
+        "median_edge": 0.10182959579498241,
+        "n": 7,
+        "positive_share": 1.0
+      },
+      "geo=lv|serial=2609081259": {
+        "median_edge": 0.10976494974682183,
+        "n": 20,
+        "positive_share": 1.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.07382256410962096,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.07186720023102777,
+        "n": 81,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.08519461715356424,
+        "n": 31,
+        "positive_share": 0.0
+      },
+      "geo=tr|serial=2608290548": {
+        "median_edge": -0.08028060682853311,
+        "n": 28,
+        "positive_share": 0.0
+      }
+    },
+    "2041745:A": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.05576329052186646,
+        "n": 98,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.04924845770098396,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.05216777291343022,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.03759870782483832,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.05910390848427083,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.04939957330082301,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=hn|serial=2608290548": {
+        "median_edge": -0.05576329052186646,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=hu|serial=2608290548": {
+        "median_edge": -0.021409634950358414,
+        "n": 7,
+        "positive_share": 0.0
+      },
+      "geo=lv|serial=2609081259": {
+        "median_edge": 0.005231551412887114,
+        "n": 20,
+        "positive_share": 1.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.07342276530747771,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.03213089221833765,
+        "n": 81,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.05216777291343022,
+        "n": 31,
+        "positive_share": 0.0
+      },
+      "geo=tr|serial=2608290548": {
+        "median_edge": -0.03367149856669438,
+        "n": 28,
+        "positive_share": 0.0
+      }
+    },
+    "2041745:D": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.08254297473973038,
+        "n": 98,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.0930178122397497,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.09552605564185845,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.08115577889447223,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.09914204003813165,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.09895214873514169,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=hn|serial=2608290548": {
+        "median_edge": -0.07051698910746229,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=hu|serial=2608290548": {
+        "median_edge": -0.07491200537596976,
+        "n": 7,
+        "positive_share": 0.0
+      },
+      "geo=lv|serial=2609081259": {
+        "median_edge": -0.07274435397708456,
+        "n": 20,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.0809164563687077,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.08661064107659988,
+        "n": 81,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.09552605564185845,
+        "n": 31,
+        "positive_share": 0.0
+      },
+      "geo=tr|serial=2608290548": {
+        "median_edge": -0.08806452924553221,
+        "n": 28,
+        "positive_share": 0.0
+      }
+    },
+    "2041745:H": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.17694309061370972,
+        "n": 98,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.1741323911092426,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.17043440192063264,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.1796984924623115,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.16320305052430895,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.1700897287412375,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=hn|serial=2608290548": {
+        "median_edge": -0.1845228418143392,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=hu|serial=2608290548": {
+        "median_edge": -0.20553983011608323,
+        "n": 7,
+        "positive_share": 0.0
+      },
+      "geo=lv|serial=2609081259": {
+        "median_edge": -0.2255380761153889,
+        "n": 20,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.1640988179041043,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.19030873561167128,
+        "n": 81,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.17043440192063264,
+        "n": 31,
+        "positive_share": 0.0
+      },
+      "geo=tr|serial=2608290548": {
+        "median_edge": -0.1882708032610243,
+        "n": 28,
+        "positive_share": 0.0
+      }
+    },
+    "2041746:A": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.04686417434706336,
+        "n": 98,
+        "positive_share": 0.3877551020408163
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.04845064569862623,
+        "n": 55,
+        "positive_share": 0.2545454545454545
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.03808293561810827,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": 0.011502047082906808,
+        "n": 24,
+        "positive_share": 1.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.0015654878384510074,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.01716488925348647,
+        "n": 26,
+        "positive_share": 0.46153846153846156
+      },
+      "geo=hn|serial=2608290548": {
+        "median_edge": -0.04813061490645809,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=hu|serial=2608290548": {
+        "median_edge": -0.0006753384032649468,
+        "n": 7,
+        "positive_share": 0.0
+      },
+      "geo=lv|serial=2609081259": {
+        "median_edge": -0.014596866138509523,
+        "n": 20,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": 0.015115768125739448,
+        "n": 22,
+        "positive_share": 1.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.005956701358251437,
+        "n": 81,
+        "positive_share": 0.30864197530864196
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.03484598387663096,
+        "n": 31,
+        "positive_share": 0.0
+      },
+      "geo=tr|serial=2608290548": {
+        "median_edge": -0.0026141664821219823,
+        "n": 28,
+        "positive_share": 0.0
+      }
+    },
+    "2041746:D": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.07452002668577473,
+        "n": 98,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.050953412978452794,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.0661345633779794,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.1125895598771749,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.08738606686061656,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.07513371616078757,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=hn|serial=2608290548": {
+        "median_edge": -0.07083349576323728,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=hu|serial=2608290548": {
+        "median_edge": -0.03852365152538384,
+        "n": 7,
+        "positive_share": 0.0
+      },
+      "geo=lv|serial=2609081259": {
+        "median_edge": -0.046444441196246244,
+        "n": 20,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.11693087713368255,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.0936028914986543,
+        "n": 81,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.07049558256576494,
+        "n": 31,
+        "positive_share": 0.0
+      },
+      "geo=tr|serial=2608290548": {
+        "median_edge": -0.05583529676569143,
+        "n": 28,
+        "positive_share": 0.0
+      }
+    },
+    "2041746:H": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.1734616252619512,
+        "n": 98,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.1734616252619512,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.17121240658282366,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.17786591606960078,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.1824157917841649,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.178971616078753,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=hn|serial=2608290548": {
+        "median_edge": -0.16452587596970647,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=hu|serial=2608290548": {
+        "median_edge": -0.20072731009777722,
+        "n": 7,
+        "positive_share": 0.0
+      },
+      "geo=lv|serial=2609081259": {
+        "median_edge": -0.19081869208056834,
+        "n": 20,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.1773554165962481,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.17721966455366733,
+        "n": 81,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.17068316835194763,
+        "n": 31,
+        "positive_share": 0.0
+      },
+      "geo=tr|serial=2608290548": {
+        "median_edge": -0.19194399770559767,
+        "n": 28,
+        "positive_share": 0.0
+      }
+    },
+    "2041747:A": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.15380987815473623,
+        "n": 98,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.15688503683526278,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.1539380180299179,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.15984637829345238,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.15586274965164892,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.15380987815473623,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=hn|serial=2608290548": {
+        "median_edge": -0.1457541684427468,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=hu|serial=2608290548": {
+        "median_edge": -0.1802577021969487,
+        "n": 7,
+        "positive_share": 0.0
+      },
+      "geo=lv|serial=2609081259": {
+        "median_edge": -0.18125174151566648,
+        "n": 20,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.15380987815473623,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.1569421262474927,
+        "n": 81,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.1539380180299179,
+        "n": 31,
+        "positive_share": 0.0
+      },
+      "geo=tr|serial=2608290548": {
+        "median_edge": -0.1538240562650135,
+        "n": 28,
+        "positive_share": 0.0
+      }
+    },
+    "2041747:D": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.09762147353261308,
+        "n": 98,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.10192261499411892,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.10517171350262522,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.09226592017157742,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.09137772875058059,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.10049646436722343,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=hn|serial=2608290548": {
+        "median_edge": -0.09762147353261308,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=hu|serial=2608290548": {
+        "median_edge": -0.09169346564593794,
+        "n": 7,
+        "positive_share": 0.0
+      },
+      "geo=lv|serial=2609081259": {
+        "median_edge": -0.08948393258008913,
+        "n": 20,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.09259221537220774,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.09226592017157742,
+        "n": 81,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.10517171350262522,
+        "n": 31,
+        "positive_share": 0.0
+      },
+      "geo=tr|serial=2608290548": {
+        "median_edge": -0.09595000866758574,
+        "n": 28,
+        "positive_share": 0.0
+      }
+    },
+    "2041747:H": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.09064231701385572,
+        "n": 98,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.0770623413607382,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2608290548": {
+        "median_edge": -0.07730508866360675,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.0839315685125378,
+        "n": 24,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.08942522062238745,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.08243511770892664,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=hn|serial=2608290548": {
+        "median_edge": -0.09455215881673762,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=hu|serial=2608290548": {
+        "median_edge": -0.059597828389610474,
+        "n": 7,
+        "positive_share": 0.0
+      },
+      "geo=lv|serial=2609081259": {
+        "median_edge": -0.06062955016185245,
+        "n": 20,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.09064231701385572,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.08666182382512944,
+        "n": 81,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2608290548": {
+        "median_edge": -0.07730508866360675,
+        "n": 31,
+        "positive_share": 0.0
+      },
+      "geo=tr|serial=2608290548": {
+        "median_edge": -0.08666182382512944,
+        "n": 28,
+        "positive_share": 0.0
+      }
+    },
+    "2041775:A": {
+      "geo=au|serial=2608290548": {
+        "median_edge": 0.07050471851694229,
+        "n": 30,
+        "positive_share": 0.9
+      },
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.0681398486386473,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.027963930944001625,
+        "n": 90,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": 0.049158741770299885,
+        "n": 32,
+        "positive_share": 1.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.10436247930771292,
+        "n": 36,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.09456163381467275,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.09948872300347844,
+        "n": 27,
+        "positive_share": 0.0
+      },
+      "geo=my|serial=2609081259": {
+        "median_edge": -0.027963930944001625,
+        "n": 29,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.14474766138159878,
+        "n": 10,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.02823151125401957,
+        "n": 29,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.06796558446197665,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.1575657933644805,
+        "n": 21,
+        "positive_share": 0.0
+      }
+    },
+    "2041775:D": {
+      "geo=au|serial=2608290548": {
+        "median_edge": -0.0448861582478548,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.042471250337286603,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.0814086680069196,
+        "n": 90,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.05354440781232772,
+        "n": 32,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.05182488625437398,
+        "n": 36,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.05354440781232772,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.05267996850613432,
+        "n": 27,
+        "positive_share": 0.0
+      },
+      "geo=my|serial=2609081259": {
+        "median_edge": -0.08395635061121653,
+        "n": 29,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.05847755216545891,
+        "n": 10,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.07893890675241155,
+        "n": 29,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.014839914675593757,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.07115216748477138,
+        "n": 21,
+        "positive_share": 0.0
+      }
+    },
+    "2041775:H": {
+      "geo=au|serial=2608290548": {
+        "median_edge": -0.17021783883976505,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.14377334344122206,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.14027780670151402,
+        "n": 90,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.16366886793398194,
+        "n": 32,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.13676000911947506,
+        "n": 36,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.13832550029561774,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.13753849527093676,
+        "n": 27,
+        "positive_share": 0.0
+      },
+      "geo=my|serial=2609081259": {
+        "median_edge": -0.14027780670151402,
+        "n": 29,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.12487322608418061,
+        "n": 10,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.1417877813504823,
+        "n": 29,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.1547984772247113,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.11805017446330335,
+        "n": 21,
+        "positive_share": 0.0
+      }
+    },
+    "2041780:A": {
+      "geo=au|serial=2608290548": {
+        "median_edge": 0.08009025749933629,
+        "n": 30,
+        "positive_share": 1.0
+      },
+      "geo=ca|serial=2608290548": {
+        "median_edge": 0.07564874791318843,
+        "n": 26,
+        "positive_share": 1.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": 0.14503816793893143,
+        "n": 146,
+        "positive_share": 1.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": 0.09316248409648065,
+        "n": 32,
+        "positive_share": 1.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": 0.06380714462936554,
+        "n": 37,
+        "positive_share": 1.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": 0.13452750091823806,
+        "n": 68,
+        "positive_share": 1.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": 0.1646907542638163,
+        "n": 25,
+        "positive_share": 1.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": 0.0838508770773172,
+        "n": 28,
+        "positive_share": 1.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": 0.1409580884107393,
+        "n": 25,
+        "positive_share": 1.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": 0.16018784707962097,
+        "n": 57,
+        "positive_share": 1.0
+      },
+      "geo=my|serial=2609081259": {
+        "median_edge": 0.22692633361558023,
+        "n": 29,
+        "positive_share": 1.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": 0.22169860488591664,
+        "n": 21,
+        "positive_share": 1.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": 0.22951065146644845,
+        "n": 36,
+        "positive_share": 1.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": 0.10427041222172573,
+        "n": 25,
+        "positive_share": 1.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": 0.15043152472067978,
+        "n": 30,
+        "positive_share": 1.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": 0.07982885673191031,
+        "n": 25,
+        "positive_share": 1.0
+      }
+    },
+    "2041780:D": {
+      "geo=au|serial=2608290548": {
+        "median_edge": -0.0044385452614813525,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.05624854757929876,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": 0.00025316789514606697,
+        "n": 146,
+        "positive_share": 0.6164383561643836
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.0006410171159548783,
+        "n": 32,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.07378097133099504,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.02343000923951244,
+        "n": 68,
+        "positive_share": 0.07352941176470588
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.0436211156544668,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": 0.00025316789514606697,
+        "n": 28,
+        "positive_share": 1.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.045644914859875096,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.041904005142581746,
+        "n": 57,
+        "positive_share": 0.21052631578947367
+      },
+      "geo=my|serial=2609081259": {
+        "median_edge": 0.03132938187976286,
+        "n": 29,
+        "positive_share": 1.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.016617383242172767,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": 0.02620640086249937,
+        "n": 36,
+        "positive_share": 0.8055555555555556
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.050811258458554276,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.04085825472224103,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.06328788328832713,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041780:H": {
+      "geo=au|serial=2608290548": {
+        "median_edge": -0.15540483143084705,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.14300623706176963,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.1567111468593556,
+        "n": 146,
+        "positive_share": 0.0
+      },
+      "geo=cy|serial=2609081259": {
+        "median_edge": -0.15746501225734666,
+        "n": 32,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.13774644495580224,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.15247084323627003,
+        "n": 68,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.15172568413437137,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.1567111468593556,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.1499329794232066,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.15164544756530884,
+        "n": 57,
+        "positive_share": 0.0
+      },
+      "geo=my|serial=2609081259": {
+        "median_edge": -0.17718035563082135,
+        "n": 29,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.1614761985747124,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.1764230239383474,
+        "n": 36,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.14676706149001317,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.151251087174684,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.1411386092853174,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041781:A": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.13219706739595682,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.1590653926139377,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.1462587574298979,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.13144589849984045,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.1303122916773498,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.13884892086330936,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.11608542018743273,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.0785833310380919,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.1410391903635816,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.16108829393237845,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.12570669414093216,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.12657950231969628,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.13106989925949386,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.12209199279415694,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.13219706739595682,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.1306227040833844,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.1462587574298979,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041781:D": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.09902759386096227,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.0626157045575021,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.07365319721132613,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.08587341649274371,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.08387005794574631,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.1055295298644805,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.10923336918113369,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.1154856501501087,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.08975109150650418,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.05664367470188547,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.1069929394559207,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.10765499789118493,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.0952499939810213,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.10789245988961393,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.09902759386096227,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.09478436407830293,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.07365319721132613,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041781:H": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.09000245478527547,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.059296461921137356,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.08796416519638894,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.11229918076391099,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.11318393928516468,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.06770620712732123,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.11802120141342742,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.18019527914727185,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.08260521222487294,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.06155936133177864,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.09791285958300577,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.103607343351098,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.09735612061345433,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.10521004086240271,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.09000245478527547,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.09900164104395115,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.08796416519638894,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041782:A": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.13496997435460045,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.14171473605861162,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.14795697908367889,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.13614124030854247,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.14211286234993603,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.14238708283800205,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.11985597452413699,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.08669188480355072,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.13891652862843185,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.14486833141487943,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.1324510854630393,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.13407082626935807,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.1416979714500376,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.11816314951007134,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.13526567949926382,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.13668005429686958,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.14795697908367889,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041782:D": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.030541444642655513,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.029547192252145082,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.018871949984471503,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.0678435985101924,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.019626215405741054,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.0400527683936277,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.09481280823829863,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.16199122408836442,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.0607019948269959,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.028271747045972573,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.058985248974187665,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.052288032025210374,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.01728024042073628,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.10716914572825609,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.02902689155203042,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.028351922081193193,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.018871949984471503,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041782:H": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.09352822295017504,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.03159532392475106,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.017446021307911508,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.05374370969291675,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.06254732888399761,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.02495117711282968,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.10892378953463133,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.20208806173399896,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.01670683856097477,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.025674786816697548,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.07668384171475673,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.0697767644627062,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.06990984222389174,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.10094160266293206,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.0938380947003098,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.09056032130312497,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.017446021307911508,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041783:A": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.044832997211258996,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.034179319162538135,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.03363549242701902,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.04054557418002158,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.06740988807614368,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.023396009760298542,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.07382425884822952,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.041227366827123246,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.37673210171567595,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.03907211290570778,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.06082125541737937,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.06857548012562742,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.06797892817901707,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.11634830024708187,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.044832997211258996,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.06797892817901707,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.03018314799368582,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041783:D": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.08322867396345268,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.07748634705871238,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.07846227355035573,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.09653495711911853,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.07364281307834664,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.050704750968853074,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.05765293638367475,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.09468984765475486,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.16377558460094788,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.07748634705871238,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.048108386167517336,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.05594947610162193,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.08095109586136462,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.06751260361007305,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.08322867396345268,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.08095109586136462,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.08084621382752388,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041783:H": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.14566175956409488,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.1499238493928312,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.1499238493928312,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.1410985089274761,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.14394267207191336,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.1608439787569974,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.14655360276257345,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.1417088482051312,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.035102990295392655,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.14902360210888344,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.15332244499029057,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.1497424740003942,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.1406852472469221,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.1329117443006853,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.14566175956409488,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.1406852472469221,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.14975455288904338,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041784:A": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.049128472836666104,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.011021943194891026,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.008532373683141525,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.06278192646601766,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.01724933089380487,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.05280765277675137,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.027478817719110094,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.05630716786348966,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.14622353801280275,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.019070719981408413,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.038550938428400516,
+        "n": 141,
+        "positive_share": 0.19148936170212766
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.039069056655768986,
+        "n": 229,
+        "positive_share": 0.34934497816593885
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.04245299241884526,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.09716070615748185,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.03414338736583211,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.03506101516081894,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.008532373683141525,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041784:D": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.09811205981242233,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.09182644856184607,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.10126111814220873,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.10373465942022897,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.0950724298005533,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.12271347095612684,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.15074836507528966,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.10293508103370619,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.2109475627166868,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.0824376534154454,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.13101961186980193,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.11222484428371604,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.10411239565471586,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.18868752504177033,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.09361882753316797,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.10608681363349381,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.10126111814220873,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041784:H": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.12421385595469836,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.12745117091626756,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.12765783692592303,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.12152460792796149,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.1281813920433067,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.11786082318404423,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.11360151636435034,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.1223721788310036,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.09051007076160222,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.13012592775494203,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.11448095286990456,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.122342912828167,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.12352398406139609,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.09950461586264991,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.12678097332803295,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.123830074290607,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.12765783692592303,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041785:A": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.08055623252813404,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.08537736377083915,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.08854037291901429,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.08615572000368599,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.08537736377083915,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.0957742724102385,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.1374060125965848,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.0772913496243296,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.10214007782101175,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.08776253668495582,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.13648182488076244,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.13655361741411987,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.08771847699098456,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.1588111928127951,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.08211619219786093,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.0853332746992671,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.08615572000368599,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041785:D": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.1327503404773851,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.12795746211969794,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.12700505910278848,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.14085710764925452,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.12795746211969794,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.13868143239112318,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.15325498344263377,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.13897808125313715,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.1554345006485084,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.12626004848794192,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.14972346610739062,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.1468114400303242,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.12892305606615806,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.14499499299018648,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.1342217458425654,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.13061537784991528,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.12869958211299393,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041785:H": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.14212601247222412,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.1401275336824851,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.1365877830260308,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.1382637055318946,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.1401275336824851,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.11721274570594675,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.0391078501396015,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.14044769697790593,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.08891050583657578,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.13845380885542924,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.04428429141732737,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.043864861890613005,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.1358092131758064,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.01636290807129981,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.13840677667837176,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.13748815658493874,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.1382637055318946,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041786:A": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.0731000787405428,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.04866973126769847,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.08144808991664942,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.0787278857956426,
+        "n": 80,
+        "positive_share": 0.15
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.0705956915002568,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.04036676253328331,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.0005743825387708457,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.1549469349627487,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": 0.11559799836039764,
+        "n": 8,
+        "positive_share": 1.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.042408278164376534,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": 0.009122913522265907,
+        "n": 141,
+        "positive_share": 0.7588652482269503
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": 0.018745143836174982,
+        "n": 229,
+        "positive_share": 0.6331877729257642
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.06486512739895212,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": 0.049912462077304154,
+        "n": 64,
+        "positive_share": 0.515625
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.06928769858494654,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.06486512739895212,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.08144808991664942,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041786:D": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.2301457922716893,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.13767040861454127,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.15379625582002598,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.15719021072028094,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.15466412759856218,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.12793092949246276,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.10402951442583852,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.25828092719935214,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.10558739211887014,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.13600180535263706,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.09060641583465168,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.09470445344129552,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.15829466000844505,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.10036388501272031,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.15794231270075532,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.15829466000844505,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.15379625582002598,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041786:H": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.09440245709618578,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.11675012260652307,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.11050641193020971,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.11013654486704394,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.11141868203960592,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.1193070841098659,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.1260215172535678,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.08026610362507591,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.13567884461203927,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.11764385917471265,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.1291070382747096,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.12925668016194314,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.11130265502865566,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.13094880928257313,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.11093063633996003,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.11130265502865566,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.11050641193020971,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041787:A": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.02053183541326553,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": 0.006356444976624909,
+        "n": 95,
+        "positive_share": 0.8842105263157894
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": 0.005504494014854311,
+        "n": 37,
+        "positive_share": 1.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": 0.0030779448013382726,
+        "n": 80,
+        "positive_share": 0.55
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.03474078033137351,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": 0.009687643780992738,
+        "n": 33,
+        "positive_share": 1.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.008196772756086435,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.06132881687469793,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": 0.056962405112664705,
+        "n": 8,
+        "positive_share": 1.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": 0.006356444976624909,
+        "n": 25,
+        "positive_share": 1.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": 0.005504494014854311,
+        "n": 141,
+        "positive_share": 0.5957446808510638
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.0016930628644349355,
+        "n": 229,
+        "positive_share": 0.37554585152838427
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.03936170212765955,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.02114349115207892,
+        "n": 64,
+        "positive_share": 0.484375
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.021303656597774223,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.03936170212765955,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": 0.0007947446813241221,
+        "n": 25,
+        "positive_share": 1.0
+      }
+    },
+    "2041787:D": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.05049946041672437,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.06622676840375541,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.06783884364381643,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.06188329352865307,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.07504008551576702,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.0669597668830838,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.07014328661716784,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.056720120703947385,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.031316071089241615,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.06622676840375541,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.0697911216519781,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.06980725882025185,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.07404255319148934,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.052861862106576285,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.048489666136724896,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.07404255319148934,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.07031545250427962,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041787:H": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.1680566700794156,
+        "n": 26,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.17280549787906185,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=fi|serial=2609081259": {
+        "median_edge": -0.17181905284631493,
+        "n": 37,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.17381767327807507,
+        "n": 80,
+        "positive_share": 0.0
+      },
+      "geo=gr|serial=2608290548": {
+        "median_edge": -0.15665419561731686,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=hk|serial=2609081259": {
+        "median_edge": -0.1734548335974644,
+        "n": 33,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.16672336205760319,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=jp|serial=2609081259": {
+        "median_edge": -0.15387153140151366,
+        "n": 6,
+        "positive_share": 0.0
+      },
+      "geo=mk|serial=2609081259": {
+        "median_edge": -0.2036614759918789,
+        "n": 8,
+        "positive_share": 0.0
+      },
+      "geo=mu|serial=2609081259": {
+        "median_edge": -0.17280549787906185,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.17180774019769773,
+        "n": 141,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.16799605794318118,
+        "n": 229,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.15574468085106374,
+        "n": 21,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2609081259": {
+        "median_edge": -0.17077929404685044,
+        "n": 64,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.16871224165341803,
+        "n": 25,
+        "positive_share": 0.0
+      },
+      "geo=sg|serial=2609081259": {
+        "median_edge": -0.15574468085106374,
+        "n": 30,
+        "positive_share": 0.0
+      },
+      "geo=ua|serial=2608290548": {
+        "median_edge": -0.16929951314941194,
+        "n": 25,
+        "positive_share": 0.0
+      }
+    },
+    "2041788:A": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": 0.02937543012990984,
+        "n": 22,
+        "positive_share": 1.0
+      },
+      "geo=fr|serial=2608290548": {
+        "median_edge": 0.017856669924646074,
+        "n": 12,
+        "positive_share": 1.0
+      }
+    },
+    "2041788:D": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.08133491083035249,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2608290548": {
+        "median_edge": -0.08905917961976206,
+        "n": 12,
+        "positive_share": 0.0
+      }
+    },
+    "2041788:H": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.14928524091523143,
+        "n": 22,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2608290548": {
+        "median_edge": -0.14507860138096285,
+        "n": 12,
+        "positive_share": 0.0
+      }
+    },
+    "2041789:A": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.12581670877254125,
+        "n": 67,
+        "positive_share": 0.44776119402985076
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": 0.20229519757841086,
+        "n": 59,
+        "positive_share": 1.0
+      },
+      "geo=fr|serial=2608290548": {
+        "median_edge": -0.12372698197854015,
+        "n": 23,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.1671933178559204,
+        "n": 27,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2608290548": {
+        "median_edge": -0.167559555615443,
+        "n": 34,
+        "positive_share": 0.4411764705882353
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.1627236770178192,
+        "n": 61,
+        "positive_share": 0.2786885245901639
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": 0.2086882061008959,
+        "n": 59,
+        "positive_share": 1.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": 0.26122199368755705,
+        "n": 28,
+        "positive_share": 1.0
+      },
+      "geo=ru|serial=2609081259": {
+        "median_edge": -0.09373026823507402,
+        "n": 31,
+        "positive_share": 0.3870967741935484
+      }
+    },
+    "2041789:D": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.18484863664082218,
+        "n": 67,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.007033397337459002,
+        "n": 59,
+        "positive_share": 0.22033898305084745
+      },
+      "geo=fr|serial=2608290548": {
+        "median_edge": -0.18501686441880494,
+        "n": 23,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.18569318861874562,
+        "n": 27,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2608290548": {
+        "median_edge": -0.1869052221225821,
+        "n": 34,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.18605116931854226,
+        "n": 61,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.06013539642932764,
+        "n": 59,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": 0.07240894369648987,
+        "n": 28,
+        "positive_share": 0.75
+      },
+      "geo=ru|serial=2609081259": {
+        "median_edge": 0.010196206823975151,
+        "n": 31,
+        "positive_share": 0.5806451612903226
+      }
+    },
+    "2041789:H": {
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.0946872549873683,
+        "n": 67,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.15659412611482748,
+        "n": 59,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2608290548": {
+        "median_edge": -0.09487408992173596,
+        "n": 23,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.08991977980779753,
+        "n": 27,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2608290548": {
+        "median_edge": -0.08956943857187338,
+        "n": 34,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.09031986384190105,
+        "n": 61,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.1484630594713049,
+        "n": 59,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.17187458485838225,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2609081259": {
+        "median_edge": -0.1406281424662661,
+        "n": 31,
+        "positive_share": 0.0
+      }
+    },
+    "2041790:A": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.08995422066125713,
+        "n": 27,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.1591191304163816,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.14772715407234205,
+        "n": 118,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2608290548": {
+        "median_edge": -0.13997769524335713,
+        "n": 49,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.15294506914555472,
+        "n": 27,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2608290548": {
+        "median_edge": -0.14618311533888217,
+        "n": 34,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.12137791470838455,
+        "n": 5,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.11992764442706172,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.1525434307708311,
+        "n": 89,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.17801467666304605,
+        "n": 59,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.1865101323933016,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2609081259": {
+        "median_edge": -0.15607175368139226,
+        "n": 59,
+        "positive_share": 0.0
+      }
+    },
+    "2041790:D": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.14445449921278908,
+        "n": 27,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2608290548": {
+        "median_edge": -0.10184878217381799,
+        "n": 95,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.08693548758667835,
+        "n": 118,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2608290548": {
+        "median_edge": -0.08469054708043033,
+        "n": 49,
+        "positive_share": 0.0
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.09781673041049621,
+        "n": 27,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2608290548": {
+        "median_edge": -0.09845422116527935,
+        "n": 34,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.1541633971272104,
+        "n": 5,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.13912893192286657,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.09738895246020995,
+        "n": 89,
+        "positive_share": 0.0
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": -0.07300107552874324,
+        "n": 59,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": -0.044036106137671505,
+        "n": 28,
+        "positive_share": 0.0
+      },
+      "geo=ru|serial=2609081259": {
+        "median_edge": -0.0556020524818549,
+        "n": 59,
+        "positive_share": 0.0
+      }
+    },
+    "2041790:H": {
+      "geo=ca|serial=2608290548": {
+        "median_edge": -0.16824028097371935,
+        "n": 27,
+        "positive_share": 0.0
+      },
+      "geo=cn|serial=2608290548": {
+        "median_edge": 0.0036926267378623034,
+        "n": 95,
+        "positive_share": 0.6947368421052632
+      },
+      "geo=cn|serial=2609081259": {
+        "median_edge": -0.0372428366520145,
+        "n": 118,
+        "positive_share": 0.3220338983050847
+      },
+      "geo=fr|serial=2608290548": {
+        "median_edge": -0.06586297921974282,
+        "n": 49,
+        "positive_share": 0.46938775510204084
+      },
+      "geo=fr|serial=2609081259": {
+        "median_edge": -0.019904749002157107,
+        "n": 27,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2608290548": {
+        "median_edge": -0.03876337693222354,
+        "n": 34,
+        "positive_share": 0.0
+      },
+      "geo=ie|serial=2609081259": {
+        "median_edge": -0.010094410533010523,
+        "n": 5,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2608290548": {
+        "median_edge": -0.04721425758901088,
+        "n": 55,
+        "positive_share": 0.0
+      },
+      "geo=mx|serial=2609081259": {
+        "median_edge": -0.021668573806303826,
+        "n": 89,
+        "positive_share": 0.056179775280898875
+      },
+      "geo=nl|serial=2608290548": {
+        "median_edge": 0.04769120724825804,
+        "n": 59,
+        "positive_share": 0.6949152542372882
+      },
+      "geo=ru|serial=2608290548": {
+        "median_edge": 0.0719090160024285,
+        "n": 28,
+        "positive_share": 1.0
+      },
+      "geo=ru|serial=2609081259": {
+        "median_edge": -0.018287550200803082,
+        "n": 59,
+        "positive_share": 0.3898305084745763
+      }
+    }
+  },
+  "observation_rows": 33453,
+  "skipped": {
+    "missing_pair_fact": 121379,
+    "non_executable": 0,
+    "post_kickoff": 52
+  },
+  "thresholds": {
+    "ge10": {
+      "calendar_days": 3,
+      "episodes": 368,
+      "fixture_selection_pairs": 6,
+      "fixtures": 5,
+      "max_episode_rounds": 8,
+      "median_episode_rounds": 1.5,
+      "rows": 697,
+      "top_fixture_rows": [
+        [
+          "2041780",
+          413
+        ],
+        [
+          "2041789",
+          237
+        ],
+        [
+          "2041744",
+          27
+        ],
+        [
+          "2041790",
+          12
+        ],
+        [
+          "2041786",
+          8
+        ]
+      ]
+    },
+    "ge2": {
+      "calendar_days": 3,
+      "episodes": 742,
+      "fixture_selection_pairs": 11,
+      "fixtures": 9,
+      "max_episode_rounds": 28,
+      "median_episode_rounds": 2.0,
+      "rows": 1537,
+      "top_fixture_rows": [
+        [
+          "2041780",
+          762
+        ],
+        [
+          "2041789",
+          257
+        ],
+        [
+          "2041786",
+          164
+        ],
+        [
+          "2041790",
+          119
+        ],
+        [
+          "2041784",
+          107
+        ],
+        [
+          "2041775",
+          59
+        ],
+        [
+          "2041744",
+          27
+        ],
+        [
+          "2041788",
+          22
+        ],
+        [
+          "2041787",
+          20
+        ]
+      ]
+    },
+    "ge5": {
+      "calendar_days": 3,
+      "episodes": 530,
+      "fixture_selection_pairs": 8,
+      "fixtures": 7,
+      "max_episode_rounds": 9,
+      "median_episode_rounds": 2.0,
+      "rows": 1021,
+      "top_fixture_rows": [
+        [
+          "2041780",
+          640
+        ],
+        [
+          "2041789",
+          250
+        ],
+        [
+          "2041790",
+          49
+        ],
+        [
+          "2041744",
+          27
+        ],
+        [
+          "2041775",
+          27
+        ],
+        [
+          "2041787",
+          20
+        ],
+        [
+          "2041786",
+          8
+        ]
+      ]
+    },
+    "gt0": {
+      "calendar_days": 3,
+      "episodes": 1168,
+      "fixture_selection_pairs": 14,
+      "fixtures": 12,
+      "max_episode_rounds": 34,
+      "median_episode_rounds": 2.0,
+      "rows": 2490,
+      "top_fixture_rows": [
+        [
+          "2041780",
+          833
+        ],
+        [
+          "2041787",
+          457
+        ],
+        [
+          "2041786",
+          305
+        ],
+        [
+          "2041789",
+          272
+        ],
+        [
+          "2041790",
+          224
+        ],
+        [
+          "2041746",
+          135
+        ],
+        [
+          "2041784",
+          107
+        ],
+        [
+          "2041775",
+          59
+        ],
+        [
+          "2041788",
+          34
+        ],
+        [
+          "2041744",
+          27
+        ]
+      ]
+    }
+  },
+  "variants": {
+    "geo=au|serial=2608290548": {
+      "fixtures": 2,
+      "ge10": 0,
+      "ge2": 57,
+      "ge5": 57,
+      "median_edge": -0.0448861582478548,
+      "positive_gt0": 57,
+      "rows": 180
+    },
+    "geo=ca|serial=2608290548": {
+      "fixtures": 10,
+      "ge10": 4,
+      "ge2": 26,
+      "ge5": 26,
+      "median_edge": -0.09811205981242233,
+      "positive_gt0": 26,
+      "rows": 783
+    },
+    "geo=cn|serial=2608290548": {
+      "fixtures": 9,
+      "ge10": 31,
+      "ge2": 81,
+      "ge5": 31,
+      "median_edge": -0.09455215881673762,
+      "positive_gt0": 156,
+      "rows": 2196
+    },
+    "geo=cn|serial=2609081259": {
+      "fixtures": 17,
+      "ge10": 191,
+      "ge2": 314,
+      "ge5": 230,
+      "median_edge": -0.0863176933716352,
+      "positive_gt0": 461,
+      "rows": 4191
+    },
+    "geo=cy|serial=2608290548": {
+      "fixtures": 6,
+      "ge10": 0,
+      "ge2": 0,
+      "ge5": 0,
+      "median_edge": -0.09036033639771135,
+      "positive_gt0": 0,
+      "rows": 504
+    },
+    "geo=cy|serial=2609081259": {
+      "fixtures": 9,
+      "ge10": 0,
+      "ge2": 64,
+      "ge5": 32,
+      "median_edge": -0.0872433220440001,
+      "positive_gt0": 88,
+      "rows": 669
+    },
+    "geo=fi|serial=2609081259": {
+      "fixtures": 8,
+      "ge10": 7,
+      "ge2": 37,
+      "ge5": 37,
+      "median_edge": -0.08825226905770162,
+      "positive_gt0": 74,
+      "rows": 888
+    },
+    "geo=fr|serial=2608290548": {
+      "fixtures": 3,
+      "ge10": 0,
+      "ge2": 0,
+      "ge5": 0,
+      "median_edge": -0.10229774183176266,
+      "positive_gt0": 35,
+      "rows": 252
+    },
+    "geo=fr|serial=2609081259": {
+      "fixtures": 17,
+      "ge10": 37,
+      "ge2": 92,
+      "ge5": 80,
+      "median_edge": -0.10104819850322078,
+      "positive_gt0": 129,
+      "rows": 2694
+    },
+    "geo=gr|serial=2608290548": {
+      "fixtures": 14,
+      "ge10": 25,
+      "ge2": 25,
+      "ge5": 25,
+      "median_edge": -0.09161726619303173,
+      "positive_gt0": 37,
+      "rows": 1068
+    },
+    "geo=hk|serial=2609081259": {
+      "fixtures": 7,
+      "ge10": 0,
+      "ge2": 0,
+      "ge5": 0,
+      "median_edge": -0.1055295298644805,
+      "positive_gt0": 33,
+      "rows": 693
+    },
+    "geo=hn|serial=2608290548": {
+      "fixtures": 5,
+      "ge10": 0,
+      "ge2": 0,
+      "ge5": 0,
+      "median_edge": -0.09455215881673762,
+      "positive_gt0": 0,
+      "rows": 495
+    },
+    "geo=hu|serial=2608290548": {
+      "fixtures": 5,
+      "ge10": 7,
+      "ge2": 7,
+      "ge5": 7,
+      "median_edge": -0.08628583808767243,
+      "positive_gt0": 7,
+      "rows": 105
+    },
+    "geo=ie|serial=2608290548": {
+      "fixtures": 2,
+      "ge10": 15,
+      "ge2": 15,
+      "ge5": 15,
+      "median_edge": -0.09845422116527935,
+      "positive_gt0": 15,
+      "rows": 204
+    },
+    "geo=ie|serial=2609081259": {
+      "fixtures": 8,
+      "ge10": 0,
+      "ge2": 0,
+      "ge5": 0,
+      "median_edge": -0.10923336918113369,
+      "positive_gt0": 0,
+      "rows": 645
+    },
+    "geo=jp|serial=2609081259": {
+      "fixtures": 9,
+      "ge10": 0,
+      "ge2": 28,
+      "ge5": 28,
+      "median_edge": -0.09456163381467275,
+      "positive_gt0": 56,
+      "rows": 294
+    },
+    "geo=lv|serial=2609081259": {
+      "fixtures": 5,
+      "ge10": 20,
+      "ge2": 20,
+      "ge5": 20,
+      "median_edge": -0.08026846367264084,
+      "positive_gt0": 40,
+      "rows": 300
+    },
+    "geo=mk|serial=2609081259": {
+      "fixtures": 7,
+      "ge10": 8,
+      "ge2": 16,
+      "ge5": 16,
+      "median_edge": -0.10214007782101175,
+      "positive_gt0": 16,
+      "rows": 168
+    },
+    "geo=mu|serial=2609081259": {
+      "fixtures": 8,
+      "ge10": 25,
+      "ge2": 25,
+      "ge5": 25,
+      "median_edge": -0.08237279332815312,
+      "positive_gt0": 50,
+      "rows": 600
+    },
+    "geo=mx|serial=2608290548": {
+      "fixtures": 8,
+      "ge10": 0,
+      "ge2": 81,
+      "ge5": 0,
+      "median_edge": -0.10801609154194936,
+      "positive_gt0": 218,
+      "rows": 3126
+    },
+    "geo=mx|serial=2609081259": {
+      "fixtures": 11,
+      "ge10": 59,
+      "ge2": 211,
+      "ge5": 74,
+      "median_edge": -0.10444760404257769,
+      "positive_gt0": 402,
+      "rows": 5511
+    },
+    "geo=my|serial=2609081259": {
+      "fixtures": 2,
+      "ge10": 29,
+      "ge2": 58,
+      "ge5": 29,
+      "median_edge": -0.05596014077760908,
+      "positive_gt0": 58,
+      "rows": 174
+    },
+    "geo=nl|serial=2608290548": {
+      "fixtures": 11,
+      "ge10": 85,
+      "ge2": 118,
+      "ge5": 96,
+      "median_edge": -0.08771847699098456,
+      "positive_gt0": 121,
+      "rows": 888
+    },
+    "geo=nl|serial=2609081259": {
+      "fixtures": 15,
+      "ge10": 36,
+      "ge2": 98,
+      "ge5": 36,
+      "median_edge": -0.10036388501272031,
+      "positive_gt0": 151,
+      "rows": 1935
+    },
+    "geo=ru|serial=2608290548": {
+      "fixtures": 18,
+      "ge10": 65,
+      "ge2": 85,
+      "ge5": 85,
+      "median_edge": -0.09034025903271359,
+      "positive_gt0": 127,
+      "rows": 2259
+    },
+    "geo=ru|serial=2609081259": {
+      "fixtures": 2,
+      "ge10": 11,
+      "ge2": 24,
+      "ge5": 17,
+      "median_edge": -0.05771614321461138,
+      "positive_gt0": 53,
+      "rows": 270
+    },
+    "geo=sg|serial=2608290548": {
+      "fixtures": 6,
+      "ge10": 0,
+      "ge2": 0,
+      "ge5": 0,
+      "median_edge": -0.09036033639771135,
+      "positive_gt0": 0,
+      "rows": 558
+    },
+    "geo=sg|serial=2609081259": {
+      "fixtures": 9,
+      "ge10": 30,
+      "ge2": 30,
+      "ge5": 30,
+      "median_edge": -0.09900164104395115,
+      "positive_gt0": 30,
+      "rows": 783
+    },
+    "geo=tr|serial=2608290548": {
+      "fixtures": 5,
+      "ge10": 0,
+      "ge2": 0,
+      "ge5": 0,
+      "median_edge": -0.08806452924553221,
+      "positive_gt0": 0,
+      "rows": 420
+    },
+    "geo=ua|serial=2608290548": {
+      "fixtures": 8,
+      "ge10": 12,
+      "ge2": 25,
+      "ge5": 25,
+      "median_edge": -0.08705994260003747,
+      "positive_gt0": 50,
+      "rows": 600
+    }
+  }
+}

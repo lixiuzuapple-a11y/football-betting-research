@@ -1,46 +1,24 @@
 # results/
 
-Output of formal experiments. **Currently empty.**
+Formal experiment outputs. TASK-0007 and TASK-0008 completed their registered analyses, but **neither validated an actionable signal**.
 
-Nothing here is versioned; `.gitignore` excludes everything except this file and
-`.gitkeep`. A result is only meaningful next to the experiment record that
-produced it, and experiment records live in the code and in
-[`../docs/experiment-protocol.md`](../docs/experiment-protocol.md).
+Compact, reviewed result summaries are versioned under `results/task0007/` and `results/task0008/` alongside the task/report/review chain. Original prospective captures and the SQLite ledger remain on the cloud host, not in Git. The legacy raw bundles are locally held and excluded from Git.
 
-## Every reported number travels with
+All reported numbers require a sample denominator, input identity/version, program revision, observed time period, execution assumptions and the exact research gate. A good-looking result is not a profitable strategy, and an ACCEPTED research procedure is not a validated hypothesis.
 
-1. **Sample size** - an ROI over 40 bets is noise with a decimal point.
-2. **Data version** - `2026-09-18.1`, not "the data".
-3. **Model version.**
-4. **Period covered**, in `data_time` terms.
-5. **Margin assumption** - gross and net are different numbers.
-6. **Commit SHA** - the code that ran.
+## Layout
 
-Without that context a number is a rumour, and a rumour in this directory is
-worse than an empty directory.
-
-## Layout convention
-
-```
-results/
-├── <experiment_id>/
-│   ├── manifest.json     the (data_version, model_version, parameters) triple
-│   ├── metrics.json      the measurements
-│   └── notes.md          what surprised us, and what we now believe less
-```
+- `task0007/`: D01-B main and independent audit aggregates, candidates and mapping diagnostics.
+- `task0008/`: B01 main and independent audit JSON summaries. Versioned in TASK-0010's executable follow-up after counts were independently checked against cloud recomputation.
 
 ## Rules
 
-1. **Failed experiments are kept.** A `FAILED` result stays, with its reason.
-   `ExperimentRegistry` has no delete path for exactly this reason.
-2. **Never overwrite a result.** A re-run is a new file under a new id.
-3. **Never report an in-sample number as out-of-sample.** Label which is which.
-4. **Never drop the denominator.** Accuracy and ROI without a sample size are
-   unreadable.
-5. **Never present a backtest as a forecast.** A backtest measures a sample; it
-   does not promise a return.
+1. Preserve negative results and failed attempts.
+2. Do not overwrite frozen experiment output. A new experiment gets a separate task/result ID.
+3. Do not present in-sample numbers as out-of-sample or quote rows as independent fixtures.
+4. Keep execution and research accept/reject separate.
+5. Do not treat `reference_proxy` as a named sharp bookmaker or true win probability.
+6. Store bulk data outside Git with immutable provenance and verifiable hashes.
 
-## Status
-
-No experiment has been run. There is no data source and no model, so there is
+See `docs/experiment-protocol.md` and `REVIEWS/TASK-0007.md` / `REVIEWS/TASK-0008.md`.
 nothing to measure yet. The empty directory is the accurate report.

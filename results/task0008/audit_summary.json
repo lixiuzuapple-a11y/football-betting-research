@@ -1,0 +1,70 @@
+{
+  "fixture_selection_pairs": 57,
+  "fixtures": 19,
+  "forward_reference": {
+    "30m": {
+      "censored": 763,
+      "increases_residual": 145,
+      "reduces_residual": 558,
+      "unchanged": 1024
+    },
+    "5m": {
+      "censored": 163,
+      "increases_residual": 73,
+      "reduces_residual": 161,
+      "unchanged": 2093
+    },
+    "60m": {
+      "censored": 1294,
+      "increases_residual": 247,
+      "reduces_residual": 944,
+      "unchanged": 5
+    },
+    "next": {
+      "censored": 51,
+      "increases_residual": 53,
+      "reduces_residual": 79,
+      "unchanged": 2307
+    }
+  },
+  "identity": {
+    "ambiguous_reference_identities": 26,
+    "ambiguous_sporttery_identities": 0,
+    "matched_reference_events": 19,
+    "reference_events": 750,
+    "sporttery_matches": 24,
+    "unmatched_reference_events": 731
+  },
+  "median_sign_flip_fixture_sides": 10,
+  "multi_variant_fixture_sides": 57,
+  "observation_rows": 33453,
+  "paired_rounds": 6978,
+  "positive_presence_inconsistent_fixture_sides": 12,
+  "thresholds": {
+    "ge10": {
+      "episodes": 368,
+      "fixture_selection_pairs": 6,
+      "fixtures": 5,
+      "rows": 697
+    },
+    "ge2": {
+      "episodes": 742,
+      "fixture_selection_pairs": 11,
+      "fixtures": 9,
+      "rows": 1537
+    },
+    "ge5": {
+      "episodes": 530,
+      "fixture_selection_pairs": 8,
+      "fixtures": 7,
+      "rows": 1021
+    },
+    "gt0": {
+      "episodes": 1168,
+      "fixture_selection_pairs": 14,
+      "fixtures": 12,
+      "rows": 2490
+    }
+  },
+  "variant_count": 30
+}

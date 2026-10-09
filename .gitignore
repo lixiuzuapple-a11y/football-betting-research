@@ -70,6 +70,10 @@ data/*
 results/*
 !results/README.md
 !results/.gitkeep
+# Audited compact output artifacts; raw/bulk evidence remains outside Git.
+!results/task0008/
+!results/task0008/summary.json
+!results/task0008/audit_summary.json
 
 # Local legacy evidence bundles. The manifests/index files may be versioned,
 # but bulk archives and temporary review extracts must stay local.
