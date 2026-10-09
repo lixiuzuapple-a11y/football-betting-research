@@ -1,6 +1,6 @@
 # TASK-0016 — Cloud collection restart qualification
 
-- Status: IN_PROGRESS
+- Status: ACCEPTED
 - Date: 2026-10-09
 - Owner Li; Executor/Reviewer ChatGPT
 - Goal: Determine whether cloud collection can resume safely after TASK-0015 revealed persistent successful-but-empty official responses.
