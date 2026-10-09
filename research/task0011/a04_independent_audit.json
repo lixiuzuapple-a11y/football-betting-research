@@ -1,0 +1,20 @@
+{
+  "source_rows_parsed": 2862,
+  "invalid_identity_date": 80403,
+  "groups": {
+    "home_adv": {
+      "n": 136,
+      "mean_home_win_residual": -0.006267371541072368
+    },
+    "away_adv": {
+      "n": 155,
+      "mean_home_win_residual": -0.001468343001626464
+    },
+    "neutral": {
+      "n": 2371,
+      "mean_home_win_residual": -0.010968552901129162
+    }
+  },
+  "primary_contrast": -0.004799028539445904,
+  "matches_primary": true
+}

@@ -1,6 +1,6 @@
 # TASK-0011 — Integrated mechanism selection and falsification cycle
 
-- Status: IN_PROGRESS
+- Status: ACCEPTED
 - Owner: Li
 - Lead / Executor / Reviewer-of-record: ChatGPT
 - Start date: 2026-10-09
