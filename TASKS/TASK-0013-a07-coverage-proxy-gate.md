@@ -1,5 +1,5 @@
 # TASK-0013 — A07 information-coverage proxy feasibility gate
-- Status: IN_PROGRESS
+- Status: ACCEPTED
 - Date: 2026-10-09
 - Owner Li; Executor/Reviewer ChatGPT.
 - New mechanism: A07 ex-ante information coverage. Distinct from TASK-0011/12 A04 rest.

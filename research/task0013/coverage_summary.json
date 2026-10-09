@@ -1,0 +1,16 @@
+{
+  "sha256": "c5cd9dbb3f75ed06136146b8eb5c9baa54edb880b0d27f2c893fe2c6920e568a",
+  "total": 83265,
+  "by_source": {
+    "fd_extra": {
+      "rows": 59940,
+      "opening_complete": 0,
+      "closing_complete": 56565
+    },
+    "fd_std": {
+      "rows": 23325,
+      "opening_complete": 18571,
+      "closing_complete": 18696
+    }
+  }
+}
