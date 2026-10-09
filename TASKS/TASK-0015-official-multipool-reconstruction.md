@@ -1,5 +1,5 @@
 # TASK-0015 — Official five-pool reconstruction and empty-universe diagnosis
-- Status: IN_PROGRESS
+- Status: ACCEPTED
 - Date: 2026-10-09
 - Owner: Li; Executor/Reviewer-of-record: ChatGPT.
 - Prior evidence: TASK-0014 at commit 15e6ba9.

@@ -1,0 +1,32 @@
+{
+  "official_regular_captures_with_raw": 7100,
+  "nonempty_captures": 2842,
+  "empty_captures": 4258,
+  "distinct_matches": 24,
+  "records_by_pool": {
+    "HAD": 18587,
+    "HHAD": 18587,
+    "TTG": 18587,
+    "CRS": 18587,
+    "HAFU": 18587
+  },
+  "total_reconstructed_rows": 92935,
+  "missing_pool_objects": 0,
+  "distinct_match_provider_clocks": {
+    "HAD": 126,
+    "HHAD": 140,
+    "TTG": 103,
+    "CRS": 90,
+    "HAFU": 105
+  },
+  "detailed_cloud_path": "/tmp/task0015-official-pools/official_pool_states.ndjson",
+  "detailed_sha256": "b1bb53046c6a5b42f7d1f5156df6e45244132e40531cb084ffac6c966c206898",
+  "had_regular_ledger_match": {
+    "matched_rows": 18587,
+    "unmatched_keys": 0,
+    "odds_time_availability_discrepancies": 0
+  },
+  "last_nonempty_utc": "2026-09-30T10:30:46.856060+00:00",
+  "first_empty_after_utc": "2026-09-30T10:31:46.837143+00:00",
+  "later_nonempty": 0
+}
