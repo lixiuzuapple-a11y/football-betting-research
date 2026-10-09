@@ -1,6 +1,6 @@
 # TASK-0020 — Official source replay vs genuine update, frozen/live comparison
 - Date: 2026-10-09
-- Status: IN_PROGRESS
+- Status: ACCEPTED
 - Owner Li, Executor/Reviewer ChatGPT
 - Frozen source TASK-0006 official regular raw, previously verified TASK-0015 NDJSON.
 - Live source TASK-0017 newly bounded official-only SQLite, **read-only**; service untouched.
