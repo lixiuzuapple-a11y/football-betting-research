@@ -1,5 +1,5 @@
 # TASK-0009 — Reference-source qualification
-- Status: IN_PROGRESS
+- Status: ACCEPTED
 - Date: 2026-10-09
 - Owner: Li
 - Lead / Executor / Reviewer: ChatGPT
