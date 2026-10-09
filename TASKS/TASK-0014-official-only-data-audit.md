@@ -1,6 +1,6 @@
 # TASK-0014 — Official Sporttery-only prospective data requalification
 
-- Status: IN_PROGRESS
+- Status: ACCEPTED
 - Owner: Li; Executor/Reviewer: ChatGPT
 - Date: 2026-10-09
 - Existing cloud dataset: /home/ubuntu/evlab-data/task0006-sealed-20260928a/ledger.sqlite3
