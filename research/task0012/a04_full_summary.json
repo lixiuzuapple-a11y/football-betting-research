@@ -1,0 +1,37 @@
+{
+  "source_sha256": "c5cd9dbb3f75ed06136146b8eb5c9baa54edb880b0d27f2c893fe2c6920e568a",
+  "source_rows_parsed": 83265,
+  "exclusions": {
+    "no_prior_fixture": 2797,
+    "missing_opening_price_or_result": 61355,
+    "invalid_rest_interval": 1152
+  },
+  "valid_rest_rows_before_price_filter": 79316,
+  "matched_league_seasons": 66,
+  "groups": {
+    "home_adv": {
+      "n": 783,
+      "mean_home_win_residual": -0.026488110919171047,
+      "mean_market_home_probability": 0.43644979674292605
+    },
+    "away_adv": {
+      "n": 863,
+      "mean_home_win_residual": 0.030628099848989933,
+      "mean_market_home_probability": 0.4340300693282986
+    },
+    "neutral": {
+      "n": 16315,
+      "mean_home_win_residual": -0.004572704860532365,
+      "mean_market_home_probability": 0.43454512288075714
+    }
+  },
+  "primary_contrast": -0.05711621076816098,
+  "cluster_bootstrap_seed": 1109,
+  "cluster_bootstrap_draws_valid": 2000,
+  "cluster_bootstrap_ci_95": [
+    -0.10197295747085891,
+    -0.015531568653962626
+  ],
+  "preregistered_adequacy_pass": true,
+  "interpretation": "EXPLORATORY_NEGATIVE_DIRECTION"
+}

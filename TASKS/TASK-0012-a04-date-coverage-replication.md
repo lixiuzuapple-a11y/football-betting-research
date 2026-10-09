@@ -1,5 +1,5 @@
 # TASK-0012 — A04 mixed-date complete-coverage replication
-- Status: IN_PROGRESS
+- Status: ACCEPTED
 - Date: 2026-10-09
 - Owner: Li; Executor/reviewer: ChatGPT
 - Parent frozen outcome: TASK-0011 inconclusive, SHA c5cd9dbb3f75ed06136146b8eb5c9baa54edb880b0d27f2c893fe2c6920e568a.
