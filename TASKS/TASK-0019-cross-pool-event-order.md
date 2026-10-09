@@ -1,5 +1,5 @@
 # TASK-0019 — Official five-pool event ordering and timestamp integrity
-- Status: IN_PROGRESS
+- Status: ACCEPTED
 - Date: 2026-10-09
 - Owner Li; Executor/Reviewer ChatGPT
 - Source frozen TASK-0006 only, TASK-0015 NDJSON independently verified under TASK-0018.
