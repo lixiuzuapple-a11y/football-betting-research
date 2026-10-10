@@ -1,5 +1,6 @@
 """TASK-0021 independent collector health monitor; one-shot, invoked by systemd timer."""
 import argparse,datetime as dt,json,sqlite3,subprocess
+from contextlib import closing
 from pathlib import Path
 
 def health(root:Path,service:str,now=None):
@@ -8,7 +9,7 @@ def health(root:Path,service:str,now=None):
     row={"at":now.isoformat(),"service":service,"active":state,"status":"FAIL"}
     try:
         db=root/"official.sqlite3"
-        with sqlite3.connect(f"file:{db}?mode=ro",uri=True,timeout=5) as con:
+        with closing(sqlite3.connect(f"file:{db}?mode=ro",uri=True,timeout=5)) as con:
             integrity=con.execute("PRAGMA quick_check").fetchone()[0]
             x=con.execute("select capture_id,observed_at_utc,result,match_count from captures order by capture_id desc limit 1").fetchone()
         row["integrity"]=integrity
