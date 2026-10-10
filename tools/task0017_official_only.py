@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import gzip
 import hashlib
+import http.client
 import json
 import os
 import sqlite3
@@ -93,7 +94,7 @@ def capture_once(conn: sqlite3.Connection, root: Path, *, timeout: float, commit
             except (ValueError, TypeError, KeyError) as exc:
                 result = "invalid_json"
                 error = f"{type(exc).__name__}: {str(exc)[:180]}"
-    except (OSError, TimeoutError) as exc:
+    except (OSError, TimeoutError, http.client.IncompleteRead) as exc:
         error = f"{type(exc).__name__}: {str(exc)[:180]}"
     received = now_utc()
     raw_hash = None
