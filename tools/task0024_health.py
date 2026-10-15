@@ -19,9 +19,9 @@ def check(root,service,max_rounds,now=None):
   if last:
    age=(now-dt.datetime.fromisoformat(last[0])).total_seconds()
    item.update({"lag_seconds":round(age,2),"last_result":last[1],"match_count":last[2]})
-  if state=="inactive" and result=="success" and n>=max_rounds and integrity=="ok" and last and last[1]=="ok":
+  if state=="inactive" and result=="success" and n>=max_rounds and integrity=="ok" and last and last[1] in ("ok", "no_offer"):
    item["status"]="COMPLETED"
-  elif state=="active" and integrity=="ok" and free>=2*1024**3 and last and last[1]=="ok" and last[2]>0 and -30<=age<=180:
+  elif state=="active" and integrity=="ok" and free>=2*1024**3 and last and last[1] in ("ok", "no_offer") and (last[2]>0 or (last[1]=="no_offer" and last[2]==0)) and -30<=age<=180:
    item["status"]="OK"
   else:item["reason"]="unit/age/response/disk/integrity gate"
  except (OSError,ValueError,sqlite3.Error) as e:item["reason"]=type(e).__name__+":"+str(e)[:120]

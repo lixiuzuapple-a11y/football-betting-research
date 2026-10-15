@@ -12,7 +12,7 @@ def test_classify_full_and_empty():
         {"subMatchList":[{"matchId":1,"had":{},"hhad":{},"ttg":{},"crs":{},"hafu":{}}]},
         {"subMatchList":[{"matchId":2}]}],"lastUpdateTime":"x"}}
     assert collector.classify(json.dumps(full).encode())==("ok",2,"x")
-    assert collector.classify(json.dumps({"success":True,"value":{"vtoolsConfig":{}}}).encode())==("empty",0,None)
+    assert collector.classify(json.dumps({"success":True,"value":{"vtoolsConfig":{}}}).encode())==("schema_error",0,None)
     assert collector.classify(json.dumps({"success":False}).encode())[0]=="source_error"
 
 

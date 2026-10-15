@@ -53,7 +53,14 @@ def classify(body: bytes) -> tuple[str, int, str | None]:
     value = obj.get("value") or {}
     if not isinstance(value, dict):
         return "schema_error", 0, None
-    groups = value.get("matchInfoList") or []
+    if "matchInfoList" not in value:
+        cfg = value.get("vtoolsConfig")
+        if (isinstance(cfg, dict) and value.keys() == {"vtoolsConfig"}
+                and all(cfg.get(k) == 1 for k in ("offLineSaleStatus", "onLineSaleStatus"))
+                and "停止销售" in str(cfg.get("onLineStopMessage", ""))):
+            return "no_offer", 0, None
+        return "schema_error", 0, None
+    groups = value.get("matchInfoList")
     if not isinstance(groups, list):
         return "schema_error", 0, None
     count = 0
@@ -64,7 +71,7 @@ def classify(body: bytes) -> tuple[str, int, str | None]:
         if not isinstance(matches, list):
             return "schema_error", 0, None
         count += len(matches)
-    return ("ok" if count else "empty"), count, value.get("lastUpdateTime")
+    return ("ok" if count else "no_offer"), count, value.get("lastUpdateTime")
 
 
 def fetch(timeout: float) -> tuple[bytes, int]:
@@ -153,7 +160,7 @@ def run(root: Path, *, max_rounds: int, max_hours: float, cadence: float,
             loop_start = time.monotonic()
             row = capture_once(conn, root, timeout=timeout, commit=commit)
             print(json.dumps(row, ensure_ascii=False), flush=True)
-            if row["result"] != "ok":
+            if row["result"] not in ("ok", "no_offer"):
                 bad += 1
                 if bad >= max_bad:
                     print("STOP consecutive non-successful/empty responses", file=sys.stderr, flush=True)
