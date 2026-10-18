@@ -93,7 +93,7 @@
     {
       "repo": "martineastwood/penaltyblog",
       "category": "B_MODELS",
-      "verification_state": "pending_individual_verification",
+      "verification_state": "completed_targeted_source_review_E2",
       "category_a": null,
       "previous_discovery": {
         "repo": "martineastwood/penaltyblog",
@@ -103,12 +103,18 @@
         "usage": "Dixon-Coles/Poisson现成算法候选",
         "license": "MIT",
         "source": "dixon_coles.py c35316db"
+      },
+      "category_b": {
+        "decision": "P1 reserve as alternative mature DC model, no full package install",
+        "source": "pyproject.toml blob 911b4c2e; penaltyblog/models/dixon_coles.py blob c35316db; LICENCE blob be173f45",
+        "findings": "v1.13.1, MIT; original DC with gradients and score probability grids. Base dependencies ~20 incl Cython, scipy, matplotlib, statsbombpy, selenium-like tls wrapper. No E3 run in this stage; no statistical performance claim.",
+        "remaining": "isolated upstream full run only if needed vs already running callumfm"
       }
     },
     {
       "repo": "callumfm/dixon-coles",
       "category": "B_MODELS",
-      "verification_state": "pending_individual_verification",
+      "verification_state": "completed_upstream_E3_original_run",
       "category_a": null,
       "previous_discovery": {
         "repo": "callumfm/dixon-coles",
@@ -118,12 +124,18 @@
         "usage": "较小的DC实现可对照",
         "license": "有LICENSE文件",
         "source": "pyproject c524a1f4"
+      },
+      "category_b": {
+        "decision": "P1 controlled research candidate, NOT production or proven alpha",
+        "source": "original git commit dea06c6e4b38085d6a4b84186cb9ead321a73ce4; upstream tests 122 PASS; independent Windows venv original package v0.1.0",
+        "findings": "original fit on E0 2025/26 380 goals-only, 2026/27 60 heldout, model LL1.033926 vs retrospective market LL1.047054, delta -0.013128, date bootstrap CI [-0.06997,+0.04781]. 60 heldout score mutation -> 37 labels change, zero forecast vector change; no odds in independent fit.",
+        "remaining": "market comparable data is not frozen prior to kickoff, test sample narrow, interval crosses zero; no actionable betting claim"
       }
     },
     {
       "repo": "Hicruben/theopenmodel",
       "category": "B_MODELS",
-      "verification_state": "pending_individual_verification",
+      "verification_state": "completed_upstream_E3_function_smoke",
       "category_a": null,
       "previous_discovery": {
         "repo": "Hicruben/theopenmodel",
@@ -133,12 +145,18 @@
         "usage": "赛前冻结快照流程、Elo至Dixon-Coles",
         "license": "MIT（README）",
         "source": "model.ts d822bd75; daily.yml ecd3abf1"
+      },
+      "category_b": {
+        "decision": "P1 methodological candidate for score grid; no OOS acceptance",
+        "source": "original lib/model.ts blob d822bd75a8d7f57e8e4a6afcadb28cad3306c911 verified with Git blob hash; original TS executed via Node24",
+        "findings": "3 original matchProb smoke vectors normalized and directional sensible; fixed constants / Elo required; no historical Elo source verified by this smoke test",
+        "remaining": "historical ClubElo/fixture snapshot availability and truly frozen pre-kickoff OOS predictions"
       }
     },
     {
       "repo": "yukunai/football-predictor",
       "category": "B_MODELS",
-      "verification_state": "pending_individual_verification",
+      "verification_state": "completed_targeted_source_review_E2",
       "category_a": null,
       "previous_discovery": {
         "repo": "yukunai/football-predictor",
@@ -148,12 +166,18 @@
         "usage": "ClubElo与DC参考项目",
         "license": "未审",
         "source": "README"
+      },
+      "category_b": {
+        "decision": "P2 source pattern/reference only, no full model onboarding",
+        "source": "shallow upstream clone HEAD b63dbcd; models/dixon_coles.py, models/backtest.py directly read",
+        "findings": "genuine DixonColesConfig and BacktestConfig with Elo prior, xG optional, refit_every, thin-history policies; its README mentions 14 free leagues and 9 API-assisted but does not prove source coverage today. No root LICENSE file was found by tracked-files check; README install clone URL points to a different GitHub owner.",
+        "remaining": "source ownership/license and legitimate league CSV provenance, actual OOS replication"
       }
     },
     {
       "repo": "kenRedco/football-predictor",
       "category": "B_MODELS",
-      "verification_state": "pending_individual_verification",
+      "verification_state": "completed_targeted_source_review_E2",
       "category_a": null,
       "previous_discovery": {
         "repo": "kenRedco/football-predictor",
@@ -163,6 +187,12 @@
         "usage": "walk-forward与Poisson+XGBoost候选",
         "license": "未审",
         "source": "README"
+      },
+      "category_b": {
+        "decision": "P2 method snippets/reference only, not integrated",
+        "source": "shallow upstream clone HEAD 60cd5ef; src/models/poisson.py plus backtest code path inspected",
+        "findings": "uses attack/defence multiplicative Poisson and scoreline grid; optional XGBoost, needs API key to fetch own source; README reported 152 tests and own RPS figures not rerun. Root LICENSE absent in tracked files.",
+        "remaining": "source/license, data coverage, exact PIT feature construction, full upstream OOS QA"
       }
     },
     {
