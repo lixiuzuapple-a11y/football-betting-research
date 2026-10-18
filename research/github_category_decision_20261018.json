@@ -1,0 +1,304 @@
+{
+  "date": "2026-10-18",
+  "policy": "One category at a time, original sources and actual negative controls; no group promotes another group.",
+  "category_order": [
+    "A_DATA",
+    "B_MODELS",
+    "C_RESEARCH_QA",
+    "D_SPECIALIZED"
+  ],
+  "counts": {
+    "A_DATA": 4,
+    "B_MODELS": 5,
+    "C_RESEARCH_QA": 4,
+    "D_SPECIALIZED": 5
+  },
+  "rows": [
+    {
+      "repo": "probberechts/soccerdata",
+      "category": "A_DATA",
+      "verification_state": "completed_E2_E3_source_probe",
+      "category_a": {
+        "decision": "P1 selective ESPN-source reference and identity-QA only; don't install entire package or promote ClubElo",
+        "evidence": "Original espn.py/clubelo.py/understat.py and pyproject read; ESPN E3 via original public endpoint, ClubElo HTTP502, Understat HTML200 but data extraction unproven",
+        "risk": "requires SeleniumBase etc; ESPN license unknown; team aliases not authoritative"
+      },
+      "previous_discovery": {
+        "repo": "probberechts/soccerdata",
+        "url": "https://github.com/probberechts/soccerdata",
+        "tier": "P0",
+        "evidence": "E2",
+        "usage": "多源数据适配器，原版 ClubElo 源码已审",
+        "license": "Apache-2.0",
+        "source": "clubelo.py e20eba86"
+      }
+    },
+    {
+      "repo": "openfootball/football.json",
+      "category": "A_DATA",
+      "verification_state": "completed_E2_E3_source_probe",
+      "category_a": {
+        "decision": "P2 historical schedule + offline fixtures only; DO NOT adopt for October 2026 results",
+        "evidence": "2026/27 EPL 380 fixtures only 45 scored, Bundesliga 306 only 33 scored, both last scored 2026-09-20; bytes/hash archived",
+        "risk": "upstream Football.TXT not auto-updated despite JSON generator daily"
+      },
+      "previous_discovery": {
+        "repo": "openfootball/football.json",
+        "url": "https://github.com/openfootball/football.json",
+        "tier": "P2",
+        "evidence": "E3-源访问",
+        "usage": "CC0比分、赛程；十月比分更新滞后",
+        "license": "CC0-1.0",
+        "source": "2026-27/en.1.json 真实HTTP 200"
+      }
+    },
+    {
+      "repo": "hudl/open-data",
+      "category": "A_DATA",
+      "verification_state": "completed_E2_E3_source_probe",
+      "category_a": {
+        "decision": "P2 event-based methodology/data only, not EV-Lab 169 current fixture match provider",
+        "evidence": "80 competition seasons no 2026 by season_name, direct 2023/24 Bundesliga match JSON 34 rows real",
+        "risk": "source attribution and event availability timing; sparse source coverage"
+      },
+      "previous_discovery": {
+        "repo": "hudl/open-data",
+        "url": "https://github.com/hudl/open-data",
+        "tier": "P2",
+        "evidence": "E3-源访问",
+        "usage": "StatsBomb事件数据，非169比赛即时历史源",
+        "license": "须署名/logo",
+        "source": "competitions.json HTTP 200"
+      }
+    },
+    {
+      "repo": "martj42/international_results",
+      "category": "A_DATA",
+      "verification_state": "completed_E2_E3_source_probe",
+      "category_a": {
+        "decision": "P2 independent national-team historical research only, not 169 club fixtures",
+        "evidence": "actual results.csv 49,945 scored rows, last 2026-10-06, differs from README statement of 49,459 to 2024",
+        "risk": "national teams only; extra-time scores; multiple secondary data origins; no club IDs"
+      },
+      "previous_discovery": {
+        "repo": "martj42/international_results",
+        "url": "https://github.com/martj42/international_results",
+        "tier": "P2",
+        "evidence": "E1",
+        "usage": "国际比赛历史结果候选",
+        "license": "未审",
+        "source": "仓库元数据"
+      }
+    },
+    {
+      "repo": "martineastwood/penaltyblog",
+      "category": "B_MODELS",
+      "verification_state": "pending_individual_verification",
+      "category_a": null,
+      "previous_discovery": {
+        "repo": "martineastwood/penaltyblog",
+        "url": "https://github.com/martineastwood/penaltyblog",
+        "tier": "P1",
+        "evidence": "E2",
+        "usage": "Dixon-Coles/Poisson现成算法候选",
+        "license": "MIT",
+        "source": "dixon_coles.py c35316db"
+      }
+    },
+    {
+      "repo": "callumfm/dixon-coles",
+      "category": "B_MODELS",
+      "verification_state": "pending_individual_verification",
+      "category_a": null,
+      "previous_discovery": {
+        "repo": "callumfm/dixon-coles",
+        "url": "https://github.com/callumfm/dixon-coles",
+        "tier": "P1",
+        "evidence": "E2",
+        "usage": "较小的DC实现可对照",
+        "license": "有LICENSE文件",
+        "source": "pyproject c524a1f4"
+      }
+    },
+    {
+      "repo": "Hicruben/theopenmodel",
+      "category": "B_MODELS",
+      "verification_state": "pending_individual_verification",
+      "category_a": null,
+      "previous_discovery": {
+        "repo": "Hicruben/theopenmodel",
+        "url": "https://github.com/Hicruben/theopenmodel",
+        "tier": "P1",
+        "evidence": "E2",
+        "usage": "赛前冻结快照流程、Elo至Dixon-Coles",
+        "license": "MIT（README）",
+        "source": "model.ts d822bd75; daily.yml ecd3abf1"
+      }
+    },
+    {
+      "repo": "yukunai/football-predictor",
+      "category": "B_MODELS",
+      "verification_state": "pending_individual_verification",
+      "category_a": null,
+      "previous_discovery": {
+        "repo": "yukunai/football-predictor",
+        "url": "https://github.com/yukunai/football-predictor",
+        "tier": "P2",
+        "evidence": "E1",
+        "usage": "ClubElo与DC参考项目",
+        "license": "未审",
+        "source": "README"
+      }
+    },
+    {
+      "repo": "kenRedco/football-predictor",
+      "category": "B_MODELS",
+      "verification_state": "pending_individual_verification",
+      "category_a": null,
+      "previous_discovery": {
+        "repo": "kenRedco/football-predictor",
+        "url": "https://github.com/kenRedco/football-predictor",
+        "tier": "P2",
+        "evidence": "E1",
+        "usage": "walk-forward与Poisson+XGBoost候选",
+        "license": "未审",
+        "source": "README"
+      }
+    },
+    {
+      "repo": "dank0i/football-forecast",
+      "category": "C_RESEARCH_QA",
+      "verification_state": "pending_individual_verification",
+      "category_a": null,
+      "previous_discovery": {
+        "repo": "dank0i/football-forecast",
+        "url": "https://github.com/dank0i/football-forecast",
+        "tier": "P0",
+        "evidence": "E2",
+        "usage": "反事实时间泄漏测试、市场对照；上游成绩未复现",
+        "license": "根目录LICENSE未找到",
+        "source": "test_leakage.py 2bb8e401"
+      }
+    },
+    {
+      "repo": "alexander-quang-phan/football-match-outcome-prediction",
+      "category": "C_RESEARCH_QA",
+      "verification_state": "pending_individual_verification",
+      "category_a": null,
+      "previous_discovery": {
+        "repo": "alexander-quang-phan/football-match-outcome-prediction",
+        "url": "https://github.com/alexander-quang-phan/football-match-outcome-prediction",
+        "tier": "P0",
+        "evidence": "E2",
+        "usage": "赛后排名泄漏反例、平局召回报告",
+        "license": "未审",
+        "source": "README a0b1cfc"
+      }
+    },
+    {
+      "repo": "OPaheimer/premier-league-predictor",
+      "category": "C_RESEARCH_QA",
+      "verification_state": "pending_individual_verification",
+      "category_a": null,
+      "previous_discovery": {
+        "repo": "OPaheimer/premier-league-predictor",
+        "url": "https://github.com/OPaheimer/premier-league-predictor",
+        "tier": "P0",
+        "evidence": "E2",
+        "usage": "freeze/grade/ledger流程，但允许替换快照",
+        "license": "MIT（README）",
+        "source": "weekly_loop.py 03f8155f"
+      }
+    },
+    {
+      "repo": "kaspersgit/football-prediction-autoresearch",
+      "category": "C_RESEARCH_QA",
+      "verification_state": "pending_individual_verification",
+      "category_a": null,
+      "previous_discovery": {
+        "repo": "kaspersgit/football-prediction-autoresearch",
+        "url": "https://github.com/kaspersgit/football-prediction-autoresearch",
+        "tier": "P3",
+        "evidence": "E2",
+        "usage": "训练特征含market_h等，不符合独立模型",
+        "license": "未审",
+        "source": "features.py 188ff7a1"
+      }
+    },
+    {
+      "repo": "ML-KULeuven/socceraction",
+      "category": "D_SPECIALIZED",
+      "verification_state": "pending_individual_verification",
+      "category_a": null,
+      "previous_discovery": {
+        "repo": "ML-KULeuven/socceraction",
+        "url": "https://github.com/ML-KULeuven/socceraction",
+        "tier": "P2",
+        "evidence": "E1",
+        "usage": "球员事件SPADL/VAEP，不是比分来源",
+        "license": "未审",
+        "source": "README"
+      }
+    },
+    {
+      "repo": "Luis-ntonio/Match_Prediction",
+      "category": "D_SPECIALIZED",
+      "verification_state": "pending_individual_verification",
+      "category_a": null,
+      "previous_discovery": {
+        "repo": "Luis-ntonio/Match_Prediction",
+        "url": "https://github.com/Luis-ntonio/Match_Prediction",
+        "tier": "P2",
+        "evidence": "E1",
+        "usage": "国际队数据不适合大部分俱乐部竞彩",
+        "license": "未审",
+        "source": "README"
+      }
+    },
+    {
+      "repo": "RKarnik10/world-cup-predictor",
+      "category": "D_SPECIALIZED",
+      "verification_state": "pending_individual_verification",
+      "category_a": null,
+      "previous_discovery": {
+        "repo": "RKarnik10/world-cup-predictor",
+        "url": "https://github.com/RKarnik10/world-cup-predictor",
+        "tier": "P3",
+        "evidence": "E1",
+        "usage": "国际队项目，第三方数据有非商用条款",
+        "license": "数据CC BY-NC-SA",
+        "source": "README"
+      }
+    },
+    {
+      "repo": "Divyadhole/world-cup-match-predictor",
+      "category": "D_SPECIALIZED",
+      "verification_state": "pending_individual_verification",
+      "category_a": null,
+      "previous_discovery": {
+        "repo": "Divyadhole/world-cup-match-predictor",
+        "url": "https://github.com/Divyadhole/world-cup-match-predictor",
+        "tier": "P3",
+        "evidence": "E1",
+        "usage": "附小型合成数据不能用于真实结论",
+        "license": "MIT（README）",
+        "source": "README"
+      }
+    },
+    {
+      "repo": "DOsinga/football_predictions",
+      "category": "D_SPECIALIZED",
+      "verification_state": "pending_individual_verification",
+      "category_a": null,
+      "previous_discovery": {
+        "repo": "DOsinga/football_predictions",
+        "url": "https://github.com/DOsinga/football_predictions",
+        "tier": "P3",
+        "evidence": "E1",
+        "usage": "杯赛模拟可混合赔率，不是独立俱乐部模型",
+        "license": "未审",
+        "source": "README"
+      }
+    }
+  ]
+}
