@@ -278,7 +278,7 @@
     {
       "repo": "ML-KULeuven/socceraction",
       "category": "D_SPECIALIZED",
-      "verification_state": "pending_individual_verification",
+      "verification_state": "completed_upstream_E3_partial_tests_and_fixture_drift",
       "category_a": null,
       "previous_discovery": {
         "repo": "ML-KULeuven/socceraction",
@@ -288,12 +288,20 @@
         "usage": "球员事件SPADL/VAEP，不是比分来源",
         "license": "未审",
         "source": "README"
+      },
+      "category_d": {
+        "decision": "P2 future event analytics only; not current pre-kickoff 169 feed",
+        "source": "upstream clone HEAD 93a1242; original v1.5.3 MIT; CPython3.12 isolated install; StatsBomb official event IDs 7584 and 9912 SHA archived",
+        "observed": "4 selected original tests PASS with real event JSON. Broader same suite 4 pass 11 fail; old event UUIDs in test fixture not in latest public 7584 snapshot. Dependency multimethod 2.x incompatible with upstream pandera 0.17.2, isolated pin 1.10 required.",
+        "evidence_level": "E3-partial",
+        "allow_in_real_benchmark": false,
+        "data_nature": "event_data_older_competition"
       }
     },
     {
       "repo": "Luis-ntonio/Match_Prediction",
       "category": "D_SPECIALIZED",
-      "verification_state": "pending_individual_verification",
+      "verification_state": "completed_source_and_real_data_audit_E2",
       "category_a": null,
       "previous_discovery": {
         "repo": "Luis-ntonio/Match_Prediction",
@@ -303,12 +311,20 @@
         "usage": "国际队数据不适合大部分俱乐部竞彩",
         "license": "未审",
         "source": "README"
+      },
+      "category_d": {
+        "decision": "P2 national-team method/reference, not club mixed 169",
+        "source": "upstream clone HEAD b22e501; LICENSE CC0; bundled results.csv sha bc278465d3d46459c72f6a8ef819f0b8cdbaf45841cee7b788fa1a768c36a01d",
+        "observed": "49,477 original scored international match rows 1872-11-30 through 2026-06-27; previously audited martj42 source has 49,945 through 2026-10-06. Bundled report claims 0.8076 log loss for calibrated model, not independently reproduced; saved XGB files/feature list examined.",
+        "evidence_level": "E2+real_file_audit",
+        "allow_in_real_benchmark": false,
+        "data_nature": "historical_international"
       }
     },
     {
       "repo": "RKarnik10/world-cup-predictor",
       "category": "D_SPECIALIZED",
-      "verification_state": "pending_individual_verification",
+      "verification_state": "completed_source_license_and_domain_E2",
       "category_a": null,
       "previous_discovery": {
         "repo": "RKarnik10/world-cup-predictor",
@@ -318,12 +334,20 @@
         "usage": "国际队项目，第三方数据有非商用条款",
         "license": "数据CC BY-NC-SA",
         "source": "README"
+      },
+      "category_d": {
+        "decision": "P3 not for current mixed club fixtures; optional national-team research only after independent historical rerun and clear code permission",
+        "source": "upstream clone HEAD f6520a5; README/requirements inspected; no root license tracked",
+        "observed": "Original XGBoost + Elo/rolling form national-team pipeline depends on martj42 international history, scikit-learn and XGBoost, Streamlit display; author performance claims unverified, no original execution this stage.",
+        "evidence_level": "E2",
+        "allow_in_real_benchmark": false,
+        "data_nature": "international_team_model"
       }
     },
     {
       "repo": "Divyadhole/world-cup-match-predictor",
       "category": "D_SPECIALIZED",
-      "verification_state": "pending_individual_verification",
+      "verification_state": "completed_original_elo_tests_and_synthetic_provenance_E3",
       "category_a": null,
       "previous_discovery": {
         "repo": "Divyadhole/world-cup-match-predictor",
@@ -333,12 +357,20 @@
         "usage": "附小型合成数据不能用于真实结论",
         "license": "MIT（README）",
         "source": "README"
+      },
+      "category_d": {
+        "decision": "P2 software/test methodology only; reject real prediction or ROI evidence",
+        "source": "upstream clone HEAD 65ff37e; MIT; original tests/test_elo.py four tests PASS via isolated scientific venv",
+        "observed": "docs/DATA_CARD.md explicitly says data/raw/international_matches_sample.csv is generated 576 matches 2017–2024, 16 teams seed42; reports/metrics-summary.json model logloss0.9841 vs Elo0.9789 refers to synthetic data, not real tournaments.",
+        "evidence_level": "E3-original_tests_synthetic_only",
+        "allow_in_real_benchmark": false,
+        "data_nature": "synthetic"
       }
     },
     {
       "repo": "DOsinga/football_predictions",
       "category": "D_SPECIALIZED",
-      "verification_state": "pending_individual_verification",
+      "verification_state": "completed_upstream_simulation_and_four_JS_tests_E3",
       "category_a": null,
       "previous_discovery": {
         "repo": "DOsinga/football_predictions",
@@ -348,6 +380,14 @@
         "usage": "杯赛模拟可混合赔率，不是独立俱乐部模型",
         "license": "未审",
         "source": "README"
+      },
+      "category_d": {
+        "decision": "P2 tournament simulator reference; no independent predictive alpha and no club mixed fixture adaptation",
+        "source": "upstream clone HEAD 8c58f54; original Python simulate.py --n 300 --seed 1, predict.py --json executed; four original JS test entrypoints run with proper YAML-to-JSON stdin when needed",
+        "observed": "test_predict.js and test_model_settings.js PASS; test_simulate_js.js and test_backtest.js PASS with 2022 WC JSON input (backtest actual replay 1 tournament); README states optional market-odds blend, explicitly distinguish from independent model. Root LICENSE not tracked; legacy/LICENSE Apache-2.0 only for legacy subtree.",
+        "evidence_level": "E3-source_runner",
+        "allow_in_real_benchmark": false,
+        "data_nature": "tournament_configuration"
       }
     }
   ]
