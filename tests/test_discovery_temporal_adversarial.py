@@ -42,3 +42,22 @@ def test_odds_mutation_cannot_change_independent_probabilities():
     changed_independent = [r["independent_p"] for r in changed["evaluated_records"]]
     assert original_independent == changed_independent
     assert original["market"]["logloss"] != changed["market"]["logloss"]
+
+
+def test_same_day_outcome_mutation_does_not_change_same_day_forecast():
+    rows = _rows()
+    baseline = evaluate(rows, min_prior=2)
+    target_day = "2026-10-12"
+    corrupted = [
+        {**r, "y": 2} if r["date"] == target_day else r
+        for r in rows
+    ]
+    replayed = evaluate(corrupted, min_prior=2)
+    extract = lambda x, day: [
+        (r["mid"], r["independent_p"])
+        for r in x["evaluated_records"]
+        if r["day"] == day
+    ]
+    assert extract(baseline, target_day) == extract(replayed, target_day)
+    # A later day's forecast is allowed to change after the outcome becomes historical.
+    assert extract(baseline, "2026-10-13") != extract(replayed, "2026-10-13")

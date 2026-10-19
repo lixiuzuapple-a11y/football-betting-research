@@ -198,7 +198,7 @@
     {
       "repo": "dank0i/football-forecast",
       "category": "C_RESEARCH_QA",
-      "verification_state": "pending_individual_verification",
+      "verification_state": "completed_original_2_antileak_tests_E3",
       "category_a": null,
       "previous_discovery": {
         "repo": "dank0i/football-forecast",
@@ -208,12 +208,17 @@
         "usage": "反事实时间泄漏测试、市场对照；上游成绩未复现",
         "license": "根目录LICENSE未找到",
         "source": "test_leakage.py 2bb8e401"
+      },
+      "category_c": {
+        "decision": "P0 adapt invariants in original EV-Lab tests, NOT original code",
+        "source": "original Git clone HEAD 32417ea; tests/test_leakage.py; two targeted upstream pytest PASS, eight deselected",
+        "evidence": "Future 20 score rewrites leave earlier Elo unchanged; current match score rewrite leaves same-match rolling form unchanged. No root LICENSE tracked; original 16k-match profitability results not independently reproduced."
       }
     },
     {
       "repo": "alexander-quang-phan/football-match-outcome-prediction",
       "category": "C_RESEARCH_QA",
-      "verification_state": "pending_individual_verification",
+      "verification_state": "completed_targeted_source_review_E2",
       "category_a": null,
       "previous_discovery": {
         "repo": "alexander-quang-phan/football-match-outcome-prediction",
@@ -223,12 +228,17 @@
         "usage": "赛后排名泄漏反例、平局召回报告",
         "license": "未审",
         "source": "README a0b1cfc"
+      },
+      "category_c": {
+        "decision": "P0 reuse feature availability and temporal train/test audit ideas, not claim original scores",
+        "source": "original Git clone HEAD e7b967e; MIT; prepare_match_training_data.py lines 171-224 shift(1), compute_pre_match_elo; train_match_prediction_models.py train<=2022, validation<=2024, holdout2025",
+        "evidence": "Original project reports removal of post-match position leakage; code has prior-only rolling expressions; no independent full 6046-match training reproduction in this stage."
       }
     },
     {
       "repo": "OPaheimer/premier-league-predictor",
       "category": "C_RESEARCH_QA",
-      "verification_state": "pending_individual_verification",
+      "verification_state": "completed_original_10_tests_plus_rewrite_negative_E3",
       "category_a": null,
       "previous_discovery": {
         "repo": "OPaheimer/premier-league-predictor",
@@ -238,12 +248,17 @@
         "usage": "freeze/grade/ledger流程，但允许替换快照",
         "license": "MIT（README）",
         "source": "weekly_loop.py 03f8155f"
+      },
+      "category_c": {
+        "decision": "P0 borrow freeze/grade and join guards only, reject mutable ledger as EV-Lab sealed store",
+        "source": "original Git clone HEAD 79dc7a3; tests/test_weekly_loop.py 10 PASS; original function _upsert_ledger in tools/weekly_loop.py actually invoked with scratch CSV",
+        "evidence": "Two writes to same MW replace historical accuracy 0.55 with 0.99, leaving 1 row; versioning must be append-only for EV-Lab evidence. Upstream feature likely okay for own workflow; not characterized as bug."
       }
     },
     {
       "repo": "kaspersgit/football-prediction-autoresearch",
       "category": "C_RESEARCH_QA",
-      "verification_state": "pending_individual_verification",
+      "verification_state": "completed_targeted_source_review_E2",
       "category_a": null,
       "previous_discovery": {
         "repo": "kaspersgit/football-prediction-autoresearch",
@@ -253,6 +268,11 @@
         "usage": "训练特征含market_h等，不符合独立模型",
         "license": "未审",
         "source": "features.py 188ff7a1"
+      },
+      "category_c": {
+        "decision": "P3 for independent model; P1 only pre-registration/frozen test process as methodological reference",
+        "source": "original src/model/features.py blob 188ff7a164b797dac35bfe084faf675466fee49a and src/model/train.py blob 04c1fd4c1337b52fcb428032cbe8fd33eab316d2",
+        "evidence": "FEATURE_COLS include market_h/d/a and market_overround, also home_market_bias; no blind import to an odds-independent probability engine. No original full application test."
       }
     },
     {
