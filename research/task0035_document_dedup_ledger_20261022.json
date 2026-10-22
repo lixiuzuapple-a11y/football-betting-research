@@ -1,0 +1,382 @@
+{
+  "audit_date": "2026-10-22",
+  "source": {
+    "url": "https://docs.google.com/document/d/1fE54qOUPNA1WaWtbz470lsIDZv01v4zHQTYwj2eQJms/edit",
+    "title": "足球彩票量化预测系统：全网深度调研与Agent开发执行规范",
+    "revisionId": "AHj4eMTeQVAsnGAQDqXZHVfaRFxELi7x2MJZoDKAsq9sx3VjYU9M9faXVLzJ-DrDgAu6sCsCPiWhonBxEEacnCEWVJNP1tH9pDHHh-yQJZ4"
+  },
+  "tier_policy": {
+    "A": "Previously audited (accepted, rejected or conditional): reuse recorded decisions and evidence; do not redo work.",
+    "B": "partially validated: identify precise gap and defer until research-changing",
+    "C": "new incremental discovery: check original source; do isolated follow-up only where high value",
+    "D": "rejected or not presently relevant: avoid work"
+  },
+  "rows": [
+    {
+      "kind": "paper",
+      "item": "Dixon & Coles 1997",
+      "status": "A",
+      "existing_evidence": "Original model already E3 tested on 34 Sporttery fixtures",
+      "evidence_ref": "REPORTS/EVLAB-TASK0034-REAL-IDENTITY-AND-DC-20261019.md",
+      "decision": "Reuse original DC; no repeat fitting",
+      "gap": "No verified betting alpha in EV-Lab",
+      "source_url": "https://doi.org/10.1111/1467-9876.00065"
+    },
+    {
+      "kind": "paper",
+      "item": "Constantinou & Fenton 2012 RPS",
+      "status": "B",
+      "existing_evidence": "Paper abstract source checked and RPS added on frozen 34/33 probabilities",
+      "evidence_ref": "tools/task0035_rps_score_audit.py",
+      "decision": "Add RPS as complementary strictly proper score",
+      "gap": "Reject document claim 'only valid metric'; logloss/Brier stay",
+      "source_url": "https://ideas.repec.org/a/bpj/jqsprt/v8y2012i1n12.html"
+    },
+    {
+      "kind": "paper",
+      "item": "Constantinou & Fenton 2013 Pi ratings",
+      "status": "C",
+      "existing_evidence": "Original penaltyblog Pi Ratings documentation E2 checked",
+      "evidence_ref": "PENALTYBLOG-PI-DOC",
+      "decision": "Potential future lightweight feature comparator",
+      "gap": "No PIT multi-league original score test completed",
+      "source_url": "https://penaltyblog.readthedocs.io/en/latest/ratings/pi.html"
+    },
+    {
+      "kind": "paper",
+      "item": "Dolores global 52-league study",
+      "status": "B",
+      "existing_evidence": "Doc description only; not independently replicated",
+      "evidence_ref": "DOCUMENT-CONTENT",
+      "decision": "Historical cross-league research candidate",
+      "gap": "Data source and reproducibility must be proven",
+      "source_url": ""
+    },
+    {
+      "kind": "paper",
+      "item": "Hubáček, Šourek & Železný 2019",
+      "status": "C",
+      "existing_evidence": "Original article confirms experiments primarily NBA 2007-2014",
+      "evidence_ref": "PUBLISHER-2019",
+      "decision": "Retain decorrelation/portfolio concept as new hypothesis",
+      "gap": "Reject document's implicit football-profit generalization",
+      "source_url": "https://doi.org/10.1016/j.ijforecast.2019.01.001"
+    },
+    {
+      "kind": "paper",
+      "item": "Baboota & Kaur 2019 EPL features",
+      "status": "B",
+      "existing_evidence": "Document-level literature lead; no direct reproduction",
+      "evidence_ref": "DOCUMENT-CONTENT",
+      "decision": "Consider only if historical features PIT-covered",
+      "gap": "Claims relative RPS superiority not independently checked",
+      "source_url": ""
+    },
+    {
+      "kind": "paper",
+      "item": "Walsh & Joshi 2024 + corrigendum 2025",
+      "status": "C",
+      "existing_evidence": "2025 corrigendum verified by University of Bath and archived authors' updated GitHub README",
+      "evidence_ref": "CORRIGENDUM-2025",
+      "decision": "Correct research evidence; investigate corrected pipeline only if needed",
+      "gap": "Original ROI +34.69% erroneous; corrected calibration avg -9.77%, accuracy avg -26.78%; NBA not football",
+      "source_url": "https://doi.org/10.1016/j.mlwa.2025.100627"
+    },
+    {
+      "kind": "paper",
+      "item": "Bunker, Yeung & Fujii 2024 football ML review",
+      "status": "B",
+      "existing_evidence": "Review abstract confirms pi+CatBoost is dataset-constrained observation, not universal result",
+      "evidence_ref": "ARXIV-2403.07669",
+      "decision": "Keep survey in research basis",
+      "gap": "Pi+CatBoost should not automatically become production baseline",
+      "source_url": "https://arxiv.org/abs/2403.07669"
+    },
+    {
+      "kind": "paper",
+      "item": "Galekwa et al. 2024 systematic review",
+      "status": "B",
+      "existing_evidence": "Document claim only",
+      "evidence_ref": "DOCUMENT-CONTENT",
+      "decision": "Optional literature background",
+      "gap": "219 studies / applicability unverified in this pass",
+      "source_url": ""
+    },
+    {
+      "kind": "paper",
+      "item": "TacticAI 2024",
+      "status": "D",
+      "existing_evidence": "Specialized corner and positional tracking domain",
+      "evidence_ref": "DOCUMENT-CONTENT",
+      "decision": "Defer",
+      "gap": "No corresponding player tracking or corner corpus for current 169 matches",
+      "source_url": ""
+    },
+    {
+      "kind": "github",
+      "item": "probberechts/soccerdata",
+      "status": "A",
+      "existing_evidence": "Previously E2 adapter audit and ESPN E3 actual data; ClubElo failure",
+      "evidence_ref": "REPORTS/EVLAB_GITHUB_CATEGORY_A_DATA_AUDIT_20261018.md",
+      "decision": "Reuse ESPN source path and own validated identity bridge",
+      "gap": "Do not run pip install soccerdata wholesale",
+      "source_url": "https://github.com/probberechts/soccerdata"
+    },
+    {
+      "kind": "github",
+      "item": "martineastwood/penaltyblog",
+      "status": "A",
+      "existing_evidence": "Previously E2 original modeling code; original callumfm alternative E3 tested",
+      "evidence_ref": "REPORTS/EVLAB_GITHUB_CATEGORY_B_MODEL_AUDIT_20261018.md",
+      "decision": "Keep as alternative RPS/Shin/Pi feature toolbox; only isolated targeted QA",
+      "gap": "No blanket install or assume alpha",
+      "source_url": "https://github.com/martineastwood/penaltyblog"
+    },
+    {
+      "kind": "github",
+      "item": "georgedouzas/sports-betting",
+      "status": "C",
+      "existing_evidence": "New: GitHub verified, MIT pyproject, original BaseBettor and odds grammar E2 checked",
+      "evidence_ref": "GITHUB-BLOB-24a4f4798183cf1704917813bcb4e0967acff4c6",
+      "decision": "Next high-value isolated original no-money backtest/test for temporal guards",
+      "gap": "No execution integration: package has optional automated real-money execution",
+      "source_url": "https://github.com/georgedouzas/sports-betting"
+    },
+    {
+      "kind": "github",
+      "item": "ML-KULeuven/socceraction",
+      "status": "A",
+      "existing_evidence": "Original event converter E3 limited tests; 4 passed 11 drift failures",
+      "evidence_ref": "REPORTS/EVLAB_GITHUB_CATEGORY_D_SPECIALIZED_20261019.md",
+      "decision": "Defer for events-only future data",
+      "gap": "Current 169 do not have comparable event coverage",
+      "source_url": "https://github.com/ML-KULeuven/socceraction"
+    },
+    {
+      "kind": "github",
+      "item": "PySport/kloppy",
+      "status": "C",
+      "existing_evidence": "New: GitHub verified, BSD-3 LICENSE and original pyproject E2 checked",
+      "evidence_ref": "GITHUB-BLOB-83cdc05e8b758400aced1b4eda21603c3879a0a8",
+      "decision": "Only consider after legal current event data coverage",
+      "gap": "No current eligible player tracking/event source; no installed original package",
+      "source_url": "https://github.com/PySport/kloppy"
+    },
+    {
+      "kind": "github",
+      "item": "kochlisGit/ProphitBet-Soccer-Bets-Predictor",
+      "status": "B",
+      "existing_evidence": "New: GitHub original 2026 README reviewed; no root LICENSE via Contents API",
+      "evidence_ref": "GITHUB-README-01e66783a6634421901e0596cb3f8785145b923f",
+      "decision": "Do not install heavy GUI; selectively inspect technical claims if concrete need",
+      "gap": "README claims about profitability and reproducibility not independently checked",
+      "source_url": "https://github.com/kochlisGit/ProphitBet-Soccer-Bets-Predictor"
+    },
+    {
+      "kind": "github",
+      "item": "conorwalsh99/ml-for-sports-betting",
+      "status": "C",
+      "existing_evidence": "New: original GitHub repo archived, README explicitly states corrected pipeline, MIT LICENSE verified",
+      "evidence_ref": "GITHUB-BLOB-59c1c0862be901ab89dbfbf4bf586cbf15a174f7",
+      "decision": "Reference corrected code, not original headline ROI",
+      "gap": "Research domain NBA; archived; no original full experimental replay",
+      "source_url": "https://github.com/conorwalsh99/ml-for-sports-betting"
+    },
+    {
+      "kind": "github",
+      "item": "JaseZiv/worldfootballR",
+      "status": "D",
+      "existing_evidence": "New GitHub metadata verified archived",
+      "evidence_ref": "GITHUB-ARCHIVED",
+      "decision": "Keep R-language historical reference only",
+      "gap": "Archived and overlaps soccerdata data adapters; no R pipeline currently",
+      "source_url": "https://github.com/JaseZiv/worldfootballR"
+    },
+    {
+      "kind": "github",
+      "item": "ewenme/understatr",
+      "status": "B",
+      "existing_evidence": "New original DESCRIPTION E2, MIT and Understat scraping tooling",
+      "evidence_ref": "GITHUB-BLOB-b933463096a8ffd7993c3855044b6d5c58af621e",
+      "decision": "Retain if Understat-specific xG needs source validation",
+      "gap": "Do not claim current 169 xG PIT; duplicates Python soccerdata scope",
+      "source_url": "https://github.com/ewenme/understatr"
+    },
+    {
+      "kind": "data",
+      "item": "Football-Data.co.uk CSV",
+      "status": "A",
+      "existing_evidence": "Already 12 original CSV hashed & 6 leagues modelled",
+      "evidence_ref": "REPORTS/EVLAB-TASK0034-REAL-IDENTITY-AND-DC-20261019.md",
+      "decision": "Reuse frozen files not redownload",
+      "gap": "Retrospective closing odds not timestamp-verifiable individually",
+      "source_url": "https://www.football-data.co.uk/"
+    },
+    {
+      "kind": "data",
+      "item": "StatsBomb Open Data",
+      "status": "A",
+      "existing_evidence": "Previously source API + actual event fixture E3 and drift detected",
+      "evidence_ref": "REPORTS/EVLAB_GITHUB_CATEGORY_D_SPECIALIZED_20261019.md",
+      "decision": "Historical event research only",
+      "gap": "Current 169 not covered",
+      "source_url": "https://github.com/statsbomb/open-data"
+    },
+    {
+      "kind": "data",
+      "item": "Open International Soccer Database 52 leagues",
+      "status": "C",
+      "existing_evidence": "New candidate named by document, raw and licensing not yet proven",
+      "evidence_ref": "DOCUMENT-CONTENT",
+      "decision": "P1 candidate to close 89 unsupported fixtures if proven PIT/legal",
+      "gap": "218916 count and 52 league coverage require raw verification",
+      "source_url": ""
+    },
+    {
+      "kind": "data",
+      "item": "European Soccer Database Kaggle",
+      "status": "B",
+      "existing_evidence": "Document's old historical database reference",
+      "evidence_ref": "DOCUMENT-CONTENT",
+      "decision": "Maybe archival feature QA",
+      "gap": "Old seasons cannot address Oct-2026 identity+recent training data",
+      "source_url": ""
+    },
+    {
+      "kind": "data",
+      "item": "ClubElo / PlayerElo",
+      "status": "A",
+      "existing_evidence": "ClubElo date API previous HTTP502/timeout from Windows",
+      "evidence_ref": "REPORTS/EVLAB_GITHUB_CATEGORY_A_DATA_AUDIT_20261018.md",
+      "decision": "Do not repeat already-failed endpoint until connectivity changed",
+      "gap": "PlayerElo source licensing/coverage unconfirmed",
+      "source_url": "http://api.clubelo.com"
+    },
+    {
+      "kind": "data",
+      "item": "Understat xG data",
+      "status": "B",
+      "existing_evidence": "HTTP 200 league page previous; xG historical parser not E3 accepted",
+      "evidence_ref": "REPORTS/EVLAB_GITHUB_CATEGORY_A_DATA_AUDIT_20261018.md",
+      "decision": "E3 narrow field/time probe only if building xG feature",
+      "gap": "Raw URL availability does not establish pre-kickoff feature freshness",
+      "source_url": "https://understat.com"
+    },
+    {
+      "kind": "data",
+      "item": "Pinnacle CLV closing line",
+      "status": "B",
+      "existing_evidence": "Already distinct market-vs-frozen Sporttery; no verified Pinnacle personal bet/closing timestamps",
+      "evidence_ref": "REPORTS/EVLAB-TASK0034-REAL-IDENTITY-AND-DC-20261019.md",
+      "decision": "Treat CLV as future research metric conditioned on real executable pre-close quotes",
+      "gap": "50-100 events not universal proof of alpha; t-test without dependence guard invalid",
+      "source_url": "https://www.pinnacle.bet/betting-resources/en/betting-strategy/using-the-closing-line-to-test-your-skill-in-betting/7e6jwjm5ykejuwkq"
+    },
+    {
+      "kind": "data",
+      "item": "Opta / Stats Perform",
+      "status": "D",
+      "existing_evidence": "Commercial high-frequency data and tracking",
+      "evidence_ref": "DOCUMENT-CONTENT",
+      "decision": "Do not integrate without legitimate data agreement",
+      "gap": "No coverage/price/rights established",
+      "source_url": ""
+    },
+    {
+      "kind": "data",
+      "item": "Betaminic / RebelBetting",
+      "status": "D",
+      "existing_evidence": "Commercial strategy comparison ideas",
+      "evidence_ref": "DOCUMENT-CONTENT",
+      "decision": "Do not couple automatic betting software",
+      "gap": "Not evidence for EV-Lab alpha",
+      "source_url": ""
+    },
+    {
+      "kind": "data",
+      "item": "Sporttery.cn HAD / official scores",
+      "status": "A",
+      "existing_evidence": "Frozen strict quotes 126; official scores135; real same-match 34 model-vs-market",
+      "evidence_ref": "REPORTS/EVLAB-TASK0034-REAL-IDENTITY-AND-DC-20261019.md",
+      "decision": "Keep source and provenance, expand future capture",
+      "gap": "Fixed 11-12% margin / 6-8% edge cannot be universal constants",
+      "source_url": "https://www.sporttery.cn"
+    },
+    {
+      "kind": "spec",
+      "item": "Phase1 fetch and team normalization",
+      "status": "A",
+      "existing_evidence": "Already 169 fixtures, 76 strict cross-source joins; sourced ESPN and Football-Data",
+      "evidence_ref": "REPORTS/EVLAB-TASK0034-REAL-IDENTITY-AND-DC-20261019.md",
+      "decision": "Reuse real bridge; add new leagues only",
+      "gap": "Do not rebuild a second full pipeline",
+      "source_url": ""
+    },
+    {
+      "kind": "spec",
+      "item": "Phase2 rolling Pi Elo xG features",
+      "status": "B",
+      "existing_evidence": "Elo and temporal anti-leak done, Pi and xG not original match E3 verified",
+      "evidence_ref": "REPORTS/EVLAB_GITHUB_CATEGORY_C_RESEARCH_QA_20261019.md",
+      "decision": "Selective isolated original Pi and xG PIT after coverage gate",
+      "gap": "No cross-sample transfer without prior-only evidence",
+      "source_url": ""
+    },
+    {
+      "kind": "spec",
+      "item": "Phase3 dual DC+CatBoost calibrated ensemble",
+      "status": "B",
+      "existing_evidence": "DC original E3; independent market benchmark no alpha on 34",
+      "evidence_ref": "REPORTS/EVLAB-TASK0034-REAL-IDENTITY-AND-DC-20261019.md",
+      "decision": "No blind CatBoost or tuning on same fixtures",
+      "gap": "Need a new frozen holdout window plus sufficient histories",
+      "source_url": ""
+    },
+    {
+      "kind": "spec",
+      "item": "Phase4 Shin/Power and Kelly sizing",
+      "status": "B",
+      "existing_evidence": "Multiplicative inverse normalized fair market baseline already used on real HAD",
+      "evidence_ref": "tools/task0031_actual_scoring.py",
+      "decision": "Shin/Power compare only on genuinely frozen odds, as sensitivity",
+      "gap": "No chosen 4/6/8% edge threshold without calibration/market evidence; don't auto-bet",
+      "source_url": ""
+    },
+    {
+      "kind": "spec",
+      "item": "Phase5 walk-forward CLV ROI and CLI",
+      "status": "B",
+      "existing_evidence": "Sample model and time separation QA exist; no verified Pinnacle close or executable wager records",
+      "evidence_ref": "REPORTS/EVLAB-TASK0034-REAL-IDENTITY-AND-DC-20261019.md",
+      "decision": "Keep forward QA, score, calibration and drawdown only when data supports it",
+      "gap": "No fake CLV/p-values/ROI or premature bet execution",
+      "source_url": ""
+    }
+  ],
+  "supplemental_discoveries": [
+    {
+      "repo": "v-eatpizzanot/soccer-dataset",
+      "url": "https://github.com/v-eatpizzanot/soccer-dataset",
+      "evidence_level": "E1 actual repository + README only",
+      "reason": "multi-country/parquet dataset, potentially covers Asia/Americas and 89 unsupported fixtures",
+      "risk": "README published counts internally evolve; upstream/API-Football data rights, as-of provenance, and frozen match coverage all unverified",
+      "decision": "P1 next isolated data-source evidence gate; no bulk install"
+    },
+    {
+      "repo": "withqwerty/open-football",
+      "url": "https://github.com/withqwerty/open-football",
+      "evidence_level": "E1 original catalog and repository metadata",
+      "reason": "explicit links to openfootball/world/europe, csv and provider identity maps; avoids rediscovering sources",
+      "risk": "curation is not validation of actual 2026 fixtures, rights or recent results",
+      "decision": "P1 map-only reconnaissance before specific source PoC"
+    },
+    {
+      "repo": "schochastics/football-data",
+      "url": "https://github.com/schochastics/football-data",
+      "evidence_level": "E1 catalog + repository identity",
+      "reason": "claimed ~1.2M matches, 207 domestic leagues through 2023; potential long-run pre-match training history",
+      "risk": "historical cutoff insufficient for direct 2026 current form; need original raw and licensing",
+      "decision": "P2 historical-only candidate after latest coverage check"
+    }
+  ]
+}
