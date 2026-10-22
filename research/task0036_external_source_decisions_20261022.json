@@ -1,0 +1,56 @@
+{
+  "stage": "TASK0036",
+  "date": "2026-10-22",
+  "baseline_commit": "9e7612610d179253fb8f40d11ad3a454366224fa",
+  "records": [
+    {
+      "repo": "eatpizzanot/soccer-dataset",
+      "url": "https://huggingface.co/datasets/eatpizzanot/soccer-dataset",
+      "evidence": "E3 raw Parquet, 18 ESPN responses, 11 independent strict joins",
+      "status": "RESEARCH_ACCEPT_PRODUCTION_NO_GO",
+      "repo_sha": "f0cbe86bee3f28cc4b803f735a5287968741c471",
+      "last_modified": "2026-07-05T01:23:18.000Z",
+      "licence_warning": "Compiler's CC-BY-4.0 claim not independent proof of upstream API-Football reuse rights",
+      "baseline_join": 76,
+      "new_join": 11,
+      "new_scored_and_HAD": 8,
+      "prior_teams5": 11,
+      "raw": "E:\\WebCodex-Workspace\\EVLab-Data-Backups\\task0036-data-source-gate-20261022"
+    },
+    {
+      "repo": "withqwerty/open-football",
+      "url": "https://github.com/withqwerty/open-football",
+      "evidence": "E2 curated links original README",
+      "status": "REFERENCE_MAP_ONLY",
+      "gap": "Need real snapshot/API rights and exact fixture proof"
+    },
+    {
+      "repo": "schochastics/football-data",
+      "url": "https://github.com/schochastics/football-data",
+      "evidence": "E2 original coverage until end of 2023, ODC-BY",
+      "status": "HISTORICAL_ONLY",
+      "gap": "No late-2026 fixture data"
+    },
+    {
+      "repo": "georgedouzas/sports-betting",
+      "url": "https://github.com/georgedouzas/sports-betting",
+      "evidence": "E3 upstream v0.15.1 HEAD eb4cedf376663fac68f508e50b83fd832e74dfd4, 53 original tests PASS, two temporal negative controls actual execution",
+      "status": "GUARD_REQUIRED_REFERENCE_ONLY",
+      "gap": "Same-day tie can split TimeSeriesSplit folds; enforce strict end-train before start-test and PIT features"
+    }
+  ],
+  "metric": {
+    "fixtures": 169,
+    "prior_bridge": 76,
+    "new_bridge": 11,
+    "total_bridge": 87,
+    "unbridged": 82,
+    "outside_previous_6_leagues_initial": 89,
+    "outside_six_remaining": 78,
+    "new_verified_scores": 8,
+    "new_strict_HAD": 8,
+    "ESPN_score_agree": 8,
+    "ESPN_score_conflicts": 0,
+    "upstream_original_tests_passed": 53
+  }
+}
