@@ -7,7 +7,7 @@ This is NOT independent proof of source licensing nor evidence of betting edge.
 HF_TEAM_BRIDGE = {'AC Milan': {'hf_name': 'Milan', 'id': 172},
  'AFC Bournemouth': {'hf_name': 'Bournemouth', 'id': 5},
  'AS Roma': {'hf_name': 'Roma', 'id': 161},
- 'Al Ahli': {'hf_name': 'Al Ahli', 'id': 100005580},
+ 'Al Ahli': {'hf_name': 'Al-Ahli Jeddah', 'id': 922},
  'Al Wasl': {'hf_name': 'Al-Wasl FC', 'id': 1525},
  'Arsenal': {'hf_name': 'Arsenal', 'id': 3},
  'Aston Villa': {'hf_name': 'Aston Villa', 'id': 14},

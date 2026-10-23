@@ -1,0 +1,95 @@
+{
+  "task": "TASK0039",
+  "as_of": "2026-10-23",
+  "final_verdict": {
+    "afc_historical_fixture_and_22club_id_gate": "RESEARCH_ACCEPT_WITH_RESTRICTIONS",
+    "hf_raw_global_team_identity": "REJECT_UNRESTRICTED",
+    "hf_filtered_dataset": "RESEARCH_SENSITIVITY_ONLY",
+    "independent_1x2_market_alpha": "NO_GO",
+    "prospective_frozen_new_window": "NOT_VERIFIED"
+  },
+  "evidence": {
+    "original_espn_responses": [
+      {
+        "source_year": "2025",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/afc.champions/scoreboard?dates=2025&limit=300",
+        "sha256": "e1e0a7ea1bdf998a17c6d6a4f70e8d781f4697acb787200177453b8e621feb9d",
+        "events": 119
+      },
+      {
+        "source_year": "2026",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/afc.champions/scoreboard?dates=2026&limit=300",
+        "sha256": "7a1f50ae5c99ba4e35041438dbdf90e3cb1674d5ad1f973370bc3c60c7e778e7",
+        "events": 143
+      }
+    ],
+    "afc_games_original_completed_prior": 108,
+    "afc_club_espn_ids_eligible": 24,
+    "afc_club_espn_ids_mapped_exact": 22,
+    "afc_prior_unmapped_games": 15,
+    "afc_new_actual_interleague_edges": 93,
+    "hf_source_raw_training": 54621,
+    "hf_csv_only_quarantined": 22491,
+    "hf_id_1051_quarantined": 24,
+    "hf_usable_raw_for_diagnostic": 32106,
+    "hf_usable_unique": 32104,
+    "hf_cross_country_id_collisions_before": 65,
+    "hf_cross_country_id_collisions_after": 0,
+    "afc_six_connected_before": 0,
+    "afc_six_connected_after": 6,
+    "afc_frozen_market_evaluable": 5,
+    "afc_model": {
+      "n": 5,
+      "logloss": 1.1232187512610445,
+      "brier3": 0.6871175107821882,
+      "rps": 0.2620362636721262,
+      "accuracy": 0.4
+    },
+    "afc_market": {
+      "n": 5,
+      "logloss": 0.876245386645718,
+      "brier3": 0.504208068636648,
+      "rps": 0.17603629263859608,
+      "accuracy": 0.6
+    },
+    "prev_27_after_source_sensitivity": 27,
+    "prev_27_model_sensitivity": {
+      "n": 27,
+      "logloss": 1.0476561940288762,
+      "brier3": 0.6357766110371855,
+      "rps": 0.2579692580851787,
+      "accuracy": 0.37037037037037035
+    },
+    "prev_27_market": {
+      "n": 27,
+      "logloss": 0.8665411663894673,
+      "brier3": 0.4967843520963781,
+      "rps": 0.19712527569278784,
+      "accuracy": 0.6296296296296297
+    },
+    "odds_input_negative_control": {
+      "same_5_afc_probabilities": true,
+      "market_probabilities_changed": true,
+      "same_other_27_model_score": true,
+      "afc_count": 5,
+      "original_ll": 1.1232187512610445,
+      "counterfactual_ll": 1.1232187512610445,
+      "recomputed_fixed_elo": true
+    },
+    "material_id_correction": {
+      "espn_name": "Al Ahli",
+      "incorrect_hf_bahrain": 100005580,
+      "correct_hf_saudi_al_ahli_jeddah": 922
+    },
+    "local_official_source_last_backup": "2026-10-18",
+    "new_prospective_frozen_official_snapshots_in_local_evidence": 0,
+    "raw_evidence_root": "E:\\WebCodex-Workspace\\EVLab-Data-Backups\\task0039-afc-prior-20261023"
+  },
+  "review_caveats": [
+    "ESPN prior-match results were retrieved retrospectively, not from contemporaneous timestamped snapshots",
+    "The HF publisher's declared licence does not prove upstream data redistribution rights",
+    "Quarantine rules target high-risk records, not a global factual certification of every remaining fixture",
+    "five AFC games are too few for a useful confidence interval or positive EV claim",
+    "no trading/executable odds/prospective bet records assessed"
+  ]
+}
