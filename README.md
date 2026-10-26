@@ -38,9 +38,19 @@ future-fixture freeze/scoring CLI at `tools/phase2_forecast_lab.py`. The first
 four future fixture predictions were frozen before kickoff; only two official
 HAD market reference snapshots passed strict research eligibility.
 
-**Not yet accepted:** recurring cloud reliability, broad team-based model
-coverage, automatic live result ingestion, full retrospective replay,
-independent market outperformance, CLV or positive EV. The generic
+**Phase 3 multi-model retrospective research: ACCEPT for historical benchmark.**
+`tools/phase3_multimodel_walkforward.py` checked 54,621 historically completed
+rows, de-duplicated 53,705, and chronologically evaluated 25,969 real fixtures
+(181 test dates, 233 competitions). Frozen baseline, pooled Elo/Davidson and
+league-Poisson models were compared with a full previous-day embargo. On the
+22,370 fixture same-sample overlap, Elo and Poisson outperformed the raw
+frequency baseline; Poisson scored slightly better than Elo. This is **not**
+a point-in-time-verified odds-market or future-fixture profit study. See
+`REPORTS/EVLAB-PHASE3-25969-MULTIMODEL-OOS-20261026.md`.
+
+**Not yet accepted:** recurring cloud reliability, integrated independent
+production model training/feature binding, automatic future result ingestion,
+independent bookmaker market outperformance, CLV or positive EV. The generic
 `available_predictors()` registry remains empty because no audited automatic
 training-source binding exists. Production feature construction also remains
 unimplemented. See `REPORTS/` and `REVIEWS/` for newer qualification evidence.
