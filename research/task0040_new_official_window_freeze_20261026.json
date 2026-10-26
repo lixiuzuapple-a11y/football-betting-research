@@ -1,0 +1,154 @@
+{
+  "task": "TASK0040",
+  "period": "2026-10-26",
+  "sample_status": "FIRST_PROSPECTIVE_OFFICIAL_OBSERVATION_FROZEN_BEFORE_KICKOFF",
+  "same_raw_bytes_across_two_independent_http200_observations": true,
+  "observations": [
+    {
+      "request_started_at_utc": "2026-10-26T03:49:44.707513+00:00",
+      "response_received_at_utc": "2026-10-26T03:49:44.926854+00:00",
+      "raw_sha256": "4079741dcbd9f9dd7ef65bd241da9f0592988b2bdb33e62aee0cb04857331457",
+      "manifest_sha256": "839d29b970d216b26125e56d91fa8e45cfa06ba138a4d2904a55ac22c7343d2d",
+      "raw_bytes": 52798,
+      "fixture_total": 4,
+      "strict_had_accepted": 2,
+      "numeric_had_accepted": 4
+    },
+    {
+      "request_started_at_utc": "2026-10-26T03:52:49.247428+00:00",
+      "response_received_at_utc": "2026-10-26T03:52:49.405926+00:00",
+      "raw_sha256": "4079741dcbd9f9dd7ef65bd241da9f0592988b2bdb33e62aee0cb04857331457",
+      "manifest_sha256": "03f289abd915f3250e5fdb59fed7cbd5e2e29933f62cccc795395fb1e2c28e38",
+      "raw_bytes": 52798,
+      "fixture_total": 4,
+      "strict_had_accepted": 2,
+      "numeric_had_accepted": 4
+    }
+  ],
+  "fixture_count": 4,
+  "strict_market_probabilities": 2,
+  "first_snapshot": {
+    "type": "EVLAB_TASK0040_NEW_PREKICKOFF_WINDOW",
+    "dataset_period": "2026-10-26",
+    "raw_sha256": "4079741dcbd9f9dd7ef65bd241da9f0592988b2bdb33e62aee0cb04857331457",
+    "manifest_sha256": "839d29b970d216b26125e56d91fa8e45cfa06ba138a4d2904a55ac22c7343d2d",
+    "raw_bytes": 52798,
+    "source_url": "https://webapi.sporttery.cn/gateway/jc/football/getMatchCalculatorV1.qry",
+    "request_started_at_utc": "2026-10-26T03:49:44.707513+00:00",
+    "response_received_at_utc": "2026-10-26T03:49:44.926854+00:00",
+    "fixture_total": 4,
+    "strict_had_accepted": 2,
+    "numeric_had_accepted": 4,
+    "rejected_strict_reasons": {
+      "nonzero_HAD_flags": 2
+    },
+    "matches": [
+      {
+        "matchId": "2042242",
+        "league": "葡超",
+        "home_code": "STC",
+        "away_code": "BEN",
+        "official_home_team_id": "1618",
+        "official_away_team_id": "267",
+        "kickoff_bjt": "2026-10-27T02:45:00+08:00",
+        "observed_at_utc": "2026-10-26T03:49:44.926854+00:00",
+        "hours_before_kickoff_at_receipt": 14.921,
+        "numeric_had_pre_kickoff": true,
+        "strict_had_pre_kickoff": true,
+        "rejection_reasons": [],
+        "frozen_had_odds": [
+          9.35,
+          4.95,
+          1.22
+        ],
+        "frozen_had_fair_market_probabilities": [
+          0.09476137050142401,
+          0.17899369983602312,
+          0.7262449296625529
+        ],
+        "provider_had_updated_at_bjt": "2026-10-24T09:46:28+08:00",
+        "provider_quote_age_hours": 50.055,
+        "overround": 0.128644
+      },
+      {
+        "matchId": "2042243",
+        "league": "法乙",
+        "home_code": "BSM",
+        "away_code": "REM",
+        "official_home_team_id": "472",
+        "official_away_team_id": "209",
+        "kickoff_bjt": "2026-10-27T03:45:00+08:00",
+        "observed_at_utc": "2026-10-26T03:49:44.926854+00:00",
+        "hours_before_kickoff_at_receipt": 15.921,
+        "numeric_had_pre_kickoff": true,
+        "strict_had_pre_kickoff": false,
+        "rejection_reasons": [
+          "nonzero_HAD_flags"
+        ]
+      },
+      {
+        "matchId": "2042244",
+        "league": "西甲",
+        "home_code": "SEV",
+        "away_code": "OSA",
+        "official_home_team_id": "677",
+        "official_away_team_id": "534",
+        "kickoff_bjt": "2026-10-27T04:00:00+08:00",
+        "observed_at_utc": "2026-10-26T03:49:44.926854+00:00",
+        "hours_before_kickoff_at_receipt": 16.171,
+        "numeric_had_pre_kickoff": true,
+        "strict_had_pre_kickoff": false,
+        "rejection_reasons": [
+          "nonzero_HAD_flags"
+        ]
+      },
+      {
+        "matchId": "2042245",
+        "league": "巴甲",
+        "home_code": "FLA",
+        "away_code": "ALM",
+        "official_home_team_id": "571",
+        "official_away_team_id": "563",
+        "kickoff_bjt": "2026-10-27T07:00:00+08:00",
+        "observed_at_utc": "2026-10-26T03:49:44.926854+00:00",
+        "hours_before_kickoff_at_receipt": 19.171,
+        "numeric_had_pre_kickoff": true,
+        "strict_had_pre_kickoff": true,
+        "rejection_reasons": [],
+        "frozen_had_odds": [
+          1.2,
+          5.4,
+          9.0
+        ],
+        "frozen_had_fair_market_probabilities": [
+          0.7377049180327868,
+          0.16393442622950816,
+          0.0983606557377049
+        ],
+        "provider_had_updated_at_bjt": "2026-10-26T10:43:11+08:00",
+        "provider_quote_age_hours": 1.109,
+        "overround": 0.12963
+      }
+    ],
+    "score_evaluation_status": "NOT_STARTED_PRE_MATCH",
+    "forecast_status": "NONE_FROZEN_DO_NOT_INVENT",
+    "no_result_join": true,
+    "no_executable_odds_claim": true,
+    "caveats": [
+      "Local observed receipt clock plus source raw bytes; external timestamp authority not attested.",
+      "Provider updated-at is not the observer timestamp; stale source quotes may be present.",
+      "Single sample is not a working recurring collector.",
+      "This audit never imports a match result or evaluates predictions."
+    ]
+  },
+  "no_outcomes_used": true,
+  "no_independent_forecasts_frozen": true,
+  "no_return_or_executable_bet_claim": true,
+  "limitations": [
+    "Original raw JSON and local source metadata remain E-drive only; repository stores digest and derived frozen two market vectors",
+    "Local receive clock not externally attested; repository commit timestamp can provide additional prospective existence evidence",
+    "Two GET responses with identical payload do not imply prices updated or continuous collector healthy",
+    "HAD provider update age includes one 50-hour-old price; strict qualification alone does not establish quote freshness or wager execution",
+    "Official fixture outcomes not observed, predicted, or tested"
+  ]
+}
