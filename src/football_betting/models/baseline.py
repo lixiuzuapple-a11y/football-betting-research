@@ -2,9 +2,10 @@
 
 **Status: not implemented - deliberately.**
 
-The project has no forecasting model. That is a fact about stage 1, not an
-oversight, and this module exists so the fact is visible in code rather than
-buried in a README.
+The generic application registry still has no configured production predictor.
+The separately audited observed-frequency research baseline lives in
+``observed_frequency.py`` and must be created from a prior official result
+snapshot; this placeholder intentionally stays unimplemented.
 
 Rules for this file:
 
@@ -34,7 +35,7 @@ class UnimplementedPredictor:
     def predict(self, request: PredictionRequest) -> None:
         """Always raises :class:`NotImplementedYetError`."""
         raise NotImplementedYetError(
-            "no forecasting model is implemented (requested "
+            "no configured application predictor is registered (requested "
             f"match={request.match.match_id!r}, model_version={self.version!r}). "
             "Stage 1 builds infrastructure only; see docs/project-charter.md."
         )

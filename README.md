@@ -23,18 +23,33 @@ Each arrow is a layer boundary, and each layer is forbidden from reaching
 across it. A prediction that knows the final score is not a prediction; a
 recommendation that places itself is not research.
 
-## Current stage
+## Current stage (updated 2026-10-26)
 
-**Stage 1: infrastructure only.** This repository currently contains a project
-skeleton, a set of data contracts with enforced invariants, the look-ahead
-guards, and a real test suite. It contains no data, no features and no
-forecasting model.
+**Phase 1 official data factory: offline ACCEPT.** `tools/phase1_data_factory.py`
+verified two real capture runs, 9,519 raw payloads and 1,727 candidate quote
+events. Historical raw inputs and SQLite outputs are kept off Git.
 
-- **No data source is configured.** `available_sources()` returns an empty tuple.
-- **No features are built.** The guards that decide what a feature vector may
-  read are implemented and tested; featurisation is not.
-- **No model exists.** `available_predictors()` returns an empty dict.
-- **No backtest has been run.**
+**Phase 2 controlled qualification: cloud STARTUP ACCEPT, long-run PENDING.**
+A separately bounded official-only collector and 2-minute health timer were
+started on 2026-10-26 under a fresh cloud root. A 135-result independent,
+weak observed-frequency 1X2 baseline is now available in
+`src/football_betting/models/observed_frequency.py`, with a create-only
+future-fixture freeze/scoring CLI at `tools/phase2_forecast_lab.py`. The first
+four future fixture predictions were frozen before kickoff; only two official
+HAD market reference snapshots passed strict research eligibility.
+
+**Not yet accepted:** recurring cloud reliability, broad team-based model
+coverage, automatic live result ingestion, full retrospective replay,
+independent market outperformance, CLV or positive EV. The generic
+`available_predictors()` registry remains empty because no audited automatic
+training-source binding exists. Production feature construction also remains
+unimplemented. See `REPORTS/` and `REVIEWS/` for newer qualification evidence.
+
+### Original Stage 1 foundation (historical)
+
+The foundation introduced data contracts, time guards and a reproducible test
+suite. The initial state had no configured source/model/features/backtest; those
+old statements no longer describe all standalone research tools.
 
 **This stage does not execute bets, and this repository contains no code capable
 of placing one.** No wagering venue is integrated, no credentials exist, and a
