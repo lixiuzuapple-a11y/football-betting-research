@@ -15,10 +15,12 @@ and offline frozen history independently of the primary CLI's printed verdict.
 | Market/outcome separation | actual forecast input has no price/result; mutation of target odds/score-shaped field leaves model predictions invariant | ACCEPT |
 | Reproduction | second independent full raw+history replay generated EXACT matching frozen object | ACCEPT |
 | Adversarial tests | eight new tests, 405 whole-repository tests PASS | ACCEPT |
-| Machine-independent time stamping | current device time plus pre-kickoff Git commitment (verify remote push) | CONDITIONAL until pushed |
+| Pre-kickoff external commitment | exact remote main commit `a0395a0f7e16af331b977223e5e697320b96e93c`, Git commit time 2026-10-29 15:42:36 CST; ahead of both Oct31 kickoff times | ACCEPT (Git record; not an independent trusted clock signature) |
 | Production economics | no contemporaneous executable odds, no real CLV, no outcome blind score, historical source 4 months stale | NO-GO |
 
-**Stage decision**: independent *single-shot pre-kickoff research forecasting*
-ACCEPT, contingent on successful GitHub publication before kickoff. Do not
+**Stage decision: ACCEPTED**, independent *single-shot pre-kickoff research forecasting*.
+The original freeze sha256 `3bb96003e370f45bc60c9656d76542bf3444cd5b19a3d2575c303e66e4d670b3`
+and derived probability evidence were observed on remote GitHub before kickoff,
+and the local worktree did not contain unrelated changes. Do not
 call ongoing automatic forward competition complete. Model disagreement
 cannot be resolved using later outcomes to pick a winner.

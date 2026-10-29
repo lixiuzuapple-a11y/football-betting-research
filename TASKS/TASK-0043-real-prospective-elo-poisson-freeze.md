@@ -15,4 +15,7 @@ Advance from completed TASK0041/42 real official capture/factory to genuinely **
 ## Completion limits
 This is a **manual one-shot prospective research freeze**. Do not claim that an automatic service is deployed, that July-only training is up to date, that 19/19 matches have modeled predictions, or that it provides economic edge. No recommendation to bet.
 
-Status: REVIEW until independent QA evidence and remote Git publication are verified.
+Status: **ACCEPTED** for bounded manual prospective freeze, reviewer 2026-10-29.
+First immutable evidence commit `a0395a0f7e16af331b977223e5e697320b96e93c`
+was verified on remote `main` before either target kickoff. Automatic recurring
+forecasts and subsequent blind scoring are NOT part of this acceptance.
