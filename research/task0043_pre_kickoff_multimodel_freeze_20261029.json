@@ -1,0 +1,88 @@
+{
+  "frozen_at_utc": "2026-10-29T07:36:26.021565+00:00",
+  "frozen_file_sha256": "3bb96003e370f45bc60c9656d76542bf3444cd5b19a3d2575c303e66e4d670b3",
+  "historical_fixture_sha256": "7ba90661dbed29eb940daf5ea385c7d76d5751d16be86bd9063293a982abc7b7",
+  "historical_manifest_sha256": "eb3c37793866a27f8c1520c78a69e6098fdf79f08622b37fed64070fa1f8748f",
+  "historical_training_matches": 53705,
+  "history_latest_training_day": "2026-07-04",
+  "history_published_utc": "2026-07-05T01:23:18+00:00",
+  "identity_ledger_sha256": "13d373dbab8363e606cfaf39c478b6035c35c86ad0ffcbf4c53e6e5014f63f2f",
+  "market_odds_not_in_model_input": true,
+  "observed_fixtures": 19,
+  "official_raw_sha256": "4fecde60266a7f99fcf10b6aeed3ab1883ad17d8394e0f2f56bc3f93f1b42767",
+  "official_received_utc": "2026-10-29T07:31:11.376632+00:00",
+  "predictions": [
+    {
+      "hf_away_id": 564,
+      "hf_home_id": 569,
+      "hf_league_id": 23,
+      "kickoff_utc": "2026-10-30T18:00:00+00:00",
+      "league": "\u632a\u8d85",
+      "matchId": "2042359",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.5227080302391942,
+          0.19865947136528342,
+          0.27863249839552234
+        ],
+        "league_poisson": [
+          0.7005422811537697,
+          0.17123698221181663,
+          0.12822073663441358
+        ],
+        "pooled_elo_davidson": [
+          0.42577252261761656,
+          0.25718497746509567,
+          0.31704249991728783
+        ]
+      },
+      "official_away_id": "613",
+      "official_home_id": "618"
+    },
+    {
+      "hf_away_id": 214,
+      "hf_home_id": 208,
+      "hf_league_id": 9,
+      "kickoff_utc": "2026-10-30T20:05:00+00:00",
+      "league": "\u6cd5\u7532",
+      "matchId": "2042364",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.45693977083714177,
+          0.24857173808540456,
+          0.2944884910774536
+        ],
+        "league_poisson": [
+          0.32693978322755224,
+          0.2568290912171414,
+          0.4162311255553065
+        ],
+        "pooled_elo_davidson": [
+          0.3517261597062559,
+          0.25901262899170857,
+          0.3892612113020356
+        ]
+      },
+      "official_away_id": "179",
+      "official_home_id": "180"
+    }
+  ],
+  "qualified": 2,
+  "rejections": {
+    "league_not_approved_for_forward_model": 15,
+    "missing_preapproved_both_team_identity": 2
+  },
+  "research_only_no_bet": true,
+  "status": "PRE_KICKOFF_FROZEN_RESEARCH_ONLY",
+  "task": "TASK0043"
+}

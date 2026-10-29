@@ -49,6 +49,14 @@ class Game:
         return 0 if self.gh > self.ga else 2 if self.gh < self.ga else 1
 
 
+@dataclass(frozen=True)
+class Scheduled:
+    """Pre-match-only model input. Deliberately contains no results or prices."""
+    league: int
+    home: int
+    away: int
+
+
 @dataclass
 class Totals:
     n: int = 0
@@ -117,7 +125,7 @@ class State:
         self.trained_game_count += 1
         self.last_training_date = game.date
 
-    def predict(self, game: Game) -> dict[str, list[float]]:
+    def predict(self, game: Game | Scheduled) -> dict[str, list[float]]:
         base = self.global_result
         prior = [(x + 1.0) / (sum(base) + 3) for x in base]
         predictions = {"global_frequency": prior}
