@@ -126,6 +126,32 @@ def test_health_unresponsive_or_down_detected(tmp_path):
     assert down["status"] == "ALERT" and down["reason"] == "collector_not_running"
 
 
+def test_health_never_calls_all_bad_captures_healthy(tmp_path, monkeypatch):
+    sample_epoch(tmp_path)
+    real_audit = health.audit
+    def mocked(root, parser):
+        data = real_audit(root, parser)
+        data["last_10_old_results"] = ["transport_error"]
+        return data
+    monkeypatch.setattr(health, "audit", mocked)
+    state = {"ActiveState": "active", "MainPID": "321"}
+    status = health.check(tmp_path, Path("tools/task0017_official_only.py"),
+                          now=NOW + dt.timedelta(seconds=25),
+                          state=state, min_free_gib=0)
+    assert status["status"] == "DEGRADED"
+    assert status["reason"] == "latest_source_or_transport_error"
+    def three_bad(root, parser):
+        data = mocked(root, parser)
+        data["last_10_old_results"] = ["transport_error"] * 3
+        return data
+    monkeypatch.setattr(health, "audit", three_bad)
+    alert = health.check(tmp_path, Path("tools/task0017_official_only.py"),
+                         now=NOW + dt.timedelta(seconds=25),
+                         state=state, min_free_gib=0)
+    assert alert["status"] == "ALERT"
+    assert alert["reason"] == "consecutive_bad_responses"
+
+
 def test_health_boot_grace(tmp_path):
     (tmp_path/"runs").mkdir()
     r = health.check(tmp_path, Path("tools/task0017_official_only.py"),

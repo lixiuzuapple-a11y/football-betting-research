@@ -92,10 +92,22 @@ def check(base: Path, parser: Path, *, now: dt.datetime | None = None,
                    "status_counts": result["original_result_counts"],
                    "lag_seconds": round(lag, 2),
                    "sqlite": result["sqlite_quick_check"]})
-    if -30 <= lag <= max_lag_seconds:
-        health["status"] = "OK"
-    else:
+    outcomes = result["last_10_old_results"]
+    recent_bad = 0
+    for outcome in reversed(outcomes):
+        if outcome in ("ok", "no_offer"):
+            break
+        recent_bad += 1
+    if not -30 <= lag <= max_lag_seconds:
         health["reason"] = "collector_stale_or_future_clock"
+    elif recent_bad >= 3:
+        health["reason"] = "consecutive_bad_responses"
+    elif recent_bad:
+        health["status"] = "DEGRADED"
+        health["reason"] = "latest_source_or_transport_error"
+    else:
+        health["status"] = "OK"
+    health["consecutive_bad_responses"] = recent_bad
     return health
 
 
