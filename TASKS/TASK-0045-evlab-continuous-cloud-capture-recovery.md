@@ -39,3 +39,14 @@ status, genuine live response/SQLite audits, verified new root after restart
 without old data mutation, and remote GitHub push. Long-run availability,
 actual 48h/7d uptime and physical reboot resilience remain unproven at
 immediate stage close; cannot be claimed from configuration alone.
+
+## Final stage decision (2026-10-30)
+Engineering **ACCEPT** after direct remote deployment, two independent live
+restart paths (watchdog and native systemd), normal epoch rollover,
+independent raw-SHA validation and offcloud closed-epoch restore. Full 430
+repository tests passed. Full documented evidence is in
+`REPORTS/EVLAB-TASK0045-CONTINUOUS-CLOUD-RECOVERY-20261030.md`
+and independent review is in
+`REVIEWS/EVLAB-TASK0045-INDEPENDENT-CLOUD-QA-20261030.md`.
+Long-run endurance, actual reboot and automated offsite alerts/backups remain
+explicitly **PENDING/OUT OF SCOPE**, not inferred to be complete.
