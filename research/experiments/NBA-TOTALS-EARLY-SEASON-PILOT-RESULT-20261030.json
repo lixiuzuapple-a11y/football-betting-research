@@ -1,0 +1,654 @@
+{
+  "source": "https://raw.githubusercontent.com/aaryanshah607/nba-line-sheet/main/nba_odds_clean.csv",
+  "sha256": "fe37302d1f6c6b12b619e1b4a507ad7c23df467d988f83df7a3e7e268ce6ee52",
+  "byte_size": 3683246,
+  "audit": {
+    "input_rows": 23609,
+    "suspicious_values": 23
+  },
+  "valid_unique_rows": 23609,
+  "period_counts": {
+    "early": 4033,
+    "comparison": 11097,
+    "excluded_day_120_plus": 8479
+  },
+  "season_first_date": {
+    "2007": "2007-10-30",
+    "2008": "2008-10-28",
+    "2009": "2009-10-27",
+    "2010": "2010-10-26",
+    "2011": "2011-12-25",
+    "2012": "2012-10-30",
+    "2013": "2013-10-29",
+    "2014": "2014-10-28",
+    "2015": "2015-10-27",
+    "2016": "2016-10-25",
+    "2017": "2017-10-17",
+    "2018": "2018-10-16",
+    "2019": "2019-10-22",
+    "2020": "2020-09-01",
+    "2021": "2021-10-19",
+    "2022": "2022-10-19",
+    "2023": "2023-10-24",
+    "2024": "2024-10-22",
+    "2025": "2025-10-21"
+  },
+  "train_2007_2020": {
+    "early": {
+      "total": 2922,
+      "over": 1364,
+      "under": 1522,
+      "push": 36,
+      "graded": 2886,
+      "over_rate": 0.472626,
+      "over_rate_ci95": [
+        0.45446,
+        0.490865
+      ]
+    },
+    "comparison": {
+      "total": 8265,
+      "over": 4127,
+      "under": 4016,
+      "push": 122,
+      "graded": 8143,
+      "over_rate": 0.506816,
+      "over_rate_ci95": [
+        0.495956,
+        0.517669
+      ]
+    },
+    "delta_over_rate": -0.03419,
+    "two_sided_p_approx": 0.00159677,
+    "z": -3.1565
+  },
+  "holdout_2021_2025": {
+    "early": {
+      "total": 1111,
+      "over": 555,
+      "under": 551,
+      "push": 5,
+      "graded": 1106,
+      "over_rate": 0.501808,
+      "over_rate_ci95": [
+        0.472386,
+        0.531218
+      ]
+    },
+    "comparison": {
+      "total": 2832,
+      "over": 1420,
+      "under": 1392,
+      "push": 20,
+      "graded": 2812,
+      "over_rate": 0.504979,
+      "over_rate_ci95": [
+        0.486505,
+        0.523439
+      ]
+    },
+    "delta_over_rate": -0.003171,
+    "two_sided_p_approx": 0.85818323,
+    "z": -0.17869
+  },
+  "holdout_seasons_agree_with_train": 2,
+  "per_season": {
+    "2007": {
+      "early": {
+        "total": 220,
+        "over": 101,
+        "under": 117,
+        "push": 2,
+        "graded": 218,
+        "over_rate": 0.463303,
+        "over_rate_ci95": [
+          0.398317,
+          0.529559
+        ]
+      },
+      "comparison": {
+        "total": 624,
+        "over": 303,
+        "under": 313,
+        "push": 8,
+        "graded": 616,
+        "over_rate": 0.491883,
+        "over_rate_ci95": [
+          0.452577,
+          0.53129
+        ]
+      },
+      "delta_over_rate": -0.02858,
+      "two_sided_p_approx": 0.46804133,
+      "z": -0.72567
+    },
+    "2008": {
+      "early": {
+        "total": 222,
+        "over": 110,
+        "under": 112,
+        "push": 0,
+        "graded": 222,
+        "over_rate": 0.495495,
+        "over_rate_ci95": [
+          0.430364,
+          0.56078
+        ]
+      },
+      "comparison": {
+        "total": 627,
+        "over": 317,
+        "under": 300,
+        "push": 10,
+        "graded": 617,
+        "over_rate": 0.513776,
+        "over_rate_ci95": [
+          0.474376,
+          0.553007
+        ]
+      },
+      "delta_over_rate": -0.018281,
+      "two_sided_p_approx": 0.64033015,
+      "z": -0.46724
+    },
+    "2009": {
+      "early": {
+        "total": 219,
+        "over": 104,
+        "under": 115,
+        "push": 0,
+        "graded": 219,
+        "over_rate": 0.474886,
+        "over_rate_ci95": [
+          0.409752,
+          0.540885
+        ]
+      },
+      "comparison": {
+        "total": 624,
+        "over": 296,
+        "under": 314,
+        "push": 14,
+        "graded": 610,
+        "over_rate": 0.485246,
+        "over_rate_ci95": [
+          0.445801,
+          0.524875
+        ]
+      },
+      "delta_over_rate": -0.01036,
+      "two_sided_p_approx": 0.79240602,
+      "z": -0.26319
+    },
+    "2010": {
+      "early": {
+        "total": 218,
+        "over": 100,
+        "under": 116,
+        "push": 2,
+        "graded": 216,
+        "over_rate": 0.462963,
+        "over_rate_ci95": [
+          0.397694,
+          0.529526
+        ]
+      },
+      "comparison": {
+        "total": 626,
+        "over": 305,
+        "under": 310,
+        "push": 11,
+        "graded": 615,
+        "over_rate": 0.495935,
+        "over_rate_ci95": [
+          0.456568,
+          0.535353
+        ]
+      },
+      "delta_over_rate": -0.032972,
+      "two_sided_p_approx": 0.40426813,
+      "z": -0.83402
+    },
+    "2011": {
+      "early": {
+        "total": 251,
+        "over": 104,
+        "under": 145,
+        "push": 2,
+        "graded": 249,
+        "over_rate": 0.417671,
+        "over_rate_ci95": [
+          0.35812,
+          0.479723
+        ]
+      },
+      "comparison": {
+        "total": 708,
+        "over": 365,
+        "under": 332,
+        "push": 11,
+        "graded": 697,
+        "over_rate": 0.523673,
+        "over_rate_ci95": [
+          0.486567,
+          0.560519
+        ]
+      },
+      "delta_over_rate": -0.106002,
+      "two_sided_p_approx": 0.00408347,
+      "z": -2.87164
+    },
+    "2012": {
+      "early": {
+        "total": 219,
+        "over": 112,
+        "under": 104,
+        "push": 3,
+        "graded": 216,
+        "over_rate": 0.518519,
+        "over_rate_ci95": [
+          0.452145,
+          0.584245
+        ]
+      },
+      "comparison": {
+        "total": 631,
+        "over": 316,
+        "under": 304,
+        "push": 11,
+        "graded": 620,
+        "over_rate": 0.509677,
+        "over_rate_ci95": [
+          0.470389,
+          0.548846
+        ]
+      },
+      "delta_over_rate": 0.008842,
+      "two_sided_p_approx": 0.82284703,
+      "z": 0.22388
+    },
+    "2013": {
+      "early": {
+        "total": 227,
+        "over": 107,
+        "under": 117,
+        "push": 3,
+        "graded": 224,
+        "over_rate": 0.477679,
+        "over_rate_ci95": [
+          0.413195,
+          0.542915
+        ]
+      },
+      "comparison": {
+        "total": 623,
+        "over": 325,
+        "under": 290,
+        "push": 8,
+        "graded": 615,
+        "over_rate": 0.528455,
+        "over_rate_ci95": [
+          0.488948,
+          0.567609
+        ]
+      },
+      "delta_over_rate": -0.050776,
+      "two_sided_p_approx": 0.19296664,
+      "z": -1.30185
+    },
+    "2014": {
+      "early": {
+        "total": 222,
+        "over": 104,
+        "under": 110,
+        "push": 8,
+        "graded": 214,
+        "over_rate": 0.485981,
+        "over_rate_ci95": [
+          0.419857,
+          0.5526
+        ]
+      },
+      "comparison": {
+        "total": 617,
+        "over": 286,
+        "under": 324,
+        "push": 7,
+        "graded": 610,
+        "over_rate": 0.468852,
+        "over_rate_ci95": [
+          0.42957,
+          0.508525
+        ]
+      },
+      "delta_over_rate": 0.017129,
+      "two_sided_p_approx": 0.66588128,
+      "z": 0.43181
+    },
+    "2015": {
+      "early": {
+        "total": 226,
+        "over": 97,
+        "under": 123,
+        "push": 6,
+        "graded": 220,
+        "over_rate": 0.440909,
+        "over_rate_ci95": [
+          0.376873,
+          0.506973
+        ]
+      },
+      "comparison": {
+        "total": 618,
+        "over": 323,
+        "under": 290,
+        "push": 5,
+        "graded": 613,
+        "over_rate": 0.526917,
+        "over_rate_ci95": [
+          0.487348,
+          0.56615
+        ]
+      },
+      "delta_over_rate": -0.086008,
+      "two_sided_p_approx": 0.02861241,
+      "z": -2.18879
+    },
+    "2016": {
+      "early": {
+        "total": 224,
+        "over": 111,
+        "under": 108,
+        "push": 5,
+        "graded": 219,
+        "over_rate": 0.506849,
+        "over_rate_ci95": [
+          0.44109,
+          0.572373
+        ]
+      },
+      "comparison": {
+        "total": 625,
+        "over": 322,
+        "under": 288,
+        "push": 15,
+        "graded": 610,
+        "over_rate": 0.527869,
+        "over_rate_ci95": [
+          0.488202,
+          0.567187
+        ]
+      },
+      "delta_over_rate": -0.02102,
+      "two_sided_p_approx": 0.59320187,
+      "z": -0.5342
+    },
+    "2017": {
+      "early": {
+        "total": 214,
+        "over": 99,
+        "under": 113,
+        "push": 2,
+        "graded": 212,
+        "over_rate": 0.466981,
+        "over_rate_ci95": [
+          0.401008,
+          0.53413
+        ]
+      },
+      "comparison": {
+        "total": 637,
+        "over": 308,
+        "under": 323,
+        "push": 6,
+        "graded": 631,
+        "over_rate": 0.488114,
+        "over_rate_ci95": [
+          0.449303,
+          0.527069
+        ]
+      },
+      "delta_over_rate": -0.021133,
+      "two_sided_p_approx": 0.59421205,
+      "z": -0.53274
+    },
+    "2018": {
+      "early": {
+        "total": 212,
+        "over": 103,
+        "under": 107,
+        "push": 2,
+        "graded": 210,
+        "over_rate": 0.490476,
+        "over_rate_ci95": [
+          0.423644,
+          0.55765
+        ]
+      },
+      "comparison": {
+        "total": 640,
+        "over": 315,
+        "under": 315,
+        "push": 10,
+        "graded": 630,
+        "over_rate": 0.5,
+        "over_rate_ci95": [
+          0.461075,
+          0.538925
+        ]
+      },
+      "delta_over_rate": -0.009524,
+      "two_sided_p_approx": 0.81106432,
+      "z": -0.23905
+    },
+    "2019": {
+      "early": {
+        "total": 212,
+        "over": 98,
+        "under": 113,
+        "push": 1,
+        "graded": 211,
+        "over_rate": 0.464455,
+        "over_rate_ci95": [
+          0.398398,
+          0.531783
+        ]
+      },
+      "comparison": {
+        "total": 606,
+        "over": 318,
+        "under": 282,
+        "push": 6,
+        "graded": 600,
+        "over_rate": 0.53,
+        "over_rate_ci95": [
+          0.49,
+          0.569618
+        ]
+      },
+      "delta_over_rate": -0.065545,
+      "two_sided_p_approx": 0.10133695,
+      "z": -1.63841
+    },
+    "2020": {
+      "early": {
+        "total": 36,
+        "over": 14,
+        "under": 22,
+        "push": 0,
+        "graded": 36,
+        "over_rate": 0.388889,
+        "over_rate_ci95": [
+          0.247849,
+          0.551355
+        ]
+      },
+      "comparison": {
+        "total": 59,
+        "over": 28,
+        "under": 31,
+        "push": 0,
+        "graded": 59,
+        "over_rate": 0.474576,
+        "over_rate_ci95": [
+          0.352659,
+          0.599602
+        ]
+      },
+      "delta_over_rate": -0.085687,
+      "two_sided_p_approx": 0.41460624,
+      "z": -0.81581
+    },
+    "2021": {
+      "early": {
+        "total": 223,
+        "over": 87,
+        "under": 136,
+        "push": 0,
+        "graded": 223,
+        "over_rate": 0.390135,
+        "over_rate_ci95": [
+          0.328492,
+          0.455499
+        ]
+      },
+      "comparison": {
+        "total": 644,
+        "over": 337,
+        "under": 303,
+        "push": 4,
+        "graded": 640,
+        "over_rate": 0.526563,
+        "over_rate_ci95": [
+          0.487837,
+          0.564971
+        ]
+      },
+      "delta_over_rate": -0.136428,
+      "two_sided_p_approx": 0.00044907,
+      "z": -3.50943
+    },
+    "2022": {
+      "early": {
+        "total": 221,
+        "over": 109,
+        "under": 110,
+        "push": 2,
+        "graded": 219,
+        "over_rate": 0.497717,
+        "over_rate_ci95": [
+          0.432109,
+          0.563403
+        ]
+      },
+      "comparison": {
+        "total": 659,
+        "over": 336,
+        "under": 318,
+        "push": 5,
+        "graded": 654,
+        "over_rate": 0.513761,
+        "over_rate_ci95": [
+          0.475487,
+          0.551875
+        ]
+      },
+      "delta_over_rate": -0.016044,
+      "two_sided_p_approx": 0.68101216,
+      "z": -0.41108
+    },
+    "2023": {
+      "early": {
+        "total": 220,
+        "over": 118,
+        "under": 101,
+        "push": 1,
+        "graded": 219,
+        "over_rate": 0.538813,
+        "over_rate_ci95": [
+          0.472691,
+          0.603597
+        ]
+      },
+      "comparison": {
+        "total": 602,
+        "over": 292,
+        "under": 305,
+        "push": 5,
+        "graded": 597,
+        "over_rate": 0.489112,
+        "over_rate_ci95": [
+          0.449212,
+          0.529152
+        ]
+      },
+      "delta_over_rate": 0.049701,
+      "two_sided_p_approx": 0.20830393,
+      "z": 1.25824
+    },
+    "2024": {
+      "early": {
+        "total": 225,
+        "over": 119,
+        "under": 104,
+        "push": 2,
+        "graded": 223,
+        "over_rate": 0.533632,
+        "over_rate_ci95": [
+          0.468141,
+          0.597984
+        ]
+      },
+      "comparison": {
+        "total": 595,
+        "over": 307,
+        "under": 282,
+        "push": 6,
+        "graded": 589,
+        "over_rate": 0.521222,
+        "over_rate_ci95": [
+          0.480873,
+          0.561297
+        ]
+      },
+      "delta_over_rate": 0.01241,
+      "two_sided_p_approx": 0.75196145,
+      "z": 0.31605
+    },
+    "2025": {
+      "early": {
+        "total": 222,
+        "over": 122,
+        "under": 100,
+        "push": 0,
+        "graded": 222,
+        "over_rate": 0.54955,
+        "over_rate_ci95": [
+          0.483812,
+          0.613602
+        ]
+      },
+      "comparison": {
+        "total": 332,
+        "over": 148,
+        "under": 184,
+        "push": 0,
+        "graded": 332,
+        "over_rate": 0.445783,
+        "over_rate_ci95": [
+          0.39324,
+          0.499567
+        ]
+      },
+      "delta_over_rate": 0.103767,
+      "two_sided_p_approx": 0.0166421,
+      "z": 2.39452
+    }
+  },
+  "verdict": "NO-GO (FIXED HYPOTHESIS)",
+  "limitations": [
+    "Third-party odds provenance and time of quote unverified.",
+    "No totals selection prices / Chinese lottery lines; ROI, CLV, EV cannot be inferred.",
+    "No independent game/score reconciliation; no multiplicity-adjusted claim."
+  ]
+}
