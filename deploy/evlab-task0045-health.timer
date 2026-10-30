@@ -1,0 +1,12 @@
+[Unit]
+Description=EV-Lab independent official capture integrity and recovery monitor
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=2min
+AccuracySec=15s
+Persistent=true
+Unit=evlab-task0045-health.service
+
+[Install]
+WantedBy=timers.target

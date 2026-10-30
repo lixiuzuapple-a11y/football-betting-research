@@ -1,0 +1,26 @@
+[Unit]
+Description=EV-Lab official-only continuous capture (immutable 120-round epochs)
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/evlab-ops/task0045
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/ubuntu/venv311/bin/python -m tools.task0045_cloud_cycle --data-base /home/ubuntu/evlab-data/task0045-continuous --source-commit __SOURCE_COMMIT__ --max-rounds 120 --max-hours 2.5 --interval 60 --timeout 20 --max-bad 3 --min-free-gib 3
+Restart=always
+RestartSec=30
+TimeoutStopSec=40
+KillSignal=SIGTERM
+MemoryMax=350M
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=/home/ubuntu/evlab-data/task0045-continuous
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

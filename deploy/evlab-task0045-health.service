@@ -1,0 +1,18 @@
+[Unit]
+Description=EV-Lab read-only raw-SHA health monitor and bounded collector watchdog
+After=evlab-task0045-official.service
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/home/ubuntu/evlab-ops/task0045
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 -m tools.task0045_cloud_health --data-base /home/ubuntu/evlab-data/task0045-continuous --parser /home/ubuntu/evlab-ops/task0045/tools/task0017_official_only.py --max-lag-seconds 360
+TimeoutStartSec=80
+ProtectSystem=full
+ReadWritePaths=/home/ubuntu/evlab-data/task0045-continuous
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
