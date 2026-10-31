@@ -23,15 +23,37 @@ Each arrow is a layer boundary, and each layer is forbidden from reaching
 across it. A prediction that knows the final score is not a prediction; a
 recommendation that places itself is not research.
 
-## Current stage (updated 2026-10-26)
+## Current stage (updated 2026-10-31)
+
+**Current boundary:** standalone tested research tools and command-line scripts
+are available. The generic production `src/football_betting` model, data,
+feature and backtest interfaces are **not wired to these tools**. The Stage 1
+placeholder list later in this document is not a list of missing research tools.
+
+**TASK0045 cloud collection: engineering ACCEPT.** The official-only 60-second
+collector and 2-minute raw-SHA health monitor run on `evlab-cloud` under
+persistent systemd units, with tested restart and immutable segment rotation.
+Long-term soak, scheduled offsite backups and external alerts remain pending.
+
+**TASK0043/TASK0044 forward forecast:** two real matches were frozen before
+kickoff and published via Git. Their original Oct31 12:30 Beijing delayed
+official scoring task is **pending until actual scoring and independent QA**.
+
+**TASK0046 guarded forward publication:** a separate once-daily, one-shot
+official source capture now reuses TASK0044/TASK0043; newly qualified fixtures
+may be Git-published with exact four-model vectors and source hashes only
+before kickoff. No eligible new fixture means no new Git commitment. The
+previously audited two-league/35-crosswalk scope is unchanged.
 
 **Phase 1 official data factory: offline ACCEPT.** `tools/phase1_data_factory.py`
 verified two real capture runs, 9,519 raw payloads and 1,727 candidate quote
 events. Historical raw inputs and SQLite outputs are kept off Git.
 
-**Phase 2 controlled qualification: cloud STARTUP ACCEPT, long-run PENDING.**
+**Phase 2 controlled qualification (historical 2026-10-26 snapshot):**
 A separately bounded official-only collector and 2-minute health timer were
-started on 2026-10-26 under a fresh cloud root. A 135-result independent,
+started on 2026-10-26 under a fresh cloud root. That old transient unit later
+failed; the independent persistent TASK0045 service above supersedes it.
+A 135-result independent,
 weak observed-frequency 1X2 baseline is now available in
 `src/football_betting/models/observed_frequency.py`, with a create-only
 future-fixture freeze/scoring CLI at `tools/phase2_forecast_lab.py`. The first
@@ -48,8 +70,8 @@ frequency baseline; Poisson scored slightly better than Elo. This is **not**
 a point-in-time-verified odds-market or future-fixture profit study. See
 `REPORTS/EVLAB-PHASE3-25969-MULTIMODEL-OOS-20261026.md`.
 
-**Not yet accepted:** recurring cloud reliability, integrated independent
-production model training/feature binding, automatic future result ingestion,
+**Not yet accepted:** long-term cloud soak, integrated independent
+production model training/feature binding, reliable unattended official result ingestion,
 independent bookmaker market outperformance, CLV or positive EV. The generic
 `available_predictors()` registry remains empty because no audited automatic
 training-source binding exists. Production feature construction also remains
@@ -136,16 +158,19 @@ Genuinely working, tested behaviour:
   calibration curve, ROI, profit, strike rate.
 - **Walk-forward windows** - train/test splits with an explicit embargo gap that
   cannot train on the period they predict.
-- **191 tests**, run in CI on every push.
+- **Regression tests**, run in CI on every push (see current CI for total).
 
-## What is not implemented
+## What is not implemented in the generic package API
 
 Listed explicitly so that nothing here reads as finished:
 
-- Data acquisition. `data.loader.load_snapshot()` raises.
+- Generic data acquisition. `data.loader.load_snapshot()` raises; the
+  standalone official capture programs in `tools/` are implemented.
 - Feature construction. `features.build_features()` validates, then raises.
-- Any forecasting model. `models.available_predictors()` is empty.
-- Backtest replay. `backtest.run_backtest()` validates, then raises.
+- Generic model registry. `models.available_predictors()` is empty; separate
+  four-model historical and prospective research tools are implemented.
+- Generic backtest replay. `backtest.run_backtest()` validates, then raises;
+  `tools/phase3_multimodel_walkforward.py` completed a 25,969-game study.
 - Persistence. The record stores are in-memory only.
 - Stake sizing, bankroll management, portfolio construction.
 - Any form of bet placement or wagering integration.
@@ -195,9 +220,12 @@ Import the layers:
 python -c "import football_betting; print(football_betting.LAYERS)"
 ```
 
-There is no command-line entry point, because there is nothing to run yet. The
-library raises `NotImplementedYetError` at every unimplemented boundary rather
-than producing placeholder output.
+There is no single installed production console entry point. Working on-demand
+research CLIs include `python -m tools.task0044_forward_orchestrator --help`
+and `python -m tools.task0046_forward_publication --help`. These require
+previously audited off-Git sources and are **not** a generic market or betting
+interface. Unimplemented package boundaries still raise
+`NotImplementedYetError`.
 
 ## How to test
 
@@ -221,14 +249,14 @@ post-match data as a pre-match input, and experiment recording.
 
 | Stage | Scope | Status |
 |---|---|---|
-| **1. Foundation** | Repository, contracts, guards, records, tests, CI | **This stage** |
-| 2. Data | One licensed, traceable source; documented schema; snapshots | Not started |
-| 3. Features | An agreed feature contract, built only from permitted inputs | Not started |
-| 4. Baseline model | A simple, explainable model with a pre-registered experiment | Not started |
-| 5. Odds and value | Closing-line and movement-based market signals | Not started |
-| 6. Evaluation | Calibration, ROI and stability reporting over a real sample | Not started |
-| 7. Backtest | Walk-forward replay over a real historical sample | Not started |
-| 8. Operations | Scheduling, monitoring, durable storage | Not started |
+| **1. Foundation** | Contracts, guards, tests, CI | ACCEPT |
+| 2. Data | Official source capture and archive; generic package loader | Research tool ACCEPT; generic API PENDING |
+| 3. Features | Production point-in-time feature builder | PENDING |
+| 4. Baseline model | Historical Elo, Poisson and frequency models; future freeze | Research ACCEPT; forward sample accumulating |
+| 5. Odds and value | Independently sourced simultaneous market quotes | NOT ACCEPTED |
+| 6. Evaluation | Historic metrics; true prospective official blind score | Historic ACCEPT; forward scoring PENDING |
+| 7. Backtest | 25,969 retrospective fixtures | Historical ACCEPT, market-PIT not proven |
+| 8. Operations | Cloud collector, monitor, guarded daily forward task | Engineering partially ACCEPT, external alerts/backup PENDING |
 | 9. Execution | *Deliberately unplanned* | Out of scope |
 
 Stage 9 is not a backlog item. Automatic betting is excluded from the project as
