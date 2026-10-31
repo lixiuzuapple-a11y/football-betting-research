@@ -1,0 +1,39 @@
+{
+  "task": "TASK0046",
+  "date_beijing": "2026-10-31",
+  "scope": "EVLab football only",
+  "verdict": "ENGINEERING_ACCEPT_NO_NEW_FIXTURE_PATH",
+  "stage_result": "NO_NEW_ELIGIBLE_PREMATCH_FIXTURES",
+  "first_trial": {
+    "mode": "probe",
+    "run_id": "run-20261031T020852158536Z-41c9c452",
+    "official_matches": 43,
+    "http_status": 200
+  },
+  "registered_trial": {
+    "mode": "publish",
+    "run_id": "run-20261031T021136112509Z-bd263952",
+    "official_matches": 43,
+    "http_status": 200,
+    "source_sha256": "31f7938ff0d7dcac6964e5427af580cd95c8918c3d709f1eecd8273a25e6450b",
+    "source_code_commit": "bfd30f6ad5396a862f6dcc37e7848cdb8ab0933b",
+    "sqlite_quick_check": "ok",
+    "verified_raw_sha_count": 1
+  },
+  "windows_scheduler": {
+    "name": "EVLab-TASK0046-DailyForward",
+    "first_verified_run_beijing": "2026-10-31T10:11:11+08:00",
+    "last_task_result": 0,
+    "next_run_beijing": "2026-10-31T11:15:15+08:00",
+    "requires_interactive_logged_in_pc": true
+  },
+  "previous_scoring_job_untouched": "EVLab-TASK0044-OfficialScore-20261031",
+  "unit_tests": 18,
+  "whole_repo_tests": 452,
+  "actual_new_git_published_fixtures": 0,
+  "actual_new_eligible_fixture_commit_published": false,
+  "market_evidence": false,
+  "real_score_qa_complete": false,
+  "cloud_collector_interrupted": false,
+  "automation_warning": "OS clock / Git commit timestamp not independently authenticated, home PC login required"
+}

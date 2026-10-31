@@ -52,7 +52,8 @@ def candidate(tmp_path, edit=None):
 
 def test_valid_ledger_has_clear_missing_market_and_training_provenance(tmp_path):
     path = candidate(tmp_path)
-    original_sha = hashlib.sha256(path.read_bytes()).hexdigest()
+    original_bytes = path.read_bytes()
+    original_sha = hashlib.sha256(original_bytes).hexdigest()
     ledger = f.build_ledger(path, now=NOW, previous=[])
     assert ledger["frozen_file_sha256"] == original_sha
     assert ledger["training_last_date"] == "2026-07-04"
@@ -61,11 +62,7 @@ def test_valid_ledger_has_clear_missing_market_and_training_provenance(tmp_path)
     assert ledger["market_quote_time_utc"] is None
     assert ledger["official_result_status"] == "PENDING"
     assert ledger["predictions"][0]["models_1x2_home_draw_away"]["league_poisson"] == [.5,.25,.25]
-    assert path.read_bytes() == candidate_data(path)
-
-
-def candidate_data(path):
-    return path.read_bytes()
+    assert path.read_bytes() == original_bytes
 
 
 @pytest.mark.parametrize("mutation,pattern", [
@@ -169,6 +166,20 @@ def test_no_eligible_still_creates_durable_single_run_journal(monkeypatch,tmp_pa
                   commit="a"*40,mode="probe",now=NOW)
     assert out["status"]=="NO_NEW_ELIGIBLE_PREMATCH_FIXTURES"
     assert len(count)==1
+    assert len(list((tmp_path/"evidence"/"journal").glob("*.json")))==1
+    assert not list((repo/"research").glob("task0046_forward_*.json"))
+
+
+def test_legitimate_official_no_offer_never_creates_prediction_or_git_commit(monkeypatch,tmp_path):
+    monkeypatch.setattr(f, "capture_and_freeze", lambda **kw: {
+        "status": "NORMAL_NO_OFFER_NOT_A_FAILURE", "raw_capture_root": "test-only"
+    })
+    repo=tmp_path/"repo"
+    (repo/"research").mkdir(parents=True)
+    out=f.one_run(repo=repo,evidence_base=tmp_path/"evidence",
+                  identity=repo/"identity",history=repo/"history",
+                  commit="a"*40,mode="probe",now=NOW)
+    assert out["status"] == "NORMAL_NO_OFFER_NOT_A_FAILURE"
     assert len(list((tmp_path/"evidence"/"journal").glob("*.json")))==1
     assert not list((repo/"research").glob("task0046_forward_*.json"))
 
