@@ -36,8 +36,12 @@ persistent systemd units, with tested restart and immutable segment rotation.
 Long-term soak, scheduled offsite backups and external alerts remain pending.
 
 **TASK0043/TASK0044 forward forecast:** two real matches were frozen before
-kickoff and published via Git. Their original Oct31 12:30 Beijing delayed
-official scoring task is **pending until actual scoring and independent QA**.
+kickoff and published via Git. Their delayed Oct31 official scoring task
+**actually ran and independently passed 2/2 official-match blind score QA**
+(TASK0044 first real prospective closure ACCEPT, N=2). This establishes
+traceability and genuine prospective scoring, **not** statistical superiority,
+market EV or reliable future automated scoring. See
+`REPORTS/EVLAB-TASK0044-FIRST-REAL-OFFICIAL-BLIND-SCORE-20261031.md`.
 
 **TASK0046 guarded forward publication:** a separate once-daily, one-shot
 official source capture now reuses TASK0044/TASK0043; newly qualified fixtures
@@ -254,7 +258,7 @@ post-match data as a pre-match input, and experiment recording.
 | 3. Features | Production point-in-time feature builder | PENDING |
 | 4. Baseline model | Historical Elo, Poisson and frequency models; future freeze | Research ACCEPT; forward sample accumulating |
 | 5. Odds and value | Independently sourced simultaneous market quotes | NOT ACCEPTED |
-| 6. Evaluation | Historic metrics; true prospective official blind score | Historic ACCEPT; forward scoring PENDING |
+| 6. Evaluation | Historic metrics; true prospective official blind score | Historical ACCEPT; first genuine N=2 blind score ACCEPT; sufficient future sample PENDING |
 | 7. Backtest | 25,969 retrospective fixtures | Historical ACCEPT, market-PIT not proven |
 | 8. Operations | Cloud collector, monitor, guarded daily forward task | Engineering partially ACCEPT, external alerts/backup PENDING |
 | 9. Execution | *Deliberately unplanned* | Out of scope |

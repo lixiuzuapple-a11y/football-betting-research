@@ -1,0 +1,83 @@
+{
+  "task": "TASK0044",
+  "phase": "OFFICIAL_BLIND_SCORE",
+  "verification": "TASK0047_INDEPENDENT_REPLAY",
+  "date_beijing": "2026-10-31",
+  "status": "ACCEPT_FIRST_REAL_OFFICIAL_PROSPECTIVE_SCORE_N2",
+  "scheduled_task": "EVLab-TASK0044-OfficialScore-20261031",
+  "scheduled_last_run_beijing": "2026-10-31T12:30:30+08:00",
+  "script_logged_start_beijing": "2026-10-31T12:30:01.4739278+08:00",
+  "script_logged_success_beijing": "2026-10-31T12:30:02.8069594+08:00",
+  "scheduler_script_timestamp_discrepancy_seconds_approx": 29,
+  "task_result_code": 0,
+  "freeze_at_utc": "2026-10-29T07:36:26.021565+00:00",
+  "prediction_source_received_utc": "2026-10-29T07:31:11.376632+00:00",
+  "git_anchor_commit": "a0395a0",
+  "git_anchor_committer_time_utc": "2026-10-29T07:42:36+00:00",
+  "git_commit_time_is_not_independent_authoritative_timestamp": true,
+  "frozen_file_sha256": "3bb96003e370f45bc60c9656d76542bf3444cd5b19a3d2575c303e66e4d670b3",
+  "original_official_fixture_source_sha256": "4fecde60266a7f99fcf10b6aeed3ab1883ad17d8394e0f2f56bc3f93f1b42767",
+  "git_canonical_ledger_sha256": "e8001e6eb3ee8c8974b7710dfa23661d1f16e98f7f319b50637b12e47f48c857",
+  "windows_checkout_ledger_sha256": "339fc55ebb50ec687934f67fa68b365b5ff64612c314b0fc5de822e097233dcf",
+  "git_checkout_diff_only_crlf_lf": true,
+  "official_score_result_sha256": "c33ae8cf8f67da7453102a840a18bb8c4414b428afb1d36a48178a3b268c8be0",
+  "official_result_page_sha256": "73d2f04bbdcb355a2bf18c2ca30bb0d0933d7cf149236a2f895bd593a7c1aba6",
+  "official_result_received_utc": "2026-10-31T04:30:02.758349+00:00",
+  "official_result_http": 200,
+  "official_result_bytes": 14927,
+  "matches": [
+    {
+      "matchId": "2042359",
+      "kickoff_beijing": "2026-10-31T02:00:00+08:00",
+      "official_home_id": "618",
+      "official_away_id": "613",
+      "home_goals": 3,
+      "away_goals": 2,
+      "final_result_status": 2,
+      "target": 0
+    },
+    {
+      "matchId": "2042364",
+      "kickoff_beijing": "2026-10-31T04:05:00+08:00",
+      "official_home_id": "180",
+      "official_away_id": "179",
+      "home_goals": 1,
+      "away_goals": 0,
+      "final_result_status": 2,
+      "target": 0
+    }
+  ],
+  "model_metrics": {
+    "global_frequency": {
+      "n": 2,
+      "accuracy": 1,
+      "mean_logloss": 0.8221034122122116,
+      "mean_brier3": 0.4728903205169874
+    },
+    "league_frequency": {
+      "n": 2,
+      "accuracy": 1,
+      "mean_logloss": 0.7159679598176149,
+      "mean_brier3": 0.39416753598685256
+    },
+    "league_poisson": {
+      "n": 2,
+      "accuracy": 0.5,
+      "mean_logloss": 0.736939915342606,
+      "mean_brier3": 0.41382858706745196
+    },
+    "pooled_elo_davidson": {
+      "n": 2,
+      "accuracy": 0.5,
+      "mean_logloss": 0.949376210663625,
+      "mean_brier3": 0.5676340298895921
+    }
+  },
+  "new_independent_qa_tests": 11,
+  "all_repository_tests": 463,
+  "missing_official_result_count": 0,
+  "no_market_benchmark": true,
+  "model_selection_not_justified": true,
+  "no_wager_or_bet": true,
+  "offgit_independent_audit": "E:\\WebCodex-Workspace\\EVLab-Data-Backups\\task0047-independent-qa-20261031\\INDEPENDENT_AUDIT.json"
+}

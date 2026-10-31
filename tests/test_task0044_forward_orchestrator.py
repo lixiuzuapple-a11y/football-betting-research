@@ -166,11 +166,18 @@ def test_after_deadline_official_fetch_saves_raw_and_scores(tmp_path, monkeypatc
     page = raw_result_pages()[0]["raw"]
     monkeypatch.setattr(flow, "official_get", lambda *_: (
         flow.RESULT_BASE+"?verified=1", page, 200))
-    # Simulate the later scoring window. The real CLI has no --now override.
+    # Simulate a scoring window after actual response receipt, not a hardcoded
+    # "AFTER" in the past. Production fetch stamps real UTC; the older fixture
+    # test date alone cannot be used as the current receipt upper bound.
     actual_scorer = flow.score_evidence
     monkeypatch.setattr(flow, "score_evidence",
                         lambda *, frozen, raw_pages, now:
-                        actual_scorer(frozen=frozen, raw_pages=raw_pages, now=AFTER))
+                        actual_scorer(
+                            frozen=frozen, raw_pages=raw_pages,
+                            now=max(
+                                AFTER,
+                                max(flow.aware(p["meta"]["response_received_utc"])
+                                    for p in raw_pages) + dt.timedelta(seconds=1))))
     out = tmp_path / "official-evidence"
     observed = flow.fetch_and_score(frozen_path=frozen_path, ledger_path=ledger_path,
                                     out_root=out, now=AFTER)
