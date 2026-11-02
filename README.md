@@ -23,7 +23,7 @@ Each arrow is a layer boundary, and each layer is forbidden from reaching
 across it. A prediction that knows the final score is not a prediction; a
 recommendation that places itself is not research.
 
-## Current stage (updated 2026-10-31)
+## Current stage (updated 2026-11-02)
 
 **Current boundary:** standalone tested research tools and command-line scripts
 are available. The generic production `src/football_betting` model, data,
@@ -48,6 +48,20 @@ official source capture now reuses TASK0044/TASK0043; newly qualified fixtures
 may be Git-published with exact four-model vectors and source hashes only
 before kickoff. No eligible new fixture means no new Git commitment. The
 previously audited two-league/35-crosswalk scope is unchanged.
+
+**TASK0048 guarded automatic delayed official scoring: engineering ACCEPT
+for actual daily Windows task and no-due condition.** The 18:30 Beijing
+job reads only previously Git-anchored TASK0046 prospective cohorts, checks
+pre-kickoff chronology and original hashes, scores official results after a
+3-hour delay, and independently replays evidence. Failure and missing
+official results remain in immutable attempt roots. **No new qualifying
+Git-published forecast existed in the 2026-11-02 real run**, so actual
+new-cohort auto-scoring remains PENDING. See
+`REPORTS/EVLAB-TASK0048-BOUNDED-AUTOMATIC-SCORING-20261102.md`.
+On 2026-11-02 the 11:15 TASK0046 run failed Git fetch exit128 (retained
+as failure), then a real later scheduled-task retry succeeded with 9 official
+fixtures but no new approved model cohort. A bounded Git fetch retry was
+added; intermittent network failures are **not** ruled out.
 
 **Phase 1 official data factory: offline ACCEPT.** `tools/phase1_data_factory.py`
 verified two real capture runs, 9,519 raw payloads and 1,727 candidate quote

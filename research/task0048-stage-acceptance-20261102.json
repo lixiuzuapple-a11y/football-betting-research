@@ -1,0 +1,41 @@
+{
+  "task": "TASK0048",
+  "date_beijing": "2026-11-02",
+  "status": "ENGINEERING_ACCEPT_SCORING_SCHEDULE_NO_DUE",
+  "original_forward_failure": {
+    "date_beijing": "2026-11-02",
+    "scheduled_at_beijing": "11:15:15",
+    "git_fetch_exit": 128,
+    "task_exit": 2,
+    "failure_retained": true,
+    "root_cause": "unconfirmed"
+  },
+  "forward_recovery": {
+    "date_beijing": "2026-11-02",
+    "manual_scheduler_trigger": true,
+    "task_exit": 0,
+    "official_games": 9,
+    "new_eligible_commitments": 0,
+    "source_journal": "run-20261102T044039402158Z-1070d016.json"
+  },
+  "score_scheduler": {
+    "name": "EVLab-TASK0048-DailyOfficialScore",
+    "daily_at_beijing": "18:30",
+    "verified_run_beijing": "2026-11-02T12:40:40+08:00",
+    "task_exit": 0,
+    "next_regular_run_beijing": "2026-11-02T18:30:30+08:00",
+    "requires_logged_in_windows": true
+  },
+  "real_score_discovery": {
+    "checked_at_utc": "2026-11-02T04:37:40.140443+00:00",
+    "status": "NO_COMMITTED_NEW_PROSPECTS",
+    "cohorts": 0
+  },
+  "historical_task0044_blind_score_n": 2,
+  "whole_repo_tests": 475,
+  "new_real_scored_cohorts": 0,
+  "profit_not_established": true,
+  "automatic_offsite_backup_pending": true,
+  "external_alert_pending": true,
+  "cloud_collector_touched": false
+}
