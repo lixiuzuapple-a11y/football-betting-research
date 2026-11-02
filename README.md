@@ -63,6 +63,13 @@ as failure), then a real later scheduled-task retry succeeded with 9 official
 fixtures but no new approved model cohort. A bounded Git fetch retry was
 added; intermittent network failures are **not** ruled out.
 
+**Traditional SFC14 / optional-nine research (framework only, DRAFT):**
+`docs/traditional-sfc14-r9-research-framework-v0.1.md` unifies
+the independent match-probability P, bettor-combination Q and audited
+tax-after-payout W research tracks. This is not an approved betting signal,
+implemented market model, new scheduled task or production change; the
+EV-Lab football mainline remains unchanged.
+
 **Phase 1 official data factory: offline ACCEPT.** `tools/phase1_data_factory.py`
 verified two real capture runs, 9,519 raw payloads and 1,727 candidate quote
 events. Historical raw inputs and SQLite outputs are kept off Git.
