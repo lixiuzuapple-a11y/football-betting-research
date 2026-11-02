@@ -40,8 +40,14 @@ def require(ok: bool, problem: str) -> None:
 
 
 def independent_audit(*, repo: Path, freeze: Path, ledger: Path,
-                      result_root: Path, anchor: str = "a0395a0") -> dict:
+                      result_root: Path, anchor: str = "a0395a0",
+                      ledger_git_path: str = LEDGER_PATH) -> dict:
     """Provenance and arithmetic must be independently verifiable from bytes."""
+    if ledger_git_path != LEDGER_PATH and not re.fullmatch(
+        r"research/task0046_forward_\d{8}T\d{6}Z_[a-f0-9]{12}\.json",
+        ledger_git_path,
+    ):
+        raise ValueError("unapproved ledger Git path")
     original = freeze.read_bytes()
     committed = ledger.read_bytes()
     frozen = json.loads(original)
@@ -49,7 +55,7 @@ def independent_audit(*, repo: Path, freeze: Path, ledger: Path,
     score_raw = (result_root / "BLIND_SCORE.json").read_bytes()
     score = json.loads(score_raw)
     manifest = json.loads((result_root / "SOURCE_MANIFEST.json").read_bytes())
-    git_source = subprocess.run(["git", "show", f"{anchor}:{LEDGER_PATH}"],
+    git_source = subprocess.run(["git", "show", f"{anchor}:{ledger_git_path}"],
                                 cwd=repo, capture_output=True, check=True, timeout=15)
     # On this Windows checkout, core.autocrlf=true and the Git index stores
     # LF while the working tree may hold CRLF. This is NOT byte-for-byte
@@ -201,9 +207,12 @@ def independent_audit(*, repo: Path, freeze: Path, ledger: Path,
         stats[name] = values
     return {
         "scope":"EVLab/TASK0044",
-        "verdict":"ACCEPT_FIRST_REAL_OFFICIAL_PROSPECTIVE_SCORE_N2",
+        "verdict":("ACCEPT_FIRST_REAL_OFFICIAL_PROSPECTIVE_SCORE_N2"
+                   if ledger_git_path == LEDGER_PATH and len(independent_rows) == 2
+                   else f"ACCEPT_PROSPECTIVE_OFFICIAL_BLIND_SCORE_N{len(independent_rows)}"),
         "not_market_EV_or_model_selection":True,
         "git_anchor_commit":anchor,
+        "git_anchor_ledger_path":ledger_git_path,
         "git_anchor_commit_time_utc":published.isoformat(),
         "git_commit_time_is_not_independent_timestamp_authority":True,
         "frozen_at_utc":started.isoformat(),

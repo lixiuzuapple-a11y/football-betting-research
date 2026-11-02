@@ -14,6 +14,7 @@ import hashlib
 import json
 import re
 import subprocess
+import time
 import uuid
 from pathlib import Path
 
@@ -133,6 +134,27 @@ def git(repo: Path, *args: str, timeout: int = 35) -> str:
     return result.stdout.strip()
 
 
+def fetch_origin_with_retry(repo: Path, *, attempts: int = 3,
+                            pause: callable = time.sleep) -> None:
+    """A temporary network/auth failure cannot bypass the remote HEAD gate.
+
+    Retries only fetch (no data/prediction/commit is performed before success).
+    No stderr/credential-bearing URL is copied to the research journal.
+    """
+    for i in range(attempts):
+        try:
+            git(repo, "-c", "credential.interactive=never",
+                "fetch", "origin", "main", timeout=30)
+            return
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as exc:
+            if i == attempts - 1:
+                raise RuntimeError(
+                    f"git fetch origin/main failed after {attempts} attempts; "
+                    f"last_error={type(exc).__name__}; no capture or prediction published"
+                ) from None
+            pause(5 * (i + 1))
+
+
 def git_preflight(repo: Path) -> None:
     origin = git(repo, "remote", "get-url", "origin")
     if not re.search(r"github\.com[:/]lixiuzuapple-a11y/football-betting-research(?:\.git)?\Z", origin):
@@ -141,7 +163,7 @@ def git_preflight(repo: Path) -> None:
         raise ValueError("refuse to auto-commit outside main")
     if git(repo, "status", "--porcelain", "--untracked-files=all"):
         raise ValueError("refuse to auto-commit in dirty workspace")
-    git(repo, "fetch", "origin", "main")
+    fetch_origin_with_retry(repo)
     if git(repo, "rev-parse", "HEAD") != git(repo, "rev-parse", "refs/remotes/origin/main"):
         raise ValueError("local main diverged from origin; manual QA required")
 

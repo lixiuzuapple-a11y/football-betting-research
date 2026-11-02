@@ -124,6 +124,16 @@ def test_success_exact_git_blob_bytes(tmp_path,monkeypatch):
     assert out["git_checkout_differs_only_in_crlf_to_lf"] is False
 
 
+def test_future_cohort_verdict_uses_real_n_not_historical_two(tmp_path,monkeypatch):
+    paths=make_case(tmp_path,monkeypatch,crlf_ledger=False)
+    repo,freeze,ledger,result,_,_=paths
+    out=qa.independent_audit(
+        repo=repo,freeze=freeze,ledger=ledger,result_root=result,
+        ledger_git_path="research/task0046_forward_20261030T090000Z_aaaaaaaaaaaa.json")
+    assert out["verdict"]=="ACCEPT_PROSPECTIVE_OFFICIAL_BLIND_SCORE_N1"
+    assert out["n"]==1
+
+
 def test_git_anchor_substantive_difference_refused(tmp_path,monkeypatch):
     paths=make_case(tmp_path,monkeypatch)
     repo,freeze,ledger,results,git_bytes,commit=paths

@@ -2,6 +2,7 @@
 import datetime as dt
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -195,3 +196,30 @@ def test_dirty_git_preflight_blocks_capture_and_retains_failure(monkeypatch,tmp_
     assert out["status"]=="FAILED_RETAIN_ALL_EVIDENCE"
     assert "dirty" in out["error"]
     assert len(list((tmp_path/"evidence"/"journal").glob("*.json")))==1
+
+
+def test_transient_fetch_failures_retry_before_any_capture(monkeypatch, tmp_path):
+    calls, sleeps = [], []
+    def transient(repo, *args, **kwargs):
+        calls.append(args)
+        if len(calls) < 3:
+            raise subprocess.CalledProcessError(128, ["git", *args])
+        return ""
+    monkeypatch.setattr(f, "git", transient)
+    f.fetch_origin_with_retry(tmp_path, pause=sleeps.append)
+    assert len(calls) == 3 and sleeps == [5, 10]
+    assert all(c == ("-c", "credential.interactive=never",
+                     "fetch", "origin", "main") for c in calls)
+
+
+def test_persistent_fetch_failure_fails_closed_and_redacts(monkeypatch, tmp_path):
+    calls = []
+    def no_auth(repo, *args, **kwargs):
+        calls.append(args)
+        raise subprocess.CalledProcessError(128, ["git", *args],
+                                             stderr="private token should not leak")
+    monkeypatch.setattr(f, "git", no_auth)
+    with pytest.raises(RuntimeError, match="after 3 attempts") as error:
+        f.fetch_origin_with_retry(tmp_path, pause=lambda x: None)
+    assert "private token" not in str(error.value)
+    assert len(calls) == 3
