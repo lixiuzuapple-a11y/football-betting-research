@@ -63,6 +63,18 @@ as failure), then a real later scheduled-task retry succeeded with 9 official
 fixtures but no new approved model cohort. A bounded Git fetch retry was
 added; intermittent network failures are **not** ruled out.
 
+**TASK0049 Nov3 forward-task incident and QA:** the 11:15 Windows TASK0046
+attempt ended with 0xC000013A and no complete journal. New STARTED / FINISHED
+invocation markers and NO_NEW eligibility-rejection counts were added. A real
+direct wrapper run succeeded with 21 official fixtures, all excluded because
+their leagues were outside the two approved forward-model competitions.
+Both registered Windows research tasks were adjusted to permit battery power,
+which cleared a queue block; however a subsequent true Task Scheduler start
+still ended 0xC000013A without FINISHED. **Unattended scheduling remains
+REJECTED/PENDING, not ACCEPTED.** Cloud TASK0045 is separate and healthy.
+See `REPORTS/EVLAB-TASK0049-ACTUAL-RUN-BATTERY-TRIAGE-20261103.md` and
+`REVIEWS/EVLAB-TASK0049-INDEPENDENT-QA-20261103.md`.
+
 **Traditional SFC14 / optional-nine research (framework only, DRAFT):**
 `docs/traditional-sfc14-r9-research-framework-v0.1.md` unifies
 the independent match-probability P, bettor-combination Q and audited
