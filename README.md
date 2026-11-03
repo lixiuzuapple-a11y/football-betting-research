@@ -75,6 +75,16 @@ REJECTED/PENDING, not ACCEPTED.** Cloud TASK0045 is separate and healthy.
 See `REPORTS/EVLAB-TASK0049-ACTUAL-RUN-BATTERY-TRIAGE-20261103.md` and
 `REVIEWS/EVLAB-TASK0049-INDEPENDENT-QA-20261103.md`.
 
+**TASK0051 Nov3 first real same-fixture market benchmark: RETROSPECTIVE
+EXPLORATORY ACCEPT; PIT-MARKET ALPHA NO-GO.** Strictly matched 175 of 237
+available market fixtures during June 11-30 against the frozen Phase3 model
+records. On the same 175, market opening 1X2 de-vig Log Loss **0.998770**
+versus EV-Lab league-Poisson **1.044675**; Brier3 **0.597135** versus
+**0.630875**. Nominal daily-bootstrap interval favoured the market in this
+short retrospective sample, but independent quote-time/PIT verification is
+absent. No bookmaker EV, tradable alpha, CLV or profit is established.
+See `REPORTS/EVLAB-TASK0051-175-SAME-FIXTURE-ODDS-BENCHMARK-20261103.md`.
+
 **Traditional SFC14 / optional-nine research (framework only, DRAFT):**
 `docs/traditional-sfc14-r9-research-framework-v0.1.md` unifies
 the independent match-probability P, bettor-combination Q and audited
