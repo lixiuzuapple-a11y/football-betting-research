@@ -131,7 +131,16 @@ def capture_and_freeze(*, output_root: Path, identity: Path, history: Path,
         status = {"status": "NO_NEW_ELIGIBLE_PREMATCH_FIXTURES",
                   "raw_source_sha256": candidate["capture"]["sha256"],
                   "skipped_previous_ids": skipped,
-                  "source_observed": candidate["total_observed_fixtures"]}
+                  "source_observed": candidate["total_observed_fixtures"],
+                  # These counts come from the same immutable, as-of capture
+                  # and preapproved frozen model; diagnostic ONLY. Never turn
+                  # an excluded fixture into a prediction or Git commitment.
+                  "crosswalk_qualified": candidate.get("crosswalk_qualified"),
+                  "model_qualified_before_dedup": len(candidates),
+                  "identity_or_league_rejections": candidate.get(
+                      "identity_or_league_rejections", {}),
+                  "model_rejections": candidate.get("model_rejections", {}),
+                  "diagnostic_not_model_eligibility_override": True}
         _create_only(output_root / "NO_NEW_FREEZE.json", status)
         return status
     frozen_path = output_root / "NEW_FORECAST_FREEZE.json"

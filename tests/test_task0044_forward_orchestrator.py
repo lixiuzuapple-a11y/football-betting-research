@@ -212,6 +212,9 @@ def test_no_repeat_predicted_fixture_when_capture_recurs(tmp_path, monkeypatch):
                                     previous_ledgers=[ledger_path], now=BEFORE)
     assert result["status"] == "NO_NEW_ELIGIBLE_PREMATCH_FIXTURES"
     assert len(result["skipped_previous_ids"]) == 2
+    assert result["model_qualified_before_dedup"] == 2
+    assert result["diagnostic_not_model_eligibility_override"] is True
+    assert json.loads((out / "NO_NEW_FREEZE.json").read_text())["source_observed"] == 19
     assert calls
     assert not (out / "NEW_FORECAST_FREEZE.json").exists()
     with pytest.raises(FileExistsError):

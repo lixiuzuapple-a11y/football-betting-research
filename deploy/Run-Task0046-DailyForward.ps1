@@ -7,6 +7,15 @@ $identity = 'E:\WebCodex-Workspace\EVLab-Data-Backups\task0037-competitions-2026
 $history = 'E:\WebCodex-Workspace\EVLab-Data-Backups\task0036-data-source-gate-20261022'
 $exitCode = 2
 $description = 'failed before Python invocation'
+$logDir = Join-Path $base 'scheduler'
+New-Item -ItemType Directory -Path $logDir -Force | Out-Null
+$startedAt = (Get-Date).ToUniversalTime().ToString('o')
+# Keep a start marker BEFORE the Python/Git stage. A forced Windows
+# termination bypasses PowerShell finally; without this we cannot tell
+# a never-started task from a killed in-flight task.
+$started = @{ invoked_at_utc = $startedAt; phase = 'STARTED'
+              windows_scheduler = 'EVLab-TASK0046-DailyForward' } | ConvertTo-Json -Compress
+Add-Content -LiteralPath (Join-Path $logDir 'INVOCATIONS.jsonl') -Value $started -Encoding UTF8
 try {
     if (!(Test-Path -LiteralPath $python) -or !(Test-Path -LiteralPath $identity) -or
         !(Test-Path -LiteralPath (Join-Path $history 'hf_manifest.json'))) {
@@ -26,9 +35,9 @@ catch {
     $exitCode = 2
 }
 finally {
-    $logDir = Join-Path $base 'scheduler'
-    New-Item -ItemType Directory -Path $logDir -Force | Out-Null
     $record = @{ invoked_at_utc = (Get-Date).ToUniversalTime().ToString('o')
+                 started_at_utc = $startedAt
+                 phase = 'FINISHED'
                  exit_code = $exitCode
                  description = $description
                  windows_scheduler = 'EVLab-TASK0046-DailyForward' } | ConvertTo-Json -Compress
