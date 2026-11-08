@@ -1,0 +1,12 @@
+[Unit]
+Description=EVLab TASK0054 daily 18:30 China time official results and independent QA
+
+[Timer]
+OnCalendar=*-*-* 18:30:00 Asia/Shanghai
+AccuracySec=45s
+Persistent=true
+RandomizedDelaySec=0
+Unit=evlab-task0054-cloud-score.service
+
+[Install]
+WantedBy=timers.target

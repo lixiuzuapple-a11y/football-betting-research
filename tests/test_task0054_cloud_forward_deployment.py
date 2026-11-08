@@ -5,6 +5,9 @@ ROOT = Path(__file__).resolve().parents[1]
 RUNNER = (ROOT / "deploy" / "Run-Task0054-CloudForward.sh").read_text()
 SERVICE = (ROOT / "deploy" / "evlab-task0054-cloud-forward.service").read_text()
 TIMER = (ROOT / "deploy" / "evlab-task0054-cloud-forward.timer").read_text()
+SCORE_RUNNER = (ROOT / "deploy" / "Run-Task0054-CloudScore.sh").read_text()
+SCORE_SERVICE = (ROOT / "deploy" / "evlab-task0054-cloud-score.service").read_text()
+SCORE_TIMER = (ROOT / "deploy" / "evlab-task0054-cloud-score.timer").read_text()
 
 
 def test_cloud_runner_cannot_target_unapproved_repo():
@@ -56,7 +59,7 @@ def test_daily_timer_has_explicit_local_clock_and_no_quick_loop():
 
 
 def test_no_other_repo_or_betting_reference_in_new_entrypoint():
-    combined = RUNNER + SERVICE + TIMER
+    combined = RUNNER + SERVICE + TIMER + SCORE_RUNNER + SCORE_SERVICE + SCORE_TIMER
     for banned in (
         "evlab-sfc14-r9", "sfc14", "r9", "curl -X POST",
         "bet365", "place_bet", "下注", "sudo ",
@@ -64,3 +67,28 @@ def test_no_other_repo_or_betting_reference_in_new_entrypoint():
         "ssh-agent", "gho_", "github_pat_"
     ):
         assert banned not in combined
+
+
+def test_cloud_scorer_uses_original_qa_and_never_fetches_results_early():
+    assert "tools.task0048_scheduled_score" in SCORE_RUNNER
+    assert "--forward-base" in SCORE_RUNNER
+    assert "--score-base" in SCORE_RUNNER
+    assert "refs/remotes/origin/main" in SCORE_RUNNER
+    assert "merge --ff-only" in SCORE_RUNNER
+    assert "NTPSynchronized" in SCORE_RUNNER
+    assert "trap finish EXIT" in SCORE_RUNNER
+
+
+def test_scorer_and_publisher_share_single_writer_flock():
+    lock = "/home/ubuntu/evlab-forward-publisher-20261108/one-writer.lock"
+    assert lock in SERVICE and lock in SCORE_SERVICE
+    assert "/usr/bin/flock -n" in SCORE_SERVICE
+    assert "NoNewPrivileges=yes" in SCORE_SERVICE
+    assert "ProtectSystem=strict" in SCORE_SERVICE
+    assert "User=ubuntu" in SCORE_SERVICE
+
+
+def test_scorer_daily_trigger_and_no_additional_intraday_repeats():
+    assert "OnCalendar=*-*-* 18:30:00 Asia/Shanghai" in SCORE_TIMER
+    assert "Persistent=true" in SCORE_TIMER
+    assert "OnUnitActiveSec=" not in SCORE_TIMER
