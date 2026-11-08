@@ -1,0 +1,64 @@
+{
+  "commit_preflight_utc": "2026-11-08T07:15:49.951000+00:00",
+  "frozen_at_utc": "2026-11-08T07:14:16.303768+00:00",
+  "frozen_file_sha256": "a336f71f27b5f6117395a5ec80b76be29ccab3e9817583957c8b5c8330e28dcb",
+  "historical_fixture_sha256": "7ba90661dbed29eb940daf5ea385c7d76d5751d16be86bd9063293a982abc7b7",
+  "historical_manifest_sha256": "eb3c37793866a27f8c1520c78a69e6098fdf79f08622b37fed64070fa1f8748f",
+  "identity_ledger_sha256": "13d373dbab8363e606cfaf39c478b6035c35c86ad0ffcbf4c53e6e5014f63f2f",
+  "market_odds": null,
+  "market_quote_status": "UNVERIFIED_NOT_INCLUDED",
+  "market_quote_time_utc": null,
+  "minimum_kickoff_utc": "2026-11-08T19:45:00+00:00",
+  "model_keys": [
+    "global_frequency",
+    "league_frequency",
+    "pooled_elo_davidson",
+    "league_poisson"
+  ],
+  "no_bet_or_buy": true,
+  "no_market_ev_or_profit_claim": true,
+  "official_raw_sha256": "f13981a2489765dba9191e05a6ea7ef0476856856ac28f0d8ebfc60f483ee1e8",
+  "official_received_utc": "2026-11-08T07:14:16.290490+00:00",
+  "official_result_status": "PENDING",
+  "predictions": [
+    {
+      "hf_away_id": 209,
+      "hf_home_id": 214,
+      "hf_league_id": 9,
+      "kickoff_utc": "2026-11-08T19:45:00+00:00",
+      "league": "法甲",
+      "matchId": "2042640",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.45693977083714177,
+          0.24857173808540456,
+          0.2944884910774536
+        ],
+        "league_poisson": [
+          0.5968444146344156,
+          0.22345548206953475,
+          0.17970010329604968
+        ],
+        "pooled_elo_davidson": [
+          0.5087886736796408,
+          0.24683106604445046,
+          0.24438026027590873
+        ]
+      },
+      "official_away_id": "182",
+      "official_home_id": "179"
+    }
+  ],
+  "published_source_commit": "c94270f2b9ee05fcb08da3207c921f5f666abb53",
+  "qualified": 1,
+  "record_schema": "EVLAB_TASK0046_FORWARD_V1",
+  "status": "PRE_KICKOFF_FROZEN_RESEARCH_ONLY",
+  "task": "TASK0043",
+  "training_last_date": "2026-07-04",
+  "training_published_at_utc": "2026-07-05T01:23:18+00:00"
+}
