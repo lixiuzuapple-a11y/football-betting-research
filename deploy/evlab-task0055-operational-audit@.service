@@ -1,0 +1,20 @@
+[Unit]
+Description=EVLab TASK0055 independent scheduled-run audit for %i
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+Group=ubuntu
+UMask=0077
+WorkingDirectory=/home/ubuntu/evlab-forward-publisher-20261108/git
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/home/ubuntu/evlab-forward-shadow-20261108/venv/bin/python -m tools.task0055_cloud_scheduler_audit --role %i --root /home/ubuntu/evlab-forward-publisher-20261108
+TimeoutStartSec=90
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/ubuntu/evlab-forward-publisher-20261108/operational-audits
+

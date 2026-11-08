@@ -1,0 +1,11 @@
+[Unit]
+Description=EVLab TASK0055 audit 25 minutes after 11:15 Asia/Shanghai forward
+
+[Timer]
+OnCalendar=*-*-* 11:40:00 Asia/Shanghai
+AccuracySec=1min
+Persistent=false
+Unit=evlab-task0055-operational-audit@forward.service
+
+[Install]
+WantedBy=timers.target
