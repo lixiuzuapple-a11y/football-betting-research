@@ -2,6 +2,8 @@
 Description=EVLab TASK0054 guarded cloud prospective four-model Git publisher (no betting)
 After=network-online.target time-sync.target
 Wants=network-online.target time-sync.target
+StartLimitIntervalSec=3600
+StartLimitBurst=3
 ConditionPathExists=/home/ubuntu/evlab-forward-publisher-20261108/git/.git
 ConditionPathExists=/home/ubuntu/evlab-forward-shadow-20261108/history/hf_manifest.json
 
@@ -14,6 +16,8 @@ UMask=0077
 Environment=PYTHONDONTWRITEBYTECODE=1
 ExecStart=/usr/bin/flock -n /home/ubuntu/evlab-forward-publisher-20261108/one-writer.lock /bin/bash /home/ubuntu/evlab-forward-publisher-20261108/git/deploy/Run-Task0054-CloudForward.sh
 TimeoutStartSec=600
+Restart=on-failure
+RestartSec=300
 NoNewPrivileges=yes
 PrivateTmp=yes
 ProtectSystem=strict

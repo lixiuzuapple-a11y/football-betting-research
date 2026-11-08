@@ -92,3 +92,11 @@ def test_scorer_daily_trigger_and_no_additional_intraday_repeats():
     assert "OnCalendar=*-*-* 18:30:00 Asia/Shanghai" in SCORE_TIMER
     assert "Persistent=true" in SCORE_TIMER
     assert "OnUnitActiveSec=" not in SCORE_TIMER
+
+
+def test_transient_failures_have_bounded_scheduler_recovery():
+    for service in (SERVICE, SCORE_SERVICE):
+        assert "Restart=on-failure" in service
+        assert "RestartSec=300" in service
+        assert "StartLimitBurst=3" in service
+        assert "StartLimitIntervalSec=3600" in service
