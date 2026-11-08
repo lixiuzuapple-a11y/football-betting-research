@@ -1,0 +1,12 @@
+[Unit]
+Description=EVLab TASK0054 daily 11:15 China time prospective cloud Git publication
+
+[Timer]
+OnCalendar=*-*-* 11:15:00 Asia/Shanghai
+AccuracySec=45s
+Persistent=true
+RandomizedDelaySec=0
+Unit=evlab-task0054-cloud-forward.service
+
+[Install]
+WantedBy=timers.target

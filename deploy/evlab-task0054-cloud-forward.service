@@ -1,0 +1,25 @@
+[Unit]
+Description=EVLab TASK0054 guarded cloud prospective four-model Git publisher (no betting)
+After=network-online.target time-sync.target
+Wants=network-online.target time-sync.target
+ConditionPathExists=/home/ubuntu/evlab-forward-publisher-20261108/git/.git
+ConditionPathExists=/home/ubuntu/evlab-forward-shadow-20261108/history/hf_manifest.json
+
+[Service]
+Type=oneshot
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/evlab-forward-publisher-20261108/git
+UMask=0077
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/usr/bin/flock -n /home/ubuntu/evlab-forward-publisher-20261108/one-writer.lock /bin/bash /home/ubuntu/evlab-forward-publisher-20261108/git/deploy/Run-Task0054-CloudForward.sh
+TimeoutStartSec=600
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/ubuntu/evlab-forward-publisher-20261108
+ReadOnlyPaths=/home/ubuntu/evlab-forward-shadow-20261108
+
+[Install]
+WantedBy=multi-user.target
