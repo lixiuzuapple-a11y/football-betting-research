@@ -85,6 +85,29 @@ short retrospective sample, but independent quote-time/PIT verification is
 absent. No bookmaker EV, tradable alpha, CLV or profit is established.
 See `REPORTS/EVLAB-TASK0051-175-SAME-FIXTURE-ODDS-BENCHMARK-20261103.md`.
 
+**TASK0052 Nov8 pre-match public archive provenance audit: LIMITED ACCEPT.**
+The first market benchmark was rechecked against the source publisher's
+**12 separate June 20-30 daily track-record archives**, each SHA-verified
+against the pinned public manifest. For its original 175 fixtures,
+75 occurred in a provider-dated snapshot before kickoff and retained the
+same provider-defined row hash in the later 1X2 CSV. Five pregame archive
+rows failed identity/hash consistency, nine were absent from earlier
+snapshots, and 86 had no provider archive before kickoff. On the 75 qualified
+rows, market Log Loss=**1.062163**, Poisson=**1.073100**; the paired daily
+nominal interval spans zero, and the source sample is selected, so the
+apparent advantage remains **unproven**. Provider-controlled timestamps,
+missing archived full 1X2 vectors, unverified OpenTimestamps attestation and
+retrospective Phase3 model construction mean **still NOT independent PIT or
+betting EV evidence**. Full report and QA:
+`REPORTS/EVLAB-TASK0052-75-PREGAME-ARCHIVE-CHECK-20261108.md`.
+
+**Nov8 operational caveat:** cloud TASK0045 capture/health is OK, but local
+TASK0046 scheduled 11:15 pre-kickoff runs on Nov5/6 and the recovered Nov8
+run ended in Windows `0xC000013A` without matching FINISHED journals.
+TASK0048's local scoring log still recorded exit0. Windows forward scheduler
+reliability is **REJECTED/PENDING**, and no new qualifying prospective
+market comparison can be claimed from these failed attempts.
+
 **Traditional SFC14 / optional-nine research (framework only, DRAFT):**
 `docs/traditional-sfc14-r9-research-framework-v0.1.md` unifies
 the independent match-probability P, bettor-combination Q and audited
