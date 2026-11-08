@@ -126,6 +126,29 @@ The authorized 14/R9 research project is temporarily closed and was not
 accessed. See `REPORTS/EVLAB-TASK0053-CLOUD-PROBE-FIRST-ANCHOR-20261108.md`
 and `REVIEWS/EVLAB-TASK0053-INDEPENDENT-QA-20261108.md`.
 
+**TASK0054 Nov8 cloud forward/scoring daily scheduler cutover: ENGINEERING
+ACCEPT for verified handover; multi-day unattended stability PENDING.**
+An EV-Lab-repo-scoped GitHub write deploy key on Tencent cloud was verified
+by creating, SHA-checking and deleting a temporary remote Git branch.
+The isolated cloud Git checkout retains full origin/main integrity.
+Cloud TASK0046 forward publisher and TASK0048 official scorer both passed
+real systemd oneshot execution (exit 0), with one-time clock-triggered
+canary runs that each produced STARTED/FINISHED journals and exit 0.
+The forward run saw 25 official fixtures; its only eligible identity was
+already anchored match 2042640 and was **correctly deduplicated**.
+The scorer recognized that match's true Git anchor and returned
+`WAIT_KICKOFF_PLUS_THREE_HOURS`. Both daily Asia/Shanghai systemd timers
+were then **enabled and independently read back active** (11:15 forward,
+18:30 score). **Only afterward** the Windows TASK0046 and TASK0048
+schedules were exported with SHA receipts and disabled (not deleted).
+Cloud and Windows no longer simultaneously schedule publication.
+NTP, SHA, official identity, 60-min lead, Git remote, create-only records,
+no betting and blind result-delay controls remain unchanged.
+The next real production scheduled triggers and post-match scoring still
+require future observation; this is not a positive-EV claim. See
+`REPORTS/EVLAB-TASK0054-CLOUD-AUTOMATION-CUTOVER-20261108.md`
+and `REVIEWS/EVLAB-TASK0054-INDEPENDENT-QA-20261108.md`.
+
 **Traditional SFC14 / optional-nine research (framework only, DRAFT):**
 `docs/traditional-sfc14-r9-research-framework-v0.1.md` unifies
 the independent match-probability P, bettor-combination Q and audited
