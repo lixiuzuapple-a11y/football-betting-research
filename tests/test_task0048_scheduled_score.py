@@ -8,6 +8,7 @@ from pathlib import Path
 import pytest
 
 from tools import task0048_scheduled_score as a
+from tools.task0044_forward_orchestrator import OfficialFinalPending
 from tools.phase2_forecast_lab import _create_only
 
 UTC=dt.timezone.utc
@@ -122,6 +123,48 @@ def test_official_result_missing_failure_retains_evidence_then_retries(tmp_path,
     assert calls[0]["out_root"] != calls[1]["out_root"]
     assert all((x["out_root"]/"RAW_API_RESULT.json").is_file() for x in calls)
     assert len(list((score/"journal").glob("*.json")))==2
+
+
+def test_verified_official_unfinished_result_remains_pending_without_fake_score(tmp_path,monkeypatch):
+    repo,base,score,ledger,freeze,event=setup_case(tmp_path,monkeypatch)
+    calls=[]
+    def unfinished(**kwargs):
+        calls.append(kwargs["out_root"])
+        kwargs["out_root"].mkdir(parents=True)
+        _create_only(kwargs["out_root"]/"SOURCE_MANIFEST.json",
+                     {"pages": [{"sha256":"a"*64}], "provider_status": "1"})
+        _create_only(kwargs["out_root"]/"official-2026-11-01-page-1.json",
+                     {"matchId":"10001","matchResultStatus":"1","sectionsNo999":""})
+        raise OfficialFinalPending("official final status not yet confirmed for match 10001")
+    qa=[]
+    first=a.run(repo=repo,forward_base=base,score_base=score,now=NOW,
+                score_fn=unfinished,audit_fn=lambda **kw:qa.append(kw))
+    assert first["status"]=="WAITING_FOR_OFFICIAL_FINAL"
+    assert first["results"][0]["status"]=="WAIT_OFFICIAL_FINAL"
+    assert not qa
+    journal=json.loads(next((score/"journal").glob("*.json")).read_text())
+    assert journal["status"]=="WAIT_OFFICIAL_FINAL"
+    assert Path(journal["raw_result_root"]).is_dir()
+    assert not list((score/"attempts").rglob("BLIND_SCORE.json"))
+    assert not list((score/"attempts").rglob("INDEPENDENT_AUDIT.json"))
+    second=a.run(repo=repo,forward_base=base,score_base=score,
+                 now=NOW+dt.timedelta(minutes=10),
+                 score_fn=unfinished,audit_fn=lambda **kw:qa.append(kw))
+    assert second["status"]=="WAITING_FOR_OFFICIAL_FINAL"
+    assert len(calls)==2 and calls[0]!=calls[1]
+    assert len(list((score/"journal").glob("*.json")))==2
+    assert not qa
+
+
+def test_official_pending_exception_without_source_manifest_is_hard_failure(tmp_path,monkeypatch):
+    repo,base,score,ledger,freeze,event=setup_case(tmp_path,monkeypatch)
+    def missing_raw(**kwargs):
+        kwargs["out_root"].mkdir(parents=True)
+        raise OfficialFinalPending("not final but no source evidence")
+    result=a.run(repo=repo,forward_base=base,score_base=score,
+                 now=NOW,score_fn=missing_raw)
+    assert result["status"]=="ATTEMPTS_REQUIRE_REVIEW"
+    assert result["results"][0]["status"]=="FAILED_RETAIN_ALL_EVIDENCE"
 
 
 @pytest.mark.parametrize("mutation,pattern",[

@@ -18,7 +18,7 @@ from pathlib import Path
 
 from tools.phase2_forecast_lab import _create_only
 from tools.task0044_forward_orchestrator import (
-    MIN_SCORE_DELAY_HOURS, aware, fetch_and_score, verified_freeze,
+    MIN_SCORE_DELAY_HOURS, OfficialFinalPending, aware, fetch_and_score, verified_freeze,
 )
 from tools.task0047_independent_blind_score_qa import independent_audit
 
@@ -154,6 +154,16 @@ def run(*, repo: Path, forward_base: Path, score_base: Path,
                 entry["score_file"]=str(evidence / "BLIND_SCORE.json")
                 entry["score_sha256"]=digest(evidence / "BLIND_SCORE.json")
                 entry["status"]="INDEPENDENT_SCORE_ACCEPTED"
+        except OfficialFinalPending as exc:
+            # Never equate "not officially final yet" with an identity conflict.
+            # Source raw bytes + SHA manifest are retained create-only for QA.
+            if not (evidence / "SOURCE_MANIFEST.json").is_file():
+                entry["error"]="missing official result source manifest"
+                entry["status"]="FAILED_RETAIN_ALL_EVIDENCE"
+            else:
+                entry["raw_result_root"]=str(evidence)
+                entry["status"]="WAIT_OFFICIAL_FINAL"
+                entry["waiting_reason"]=str(exc)[:240]
         except Exception as exc:
             entry["error_type"]=type(exc).__name__
             entry["error"]=str(exc)[:500]
@@ -163,7 +173,9 @@ def run(*, repo: Path, forward_base: Path, score_base: Path,
                                                        "error") if k in entry})
     output["status"] = "NO_COMMITTED_NEW_PROSPECTS" if not events else (
         "ATTEMPTS_REQUIRE_REVIEW" if any(r["status"]=="FAILED_RETAIN_ALL_EVIDENCE"
-            for r in output["results"]) else "SCORING_CHECK_COMPLETE")
+            for r in output["results"]) else (
+        "WAITING_FOR_OFFICIAL_FINAL" if any(r["status"]=="WAIT_OFFICIAL_FINAL"
+            for r in output["results"]) else "SCORING_CHECK_COMPLETE"))
     return output
 
 

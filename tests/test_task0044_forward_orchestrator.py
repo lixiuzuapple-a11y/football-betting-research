@@ -84,6 +84,35 @@ def test_official_two_match_blind_score_all_fixed_models():
         assert stats["accuracy"] == 0.5
 
 
+def test_correct_fixture_but_provider_status_1_without_score_remains_pending():
+    with pytest.raises(flow.OfficialFinalPending, match="final status not yet confirmed"):
+        flow.score_evidence(
+            frozen={"predictions": records()},
+            raw_pages=raw_result_pages(status="1", score1=""),
+            now=AFTER,
+        )
+
+
+def test_status_1_with_full_time_score_does_not_get_exempted_as_pending():
+    with pytest.raises(ValueError, match="conflicting official final status") as error:
+        flow.score_evidence(
+            frozen={"predictions": records()},
+            raw_pages=raw_result_pages(status="1", score1="1:0"),
+            now=AFTER,
+        )
+    assert not isinstance(error.value, flow.OfficialFinalPending)
+
+
+def test_status_1_but_wrong_team_is_still_hard_identity_failure():
+    with pytest.raises(ValueError, match="official fixture identity conflict") as error:
+        flow.score_evidence(
+            frozen={"predictions": records()},
+            raw_pages=raw_result_pages(status="1", home="999", score1=""),
+            now=AFTER,
+        )
+    assert not isinstance(error.value, flow.OfficialFinalPending)
+
+
 @pytest.mark.parametrize("mutation,why", [
     ({"status": "1"}, "final status"),
     ({"home": "99999"}, "identity conflict"),

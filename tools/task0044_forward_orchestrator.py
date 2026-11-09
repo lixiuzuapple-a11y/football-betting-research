@@ -29,6 +29,14 @@ MIN_SCORE_DELAY_HOURS = 3
 MAX_SCORE_PAGES_PER_DATE = 15
 
 
+class OfficialFinalPending(ValueError):
+    """Correct official fixture identified, but its full-time result is not final.
+
+    Only explicit provider status=1 with no final score is retryable; identity
+    conflicts, malformed scores and unknown statuses remain hard failures.
+    """
+
+
 def aware(text: str) -> dt.datetime:
     value = dt.datetime.fromisoformat(text)
     if value.utcoffset() is None:
@@ -193,11 +201,17 @@ def score_evidence(*, frozen: dict, raw_pages: list[dict], now: dt.datetime) -> 
         r = results[mid]
         kickoff = aware(rec["kickoff_utc"])
         played_bjt = kickoff.astimezone(BJT).date().isoformat()
-        if (str(r.get("matchResultStatus")) != "2"
-                or str(r.get("homeTeamId")) != str(rec["official_home_id"])
+        if (str(r.get("homeTeamId")) != str(rec["official_home_id"])
                 or str(r.get("awayTeamId")) != str(rec["official_away_id"])
                 or str(r.get("matchDate")) != played_bjt):
-            raise ValueError("final status or official fixture identity conflict")
+            raise ValueError("official fixture identity conflict")
+        result_status = str(r.get("matchResultStatus"))
+        if result_status == "1" and not str(r.get("sectionsNo999", "")).strip():
+            raise OfficialFinalPending(
+                f"official final status not yet confirmed for match {mid} (status=1)"
+            )
+        if result_status != "2":
+            raise ValueError("unrecognized or conflicting official final status")
         score = str(r.get("sectionsNo999", ""))
         if not re.fullmatch(r"\d{1,2}:\d{1,2}", score):
             raise ValueError("official final full-time score not verified")
