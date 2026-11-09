@@ -308,6 +308,25 @@ Each of these raises `NotImplementedYetError`, which is a distinct exception
 type precisely so that "not built yet" can never be mistaken for a working
 implementation returning a plausible number.
 
+**TASK0056 Nov9 verified post-kickoff official result remains NOT FINAL:
+controlled scoring retry ACCEPT, new blind score PENDING.** An actual
+09:03 Beijing cloud scoring service run on Git-anchored fixture 2042640
+captured official status `1` and an empty full-time score (correct teams
+and date); the old combined failure reported exit 2, retaining the raw
+result. The code now distinguishes this exact *verified fixture, no final
+score* situation as `WAIT_OFFICIAL_FINAL` while still rejecting mismatched
+team identity, unknown statuses and inconsistent result fields. The real
+systemd `Restart=on-failure` mechanism retried at 09:08, fetched the new
+GitHub fix and exited **0**, recording a new immutable journal and source
+manifest. Independent runtime QA checked original freeze and official
+page SHA, confirmed both failure and wait evidence retained, and verified
+**no** blind score or QA acceptance file was written. All **527 tests
+passed**. Future regular 18:30 official scoring remains active; no match
+outcome, model accuracy or betting EV can be claimed until status `2` and
+the full-time result pass independent audit. See
+`REPORTS/EVLAB-TASK0056-OFFICIAL-NOT-FINAL-SCORING-20261109.md` and
+`REVIEWS/EVLAB-TASK0056-INDEPENDENT-QA-20261109.md`.
+
 ## Research principles
 
 Stated in full in [`docs/project-charter.md`](docs/project-charter.md):
