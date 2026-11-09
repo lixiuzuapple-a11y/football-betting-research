@@ -1,0 +1,74 @@
+{
+  "limits": [
+    "n=3: descriptive arithmetic, no statistical model comparison or selection.",
+    "Market pre-kickoff 1X2 odds absent for these 3 games; CLV, EV and ROI not assessed.",
+    "Do not merge retrospective 175-game market benchmark into this forward cohort.",
+    "Git commit clock is not an independently notarized timestamp authority.",
+    "Do not project a win rate, place wagers or change original prospective model parameters."
+  ],
+  "model_freeze_policy": "previously committed independent QA only; no refitting",
+  "models": {
+    "global_frequency": {
+      "mean_brier3": 0.5598543978735574,
+      "mean_logloss": 0.939475446016934,
+      "n": 3,
+      "top_class_accuracy": 0.6666666666666666,
+      "top_class_correct": 2
+    },
+    "league_frequency": {
+      "mean_brier3": 0.5188878081144573,
+      "mean_logloss": 0.8848170919408714,
+      "n": 3,
+      "top_class_accuracy": 0.6666666666666666,
+      "top_class_correct": 2
+    },
+    "league_poisson": {
+      "mean_brier3": 0.635568234138214,
+      "mean_logloss": 1.0634485803510054,
+      "n": 3,
+      "top_class_accuracy": 0.3333333333333333,
+      "top_class_correct": 1
+    },
+    "pooled_elo_davidson": {
+      "mean_brier3": 0.6753402468230717,
+      "mean_logloss": 1.1025940814585706,
+      "n": 3,
+      "top_class_accuracy": 0.3333333333333333,
+      "top_class_correct": 1
+    }
+  },
+  "n": 3,
+  "official_verified_results": {
+    "away_wins": 1,
+    "draws": 0,
+    "home_wins": 2
+  },
+  "source_cohorts": [
+    {
+      "cohort": "TASK0044_FIRST_BLIND_OCT31",
+      "frozen_source_sha256": "3bb96003e370f45bc60c9656d76542bf3444cd5b19a3d2575c303e66e4d670b3",
+      "git_anchor": "a0395a0",
+      "independent_qa_sha256": "a9aa37976239489d9eeaded024f06781a713b9fae12c3cb3e3db00a61f021a91",
+      "n": 2,
+      "score_sha256": "c33ae8cf8f67da7453102a840a18bb8c4414b428afb1d36a48178a3b268c8be0",
+      "scored_at_utc": "2026-10-31T04:30:02.772822+00:00",
+      "source_official_pages_sha256": [
+        "73d2f04bbdcb355a2bf18c2ca30bb0d0933d7cf149236a2f895bd593a7c1aba6"
+      ]
+    },
+    {
+      "cohort": "TASK0053_CLOUD_ANCHORED_NOV09_SCORE",
+      "frozen_source_sha256": "a336f71f27b5f6117395a5ec80b76be29ccab3e9817583957c8b5c8330e28dcb",
+      "git_anchor": "632aced51dabaee194c9a62ab58e3210bc8be3fc",
+      "independent_qa_sha256": "8fccb751d0d20e3520a2f42754e9f4d4f6a598213cac91450cbed653edcf668c",
+      "n": 1,
+      "score_sha256": "246c62a7f12c2e04773d68155ad018d6a19b5e80514c7e46e8c26e7989a36b97",
+      "scored_at_utc": "2026-11-09T10:04:04.954708+00:00",
+      "source_official_pages_sha256": [
+        "4829f2072547aead83d1a6e94f896060fa56a092ef9ffe37a86ebce346bfca75"
+      ]
+    }
+  ],
+  "status": "ACCEPT_DESCRIPTIVE_PROSPECTIVE_N3_NO_EV",
+  "task": "TASK0057"
+}

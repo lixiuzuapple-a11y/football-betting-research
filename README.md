@@ -327,6 +327,29 @@ the full-time result pass independent audit. See
 `REPORTS/EVLAB-TASK0056-OFFICIAL-NOT-FINAL-SCORING-20261109.md` and
 `REVIEWS/EVLAB-TASK0056-INDEPENDENT-QA-20261109.md`.
 
+**TASK0057 Nov9 authentic scored prospective N=3 cohort: RESEARCH
+ARITHMETIC ACCEPT, MARKET ALPHA/EV NO-GO.** On 2026-11-09 11:15 CST,
+the *real scheduled* Tencent cloud forward publication captured 4 official
+matches but all 4 failed the previously frozen competition gate; at 11:40
+the independent timer watchdog reported `PASS`, and no synthetic forecast
+was committed. At 18:04 CST, the cloud official-only scorer finally received
+status `2` and final `1–2` for frozen match `2042640` (Lens–Marseille,
+away win) and generated genuine `INDEPENDENT_SCORE_ACCEPTED` evidence,
+with byte-verified Git anchor `632aced` and complete standalone QA.
+**All four models' top class predictions missed** that fixture.
+TASK0057 independently checked both accepted, disjoint prospective cohorts
+(Oct31 N=2; Nov9 N=1), preserving exact score and QA SHA proofs and
+recomputing all 3 per-fixture loss/Brier/top-class totals. Result for N=3:
+global-frequency Log Loss `0.9395`, league-frequency `0.8848`,
+Elo `1.1026`, league-Poisson `1.0634`; top-1 accuracy respectively
+`2/3,2/3,1/3,1/3`. **With only three matches, no model can be
+selected, no bookmaker comparison is possible and no positive EV or CLV
+is supported.** Exact aggregate output:
+`research/task0057_prospective_official_n3_20261109.json`, report and
+independent QA: `REPORTS/EVLAB-TASK0057-PROSPECTIVE-N3-AUDIT-20261109.md`,
+`REVIEWS/EVLAB-TASK0057-INDEPENDENT-QA-20261109.md`. No changes to
+the separately closed 14/R9 project.
+
 ## Research principles
 
 Stated in full in [`docs/project-charter.md`](docs/project-charter.md):
