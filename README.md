@@ -377,6 +377,43 @@ model odds, or production data was modified. See
 `REPORTS/EVLAB-TASK0058-REAL-OFFER-COVERAGE-20261110.md` and
 `REVIEWS/EVLAB-TASK0058-INDEPENDENT-QA-20261110.md`.
 
+**TASK0059 Nov10 verified 14-league prospective expansion:
+ENGINEERING ACCEPT; true expanded forward N still PENDING.** Prior to
+TASK0059 the safe TASK0043/TASK0046 forward model accepted **only Norway
+Eliteserien + French Ligue 1** despite a frozen HF historical source
+with 271 league definitions. The league allowlist was enlarged from **2
+to 14** by explicitly pinning the pre-existing source's exact
+`(league_id,name,country)` tuples: English Premier League,
+Championship; Spanish La Liga; Italian Serie A; German Bundesliga, 2.
+Bundesliga; Dutch Eredivisie; Portuguese Primeira Liga; French Ligue
+1, Ligue 2; Norway Eliteserien; Brazilian Serie A; Japanese J1 League;
+Korean K League 1. **No club identities are newly assumed**: exactly
+the previous SHA-pinned 70 official-to-HF club ID mapping from the
+35 independently verified cup fixtures remains in force; unknown clubs
+and name contradictions still fail closed. No new team models or
+historical training are downloaded or applied.
+
+Using the previously SHA-audited TASK0058 Nov8–10 retrospective
+official offer cohort, an **as-of source, NO-score counterfactual** found
+6 distinct matches that pass strict both-club identity and all four
+frozen model readiness gates under 14 leagues, compared with **1 under
+2 leagues**. Six historical matches are **not** prospective predictions
+or model wins, and may NEVER be included in real forward scoring.
+The old TASK0058 two-league experiment was made replay-invariant by
+pinning both its source-run IDs and 2-league policy; after the change
+the original **full archived source result SHA256 remained exactly**
+`7c690964a006481da2e003d4d882137f5435504732888a7f8801f3ed6420f85e`,
+and this *exact digest* was re-observed byte-for-byte on the live cloud
+after versioning. GitHub→Tencent cloud activation and a new genuine
+read-only one-shot official capture probe succeeded at 2026-11-10
+12:33 CST; that probe found **8 fixtures, 0 eligible**, correctly
+produced **no new prospect** and left Git clean. Local **566 passed**
+regression tests. Existing forward scoring and watchdog timers remain
+enabled. See
+`research/task0059_expanded_league_eligibility_20261110.json`,
+`REPORTS/EVLAB-TASK0059-14-LEAGUE-EXPANSION-20261110.md` and
+`REVIEWS/EVLAB-TASK0059-INDEPENDENT-QA-20261110.md`.
+
 ## Research principles
 
 Stated in full in [`docs/project-charter.md`](docs/project-charter.md):
