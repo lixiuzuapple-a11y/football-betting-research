@@ -1,8 +1,10 @@
-"""TASK0043: real official capture -> verified prior-team identity -> independent 1X2 freeze.
+"""TASK0043/TASK0059: real official capture -> verified identity -> 1X2 freeze.
 
 No score, bookmaker price, result source, quote candidate or BUY input enters
-the model. The July 2026 historical snapshot is already published BEFORE the
-October 2026 target fixtures; it is stale and research-only.
+the model. TASK0059 broadens only the *league allowlist*, reusing the exact
+immutable preapproved 70-club official/HF identity crosswalk and 2026-07
+historical dataset. Unknown clubs continue to fail closed; old forecasts
+remain bound to their ORIGINAL Git code and frozen SHA.
 """
 from __future__ import annotations
 
@@ -33,6 +35,21 @@ EXPECTED_BRIDGE_SHA = "13d373dbab8363e606cfaf39c478b6035c35c86ad0ffcbf4c53e6e501
 ELIGIBLE_LEAGUES = {
     "挪超": (23, "Eliteserien", "Norway"),
     "法甲": (9, "Ligue 1", "France"),
+    # TASK0059: exact (id,name,country) tuples independently verified against
+    # the same SHA-pinned HF leagues.parquet. Do NOT automatically infer aliases
+    # or extend the 70-club team identity mapping in this task.
+    "英超": (1, "Premier League", "England"),
+    "西甲": (5, "La Liga", "Spain"),
+    "意甲": (7, "Serie A", "Italy"),
+    "德甲": (11, "Bundesliga", "Germany"),
+    "荷甲": (13, "Eredivisie", "Netherlands"),
+    "葡超": (14, "Primeira Liga", "Portugal"),
+    "日职": (21, "J1 League", "Japan"),
+    "韩职": (38, "K League 1", "South Korea"),
+    "巴甲": (19, "Serie A", "Brazil"),
+    "英冠": (2, "Championship", "England"),
+    "法乙": (10, "Ligue 2", "France"),
+    "德乙": (12, "2. Bundesliga", "Germany"),
 }
 EXPECTED_HISTORY_ROWS = 53705
 
@@ -132,7 +149,11 @@ def frozen_team_bridge(path: Path) -> tuple[dict[str, tuple[int, str]], str]:
 
 
 def qualify_fixtures(matches: list[dict], crosswalk: dict,
-                     now: dt.datetime) -> tuple[list[dict], dict[str, int]]:
+                     now: dt.datetime, *,
+                     approved_leagues: dict | None = None
+                     ) -> tuple[list[dict], dict[str, int]]:
+    """New freezes use the current approved catalog, old audits pin their own."""
+    league_policy = ELIGIBLE_LEAGUES if approved_leagues is None else approved_leagues
     allowed = []
     excluded = collections.Counter()
     for row in matches:
@@ -143,7 +164,7 @@ def qualify_fixtures(matches: list[dict], crosswalk: dict,
             excluded["not_future_at_freeze"] += 1
             continue
         league_name = str(row.get("leagueAbbName"))
-        if league_name not in ELIGIBLE_LEAGUES:
+        if league_name not in league_policy:
             excluded["league_not_approved_for_forward_model"] += 1
             continue
         hid, aid = str(row.get("homeTeamId")), str(row.get("awayTeamId"))
@@ -161,7 +182,7 @@ def qualify_fixtures(matches: list[dict], crosswalk: dict,
             "kickoff_utc": kickoff.isoformat(),
             "official_home_id": hid, "official_away_id": aid,
             "hf_home_id": home, "hf_away_id": away,
-            "hf_league_id": ELIGIBLE_LEAGUES[league_name][0],
+            "hf_league_id": league_policy[league_name][0],
         })
     return allowed, dict(sorted(excluded.items()))
 
@@ -251,7 +272,7 @@ def build(*, capture: Path, identity: Path, history: Path,
         "not_realtime_trading_eligible": True,
         "limitations": [
             "Frozen historic training source was published in July 2026, 4 months before predictions; staleness is not corrected.",
-            "Only previously verified 35-cup-match identity ledger and two exact leagues eligible.",
+            "TASK0059: 14 independently matched historical league tuples; only the original 35-cup-match preapproved 70-club identity ledger is eligible. No new club mapping inferred.",
             "Odds, result and CLV are not inputs or validated by this forecast.",
             "Local UTC system clock is not an independent timestamp authority; pre-kickoff Git commit required.",
         ],

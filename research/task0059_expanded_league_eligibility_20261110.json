@@ -1,0 +1,340 @@
+{
+  "counterfactual_games": [
+    {
+      "all_four_models": [
+        "global_frequency",
+        "league_frequency",
+        "league_poisson",
+        "pooled_elo_davidson"
+      ],
+      "first_verified_offer_utc": "2026-11-08T00:00:32.960855+00:00",
+      "historical_model_training_ready": true,
+      "kickoff_utc": "2026-11-08T14:00:00+00:00",
+      "league": "英超",
+      "matchId": "2042624",
+      "old_preapproved_eligible": false
+    },
+    {
+      "all_four_models": [
+        "global_frequency",
+        "league_frequency",
+        "league_poisson",
+        "pooled_elo_davidson"
+      ],
+      "first_verified_offer_utc": "2026-11-08T00:00:32.960855+00:00",
+      "historical_model_training_ready": true,
+      "kickoff_utc": "2026-11-08T16:30:00+00:00",
+      "league": "英超",
+      "matchId": "2042632",
+      "old_preapproved_eligible": false
+    },
+    {
+      "all_four_models": [
+        "global_frequency",
+        "league_frequency",
+        "league_poisson",
+        "pooled_elo_davidson"
+      ],
+      "first_verified_offer_utc": "2026-11-08T00:00:32.960855+00:00",
+      "historical_model_training_ready": true,
+      "kickoff_utc": "2026-11-08T17:00:00+00:00",
+      "league": "意甲",
+      "matchId": "2042634",
+      "old_preapproved_eligible": false
+    },
+    {
+      "all_four_models": [
+        "global_frequency",
+        "league_frequency",
+        "league_poisson",
+        "pooled_elo_davidson"
+      ],
+      "first_verified_offer_utc": "2026-11-08T00:00:32.960855+00:00",
+      "historical_model_training_ready": true,
+      "kickoff_utc": "2026-11-08T17:30:00+00:00",
+      "league": "西甲",
+      "matchId": "2042635",
+      "old_preapproved_eligible": false
+    },
+    {
+      "all_four_models": [
+        "global_frequency",
+        "league_frequency",
+        "league_poisson",
+        "pooled_elo_davidson"
+      ],
+      "first_verified_offer_utc": "2026-11-08T00:00:32.960855+00:00",
+      "historical_model_training_ready": true,
+      "kickoff_utc": "2026-11-08T19:45:00+00:00",
+      "league": "法甲",
+      "matchId": "2042640",
+      "old_preapproved_eligible": true
+    },
+    {
+      "all_four_models": [
+        "global_frequency",
+        "league_frequency",
+        "league_poisson",
+        "pooled_elo_davidson"
+      ],
+      "first_verified_offer_utc": "2026-11-08T00:00:32.960855+00:00",
+      "historical_model_training_ready": true,
+      "kickoff_utc": "2026-11-08T20:00:00+00:00",
+      "league": "西甲",
+      "matchId": "2042641",
+      "old_preapproved_eligible": false
+    }
+  ],
+  "former_league_catalogue": {
+    "挪超": [
+      23,
+      "Eliteserien",
+      "Norway"
+    ],
+    "法甲": [
+      9,
+      "Ligue 1",
+      "France"
+    ]
+  },
+  "frozen_historical_manifest_sha256": "eb3c37793866a27f8c1520c78a69e6098fdf79f08622b37fed64070fa1f8748f",
+  "frozen_team_bridge_sha256": "13d373dbab8363e606cfaf39c478b6035c35c86ad0ffcbf4c53e6e5014f63f2f",
+  "historical_training_league_counts": {
+    "巴甲": {
+      "hf_id": 19,
+      "hf_tuple": [
+        19,
+        "Serie A",
+        "Brazil"
+      ],
+      "historical_distinct_home_teams": 45,
+      "played_training_rows": 8909
+    },
+    "德乙": {
+      "hf_id": 12,
+      "hf_tuple": [
+        12,
+        "2. Bundesliga",
+        "Germany"
+      ],
+      "historical_distinct_home_teams": 53,
+      "played_training_rows": 5600
+    },
+    "德甲": {
+      "hf_id": 11,
+      "hf_tuple": [
+        11,
+        "Bundesliga",
+        "Germany"
+      ],
+      "historical_distinct_home_teams": 35,
+      "played_training_rows": 5014
+    },
+    "意甲": {
+      "hf_id": 7,
+      "hf_tuple": [
+        7,
+        "Serie A",
+        "Italy"
+      ],
+      "historical_distinct_home_teams": 42,
+      "played_training_rows": 6453
+    },
+    "挪超": {
+      "hf_id": 23,
+      "hf_tuple": [
+        23,
+        "Eliteserien",
+        "Norway"
+      ],
+      "historical_distinct_home_teams": 31,
+      "played_training_rows": 3536
+    },
+    "日职": {
+      "hf_id": 21,
+      "hf_tuple": [
+        21,
+        "J1 League",
+        "Japan"
+      ],
+      "historical_distinct_home_teams": 41,
+      "played_training_rows": 5477
+    },
+    "法乙": {
+      "hf_id": 10,
+      "hf_tuple": [
+        10,
+        "Ligue 2",
+        "France"
+      ],
+      "historical_distinct_home_teams": 61,
+      "played_training_rows": 6223
+    },
+    "法甲": {
+      "hf_id": 9,
+      "hf_tuple": [
+        9,
+        "Ligue 1",
+        "France"
+      ],
+      "historical_distinct_home_teams": 38,
+      "played_training_rows": 5769
+    },
+    "英冠": {
+      "hf_id": 2,
+      "hf_tuple": [
+        2,
+        "Championship",
+        "England"
+      ],
+      "historical_distinct_home_teams": 53,
+      "played_training_rows": 8355
+    },
+    "英超": {
+      "hf_id": 1,
+      "hf_tuple": [
+        1,
+        "Premier League",
+        "England"
+      ],
+      "historical_distinct_home_teams": 41,
+      "played_training_rows": 6080
+    },
+    "荷甲": {
+      "hf_id": 13,
+      "hf_tuple": [
+        13,
+        "Eredivisie",
+        "Netherlands"
+      ],
+      "historical_distinct_home_teams": 36,
+      "played_training_rows": 5338
+    },
+    "葡超": {
+      "hf_id": 14,
+      "hf_tuple": [
+        14,
+        "Primeira Liga",
+        "Portugal"
+      ],
+      "historical_distinct_home_teams": 38,
+      "played_training_rows": 4780
+    },
+    "西甲": {
+      "hf_id": 5,
+      "hf_tuple": [
+        5,
+        "La Liga",
+        "Spain"
+      ],
+      "historical_distinct_home_teams": 37,
+      "played_training_rows": 6523
+    },
+    "韩职": {
+      "hf_id": 38,
+      "hf_tuple": [
+        38,
+        "K League 1",
+        "South Korea"
+      ],
+      "historical_distinct_home_teams": 53,
+      "played_training_rows": 5509
+    }
+  },
+  "leagues_after": 14,
+  "leagues_before": 2,
+  "limits": [
+    "Retrospective replay only; no new PIT/Git-anchored forecast claimed",
+    "Original 70-club identity mapping unchanged; no fuzzy addition",
+    "Model stability and market superiority unproven",
+    "Historical training source ends July 2026; expanded models need prospective scoring"
+  ],
+  "new_counterfactual_eligible_fixture_ids": [
+    "2042624",
+    "2042632",
+    "2042634",
+    "2042635",
+    "2042640",
+    "2042641"
+  ],
+  "new_league_catalogue": {
+    "巴甲": [
+      19,
+      "Serie A",
+      "Brazil"
+    ],
+    "德乙": [
+      12,
+      "2. Bundesliga",
+      "Germany"
+    ],
+    "德甲": [
+      11,
+      "Bundesliga",
+      "Germany"
+    ],
+    "意甲": [
+      7,
+      "Serie A",
+      "Italy"
+    ],
+    "挪超": [
+      23,
+      "Eliteserien",
+      "Norway"
+    ],
+    "日职": [
+      21,
+      "J1 League",
+      "Japan"
+    ],
+    "法乙": [
+      10,
+      "Ligue 2",
+      "France"
+    ],
+    "法甲": [
+      9,
+      "Ligue 1",
+      "France"
+    ],
+    "英冠": [
+      2,
+      "Championship",
+      "England"
+    ],
+    "英超": [
+      1,
+      "Premier League",
+      "England"
+    ],
+    "荷甲": [
+      13,
+      "Eredivisie",
+      "Netherlands"
+    ],
+    "葡超": [
+      14,
+      "Primeira Liga",
+      "Portugal"
+    ],
+    "西甲": [
+      5,
+      "La Liga",
+      "Spain"
+    ],
+    "韩职": [
+      38,
+      "K League 1",
+      "South Korea"
+    ]
+  },
+  "old_fixture_ids_still_eligible": [
+    "2042640"
+  ],
+  "old_task0058_summary_sha256": "7c690964a006481da2e003d4d882137f5435504732888a7f8801f3ed6420f85e",
+  "purpose": "versioned 2-to-14 league expanded candidate eligibility under unchanged pinned 70-club bridge, no retrospective scoring",
+  "task": "TASK0059",
+  "team_bridge_official_ids": 70,
+  "verdict": "ACCEPT_AS_OF_HISTORICAL_COUNTERFACTUAL_ONLY"
+}

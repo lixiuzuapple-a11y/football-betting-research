@@ -22,13 +22,20 @@ from pathlib import Path
 
 from tools.task0017_official_only import ENDPOINT
 from tools.task0043_prospective_multimodel_freeze import (
-    ELIGIBLE_LEAGUES, EXPECTED_BRIDGE_SHA, frozen_team_bridge,
+    EXPECTED_BRIDGE_SHA, frozen_team_bridge,
     qualify_fixtures,
 )
 
 UTC = dt.timezone.utc
 BJT = dt.timezone(dt.timedelta(hours=8))
 RUN_PATTERN = re.compile(r"run-(\d{8})T\d{6}\d{6}Z-[a-z0-9]+")
+# This is NOT the current mutable production catalog. The original Nov10
+# TASK0058 experiment was frozen under exactly these two leagues. Future
+# prospective policy expansions must not rewrite its earlier 34/3/1 result.
+TASK0058_FROZEN_LEAGUES = {
+    "挪超": (23, "Eliteserien", "Norway"),
+    "法甲": (9, "Ligue 1", "France"),
+}
 
 
 def hash_file(path: Path) -> str:
@@ -180,7 +187,9 @@ def audit_runs(roots: list[Path], bridge: Path, *,
             if status not in ("ok", "no_offer"):
                 d["unusable_capture_count"] += 1
             d["observed_fixture_instances"] += len(fixtures)
-            allowed, rejected = qualify_fixtures(fixtures, crosswalk, observed)
+            allowed, rejected = qualify_fixtures(
+                fixtures, crosswalk, observed, approved_leagues=TASK0058_FROZEN_LEAGUES
+            )
             d["rejection_observations"].update(rejected)
             row_counts[status] += 1
             for row in fixtures:
@@ -194,7 +203,7 @@ def audit_runs(roots: list[Path], bridge: Path, *,
                     continue
                 unique_future.add(mid)
                 d["_future_ids"].add(mid)
-                if str(row.get("leagueAbbName")) in ELIGIBLE_LEAGUES:
+                if str(row.get("leagueAbbName")) in TASK0058_FROZEN_LEAGUES:
                     unique_league.add(mid)
                     d["_eligible_league_ids"].add(mid)
                     d["league_approved_observations"] += 1
@@ -236,7 +245,7 @@ def audit_runs(roots: list[Path], bridge: Path, *,
         "status": "DESCRIPTIVE_OFFICIAL_SUPPLY_AUDIT_NO_FORECAST",
         "interval_utc": [first_utc.isoformat(), last_utc.isoformat()],
         "identity_ledger_sha256": EXPECTED_BRIDGE_SHA,
-        "approved_leagues": sorted(ELIGIBLE_LEAGUES),
+        "approved_leagues": sorted(TASK0058_FROZEN_LEAGUES),
         "completed_runs_used": len(cycle_receipts),
         "source_captures_observed": sum(d["captures"] for d in formatted_daily.values()),
         "verified_captures": sum(
