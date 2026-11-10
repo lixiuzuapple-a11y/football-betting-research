@@ -1,0 +1,98 @@
+{
+  "date_beijing": "2026-11-10",
+  "future_source_name_only_candidates": [
+    {
+      "kickoff_utc": "2026-11-20T19:45:00Z",
+      "official_match_id": null,
+      "possible_hf_away_id": 218,
+      "possible_hf_home_id": 228,
+      "possible_official_away_team_id": "194",
+      "possible_official_home_team_id": "198",
+      "provider_away": "Le Havre",
+      "provider_event_id": "5dcc9d2b0da87770a4f49e924275be39",
+      "provider_home": "Troyes",
+      "status": "EXACT_TWO_SIDE_SOURCE_ALIAS_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "kickoff_utc": "2026-11-21T19:45:00Z",
+      "official_match_id": null,
+      "possible_hf_away_id": 224,
+      "possible_hf_home_id": 208,
+      "possible_official_away_team_id": "181",
+      "possible_official_home_team_id": "180",
+      "provider_away": "Lyon",
+      "provider_event_id": "d2113ca19873218496f8b2fe6c7e7c41",
+      "provider_home": "Lille",
+      "status": "EXACT_TWO_SIDE_SOURCE_ALIAS_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "kickoff_utc": "2026-11-28T19:45:00Z",
+      "official_match_id": null,
+      "possible_hf_away_id": 228,
+      "possible_hf_home_id": 207,
+      "possible_official_away_team_id": "198",
+      "possible_official_home_team_id": "186",
+      "provider_away": "Troyes",
+      "provider_event_id": "e9a1243fbfbc6f58d0e0522eb07ea9a1",
+      "provider_home": "Nice",
+      "status": "EXACT_TWO_SIDE_SOURCE_ALIAS_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "kickoff_utc": "2026-11-28T19:45:00Z",
+      "official_match_id": null,
+      "possible_hf_away_id": 223,
+      "possible_hf_home_id": 218,
+      "possible_official_away_team_id": "191",
+      "possible_official_home_team_id": "194",
+      "provider_away": "Strasbourg",
+      "provider_event_id": "f96c1137c9d3f7e2e691275a2988fa1d",
+      "provider_home": "Le Havre",
+      "status": "EXACT_TWO_SIDE_SOURCE_ALIAS_CANDIDATE_NOT_APPROVED"
+    }
+  ],
+  "international_odds": {
+    "both_preapproved_official_team_identity_name_candidates": 4,
+    "both_unique_historical_exact_name_candidates": 10,
+    "events": 18,
+    "provider_league": "soccer_france_ligue_one",
+    "raw_local_ignored_path": "data/raw/task0062-the-odds-api-20261110T083935Z/ligue1-eu-h2h.json",
+    "raw_sha256": "78c1f19a29b0385f80dac776d0b66e932d038d9dc87ed301ef9cd4e3b454f571",
+    "received_utc": "2026-11-10T08:39:37.1958974+00:00"
+  },
+  "join": {
+    "blocker": "OFFICIAL_FIXTURES_ALL_OUTSIDE_CURRENT_APPROVED_LEAGUES",
+    "eligible_official_fixtures_sharing_market_league": 0,
+    "independent_provider_event_official_match_id_bridges": 0,
+    "model_frozen_contemporaneous_1x2_market_admissions": 0
+  },
+  "limits": [
+    "These two captures were not simultaneous and do not create a same-time market observation.",
+    "Four shortlisted bookmaker events have NO observed official matchId and no independently verified provider event bridge.",
+    "Do not infer licence to include cup fixtures or auto-approve a name match.",
+    "Provider quotes are not true bookmaker-origin change timestamps."
+  ],
+  "official": {
+    "collector_epoch": "run-20261110T082933533718Z-e09aa8f466",
+    "league_abbreviation_counts": {
+      "日联赛杯": 4,
+      "英锦标赛": 4
+    },
+    "model_eligible": 0,
+    "model_exclusion_counts": {
+      "league_not_approved_for_forward_model": 8
+    },
+    "raw_local_ignored_path": "data/raw/task0063-official-odds-bridge-20261110/official-20261110T085733Z.json.gz",
+    "raw_sha256": "3480202c716ad1027a603c5dd834f10c566df873789b71846e9828d30dbc0885",
+    "received_utc": "2026-11-10T08:57:33.790283+00:00",
+    "total_offered": 8
+  },
+  "registry": {
+    "approved_official_team_ids": 143,
+    "league_crosswalk_sha256": "af8cf2360d58fd19bbd7e89a7c9bc35d4bffd19cb48b3a8b2245473dda845fb6",
+    "master_sha256": "fd5c2f0d8c007eb796b7e1823e2388fd85ebf9841906a5a97065cce2122693a8"
+  },
+  "stage": "REAL_OFFICIAL_ODDS_OVERLAP_PREFLIGHT",
+  "task": "TASK0063",
+  "verdict": "ACCEPT_MEASURED_CAPTURE_OVERLAP_DENOMINATORS_NO_GO_VALID_PIT_MARKET_COMPARISON",
+  "zero_paid_no_extra_collector_no_EV": true
+}

@@ -459,7 +459,8 @@ The separately closed SFC14/R9 project was not accessed.
 ACCEPT; same-match + same-time international odds still NO-GO.**
 The project now has a persistent, source-versioned, extensible *historical*
 club registry at `research/registry/v1-20261110/`: **501 distinct HF club
-keys** associated with **605 league-member records** across all 14
+keys** (480 with historical membership in these 14 leagues plus 21 already
+independently verified clubs retained without such membership) and **605 league-member records** across all 14
 preapproved leagues, original **143 preapproved official↔HF identities**,
 **358 HF-only unapproved candidates**, **503 source-name alias candidates**
 (never automatically accepted) and a separate 14-league summary.
@@ -488,6 +489,19 @@ collector, API key or subscription has been installed. See
 `REPORTS/EVLAB-TASK0061-14-LEAGUE-REGISTRY-AND-PIT-ODDS-20261110.md`
 and `REVIEWS/EVLAB-TASK0061-INDEPENDENT-QA-20261110.md`.
 Previously accepted prospective N=3 remains unchanged; 14/R9 remains closed.
+
+**TASK0063 Nov10 actual official-vs-odds fixture identity overlap: SOURCE
+PREFLIGHT ACCEPT, PIT MARKET STILL 0/NO-GO.** Read-only Tencent cloud
+collector snapshot has 8 official offered fixtures (4 England Trophy,
+4 Japan League Cup), all outside the 14 approved forward-model leagues.
+Reused the existing free Ligue 1 API snapshot (18 future events) with no
+new credit usage. Historical-source exact two-sided names yielded 10
+candidates, of which 4 additionally have both preapproved official↔HF
+club identities. None has a verified official matchId↔provider event ID
+bridge yet. The registry master-count caveat is 501 = 480 historic
+14-league members + 21 previously approved extra clubs; no raw/version
+change. See `REPORTS/EVLAB-TASK0063-REAL-FIXTURE-IDENTITY-OVERLAP-20261110.md`
+and `REVIEWS/EVLAB-TASK0063-INDEPENDENT-QA-20261110.md`.
 
 **TASK0062 Nov10 live free The Odds API pilot: source/format PARTIAL
 ACCEPT; same-time model-market comparison remains 0/NO-GO.** An existing
