@@ -13,6 +13,10 @@
 *.gz binary
 *.parquet binary
 
+# TASK0060 source identity ledger is an immutable signed-off JSON byte stream:
+# CRLF vs LF transforms would invalidate its official source SHA checkpoint.
+research/task0060_verified_club_extension_20261110.json -text -eol -diff
+
 # Windows-only scripts keep CRLF so they stay runnable in cmd.exe and PowerShell.
 *.bat text eol=crlf
 *.cmd text eol=crlf
