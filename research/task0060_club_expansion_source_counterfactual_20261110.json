@@ -1,0 +1,60 @@
+{
+  "all_distinct_offered_games": 35,
+  "extended_14league_four_model_ready_unique_games": 16,
+  "extended_14league_identity_qualified_unique_games": 19,
+  "limit": "Earlier official snapshots under new rules are retrospective counterfactual diagnostics. NEVER add to true prospective N=3.",
+  "new_approved_clubs": 143,
+  "new_distinct_qualified_match_ids_no_retroactive_credit": {
+    "2042617": {
+      "first_utc": "2026-11-08T00:00:32.960855+00:00",
+      "league": "意甲"
+    },
+    "2042618": {
+      "first_utc": "2026-11-08T00:00:32.960855+00:00",
+      "league": "西甲"
+    },
+    "2042622": {
+      "first_utc": "2026-11-08T00:00:32.960855+00:00",
+      "league": "英超"
+    },
+    "2042626": {
+      "first_utc": "2026-11-08T00:00:32.960855+00:00",
+      "league": "意甲"
+    },
+    "2042627": {
+      "first_utc": "2026-11-08T00:00:32.960855+00:00",
+      "league": "德甲"
+    },
+    "2042628": {
+      "first_utc": "2026-11-08T00:00:32.960855+00:00",
+      "league": "西甲"
+    },
+    "2042630": {
+      "first_utc": "2026-11-08T00:00:32.960855+00:00",
+      "league": "荷甲"
+    },
+    "2042633": {
+      "first_utc": "2026-11-08T00:00:32.960855+00:00",
+      "league": "德甲"
+    },
+    "2042636": {
+      "first_utc": "2026-11-08T00:00:32.960855+00:00",
+      "league": "西甲"
+    },
+    "2042639": {
+      "first_utc": "2026-11-08T00:00:32.960855+00:00",
+      "league": "意甲"
+    }
+  },
+  "new_identity_extension_sha256": "9ac60ea590c0bdf0702024ccbe2712f27dfbe45445f74e70e8df34cd233056c8",
+  "no_results_odds_or_wagers": true,
+  "old_approved_clubs": 70,
+  "prior_14league_four_model_ready_unique_games": 6,
+  "prior_14league_identity_qualified_unique_games": 6,
+  "source_completed_runs": 26,
+  "source_task0058_sha256": "7c690964a006481da2e003d4d882137f5435504732888a7f8801f3ed6420f85e",
+  "status": "HISTORICAL_COUNTERFACTUAL_ONLY_NOT_PROSPECTIVE",
+  "task": "TASK0060",
+  "unusable_observations": 1,
+  "verified_observations": 3044
+}

@@ -414,6 +414,47 @@ enabled. See
 `REPORTS/EVLAB-TASK0059-14-LEAGUE-EXPANSION-20261110.md` and
 `REVIEWS/EVLAB-TASK0059-INDEPENDENT-QA-20261110.md`.
 
+**TASK0060 Nov10 approved team expansion ACTUALLY DEPLOYED:
+70→143 independently verified clubs; research profitability UNPROVEN.**
+TASK0059 previously broadened league eligibility from 2 to 14 but
+only 70 clubs could pass the exact two-team official-to-HF match gate.
+TASK0060 reused independently accepted cross-source match identities:
+76 from TASK0034 and 11 from TASK0036. Original Sporttery raw gzip
+HTTP-body SHA, ESPN raw pages/event/team IDs and source-specific UTC
+kickoff, frozen HF historical team ID/name and prior league games were
+checked. **73 new clubs** passed as additive-only entries, **110
+individual provenance witnesses** independently rechecked, and **6
+source observations** refused (ambiguous names including Inter/Ath
+Bilbao; no same-league unique HF ID; or fewer than five pre-July
+historical league matches). The original **70 official and HF IDs and
+Chinese team names are unchanged**. Source proof in
+`research/task0060_verified_club_extension_20261110.json` with exact
+SHA256 `9ac60ea590c0bdf0702024ccbe2712f27dfbe45445f74e70e8df34cd233056c8`,
+which now survives Windows/Git/cloud byte-for-byte without line-ending
+normalization. The frozen bridge loader requires both the original
+SHA and this new SHA; new Git forecast ledgers record both source
+hashes plus a combined identity version. Historic TASK0058's exact
+two-league/26-run original remains replayable with its original
+SHA `7c690964a006481da2e003d4d882137f5435504732888a7f8801f3ed6420f85e`.
+Real Tencent cloud source probe (Nov10 **14:30 Beijing**) returned
+HTTP200 with 8 non-approved-league offers, correctly **0 new Git
+forecasts**; production timers remained active.
+
+On the fixed *retrospective source-only* Nov8–10 window, new
+143-club, 14-league eligibility increased distinct identity-qualified
+matches **6→19** and complete four-model-ready matches **6→16**,
+when compared with 70-club 14-league eligibility. Two source replays
+were byte-identical; **these are NOT real pre-kickoff Git forecasts
+or extra scored results**. True prospective independently scored
+N remains **3**; no comparable real-time market odds, no demonstrated
+CLV or positive EV. Full report:
+`REPORTS/EVLAB-TASK0060-VERIFIED-143-CLUB-EXPANSION-20261110.md`,
+independent QA:
+`REVIEWS/EVLAB-TASK0060-INDEPENDENT-QA-20261110.md`,
+source-only aggregate:
+`research/task0060_club_expansion_source_counterfactual_20261110.json`.
+The separately closed SFC14/R9 project was not accessed.
+
 ## Research principles
 
 Stated in full in [`docs/project-charter.md`](docs/project-charter.md):
