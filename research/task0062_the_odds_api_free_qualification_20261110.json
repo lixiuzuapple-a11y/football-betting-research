@@ -1,0 +1,81 @@
+{
+  "task": "TASK0062",
+  "date": "2026-11-10",
+  "project": "EV-Lab",
+  "scope": "FREE_ONE_SHOT_SOURCE_QUALIFICATION_NO_RECURRING_COLLECTOR",
+  "sports_catalog": {
+    "http_status": 200,
+    "soccer_keys_returned": 42,
+    "qualified_target_leagues_14": 11,
+    "present": [
+      "巴甲",
+      "德乙",
+      "德甲",
+      "意甲",
+      "法乙",
+      "法甲",
+      "英冠",
+      "英超",
+      "荷甲",
+      "葡超",
+      "西甲"
+    ],
+    "not_listed_at_observation": [
+      "挪超",
+      "日职",
+      "韩职"
+    ],
+    "quota_cost": 0,
+    "caveat": "A missing sport key at one instant is not a permanent coverage failure"
+  },
+  "sample": {
+    "sport_key": "soccer_france_ligue_one",
+    "region": "eu",
+    "market": "h2h",
+    "odds_format": "decimal",
+    "request_started_utc": "2026-11-10T08:39:35.2447620+00:00",
+    "first_received_utc": "2026-11-10T08:39:37.1958974+00:00",
+    "http_status": 200,
+    "events": 18,
+    "bookmakers_distinct": 20,
+    "pinnacle_events": 18,
+    "h2h_markets": 244,
+    "complete_full_time_1x2": 244,
+    "update_age_minutes_min": 0.12,
+    "update_age_minutes_max": 1.34,
+    "pinnacle_update_age_minutes_min": 0.39,
+    "pinnacle_update_age_minutes_max": 0.4,
+    "all_15min_recent": 244,
+    "all_future_at_receipt": true,
+    "kickoff_from_receipt_hours_min": 251.09,
+    "kickoff_from_receipt_hours_max": 467.09,
+    "raw_bytes": 65469,
+    "raw_sha256": "78c1f19a29b0385f80dac776d0b66e932d038d9dc87ed301ef9cd4e3b454f571",
+    "ignored_raw_relative_path": "data/raw/task0062-the-odds-api-20261110T083935Z/ligue1-eu-h2h.json",
+    "ignored_receipt_relative_path": "data/raw/task0062-the-odds-api-20261110T083935Z/capture_receipt.json",
+    "quota_cost": 1,
+    "quota_remaining_after": 498,
+    "quota_used_after": 2
+  },
+  "identity_read_only_candidate_check": {
+    "method": "exact casefold text match in Ligue1 historic league crosswalk, never used to approve identity",
+    "both_source_alias_exact_candidates": 10,
+    "both_sides_official_verified_name_candidates": 4,
+    "independently_authorized_cross_provider_event_bridges": 0,
+    "admitted_contemporaneous_model_market_pairs": 0
+  },
+  "audits": {
+    "offline_raw_sha_and_market_recompute": "PASS",
+    "existing_task0061_regression": "16 passed",
+    "full_pytest": "592 passed",
+    "timezone_error": "PowerShell ConvertFrom-Json automatic date conversion generated a false +8h age; independent raw JSON ISO8601 parser corrected it"
+  },
+  "decision": "PARTIAL_ACCEPT_REAL_FREE_API_SOURCE_AND_SCHEMA__NO_GO_PIT_MODEL_MARKET_COMPARISON",
+  "rules": [
+    "no paid purchase",
+    "no new ongoing collector",
+    "no bookmaker-origin timestamp inference",
+    "no api key in git",
+    "no positive EV / CLV claims"
+  ]
+}

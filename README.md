@@ -489,6 +489,20 @@ collector, API key or subscription has been installed. See
 and `REVIEWS/EVLAB-TASK0061-INDEPENDENT-QA-20261110.md`.
 Previously accepted prospective N=3 remains unchanged; 14/R9 remains closed.
 
+**TASK0062 Nov10 live free The Odds API pilot: source/format PARTIAL
+ACCEPT; same-time model-market comparison remains 0/NO-GO.** An existing
+free key was configured **locally only after TASK0061 signoff** (the earlier
+TASK0061 historical statement that no key was installed applied at its
+signoff). One no-cost sports catalogue listed 11/14 target leagues; one
+1-credit Ligue 1 EU h2h call produced 18 upcoming events, 20 bookmakers
+(Pinnacle in all 18), 244 complete three-way markets. Independently parsed
+raw UTC timestamps put 244/244 bookmaker-market observations within
+0.12–1.34 minutes of receipt. However no provider event↔official fixture
+identity bridge or pre-model Git quote anchor exists: PIT eligible remains
+zero. No recurring odds collector and no historical purchase were made.
+See `REPORTS/EVLAB-TASK0062-FREE-ODDS-API-QUALIFICATION-20261110.md`
+and `REVIEWS/EVLAB-TASK0062-INDEPENDENT-QA-20261110.md`.
+
 ## Research principles
 
 Stated in full in [`docs/project-charter.md`](docs/project-charter.md):
