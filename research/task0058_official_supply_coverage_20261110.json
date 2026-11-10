@@ -1,0 +1,381 @@
+{
+  "approved_leagues": [
+    "挪超",
+    "法甲"
+  ],
+  "by_beijing_date": {
+    "2026-11-08": {
+      "_all_ids": 31,
+      "_eligible_league_ids": 3,
+      "_future_ids": 30,
+      "_strict_ids": 1,
+      "captures": 964,
+      "league_approved_observations": 2738,
+      "no_offer": 0,
+      "observed_fixture_instances": 24183,
+      "ok": 963,
+      "rejection_observations": {
+        "league_not_approved_for_forward_model": 21391,
+        "missing_preapproved_both_team_identity": 1775,
+        "not_future_at_freeze": 54
+      },
+      "transport_error": 1,
+      "unusable_capture_count": 1
+    },
+    "2026-11-09": {
+      "_all_ids": 15,
+      "_eligible_league_ids": 2,
+      "_future_ids": 15,
+      "_strict_ids": 1,
+      "captures": 1447,
+      "league_approved_observations": 241,
+      "no_offer": 424,
+      "observed_fixture_instances": 4428,
+      "ok": 1023,
+      "rejection_observations": {
+        "league_not_approved_for_forward_model": 4161,
+        "missing_preapproved_both_team_identity": 15,
+        "not_future_at_freeze": 26
+      },
+      "unusable_capture_count": 0
+    },
+    "2026-11-10": {
+      "_all_ids": 4,
+      "_eligible_league_ids": 0,
+      "_future_ids": 4,
+      "_strict_ids": 0,
+      "captures": 634,
+      "league_approved_observations": 0,
+      "no_offer": 0,
+      "observed_fixture_instances": 2536,
+      "ok": 634,
+      "rejection_observations": {
+        "league_not_approved_for_forward_model": 2536
+      },
+      "unusable_capture_count": 0
+    }
+  },
+  "completed_runs_used": 26,
+  "eligible_observation_windows": {
+    "2042640": {
+      "first_seen_utc": "2026-11-08T00:00:32.960855+00:00",
+      "kickoff_utc": "2026-11-08T19:45:00+00:00",
+      "last_seen_utc": "2026-11-08T19:44:33.612110+00:00",
+      "league": "法甲",
+      "observations": 1189
+    }
+  },
+  "identity_ledger_sha256": "13d373dbab8363e606cfaf39c478b6035c35c86ad0ffcbf4c53e6e5014f63f2f",
+  "interval_utc": [
+    "2026-11-08T00:00:00+00:00",
+    "2026-11-10T03:15:00+00:00"
+  ],
+  "limits": [
+    "Repeated minute captures are not independent match observations.",
+    "Completed TASK0045 cycles only: this is not the entire bookmaker/football universe.",
+    "Historical capture times are the original server clock, not independent notarization.",
+    "Identity+league approval is a necessary, not sufficient, condition for all four model forecasts.",
+    "A retrospectively observed fixture without a prior Git commit can NEVER be scored as prospective.",
+    "No additional league, identity, bookmaker odds, bets, model selection or positive EV inferred."
+  ],
+  "source_captures_observed": 3045,
+  "source_run_receipts": [
+    {
+      "captures_in_window": 45,
+      "completed_cycle_outcome_sha256": "c59bbef10069d04419e0ee393b49f0751a31b4a5251d13142821ac9a8acfa76b",
+      "first_observed_utc": "2026-11-08T00:00:32.960855+00:00",
+      "last_observed_utc": "2026-11-08T00:44:32.904152+00:00",
+      "run_id": "run-20261107T224532777692Z-a760543479",
+      "source_sqlite_sha256": "3a869ee9026082bf48065d69c48af2e69730091e61bef0fd527f0c673f5fcf58",
+      "status_counts_in_window": {
+        "ok": 45
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "ecd8f949a51a3d08d408a4a433f6ee05d32bfdf677ea6f69ddb3a90c2338fe5c",
+      "first_observed_utc": "2026-11-08T00:45:03.250635+00:00",
+      "last_observed_utc": "2026-11-08T02:44:03.320311+00:00",
+      "run_id": "run-20261108T004503025858Z-ec7469250b",
+      "source_sqlite_sha256": "6d3fe7ded52f3b5bf0ec2aec878b1d5e30d2a09b2f30a96488f8052d68b811db",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "db2f7859916665c3c7d196ab9cb38b397974f9ca0a9af9fa40fe7aac80de0b07",
+      "first_observed_utc": "2026-11-08T02:44:33.644755+00:00",
+      "last_observed_utc": "2026-11-08T04:43:33.690130+00:00",
+      "run_id": "run-20261108T024433530787Z-9e2b79e5fa",
+      "source_sqlite_sha256": "f9c4a7fa2bbd1946cd1609970359a1760f87096a1c1d707ee4b8568da9f24add",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "76b8b32fcf8e6bd9326244b4269265425831be79b3db0f5506067c8cbcb5da25",
+      "first_observed_utc": "2026-11-08T04:44:03.936748+00:00",
+      "last_observed_utc": "2026-11-08T06:43:04.187606+00:00",
+      "run_id": "run-20261108T044403775378Z-23a310266a",
+      "source_sqlite_sha256": "ab75a2b8e97c8c80c1234ff6a0a5bd4dafd705cd534541dbb7ad1668953c46fd",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "21cd4771b40a9da7bae00f3a2a1cb0ca250d14708c645c1b51fad58b026b3074",
+      "first_observed_utc": "2026-11-08T06:43:34.634593+00:00",
+      "last_observed_utc": "2026-11-08T08:42:34.392571+00:00",
+      "run_id": "run-20261108T064334277629Z-2b5d3642db",
+      "source_sqlite_sha256": "e6996029a13c6c92cfe8762d04cddf43382e00bda08ef8ff65be449c1d536c29",
+      "status_counts_in_window": {
+        "ok": 119,
+        "transport_error": 1
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "91e22764ccff38df7192f0eacb178833d336a874ff222ba9f6a7588dc7678810",
+      "first_observed_utc": "2026-11-08T08:43:01.566717+00:00",
+      "last_observed_utc": "2026-11-08T10:42:01.725832+00:00",
+      "run_id": "run-20261108T084301445519Z-c30862f1bf",
+      "source_sqlite_sha256": "742cb8b4e5a226bad1fef68da3d2384a19a787a5608eea7de391ca53e15b9ff0",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "e68cc2e03a6a09ef53748ad8d8ddc83edb8fcce11eef23c82a4f9d12d1909644",
+      "first_observed_utc": "2026-11-08T10:42:32.311434+00:00",
+      "last_observed_utc": "2026-11-08T12:41:32.363408+00:00",
+      "run_id": "run-20261108T104232026360Z-b1250cc7e7",
+      "source_sqlite_sha256": "919266846485671911247d7462fe49cff72d34526a57d18ef36e548c44d09425",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "8b920d79d05f52fb365dff9af5792508a844e79b743b8b4e2d1376861e347d9b",
+      "first_observed_utc": "2026-11-08T12:42:02.652104+00:00",
+      "last_observed_utc": "2026-11-08T14:41:02.711390+00:00",
+      "run_id": "run-20261108T124202528009Z-70ba1a89c3",
+      "source_sqlite_sha256": "e0051659107e2771039cdc262d75defa26adcbe8d132caf055190fa89fa13ae2",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "d331f1ac6398b28d696745e943ec74039f2751da4d2fd8b080a18fd181bdd31f",
+      "first_observed_utc": "2026-11-08T14:41:33.242718+00:00",
+      "last_observed_utc": "2026-11-08T16:40:33.196278+00:00",
+      "run_id": "run-20261108T144133027086Z-d8071b0309",
+      "source_sqlite_sha256": "d5709d6ca8cae58881dd7c100c082c6c83eeb66bb46a03d782b6069e6fcd913c",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "441518a19b3ab774e41900990f876be4bf81d3f5ccaf7e48d9fbb2ff8662e54a",
+      "first_observed_utc": "2026-11-08T16:41:03.379514+00:00",
+      "last_observed_utc": "2026-11-08T18:40:03.352833+00:00",
+      "run_id": "run-20261108T164103275788Z-2cb8e6f7d6",
+      "source_sqlite_sha256": "ba1115b08a572b7279218ddc5ac2a482380329f812545440dba039c27046e18a",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "801bc59380925a26eea68eabfbcde5c5cae2e91c00314a5769023585de07bbcd",
+      "first_observed_utc": "2026-11-08T18:40:34.113312+00:00",
+      "last_observed_utc": "2026-11-08T20:39:33.611329+00:00",
+      "run_id": "run-20261108T184033527415Z-53b8161a83",
+      "source_sqlite_sha256": "5faa759af69397f1e9dcbb01a9b24ace9b34b9f4b1a843e32b9e6c681b5035c4",
+      "status_counts_in_window": {
+        "no_offer": 39,
+        "ok": 81
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "63fc583b661608ff74971a271bac6a21bc13f8719a4614a6dbd9274112e385e2",
+      "first_observed_utc": "2026-11-08T20:40:03.858793+00:00",
+      "last_observed_utc": "2026-11-08T22:39:03.866931+00:00",
+      "run_id": "run-20261108T204003775538Z-c006e48f5e",
+      "source_sqlite_sha256": "3d881d3928c029e772f8596102f61d64a9a4550902f1b0d17adca9a15a06b560",
+      "status_counts_in_window": {
+        "no_offer": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "5cc7f8b16a2758f393405b32a02bc8cff9806129c070b99d4f7d8b3773c078ce",
+      "first_observed_utc": "2026-11-08T22:39:32.934913+00:00",
+      "last_observed_utc": "2026-11-09T00:38:32.914987+00:00",
+      "run_id": "run-20261108T223932835113Z-9718b20f37",
+      "source_sqlite_sha256": "5497461da2d3be35cf900279584f8030283d3634c72fac9ea6a8e7427c649cc9",
+      "status_counts_in_window": {
+        "no_offer": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "1ac839b1a4dc96c63f7e9d9cefb6058ea77d87a334ff21a17b15d65fc6300d7f",
+      "first_observed_utc": "2026-11-09T00:38:33.132530+00:00",
+      "last_observed_utc": "2026-11-09T02:37:33.120381+00:00",
+      "run_id": "run-20261109T003833046580Z-8bebf33dd5",
+      "source_sqlite_sha256": "97446b6d7ecf3f3488bf405461ab3dd73a8c2737d935f3172d43773cb0995e4f",
+      "status_counts_in_window": {
+        "no_offer": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "894b457b0dfbbee49487fee70fda34607c6125821bd29eeee6eef7e693375563",
+      "first_observed_utc": "2026-11-09T02:38:03.476505+00:00",
+      "last_observed_utc": "2026-11-09T04:37:03.371794+00:00",
+      "run_id": "run-20261109T023803278331Z-4966138bdd",
+      "source_sqlite_sha256": "e8bdff9df80fd29b53b0601c99821e91ff9a4ea969aab62503161dfd494a1403",
+      "status_counts_in_window": {
+        "no_offer": 25,
+        "ok": 95
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "be619bfbed38a06ddc950554f8c85b29da0f7359c822483a352feaea9df17d7b",
+      "first_observed_utc": "2026-11-09T04:37:33.679792+00:00",
+      "last_observed_utc": "2026-11-09T06:36:33.686307+00:00",
+      "run_id": "run-20261109T043733528620Z-82e1d6deda",
+      "source_sqlite_sha256": "142d471f378ea79270cfd55af159d3a9d6234ac7743641e1d729b3ba1031e746",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "049c9daf1da0e60bc6a852f2599a926886da73536ff68e4539ca74bb5baa1d04",
+      "first_observed_utc": "2026-11-09T06:37:03.929490+00:00",
+      "last_observed_utc": "2026-11-09T08:36:03.913473+00:00",
+      "run_id": "run-20261109T063703775519Z-b263093193",
+      "source_sqlite_sha256": "7af64e93478ff2f27eead34a67fec6664b8c148353db500be6e50bde9029ed29",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "a461a9c61140a145f7bedf7065016b6f89bba4cc92f5fae61a31d83a7af1e956",
+      "first_observed_utc": "2026-11-09T08:36:34.395301+00:00",
+      "last_observed_utc": "2026-11-09T10:35:34.356156+00:00",
+      "run_id": "run-20261109T083634031944Z-99073ae442",
+      "source_sqlite_sha256": "b6109d2b6c11ec5cc41cd4d6d2bee1cd1b9add70c3b300ffe45f42c6e9bd4606",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "8ded5ffb073fe514f92d62cfb3b2704952f9ee57ca2b488f68c29fd0fb712dfb",
+      "first_observed_utc": "2026-11-09T10:35:53.008876+00:00",
+      "last_observed_utc": "2026-11-09T12:34:53.532769+00:00",
+      "run_id": "run-20261109T103552838703Z-4154dc9b76",
+      "source_sqlite_sha256": "f2a4e9c9ac9b0c5bd74313f3a9828a2e50bc56a3fc3abf42ffd9cfb9f1808dee",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "21e524540678646d72050b903bc6322affc34d44e500828173711dcbefc2ff1f",
+      "first_observed_utc": "2026-11-09T12:34:53.816264+00:00",
+      "last_observed_utc": "2026-11-09T14:33:53.938629+00:00",
+      "run_id": "run-20261109T123453656093Z-34883e4d29",
+      "source_sqlite_sha256": "fa909e6021ec93d075b89083b17894dbbabc16f1db1bb5acab1cc6f9cb01efbc",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "f2420cd47158fe6549f657cbd2cac5c89d348ebd1b3060c82d411c35b2fceece",
+      "first_observed_utc": "2026-11-09T14:34:24.283532+00:00",
+      "last_observed_utc": "2026-11-09T16:33:24.152157+00:00",
+      "run_id": "run-20261109T143424027002Z-1d59d8755a",
+      "source_sqlite_sha256": "a16e5f78d784609780f95c3cc236761c763270a6690017f4f24d636687b7b63e",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "b187a34c245091cbc15de14aa6a908be224012727785a52996fe6857366455cf",
+      "first_observed_utc": "2026-11-09T16:33:54.464314+00:00",
+      "last_observed_utc": "2026-11-09T18:32:54.378912+00:00",
+      "run_id": "run-20261109T163354277288Z-e9b63c4b64",
+      "source_sqlite_sha256": "9f4771daef020488c87c1dd2f08a8c9aba3227ef6af91fa3f9dc3170996ae6c0",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "165e4eef0e7607a9f5bcad67cfefdf00920b2fdd37500aafe7f22451b8d3b3ea",
+      "first_observed_utc": "2026-11-09T18:33:24.648070+00:00",
+      "last_observed_utc": "2026-11-09T20:32:24.613390+00:00",
+      "run_id": "run-20261109T183324539529Z-44ba6ce664",
+      "source_sqlite_sha256": "ed8574d8ec8fb881cade32a2929ce9b9d62c389f674011ce9b725ae7ce79ab2f",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "466790cd3be318ea25cf131ea723d57bf69d5ddb4d77ffb55bde54ab1d15adc7",
+      "first_observed_utc": "2026-11-09T20:32:52.953607+00:00",
+      "last_observed_utc": "2026-11-09T22:31:53.008695+00:00",
+      "run_id": "run-20261109T203252847298Z-b30f7bbbf7",
+      "source_sqlite_sha256": "224b9973ee232c7f31ccd0f8d54b05627e27385e68b9c93ce863b26744842add",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "d9996569e69a77e0c6b6464a7d1dbd26b3a405a2dd74bbfa94f0ffab119cbc10",
+      "first_observed_utc": "2026-11-09T22:32:23.367338+00:00",
+      "last_observed_utc": "2026-11-10T00:31:23.428985+00:00",
+      "run_id": "run-20261109T223223275684Z-11cf02471d",
+      "source_sqlite_sha256": "dd4fe92097cddb88c701d5f51fcd1bb576a978b7c574f523fc57907c0d0b5f36",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    },
+    {
+      "captures_in_window": 120,
+      "completed_cycle_outcome_sha256": "4321b016a8f713e873c4621df36ed36450b0bed46c736d1c3f5ae9dcb3e3a60d",
+      "first_observed_utc": "2026-11-10T00:31:53.640736+00:00",
+      "last_observed_utc": "2026-11-10T02:30:53.788499+00:00",
+      "run_id": "run-20261110T003153527631Z-785473228c",
+      "source_sqlite_sha256": "ae81717e79b27faf9ae2c98b34556f6feca9ec051a6e120aa9559fbb3bb62b45",
+      "status_counts_in_window": {
+        "ok": 120
+      }
+    }
+  ],
+  "status": "DESCRIPTIVE_OFFICIAL_SUPPLY_AUDIT_NO_FORECAST",
+  "task": "TASK0058",
+  "unique_fixture_ids_any_status": 35,
+  "unique_fixture_ids_observed_before_kickoff": 34,
+  "unique_ids_in_approved_leagues_before_kickoff": 3,
+  "unique_ids_strict_identity_and_league_preapproved": 1,
+  "unusable_source_captures": 1,
+  "verified_captures": 3044
+}

@@ -350,6 +350,33 @@ independent QA: `REPORTS/EVLAB-TASK0057-PROSPECTIVE-N3-AUDIT-20261109.md`,
 `REVIEWS/EVLAB-TASK0057-INDEPENDENT-QA-20261109.md`. No changes to
 the separately closed 14/R9 project.
 
+**TASK0058 Nov10 official feed supply constraint audit: ACCEPT; new model
+alpha/EV NO-GO.** Nov9 18:30 cloud official scoring and 19:00 watchdog
+both actually ran exit 0/PASS, correctly returned
+`ALREADY_INDEPENDENTLY_ACCEPTED` for the Nov8 Git-anchored sample.
+Nov10 11:15 forward captured 8 fixtures, all rejected by the existing
+league gate; the independent 11:40 watchdog returned PASS. The Nov9
+forward had likewise captured 4 offers, all out of scope.
+To distinguish collection cadence from eligibility, TASK0058 strictly
+replayed **26 completed TASK0045 cycles** covering UTC Nov8 00:00–Nov10
+03:15. Of **3,045** archived source observations, **3,044** were valid
+(1 transport error isolated), with **35 unique offered fixtures**,
+**34 visible before kickoff**, **3 from preapproved leagues** and **only
+1 passing the preapproved BOTH-team identity+league checks**: match
+`2042640`, which was already Git-frozen and officially scored.
+Therefore *in this bounded window* extra collection times would not
+create a distinct new eligible forward match, and must not be confused
+with expanding model/identity coverage. This does not extrapolate to
+other dates or all football matches. Full source-only audit replay was
+byte-identical twice (SHA256
+`7c690964a006481da2e003d4d882137f5435504732888a7f8801f3ed6420f85e`);
+a **separately implemented independent SQLite/gzip/identity check**
+reproduced the counts. No training, fixture whitelist, cloud scheduler,
+model odds, or production data was modified. See
+`research/task0058_official_supply_coverage_20261110.json`,
+`REPORTS/EVLAB-TASK0058-REAL-OFFER-COVERAGE-20261110.md` and
+`REVIEWS/EVLAB-TASK0058-INDEPENDENT-QA-20261110.md`.
+
 ## Research principles
 
 Stated in full in [`docs/project-charter.md`](docs/project-charter.md):
