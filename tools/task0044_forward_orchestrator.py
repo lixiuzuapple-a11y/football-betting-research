@@ -65,6 +65,10 @@ def verified_freeze(frozen: Path, ledger: Path) -> tuple[dict, dict]:
             or snap.get("new_results_input_to_models") is not False
             or snap.get("no_bet_or_buy") is not True
             or snap.get("predictions") != commitment.get("predictions")
+            or any(snap.get(k) != commitment.get(k) for k in (
+                "identity_ledger_sha256", "identity_extension_sha256",
+                "original_identity_ledger_sha256", "identity_version"
+            ))
             or len(snap.get("predictions", [])) != commitment.get("qualified")):
         raise ValueError("freeze/committed forecast provenance mismatch")
     start = aware(snap["frozen_at_utc"])

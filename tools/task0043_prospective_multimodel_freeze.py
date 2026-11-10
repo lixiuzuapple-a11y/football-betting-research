@@ -32,6 +32,11 @@ HISTORY_LAST_EXCLUSIVE = dt.date(2026, 7, 5)
 MAX_CAPTURE_AGE = dt.timedelta(hours=6)
 EXPECTED_HISTORY_MANIFEST = "eb3c37793866a27f8c1520c78a69e6098fdf79f08622b37fed64070fa1f8748f"
 EXPECTED_BRIDGE_SHA = "13d373dbab8363e606cfaf39c478b6035c35c86ad0ffcbf4c53e6e5014f63f2f"
+TASK0060_EXTENSION_FILE = (
+    Path(__file__).resolve().parent.parent /
+    "research/task0060_verified_club_extension_20261110.json"
+)
+TASK0060_EXTENSION_SHA = "9ac60ea590c0bdf0702024ccbe2712f27dfbe45445f74e70e8df34cd233056c8"
 ELIGIBLE_LEAGUES = {
     "挪超": (23, "Eliteserien", "Norway"),
     "法甲": (9, "Ligue 1", "France"),
@@ -56,6 +61,56 @@ EXPECTED_HISTORY_ROWS = 53705
 
 def _hash(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def verified_extended_team_bridge(identity: Path, extension: Path
+                                  ) -> tuple[dict, dict]:
+    """Admit only the exact independently accepted, additive TASK0060 clubs.
+
+    Historic frozen_team_bridge() remains untouched for old experiments.
+    Current source code pins extension bytes; any missing/modified extension,
+    duplicate team ID or alteration to the original 70 rejects prediction.
+    """
+    original, old_sha = frozen_team_bridge(identity)
+    if len(original) != 70 or old_sha != EXPECTED_BRIDGE_SHA:
+        raise ValueError("immutable prior 70-team club bridge invalid")
+    new_sha = _hash(extension)
+    if new_sha != TASK0060_EXTENSION_SHA:
+        raise ValueError("TASK0060 additive club extension SHA mismatch")
+    data = json.loads(extension.read_text(encoding="utf-8"))
+    if (data.get("task") != "TASK0060"
+            or data.get("phase") != "STRICT_ADDITIVE_CLUB_IDENTITY_ONLY"
+            or data.get("original_70_unchanged") is not True
+            or data.get("original_bridge_sha256") != old_sha
+            or data.get("frozen_training_manifest_sha256") != EXPECTED_HISTORY_MANIFEST
+            or data.get("original_clubs") != 70
+            or data.get("additional_clubs") != 73
+            or data.get("total_authorized_clubs") != 143
+            or len(data.get("additions", [])) != 73):
+        raise ValueError("TASK0060 source review and member counts inconsistent")
+    combined = dict(original)
+    hf_seen = {int(item[0]) for item in original.values()}
+    for row in data["additions"]:
+        official_id = str(row["official_id"])
+        hid, name = row["hf_team_id"], row["official_zh"]
+        if (not official_id.isdecimal()
+                or official_id in combined or type(hid) is not int
+                or hid in hf_seen or not isinstance(name, str)
+                or not name.strip() or row.get("minimum_pre_july_league_games", 0) < 5
+                or not row.get("witnesses")):
+            raise ValueError("TASK0060 duplicate/invalid identity or missing source")
+        hf_seen.add(hid)
+        combined[official_id] = (hid, name)
+    if len(combined) != 143 or len(hf_seen) != 143:
+        raise ValueError("expanded club mapping not bijective")
+    return combined, {
+        "original_identity_ledger_sha256": old_sha,
+        "identity_extension_sha256": new_sha,
+        "identity_version": "TASK0060_ADDITIVE_143",
+        "identity_combined_sha256": hashlib.sha256(
+            bytes.fromhex(old_sha) + bytes.fromhex(new_sha)
+        ).hexdigest(),
+    }
 
 
 def _aware(value: str) -> dt.datetime:
@@ -253,14 +308,20 @@ def build(*, capture: Path, identity: Path, history: Path,
     if now <= HISTORY_AVAILABLE_AT:
         raise ValueError("historical snapshot not published as-of freeze")
     matches, capture_meta = load_capture(capture, now)
-    mapping, identity_sha = frozen_team_bridge(identity)
+    mapping, extended_identity = verified_extended_team_bridge(
+        identity, TASK0060_EXTENSION_FILE
+    )
     qualified, rejected = qualify_fixtures(matches, mapping, now)
     state, history_meta = load_historical_state(history, now)
     accepted, model_rejected = model_fixtures(qualified, state)
     return {
         "task": "TASK0043", "phase": "REAL_PROSPECTIVE_RESEARCH_FREEZE",
         "frozen_at_utc": now.isoformat(), "capture": capture_meta,
-        "identity_ledger_sha256": identity_sha,
+        "identity_ledger_sha256": extended_identity["identity_combined_sha256"],
+        "identity_extension_sha256": extended_identity["identity_extension_sha256"],
+        "original_identity_ledger_sha256": extended_identity[
+            "original_identity_ledger_sha256"],
+        "identity_version": extended_identity["identity_version"],
         "history": {**history_meta, "history_manifest_sha256": EXPECTED_HISTORY_MANIFEST,
                     "published_at_utc": HISTORY_AVAILABLE_AT.isoformat()},
         "total_observed_fixtures": len(matches),
@@ -272,7 +333,7 @@ def build(*, capture: Path, identity: Path, history: Path,
         "not_realtime_trading_eligible": True,
         "limitations": [
             "Frozen historic training source was published in July 2026, 4 months before predictions; staleness is not corrected.",
-            "TASK0059: 14 independently matched historical league tuples; only the original 35-cup-match preapproved 70-club identity ledger is eligible. No new club mapping inferred.",
+            "TASK0060: 14 approved leagues, original 70 SHA-pinned clubs plus 73 separately reviewed and SHA-pinned additive identities; historic cohorts unchanged.",
             "Odds, result and CLV are not inputs or validated by this forecast.",
             "Local UTC system clock is not an independent timestamp authority; pre-kickoff Git commit required.",
         ],

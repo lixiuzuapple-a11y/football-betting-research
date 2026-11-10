@@ -1,0 +1,1498 @@
+{
+  "additional_clubs": 73,
+  "additions": [
+    {
+      "hf_team_id": 17,
+      "hf_team_name": "Chelsea",
+      "minimum_pre_july_league_games": 608,
+      "official_id": "7",
+      "official_zh": "切尔西",
+      "witnesses": [
+        {
+          "espn_event_id": "401878775",
+          "fd_name": "Chelsea",
+          "match_id": "2041876",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401878771",
+          "fd_name": "Chelsea",
+          "match_id": "2042024",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 9,
+      "hf_team_name": "Everton",
+      "minimum_pre_july_league_games": 608,
+      "official_id": "9",
+      "official_zh": "埃弗顿",
+      "witnesses": [
+        {
+          "espn_event_id": "401878774",
+          "fd_name": "Everton",
+          "match_id": "2041903",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401878771",
+          "fd_name": "Everton",
+          "match_id": "2042024",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 10,
+      "hf_team_name": "Fulham",
+      "minimum_pre_july_league_games": 380,
+      "official_id": "10",
+      "official_zh": "富勒姆",
+      "witnesses": [
+        {
+          "espn_event_id": "401879265",
+          "fd_name": "Fulham",
+          "match_id": "2041875",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401878770",
+          "fd_name": "Fulham",
+          "match_id": "2042037",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 31,
+      "hf_team_name": "Middlesbrough",
+      "minimum_pre_july_league_games": 654,
+      "official_id": "14",
+      "official_zh": "米德尔斯堡",
+      "witnesses": [
+        {
+          "espn_event_id": "401880227",
+          "fd_name": "Middlesbrough",
+          "match_id": "2041961",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "7779f9a75ffd184ab59f73d4fec088fd6acb4e5d43608bd399de00b5b90c2ed4"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 13,
+      "hf_team_name": "Newcastle",
+      "minimum_pre_july_league_games": 570,
+      "official_id": "15",
+      "official_zh": "纽卡斯尔联",
+      "witnesses": [
+        {
+          "espn_event_id": "401879258",
+          "fd_name": "Newcastle",
+          "match_id": "2042041",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 25,
+      "hf_team_name": "Norwich",
+      "minimum_pre_july_league_games": 419,
+      "official_id": "16",
+      "official_zh": "诺维奇",
+      "witnesses": [
+        {
+          "espn_event_id": "401880223",
+          "fd_name": "Norwich",
+          "match_id": "2041967",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "359c5d73d28b0b249db65896eee5b14e8b9403db25451299404bfb30e2d56713"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 64,
+      "hf_team_name": "Portsmouth",
+      "minimum_pre_july_league_games": 138,
+      "official_id": "17",
+      "official_zh": "朴次茅斯",
+      "witnesses": [
+        {
+          "espn_event_id": "401880237",
+          "fd_name": "Portsmouth",
+          "match_id": "2041898",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 22,
+      "hf_team_name": "Southampton",
+      "minimum_pre_july_league_games": 143,
+      "official_id": "18",
+      "official_zh": "南安普敦",
+      "witnesses": [
+        {
+          "espn_event_id": "401880237",
+          "fd_name": "Southampton",
+          "match_id": "2041898",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401880223",
+          "fd_name": "Southampton",
+          "match_id": "2041967",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "359c5d73d28b0b249db65896eee5b14e8b9403db25451299404bfb30e2d56713"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 16,
+      "hf_team_name": "Tottenham",
+      "minimum_pre_july_league_games": 608,
+      "official_id": "19",
+      "official_zh": "托特纳姆热刺",
+      "witnesses": [
+        {
+          "espn_event_id": "401878773",
+          "fd_name": "Tottenham",
+          "match_id": "2041882",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 157,
+      "hf_team_name": "Genoa",
+      "minimum_pre_july_league_games": 588,
+      "official_id": "26",
+      "official_zh": "热那亚",
+      "witnesses": [
+        {
+          "espn_event_id": "401874935",
+          "fd_name": "Genoa",
+          "match_id": "2042045",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 121,
+      "hf_team_name": "Elche",
+      "minimum_pre_july_league_games": 236,
+      "official_id": "30",
+      "official_zh": "埃尔切",
+      "witnesses": [
+        {
+          "espn_event_id": "401882854",
+          "fd_name": "Elche",
+          "match_id": "2041899",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401882837",
+          "fd_name": "Elche",
+          "match_id": "2042038",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 122,
+      "hf_team_name": "Levante",
+      "minimum_pre_july_league_games": 470,
+      "official_id": "33",
+      "official_zh": "莱万特",
+      "witnesses": [
+        {
+          "espn_event_id": "401882852",
+          "fd_name": "Levante",
+          "match_id": "2041928",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401882844",
+          "fd_name": "Levante",
+          "match_id": "2042011",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "2634b8d4eadb12708747da86778872eeb888dd21cc3919d7d445aed126cad6b3"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 1,
+      "hf_team_name": "Burnley",
+      "minimum_pre_july_league_games": 276,
+      "official_id": "42",
+      "official_zh": "伯恩利",
+      "witnesses": [
+        {
+          "espn_event_id": "401880218",
+          "fd_name": "Burnley",
+          "match_id": "2042010",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "2634b8d4eadb12708747da86778872eeb888dd21cc3919d7d445aed126cad6b3"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 44,
+      "hf_team_name": "Ipswich",
+      "minimum_pre_july_league_games": 38,
+      "official_id": "48",
+      "official_zh": "伊普斯维奇",
+      "witnesses": [
+        {
+          "espn_event_id": "401879265",
+          "fd_name": "Ipswich",
+          "match_id": "2041875",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401879259",
+          "fd_name": "Ipswich",
+          "match_id": "2042036",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 21,
+      "hf_team_name": "Leeds",
+      "minimum_pre_july_league_games": 152,
+      "official_id": "49",
+      "official_zh": "利兹联",
+      "witnesses": [
+        {
+          "espn_event_id": "401879260",
+          "fd_name": "Leeds",
+          "match_id": "2042057",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 32,
+      "hf_team_name": "Millwall",
+      "minimum_pre_july_league_games": 600,
+      "official_id": "51",
+      "official_zh": "米尔沃尔",
+      "witnesses": [
+        {
+          "espn_event_id": "401880215",
+          "fd_name": "Millwall",
+          "match_id": "2042025",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "d80cdc8d6db6e0465c202824f6fca60f1e223a7620945dc77486fcff76fc2378"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 4,
+      "hf_team_name": "Nott'm Forest",
+      "minimum_pre_july_league_games": 152,
+      "official_id": "52",
+      "official_zh": "诺丁汉森林",
+      "witnesses": [
+        {
+          "espn_event_id": "401879266",
+          "fd_name": "Nott'm Forest",
+          "match_id": "2041904",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401878769",
+          "fd_name": "Nott'm Forest",
+          "match_id": "2042065",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 36,
+      "hf_team_name": "Stoke",
+      "minimum_pre_july_league_games": 368,
+      "official_id": "59",
+      "official_zh": "斯托克城",
+      "witnesses": [
+        {
+          "espn_event_id": "401880227",
+          "fd_name": "Stoke",
+          "match_id": "2041961",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "7779f9a75ffd184ab59f73d4fec088fd6acb4e5d43608bd399de00b5b90c2ed4"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 20,
+      "hf_team_name": "Wolves",
+      "minimum_pre_july_league_games": 230,
+      "official_id": "64",
+      "official_zh": "伍尔弗汉普顿",
+      "witnesses": [
+        {
+          "espn_event_id": "401880218",
+          "fd_name": "Wolves",
+          "match_id": "2042010",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "2634b8d4eadb12708747da86778872eeb888dd21cc3919d7d445aed126cad6b3"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 15,
+      "hf_team_name": "Brentford",
+      "minimum_pre_july_league_games": 190,
+      "official_id": "69",
+      "official_zh": "布伦特福德",
+      "witnesses": [
+        {
+          "espn_event_id": "401878776",
+          "fd_name": "Brentford",
+          "match_id": "2041877",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401879262",
+          "fd_name": "Brentford",
+          "match_id": "2042035",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 33,
+      "hf_team_name": "Hull",
+      "minimum_pre_july_league_games": 114,
+      "official_id": "76",
+      "official_zh": "赫尔城",
+      "witnesses": [
+        {
+          "espn_event_id": "401878774",
+          "fd_name": "Hull",
+          "match_id": "2041903",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401878770",
+          "fd_name": "Hull",
+          "match_id": "2042037",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 164,
+      "hf_team_name": "Atalanta",
+      "minimum_pre_july_league_games": 590,
+      "official_id": "117",
+      "official_zh": "亚特兰大",
+      "witnesses": [
+        {
+          "espn_event_id": "401875005",
+          "fd_name": "Atalanta",
+          "match_id": "2041922",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401874978",
+          "fd_name": "Atalanta",
+          "match_id": "2042067",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "d80cdc8d6db6e0465c202824f6fca60f1e223a7620945dc77486fcff76fc2378"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 171,
+      "hf_team_name": "Bologna",
+      "minimum_pre_july_league_games": 589,
+      "official_id": "118",
+      "official_zh": "博洛尼亚",
+      "witnesses": [
+        {
+          "espn_event_id": "401874776",
+          "fd_name": "Bologna",
+          "match_id": "2041906",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401874953",
+          "fd_name": "Bologna",
+          "match_id": "2042040",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 170,
+      "hf_team_name": "Cagliari",
+      "minimum_pre_july_league_games": 549,
+      "official_id": "120",
+      "official_zh": "卡利亚里",
+      "witnesses": [
+        {
+          "espn_event_id": "401874764",
+          "fd_name": "Cagliari",
+          "match_id": "2041916",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401874762",
+          "fd_name": "Cagliari",
+          "match_id": "2042073",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "d80cdc8d6db6e0465c202824f6fca60f1e223a7620945dc77486fcff76fc2378"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 158,
+      "hf_team_name": "Fiorentina",
+      "minimum_pre_july_league_games": 628,
+      "official_id": "122",
+      "official_zh": "佛罗伦萨",
+      "witnesses": [
+        {
+          "espn_event_id": "401874774",
+          "fd_name": "Fiorentina",
+          "match_id": "2042059",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 166,
+      "hf_team_name": "Lazio",
+      "minimum_pre_july_league_games": 627,
+      "official_id": "125",
+      "official_zh": "拉齐奥",
+      "witnesses": [
+        {
+          "espn_event_id": "401874951",
+          "fd_name": "Lazio",
+          "match_id": "2041905",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401874765",
+          "fd_name": "Lazio",
+          "match_id": "2042069",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "d80cdc8d6db6e0465c202824f6fca60f1e223a7620945dc77486fcff76fc2378"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 165,
+      "hf_team_name": "Lecce",
+      "minimum_pre_july_league_games": 276,
+      "official_id": "126",
+      "official_zh": "莱切",
+      "witnesses": [
+        {
+          "espn_event_id": "401874776",
+          "fd_name": "Lecce",
+          "match_id": "2041906",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401874771",
+          "fd_name": "Lecce",
+          "match_id": "2042052",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 177,
+      "hf_team_name": "Parma",
+      "minimum_pre_july_league_games": 389,
+      "official_id": "130",
+      "official_zh": "帕尔马",
+      "witnesses": [
+        {
+          "espn_event_id": "401875021",
+          "fd_name": "Parma",
+          "match_id": "2041881",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401874784",
+          "fd_name": "Parma",
+          "match_id": "2042075",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "d80cdc8d6db6e0465c202824f6fca60f1e223a7620945dc77486fcff76fc2378"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 167,
+      "hf_team_name": "Udinese",
+      "minimum_pre_july_league_games": 628,
+      "official_id": "135",
+      "official_zh": "乌迪内斯",
+      "witnesses": [
+        {
+          "espn_event_id": "401874763",
+          "fd_name": "Udinese",
+          "match_id": "2041925",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401874771",
+          "fd_name": "Udinese",
+          "match_id": "2042052",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 169,
+      "hf_team_name": "Torino",
+      "minimum_pre_july_league_games": 551,
+      "official_id": "136",
+      "official_zh": "都灵",
+      "witnesses": [
+        {
+          "espn_event_id": "401874763",
+          "fd_name": "Torino",
+          "match_id": "2041925",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401874784",
+          "fd_name": "Torino",
+          "match_id": "2042075",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "d80cdc8d6db6e0465c202824f6fca60f1e223a7620945dc77486fcff76fc2378"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 259,
+      "hf_team_name": "Freiburg",
+      "minimum_pre_july_league_games": 516,
+      "official_id": "141",
+      "official_zh": "弗赖堡",
+      "witnesses": [
+        {
+          "espn_event_id": "401884778",
+          "fd_name": "Freiburg",
+          "match_id": "2041911",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401884771",
+          "fd_name": "Freiburg",
+          "match_id": "2042061",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "d80cdc8d6db6e0465c202824f6fca60f1e223a7620945dc77486fcff76fc2378"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 278,
+      "hf_team_name": "Hamburg",
+      "minimum_pre_july_league_games": 312,
+      "official_id": "142",
+      "official_zh": "汉堡",
+      "witnesses": [
+        {
+          "espn_event_id": "401884767",
+          "fd_name": "Hamburg",
+          "match_id": "2042033",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 269,
+      "hf_team_name": "Mainz",
+      "minimum_pre_july_league_games": 550,
+      "official_id": "147",
+      "official_zh": "美因茨",
+      "witnesses": [
+        {
+          "espn_event_id": "401884765",
+          "fd_name": "Mainz",
+          "match_id": "2042032",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 257,
+      "hf_team_name": "M'gladbach",
+      "minimum_pre_july_league_games": 550,
+      "official_id": "148",
+      "official_zh": "门兴格拉德巴赫",
+      "witnesses": [
+        {
+          "espn_event_id": "401884774",
+          "fd_name": "M'gladbach",
+          "match_id": "2041908",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401884768",
+          "fd_name": "M'gladbach",
+          "match_id": "2042066",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "d80cdc8d6db6e0465c202824f6fca60f1e223a7620945dc77486fcff76fc2378"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 273,
+      "hf_team_name": "Schalke 04",
+      "minimum_pre_july_league_games": 412,
+      "official_id": "151",
+      "official_zh": "沙尔克04",
+      "witnesses": [
+        {
+          "espn_event_id": "401884778",
+          "fd_name": "Schalke 04",
+          "match_id": "2041911",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401884765",
+          "fd_name": "Schalke 04",
+          "match_id": "2042032",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 262,
+      "hf_team_name": "Stuttgart",
+      "minimum_pre_july_league_games": 484,
+      "official_id": "152",
+      "official_zh": "斯图加特",
+      "witnesses": [
+        {
+          "espn_event_id": "401884767",
+          "fd_name": "Stuttgart",
+          "match_id": "2042033",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 254,
+      "hf_team_name": "Werder Bremen",
+      "minimum_pre_july_league_games": 516,
+      "official_id": "153",
+      "official_zh": "云达不来梅",
+      "witnesses": [
+        {
+          "espn_event_id": "401884766",
+          "fd_name": "Werder Bremen",
+          "match_id": "2042031",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 267,
+      "hf_team_name": "FC Koln",
+      "minimum_pre_july_league_games": 416,
+      "official_id": "166",
+      "official_zh": "科隆",
+      "witnesses": [
+        {
+          "espn_event_id": "401884774",
+          "fd_name": "FC Koln",
+          "match_id": "2041908",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401884770",
+          "fd_name": "FC Koln",
+          "match_id": "2042007",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "2634b8d4eadb12708747da86778872eeb888dd21cc3919d7d445aed126cad6b3"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 276,
+      "hf_team_name": "Paderborn",
+      "minimum_pre_july_league_games": 70,
+      "official_id": "169",
+      "official_zh": "帕德博恩",
+      "witnesses": [
+        {
+          "espn_event_id": "401884766",
+          "fd_name": "Paderborn",
+          "match_id": "2042031",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 270,
+      "hf_team_name": "Ein Frankfurt",
+      "minimum_pre_july_league_games": 516,
+      "official_id": "170",
+      "official_zh": "法兰克福",
+      "witnesses": [
+        {
+          "espn_event_id": "401884780",
+          "fd_name": "Ein Frankfurt",
+          "match_id": "2041883",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401884770",
+          "fd_name": "Ein Frankfurt",
+          "match_id": "2042007",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "2634b8d4eadb12708747da86778872eeb888dd21cc3919d7d445aed126cad6b3"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 216,
+      "hf_team_name": "Monaco",
+      "minimum_pre_july_league_games": 510,
+      "official_id": "184",
+      "official_zh": "摩纳哥",
+      "witnesses": [
+        {
+          "espn_event_id": "401876444",
+          "fd_name": "Monaco",
+          "match_id": "2041890",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401876435",
+          "fd_name": "Monaco",
+          "match_id": "2042064",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "d80cdc8d6db6e0465c202824f6fca60f1e223a7620945dc77486fcff76fc2378"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 207,
+      "hf_team_name": "Nice",
+      "minimum_pre_july_league_games": 588,
+      "official_id": "186",
+      "official_zh": "尼斯",
+      "witnesses": [
+        {
+          "espn_event_id": "401876443",
+          "fd_name": "Nice",
+          "match_id": "2041907",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401876434",
+          "fd_name": "Nice",
+          "match_id": "2042070",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "d80cdc8d6db6e0465c202824f6fca60f1e223a7620945dc77486fcff76fc2378"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 223,
+      "hf_team_name": "Strasbourg",
+      "minimum_pre_july_league_games": 319,
+      "official_id": "191",
+      "official_zh": "斯特拉斯堡",
+      "witnesses": [
+        {
+          "espn_event_id": "401876443",
+          "fd_name": "Strasbourg",
+          "match_id": "2041907",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401876432",
+          "fd_name": "Strasbourg",
+          "match_id": "2042039",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 220,
+      "hf_team_name": "Toulouse",
+      "minimum_pre_july_league_games": 512,
+      "official_id": "192",
+      "official_zh": "图卢兹",
+      "witnesses": [
+        {
+          "espn_event_id": "401876444",
+          "fd_name": "Toulouse",
+          "match_id": "2041890",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401876437",
+          "fd_name": "Toulouse",
+          "match_id": "2042009",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "2634b8d4eadb12708747da86778872eeb888dd21cc3919d7d445aed126cad6b3"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 218,
+      "hf_team_name": "Le Havre",
+      "minimum_pre_july_league_games": 102,
+      "official_id": "194",
+      "official_zh": "勒阿弗尔",
+      "witnesses": [
+        {
+          "espn_event_id": "401876446",
+          "fd_name": "Le Havre",
+          "match_id": "2041879",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 228,
+      "hf_team_name": "Troyes",
+      "minimum_pre_july_league_games": 190,
+      "official_id": "198",
+      "official_zh": "特鲁瓦",
+      "witnesses": [
+        {
+          "espn_event_id": "401876440",
+          "fd_name": "Troyes",
+          "match_id": "2041917",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 303,
+      "hf_team_name": "Ajax",
+      "minimum_pre_july_league_games": 561,
+      "official_id": "240",
+      "official_zh": "阿贾克斯",
+      "witnesses": [
+        {
+          "espn_event_id": "401875575",
+          "frozen_hf_fixture_id": 101552197,
+          "match_id": "2042063",
+          "reviewed_cohort": "TASK0036",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 309,
+      "hf_team_name": "AZ Alkmaar",
+      "minimum_pre_july_league_games": 572,
+      "official_id": "241",
+      "official_zh": "阿尔克马尔",
+      "witnesses": [
+        {
+          "espn_event_id": "401875591",
+          "frozen_hf_fixture_id": 101552181,
+          "match_id": "2041885",
+          "reviewed_cohort": "TASK0036",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 1483,
+      "hf_team_name": "Groningen",
+      "minimum_pre_july_league_games": 544,
+      "official_id": "246",
+      "official_zh": "格罗宁根",
+      "witnesses": [
+        {
+          "espn_event_id": "401875575",
+          "frozen_hf_fixture_id": 101552197,
+          "match_id": "2042063",
+          "reviewed_cohort": "TASK0036",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 301,
+      "hf_team_name": "Heerenveen",
+      "minimum_pre_july_league_games": 577,
+      "official_id": "247",
+      "official_zh": "海伦芬",
+      "witnesses": [
+        {
+          "espn_event_id": "401875583",
+          "frozen_hf_fixture_id": 101552189,
+          "match_id": "2042005",
+          "reviewed_cohort": "TASK0036",
+          "source_sha256": "2634b8d4eadb12708747da86778872eeb888dd21cc3919d7d445aed126cad6b3"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 300,
+      "hf_team_name": "Utrecht",
+      "minimum_pre_july_league_games": 588,
+      "official_id": "255",
+      "official_zh": "乌德勒支",
+      "witnesses": [
+        {
+          "espn_event_id": "401875587",
+          "frozen_hf_fixture_id": 101552185,
+          "match_id": "2041896",
+          "reviewed_cohort": "TASK0036",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 1484,
+      "hf_team_name": "Willem II",
+      "minimum_pre_july_league_games": 393,
+      "official_id": "257",
+      "official_zh": "威廉二世",
+      "witnesses": [
+        {
+          "espn_event_id": "401875587",
+          "frozen_hf_fixture_id": 101552185,
+          "match_id": "2041896",
+          "reviewed_cohort": "TASK0036",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 226,
+      "hf_team_name": "Angers",
+      "minimum_pre_july_league_games": 362,
+      "official_id": "459",
+      "official_zh": "昂热",
+      "witnesses": [
+        {
+          "espn_event_id": "401876439",
+          "fd_name": "Angers",
+          "match_id": "2042060",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "d80cdc8d6db6e0465c202824f6fca60f1e223a7620945dc77486fcff76fc2378"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 151,
+      "hf_team_name": "La Coruna",
+      "minimum_pre_july_league_games": 76,
+      "official_id": "509",
+      "official_zh": "拉科鲁尼亚",
+      "witnesses": [
+        {
+          "espn_event_id": "401882847",
+          "fd_name": "La Coruna",
+          "match_id": "2041909",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401882844",
+          "fd_name": "La Coruna",
+          "match_id": "2042011",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "2634b8d4eadb12708747da86778872eeb888dd21cc3919d7d445aed126cad6b3"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 119,
+      "hf_team_name": "Espanol",
+      "minimum_pre_july_league_games": 551,
+      "official_id": "510",
+      "official_zh": "西班牙人",
+      "witnesses": [
+        {
+          "espn_event_id": "401882843",
+          "fd_name": "Espanol",
+          "match_id": "2042026",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 3189,
+      "hf_team_name": "Malaga",
+      "minimum_pre_july_league_games": 312,
+      "official_id": "512",
+      "official_zh": "马拉加",
+      "witnesses": [
+        {
+          "espn_event_id": "401882841",
+          "fd_name": "Malaga",
+          "match_id": "2042068",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "d80cdc8d6db6e0465c202824f6fca60f1e223a7620945dc77486fcff76fc2378"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 110,
+      "hf_team_name": "Osasuna",
+      "minimum_pre_july_league_games": 473,
+      "official_id": "534",
+      "official_zh": "奥萨苏纳",
+      "witnesses": [
+        {
+          "espn_event_id": "401882855",
+          "fd_name": "Osasuna",
+          "match_id": "2041913",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401882840",
+          "fd_name": "Osasuna",
+          "match_id": "2042053",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 305,
+      "hf_team_name": "Zwolle",
+      "minimum_pre_july_league_games": 458,
+      "official_id": "537",
+      "official_zh": "兹沃勒",
+      "witnesses": [
+        {
+          "espn_event_id": "401875586",
+          "frozen_hf_fixture_id": 101552187,
+          "match_id": "2041901",
+          "reviewed_cohort": "TASK0036",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401875578",
+          "frozen_hf_fixture_id": 101552194,
+          "match_id": "2042051",
+          "reviewed_cohort": "TASK0036",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 128,
+      "hf_team_name": "Santander",
+      "minimum_pre_july_league_games": 76,
+      "official_id": "676",
+      "official_zh": "桑坦德竞技",
+      "witnesses": [
+        {
+          "espn_event_id": "401882850",
+          "fd_name": "Santander",
+          "match_id": "2041918",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401882840",
+          "fd_name": "Santander",
+          "match_id": "2042053",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 101,
+      "hf_team_name": "Sevilla",
+      "minimum_pre_july_league_games": 632,
+      "official_id": "677",
+      "official_zh": "塞维利亚",
+      "witnesses": [
+        {
+          "espn_event_id": "401882852",
+          "fd_name": "Sevilla",
+          "match_id": "2041928",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401882839",
+          "fd_name": "Sevilla",
+          "match_id": "2042071",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "d80cdc8d6db6e0465c202824f6fca60f1e223a7620945dc77486fcff76fc2378"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 102,
+      "hf_team_name": "Valencia",
+      "minimum_pre_july_league_games": 631,
+      "official_id": "678",
+      "official_zh": "巴伦西亚",
+      "witnesses": [
+        {
+          "espn_event_id": "401882850",
+          "fd_name": "Valencia",
+          "match_id": "2041918",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401882838",
+          "fd_name": "Valencia",
+          "match_id": "2042046",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 212,
+      "hf_team_name": "Lorient",
+      "minimum_pre_july_league_games": 448,
+      "official_id": "750",
+      "official_zh": "洛里昂",
+      "witnesses": [
+        {
+          "espn_event_id": "401876435",
+          "fd_name": "Lorient",
+          "match_id": "2042064",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "d80cdc8d6db6e0465c202824f6fca60f1e223a7620945dc77486fcff76fc2378"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 256,
+      "hf_team_name": "Augsburg",
+      "minimum_pre_july_league_games": 516,
+      "official_id": "808",
+      "official_zh": "奥格斯堡",
+      "witnesses": [
+        {
+          "espn_event_id": "401884764",
+          "fd_name": "Augsburg",
+          "match_id": "2042030",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 308,
+      "hf_team_name": "Excelsior",
+      "minimum_pre_july_league_games": 366,
+      "official_id": "816",
+      "official_zh": "SBV精英",
+      "witnesses": [
+        {
+          "espn_event_id": "401875583",
+          "frozen_hf_fixture_id": 101552189,
+          "match_id": "2042005",
+          "reviewed_cohort": "TASK0036",
+          "source_sha256": "2634b8d4eadb12708747da86778872eeb888dd21cc3919d7d445aed126cad6b3"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 100,
+      "hf_team_name": "Vallecano",
+      "minimum_pre_july_league_games": 430,
+      "official_id": "849",
+      "official_zh": "巴列卡诺",
+      "witnesses": [
+        {
+          "espn_event_id": "401882842",
+          "fd_name": "Vallecano",
+          "match_id": "2042078",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "d80cdc8d6db6e0465c202824f6fca60f1e223a7620945dc77486fcff76fc2378"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 310,
+      "hf_team_name": "Go Ahead Eagles",
+      "minimum_pre_july_league_games": 280,
+      "official_id": "872",
+      "official_zh": "前进之鹰",
+      "witnesses": [
+        {
+          "espn_event_id": "401875578",
+          "frozen_hf_fixture_id": 101552194,
+          "match_id": "2042051",
+          "reviewed_cohort": "TASK0036",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 1472,
+      "hf_team_name": "Cambuur",
+      "minimum_pre_july_league_games": 174,
+      "official_id": "1256",
+      "official_zh": "坎布尔",
+      "witnesses": [
+        {
+          "espn_event_id": "401875586",
+          "frozen_hf_fixture_id": 101552187,
+          "match_id": "2041901",
+          "reviewed_cohort": "TASK0036",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 268,
+      "hf_team_name": "Union Berlin",
+      "minimum_pre_july_league_games": 244,
+      "official_id": "1270",
+      "official_zh": "柏林联合",
+      "witnesses": [
+        {
+          "espn_event_id": "401884769",
+          "fd_name": "Union Berlin",
+          "match_id": "2042034",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 155,
+      "hf_team_name": "Frosinone",
+      "minimum_pre_july_league_games": 118,
+      "official_id": "1303",
+      "official_zh": "弗洛西诺内",
+      "witnesses": [
+        {
+          "espn_event_id": "401874754",
+          "fd_name": "Frosinone",
+          "match_id": "2041889",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401874959",
+          "fd_name": "Frosinone",
+          "match_id": "2042008",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "2634b8d4eadb12708747da86778872eeb888dd21cc3919d7d445aed126cad6b3"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 1474,
+      "hf_team_name": "Telstar",
+      "minimum_pre_july_league_games": 40,
+      "official_id": "1475",
+      "official_zh": "特尔斯达",
+      "witnesses": [
+        {
+          "espn_event_id": "401875580",
+          "frozen_hf_fixture_id": 101552192,
+          "match_id": "2042044",
+          "reviewed_cohort": "TASK0036",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 163,
+      "hf_team_name": "Sassuolo",
+      "minimum_pre_july_league_games": 474,
+      "official_id": "1509",
+      "official_zh": "萨索洛",
+      "witnesses": [
+        {
+          "espn_event_id": "401874789",
+          "fd_name": "Sassuolo",
+          "match_id": "2041912",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401874959",
+          "fd_name": "Sassuolo",
+          "match_id": "2042008",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "2634b8d4eadb12708747da86778872eeb888dd21cc3919d7d445aed126cad6b3"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 176,
+      "hf_team_name": "Venezia",
+      "minimum_pre_july_league_games": 80,
+      "official_id": "1029209",
+      "official_zh": "威尼斯",
+      "witnesses": [
+        {
+          "espn_event_id": "401875005",
+          "fd_name": "Venezia",
+          "match_id": "2041922",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401874760",
+          "fd_name": "Venezia",
+          "match_id": "2042028",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "b5958a191228593ed86594a86cfc2d19ded4890b1cf544978b38a62a4a2f5d99"
+        }
+      ]
+    },
+    {
+      "hf_team_id": 160,
+      "hf_team_name": "Monza",
+      "minimum_pre_july_league_games": 120,
+      "official_id": "1039249",
+      "official_zh": "蒙扎",
+      "witnesses": [
+        {
+          "espn_event_id": "401874951",
+          "fd_name": "Monza",
+          "match_id": "2041905",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "4403336b6187e302b27b0bc7e1021abdb460c850804c4cb2ad35c99f2df8d9bd"
+        },
+        {
+          "espn_event_id": "401874762",
+          "fd_name": "Monza",
+          "match_id": "2042073",
+          "reviewed_cohort": "TASK0034",
+          "source_sha256": "d80cdc8d6db6e0465c202824f6fca60f1e223a7620945dc77486fcff76fc2378"
+        }
+      ]
+    }
+  ],
+  "frozen_training_manifest_sha256": "eb3c37793866a27f8c1520c78a69e6098fdf79f08622b37fed64070fa1f8748f",
+  "limits": [
+    "Only previously accepted match identities, verified original HTTP source SHA.",
+    "No retroactive pre-kickoff forecasts; no new model training or market input.",
+    "14-league policy and original 70 club identity crosswalk unchanged.",
+    "Model calibration, CLV, betting profitability and positive EV unproven."
+  ],
+  "original_70_unchanged": true,
+  "original_bridge_sha256": "13d373dbab8363e606cfaf39c478b6035c35c86ad0ffcbf4c53e6e5014f63f2f",
+  "original_clubs": 70,
+  "phase": "STRICT_ADDITIVE_CLUB_IDENTITY_ONLY",
+  "rejected_source_observations": [
+    {
+      "fd_name": "Inter",
+      "match_id": "2041881",
+      "matching_ids": [
+        159,
+        6349
+      ],
+      "official_id": "123",
+      "reason": "HF_fd_name_not_unique"
+    },
+    {
+      "fd_name": "Le Mans",
+      "match_id": "2042009",
+      "matching_ids": [],
+      "official_id": "195",
+      "reason": "HF_fd_name_not_unique"
+    },
+    {
+      "fd_name": "Lincoln",
+      "match_id": "2042025",
+      "matching_ids": [],
+      "official_id": "99",
+      "reason": "HF_fd_name_not_unique"
+    },
+    {
+      "games": 2,
+      "official_id": "2194",
+      "reason": "frozen_league_training_below_5"
+    },
+    {
+      "fd_name": "Inter",
+      "match_id": "2042040",
+      "matching_ids": [
+        159,
+        6349
+      ],
+      "official_id": "123",
+      "reason": "HF_fd_name_not_unique"
+    },
+    {
+      "fd_name": "Ath Bilbao",
+      "match_id": "2042046",
+      "matching_ids": [
+        107,
+        4643
+      ],
+      "official_id": "506",
+      "reason": "HF_fd_name_not_unique"
+    }
+  ],
+  "reviewed_0034_report_sha256": "4049f5374e18980ec76f3bfc9d830e95eb34919e2d08fc829d8681584a1f0fdc",
+  "reviewed_0036_report_sha256": "2887172d9cf138e96031bf04b95e8016b9cc2f7416dabb6ae8f48d60fefc78fa",
+  "task": "TASK0060",
+  "total_authorized_clubs": 143
+}
