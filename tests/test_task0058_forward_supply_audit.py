@@ -200,3 +200,43 @@ def test_naive_time_or_invalid_interval_rejected(tmp_path, monkeypatch):
         a.audit_runs([root], bridge, first_utc=END, last_utc=START)
     with pytest.raises(ValueError, match="naive"):
         a.as_utc("2026-11-10T11:15:00")
+
+
+def test_prior_audit_pins_exact_completed_source_ids_not_late_new_cycles(tmp_path, monkeypatch):
+    import shutil
+    root, bridge, _ = fixture_cycle(tmp_path)
+    original = audit_fixture(root, bridge, monkeypatch)
+    first = a.pinned_completed_roots(tmp_path, original)
+    assert first == [root.resolve()]
+    later = tmp_path / "run-20261108T090000000000Z-bbbbbb"
+    shutil.copytree(root, later)
+    # A new, later-completed cycle has overlapping original timestamps, but
+    # cannot mutate which run IDs were in the previous accepted experiment.
+    assert a.pinned_completed_roots(tmp_path, original) == [root.resolve()]
+    reconstructed = a.audit_runs(
+        first, bridge, first_utc=START, last_utc=END
+    )
+    assert reconstructed == original
+
+
+def test_tampered_frozen_cycle_sha_must_refuse_replay(tmp_path, monkeypatch):
+    root, bridge, _ = fixture_cycle(tmp_path)
+    snapshot = audit_fixture(root, bridge, monkeypatch)
+    db = sqlite3.connect(root / "official.sqlite3")
+    db.execute("UPDATE captures SET match_count=777 WHERE capture_id=1")
+    db.commit()
+    db.close()
+    with pytest.raises(ValueError, match="SHA mismatch"):
+        a.pinned_completed_roots(tmp_path, snapshot)
+
+
+def test_duplicate_or_unsafe_frozen_run_identity_rejected(tmp_path, monkeypatch):
+    root, bridge, _ = fixture_cycle(tmp_path)
+    snap = audit_fixture(root, bridge, monkeypatch)
+    snap["source_run_receipts"].append(dict(snap["source_run_receipts"][0]))
+    with pytest.raises(ValueError, match="duplicate"):
+        a.pinned_completed_roots(tmp_path, snap)
+    snap["source_run_receipts"].pop()
+    snap["source_run_receipts"][0]["run_id"] = "../untracked"
+    with pytest.raises(ValueError, match="invalid"):
+        a.pinned_completed_roots(tmp_path, snap)

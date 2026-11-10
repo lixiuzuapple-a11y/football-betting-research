@@ -42,6 +42,43 @@ def hash_file(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def pinned_completed_roots(collector_runs: Path, frozen: dict) -> list[Path]:
+    """Reproduce a previous as-of audit, never ingest later-completed runs.
+
+    The original 2026-11-10 report was built while a two-hour collection was
+    still active. That cycle finished LATER and contains earlier timestamps.
+    A time-window filter alone therefore changes the cohort on replay.
+    """
+    if (frozen.get("task") != "TASK0058"
+            or frozen.get("status") != "DESCRIPTIVE_OFFICIAL_SUPPLY_AUDIT_NO_FORECAST"
+            or not isinstance(frozen.get("source_run_receipts"), list)
+            or not frozen["source_run_receipts"]):
+        raise ValueError("not a valid previously frozen source cohort report")
+    roots = []
+    seen = set()
+    base = collector_runs.resolve()
+    for receipt in frozen["source_run_receipts"]:
+        name = receipt.get("run_id")
+        if (not isinstance(name, str) or not RUN_PATTERN.fullmatch(name)
+                or name in seen):
+            raise ValueError("invalid/duplicate frozen source cycle ID")
+        seen.add(name)
+        root = (base / name).resolve()
+        if not root.is_relative_to(base):
+            raise ValueError("unsafe frozen cycle path")
+        for rel, key in (
+            ("CYCLE_OUTCOME.json", "completed_cycle_outcome_sha256"),
+            ("official.sqlite3", "source_sqlite_sha256"),
+        ):
+            recorded = receipt.get(key)
+            if not isinstance(recorded, str) or len(recorded) != 64:
+                raise ValueError("missing frozen cycle SHA")
+            if hash_file(root / rel) != recorded:
+                raise ValueError("frozen completed cycle file SHA mismatch")
+        roots.append(root)
+    return roots
+
+
 def as_utc(value: str) -> dt.datetime:
     parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
     if parsed.tzinfo is None or parsed.utcoffset() is None:
@@ -278,13 +315,23 @@ def main() -> None:
     ap.add_argument("--identity", required=True, type=Path)
     ap.add_argument("--start-utc", required=True)
     ap.add_argument("--end-utc", required=True)
+    ap.add_argument("--pinned-source-report", type=Path,
+                    help="Use exact original completed run IDs and verify their SHA; "
+                         "prevents late-completed cycles from altering historical N")
     ap.add_argument("--out", required=True, type=Path)
     args = ap.parse_args()
-    roots = [x for x in args.collector_runs.iterdir()
-             if x.is_dir() and RUN_PATTERN.fullmatch(x.name)
-             and (x / "CYCLE_OUTCOME.json").is_file()]
+    frozen = None
+    if args.pinned_source_report:
+        frozen = json.loads(args.pinned_source_report.read_bytes())
+        roots = pinned_completed_roots(args.collector_runs, frozen)
+    else:
+        roots = [x for x in args.collector_runs.iterdir()
+                 if x.is_dir() and RUN_PATTERN.fullmatch(x.name)
+                 and (x / "CYCLE_OUTCOME.json").is_file()]
     result = audit_runs(roots, args.identity,
                         first_utc=as_utc(args.start_utc), last_utc=as_utc(args.end_utc))
+    if frozen and result != frozen:
+        raise ValueError("frozen completed-cycle replay arithmetic/receipts mismatch")
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with args.out.open("x", encoding="utf-8") as file:
         json.dump(result, file, indent=2, sort_keys=True, ensure_ascii=False)
