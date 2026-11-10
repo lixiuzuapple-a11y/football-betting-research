@@ -1,0 +1,16 @@
+{
+  "candidates_seen": 1,
+  "contemporaneous_markets_accepted": 0,
+  "no_bet_no_model_selection_no_EV": true,
+  "results": [
+    {
+      "official_match_id": "2042640",
+      "provider_event_id": "tipsaudit:15694",
+      "reason": "CROSS_PROVIDER_IDENTITY_NOT_INDEPENDENTLY_APPROVED",
+      "status": "REJECTED_UNVERIFIED_SAME_TIME_MARKET"
+    }
+  ],
+  "source_model_ledger_sha256": "354cf7cd345d703b7a3a9c75c54231d6ad39f3feefafafe9d76ec987ded8f6ff",
+  "stage": "INDEPENDENT_SAME_TIME_1X2_GATE",
+  "task": "TASK0061"
+}

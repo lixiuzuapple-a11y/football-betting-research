@@ -455,6 +455,40 @@ source-only aggregate:
 `research/task0060_club_expansion_source_counterfactual_20261110.json`.
 The separately closed SFC14/R9 project was not accessed.
 
+**TASK0061 Nov10 two-stage audit: canonical 14-league identity census
+ACCEPT; same-match + same-time international odds still NO-GO.**
+The project now has a persistent, source-versioned, extensible *historical*
+club registry at `research/registry/v1-20261110/`: **501 distinct HF club
+keys** associated with **605 league-member records** across all 14
+preapproved leagues, original **143 preapproved official↔HF identities**,
+**358 HF-only unapproved candidates**, **503 source-name alias candidates**
+(never automatically accepted) and a separate 14-league summary.
+Frozen HF source as-of July 5 2026 and both approved identity ledger
+SHA values remain immutable. These are historic league members, **NOT
+the 2026/27 active roster**. New names, 90% similarity or a single matched
+opponent never authorize a prediction; aliases need independently verified
+two-side event ID/time/type witnesses.
+
+The real original Git-frozen Lens–Marseille Nov8 match was joined as a
+*research-only candidate* to the Nov10-retrieved, CC BY-4.0 TipsAudit
+public postmatch page (`643fa7f841c65a737487ca406a2eefb5dcf307ba24289f967e658fb90a95172e`);
+this page self-reports a Nov1 prediction record and shows Pinnacle-style
+2.06/3.94/3.20 prices, but was observed by EV-Lab **after the game**,
+has no independently approved event crosswalk, and proves no market quote
+was contemporaneously available when the model froze Nov8 07:14 UTC.
+The actual strict gate correctly returned **0/1 accepted contemporaneous
+international quotes**. The production-independent
+`tools/task0061_same_time_odds.py` now enforces exact two-side identity,
+kickoff, all three full-time 1X2 selections, bookmaker update time,
+<10-minute pre-model raw-response receipt, separate pre-model Git
+receipt anchor and original raw SHA; no guessed timestamps, no odds in
+the prediction model, no EV/ROI claim. The Odds API requires a licensed
+key and paid history for retrospective snapshots; NO new price
+collector, API key or subscription has been installed. See
+`REPORTS/EVLAB-TASK0061-14-LEAGUE-REGISTRY-AND-PIT-ODDS-20261110.md`
+and `REVIEWS/EVLAB-TASK0061-INDEPENDENT-QA-20261110.md`.
+Previously accepted prospective N=3 remains unchanged; 14/R9 remains closed.
+
 ## Research principles
 
 Stated in full in [`docs/project-charter.md`](docs/project-charter.md):

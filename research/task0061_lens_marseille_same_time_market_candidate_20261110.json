@@ -1,0 +1,41 @@
+[
+  {
+    "official_match_id": "2042640",
+    "provider_event_id": "tipsaudit:15694",
+    "sport_key": "soccer_france_ligue_one",
+    "bookmaker_key": "reported_pinnacle_snapshot",
+    "market_key": "h2h",
+    "period": "FULL_TIME_90",
+    "identity_bridge": {
+      "status": "PUBLISHED_MATCH_PAGE_NOT_INDEPENDENT_EVENT_ID_BRIDGE",
+      "official_match_id": "2042640",
+      "provider_event_id": "tipsaudit:15694",
+      "league_zh": "法甲",
+      "hf_home_id": 214,
+      "hf_away_id": 209,
+      "official_home_id": "179",
+      "official_away_id": "182",
+      "provider_home_team": "Lens",
+      "provider_away_team": "Marseille",
+      "kickoff_utc": "2026-11-08T19:45:00Z",
+      "evidence_sha256": null
+    },
+    "receipt": {
+      "source_provider": "tipsaudit_public_postmatch_page_not_live_1x2_api",
+      "source_url": "https://tipsaudit.com/match/15694/lens-vs-marseille-2026-11-08",
+      "http_status": null,
+      "first_received_utc": "2026-11-10T07:20:01.609383+00:00",
+      "git_anchor_time_utc": null,
+      "raw_sha256": "643fa7f841c65a737487ca406a2eefb5dcf307ba24289f967e658fb90a95172e",
+      "relative_raw_path": "tipsaudit-lens-marseille-20261108-postmatch.html"
+    },
+    "site_self_reported_prediction_log_utc": "2026-11-01T06:01:33Z",
+    "site_postmatch_reported_first_bookmaker_price_home_draw_away": [
+      2.06,
+      3.94,
+      3.2
+    ],
+    "site_quote_update_timestamp_at_model_freeze": null,
+    "research_disclaimer": "Real postmatch page captured Nov10. Earlier site record is self-reported and can include prices added later. No independent pre-model book timestamp, git anchor or verified market event ID; not valid contemporaneous price."
+  }
+]

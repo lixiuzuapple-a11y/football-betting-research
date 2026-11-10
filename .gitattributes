@@ -17,6 +17,12 @@
 # CRLF vs LF transforms would invalidate its official source SHA checkpoint.
 research/task0060_verified_club_extension_20261110.json -text -eol -diff
 
+# TASK0061 reproducible club registry and strict-market QA evidence:
+# these source files are byte/SHA frozen. Do not normalize CRLF on Windows.
+research/registry/v1-20261110/*.csv -text -diff
+research/registry/v1-20261110/*.json -text -diff
+research/task0061_*20261110.json -text -diff
+
 # Windows-only scripts keep CRLF so they stay runnable in cmd.exe and PowerShell.
 *.bat text eol=crlf
 *.cmd text eol=crlf
