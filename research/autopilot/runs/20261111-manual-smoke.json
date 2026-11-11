@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1",
+  "run_id": "2026-11-11T01-18-38Z-manual-smoke",
+  "trigger": "manual",
+  "observed_at_utc": "2026-11-11T01:18:38Z",
+  "observed_main_sha": "6989b18574848612beb50aff0119385c39542f04",
+  "source_status": {
+    "github_read": "PASS",
+    "github_branch_write": "DENIED_403",
+    "webcodex_windows": "CONNECTED",
+    "managed_worktree": "CREATED_CLEAN_FROM_MAIN",
+    "cloud_service_health": "NOT_CHECKED",
+    "scheduled_chatgpt_execution": "NOT_YET_TESTED"
+  },
+  "decision": "RUN",
+  "work_package": "Pilot infrastructure and non-destructive project status audit",
+  "evidence": [
+    "WebCodex head 6989b185; local branch main initially clean and origin/main aligned.",
+    "GitHub REST repo and README fetch succeeded; direct branch creation denied 403.",
+    "Isolated managed worktree from exact main SHA; two pilot spec files added.",
+    "PowerShell validation confirmed both files exist and git diff --check exited zero."
+  ],
+  "validations": {
+    "docs_exist": true,
+    "git_diff_check_exit": 0,
+    "note": "git diff --check does not include untracked files; content reviewed before creation"
+  },
+  "mutations": [
+    "Isolated worktree only: skills/research-autopilot/SKILL.md",
+    "Isolated worktree only: docs/AUTOPILOT_PILOT_20261111.md"
+  ],
+  "limitations": [
+    "This is a user-initiated manual invocation, not autonomous wake-up.",
+    "No cloud timer/service verification in this smoke test.",
+    "No successful Git remote write demonstrated yet.",
+    "No ChatGPT scheduler invocation demonstrated yet."
+  ],
+  "next_action": "Commit/push only on isolated pilot branch if authorized; schedule seven bounded runs and verify first unattended wake without claiming premature success.",
+  "owner_action_required": false
+}
