@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "run_id": "2026-11-11T03-40-39Z-manual-round1-cloud-forward",
+  "trigger": "manual",
+  "observed_at_utc": "2026-11-11T03:40:39Z",
+  "observed_main_sha": "6989b18574848612beb50aff0119385c39542f04",
+  "sources": [
+    "GitHub main 6989b18 confirmed with git ls-remote",
+    "Tencent cloud via read-only ssh evlab-cloud; 2026-11-11 11:15 forward timer and 11:40 audit timer"
+  ],
+  "decision": "RUN",
+  "work_package": "R1 independently inspect first Nov11 production forward timer, raw bytes, no-eligible semantics, and watchdog evidence",
+  "observed_evidence": {
+    "forward_timer_last_trigger": "2026-11-11 11:15:01 Asia/Shanghai",
+    "forward_service": "Result=success; ExecMainStatus=0; paired STARTED 11:15:01 / FINISHED 11:15:10",
+    "capture_received_utc": "2026-11-11T03:15:09.664112Z",
+    "raw_sha256": "1b1a4fedd777782fa63e8e633965ed8795a600ad0d703646d8b0148a704f8345",
+    "source_observed": 12,
+    "eligible": 0,
+    "rejections": {
+      "league_not_approved_for_forward_model": 12
+    },
+    "no_new_freeze_status": "NO_NEW_ELIGIBLE_PREMATCH_FIXTURES",
+    "watchdog_timer_last_trigger": "2026-11-11 11:40:01 Asia/Shanghai",
+    "watchdog_status": "PASS",
+    "watchdog_issues": [],
+    "watchdog_evidence_file": "/home/ubuntu/evlab-forward-publisher-20261108/operational-audits/20261111-forward-034001662550-271ba9d9.json",
+    "watchdog_evidence_sha256": "7e956287492985cb6db8d9a58e6f2c9a4844a0abb9ffa4e9059a811a58376a18"
+  },
+  "validation": [
+    "Read-only journal confirms official GET HTTP200, 12 events, result NO_NEW, and exit0.",
+    "Independent gzip -cd raw | sha256sum equals journal/NO_NEW_FREEZE.json 1b1a4f... raw_source_sha256.",
+    "Read back NO_NEW_FREEZE.json: 12 league rejections, zero model/crosswalk qualified, skipped_previous_ids empty.",
+    "Independent TASK0055 auditor itself executed by systemd 11:40:01, output PASS with matched STARTED/FINISHED, no anomalies, issues=[]. Its JSON raw SHA-256 independently checked."
+  ],
+  "mutations": [
+    "None in production/main. This unique run evidence record added only to experimental branch."
+  ],
+  "limitations": [
+    "No new approved prospective fixture or forecast; no opportunity to evaluate same-fixture market/PIT/CLV/EV.",
+    "Watchdog PASS proves scheduled execution, not model performance, profitability, or official source completeness beyond returned list."
+  ],
+  "next_action": "R2: independently verify previously accepted N=3 descriptive summary integrity and frozen evidence using source hash, cohort arithmetic and targeted tests. Avoid using N=3 as selection evidence.",
+  "owner_action_required": false
+}
