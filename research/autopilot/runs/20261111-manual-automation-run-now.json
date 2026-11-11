@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1",
+  "run_id": "2026-11-11T01-24-02Z-manual-automation-run-now",
+  "trigger": "manual",
+  "observed_at_utc": "2026-11-11T01:24:02Z",
+  "automation_invocation": "run_now returned inline_run and this turn executed the saved prompt; this is not a scheduled unattended wake",
+  "observed_main_sha": "6989b18574848612beb50aff0119385c39542f04",
+  "pilot_branch_sha_before": "0d39e03dd0c58f46d62dabcbf626bc99d760891b",
+  "source_status": {
+    "github_read": "PASS pilot skill/docs/prior run via branch ref, main README via main ref",
+    "github_write": "403 direct connector branch/PR create; WebCodex git push previously succeeded",
+    "webcodex": "CONNECTED",
+    "git_ls_remote_main": "MATCHED local main",
+    "cloud_health": "NOT_RECHECKED (only 2026-11-10 report evidence)",
+    "automated_unattended_wake": "NOT_YET_OBSERVED"
+  },
+  "decision": "RUN",
+  "work_package": "Independent continuity/freshness audit of TASK0063 identity and TASK0061 gate regression",
+  "evidence": [
+    "Read TASK0063 report and independent QA (2026-11-10): 8 real official fixtures, none within approved 14 league forward policy; 18 odds API Ligue 1 fixtures, 4 names/identities candidate matches but zero approved official/provider event bridges.",
+    "Read TASK0062 report: free odds sample is a supplementary source, not accepted independent PIT or tradable market observation.",
+    "GitHub branch fetch returned pilot SKILL, pilot runbook and earlier manual-smoke record, confirming persisted branch read-after-write.",
+    "git ls-remote origin/main equals 6989b18574848612beb50aff0119385c39542f04; local HEAD in isolated branch 0d39e03.",
+    "git diff main...pilot branch listed only three pilot files and git status --short had no pending changes."
+  ],
+  "validation": {
+    "python -m pytest -q tests/test_task0061_registry_and_odds.py": "PASS 16 passed in 0.47s",
+    "independent_QA": "Report cautions preserved: zero same-fixture market comparator, no PIT, no CLV, no positive EV"
+  },
+  "mutations": [
+    "This run record will be appended only on experiment/research-autopilot-pilot-20261111; main and production untouched."
+  ],
+  "limitations": [
+    "Manual on-demand run, not unattended scheduled trigger.",
+    "No live official-match retrieval or current cloud service audit in this run.",
+    "No validated real same-fixture/time-point market observation."
+  ],
+  "next_action": "Await first truly scheduled wake, read prior run records and verify dedup; re-check fresh official/model event evidence only when available. Next bounded candidate dates after original snapshot: 2026-11-20/21/28; they are not approved official matches.",
+  "owner_action_required": false
+}
