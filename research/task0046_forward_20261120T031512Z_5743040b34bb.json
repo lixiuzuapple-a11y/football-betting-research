@@ -1,0 +1,675 @@
+{
+  "commit_preflight_utc": "2026-11-20T03:15:12.490707+00:00",
+  "frozen_at_utc": "2026-11-20T03:15:10.131794+00:00",
+  "frozen_file_sha256": "5743040b34bbd1576e9ca035a9fb04a55326f0225f697a4c7fbd36e206270396",
+  "historical_fixture_sha256": "7ba90661dbed29eb940daf5ea385c7d76d5751d16be86bd9063293a982abc7b7",
+  "historical_manifest_sha256": "eb3c37793866a27f8c1520c78a69e6098fdf79f08622b37fed64070fa1f8748f",
+  "identity_extension_sha256": "9ac60ea590c0bdf0702024ccbe2712f27dfbe45445f74e70e8df34cd233056c8",
+  "identity_ledger_sha256": "749f06083b1d4a3f8eb2b972a1b09fdbc532e0faaf1802a89dd20f9c5fae2077",
+  "identity_version": "TASK0060_ADDITIVE_143",
+  "market_odds": null,
+  "market_quote_status": "UNVERIFIED_NOT_INCLUDED",
+  "market_quote_time_utc": null,
+  "minimum_kickoff_utc": "2026-11-20T19:30:00+00:00",
+  "model_keys": [
+    "global_frequency",
+    "league_frequency",
+    "pooled_elo_davidson",
+    "league_poisson"
+  ],
+  "no_bet_or_buy": true,
+  "no_market_ev_or_profit_claim": true,
+  "official_raw_sha256": "58497771029cf40fc042127f350aac6e708431d63ce1ae3ae09cb2fad8380d62",
+  "official_received_utc": "2026-11-20T03:15:10.112308+00:00",
+  "official_result_status": "PENDING",
+  "original_identity_ledger_sha256": "13d373dbab8363e606cfaf39c478b6035c35c86ad0ffcbf4c53e6e5014f63f2f",
+  "predictions": [
+    {
+      "hf_away_id": 267,
+      "hf_home_id": 255,
+      "hf_league_id": 11,
+      "kickoff_utc": "2026-11-20T19:30:00+00:00",
+      "league": "德甲",
+      "matchId": "2042884",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.43838452553736823,
+          0.24703863892738875,
+          0.31457683553524296
+        ],
+        "league_poisson": [
+          0.8611457207658958,
+          0.08514172918766552,
+          0.053712550046438594
+        ],
+        "pooled_elo_davidson": [
+          0.7521733387002624,
+          0.1696952792812686,
+          0.07813138201846899
+        ]
+      },
+      "official_away_id": "166",
+      "official_home_id": "137"
+    },
+    {
+      "hf_away_id": 10,
+      "hf_home_id": 2,
+      "hf_league_id": 1,
+      "kickoff_utc": "2026-11-21T12:30:00+00:00",
+      "league": "英超",
+      "matchId": "2042906",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.42697531094064195,
+          0.2725716839204588,
+          0.3004530051388992
+        ],
+        "league_poisson": [
+          0.7473377952276454,
+          0.16386172362095675,
+          0.08880048115139781
+        ],
+        "pooled_elo_davidson": [
+          0.6231183138966742,
+          0.2193290432469851,
+          0.15755264285634066
+        ]
+      },
+      "official_away_id": "10",
+      "official_home_id": "12"
+    },
+    {
+      "hf_away_id": 170,
+      "hf_home_id": 192,
+      "hf_league_id": 7,
+      "kickoff_utc": "2026-11-21T14:00:00+00:00",
+      "league": "意甲",
+      "matchId": "2042908",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.3971863357587367,
+          0.2489038920190314,
+          0.3539097722222318
+        ],
+        "league_poisson": [
+          0.6724017562408093,
+          0.20021112779857772,
+          0.12738711596061292
+        ],
+        "pooled_elo_davidson": [
+          0.5670381435961585,
+          0.23470362280654322,
+          0.19825823359729827
+        ]
+      },
+      "official_away_id": "120",
+      "official_home_id": "1040070"
+    },
+    {
+      "hf_away_id": 266,
+      "hf_home_id": 257,
+      "hf_league_id": 11,
+      "kickoff_utc": "2026-11-21T14:30:00+00:00",
+      "league": "德甲",
+      "matchId": "2042909",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.43838452553736823,
+          0.24703863892738875,
+          0.31457683553524296
+        ],
+        "league_poisson": [
+          0.23436571369452006,
+          0.2429041478688484,
+          0.5227301384366315
+        ],
+        "pooled_elo_davidson": [
+          0.2813488412610668,
+          0.25328891232945344,
+          0.4653622464094799
+        ]
+      },
+      "official_away_id": "140",
+      "official_home_id": "148"
+    },
+    {
+      "hf_away_id": 258,
+      "hf_home_id": 270,
+      "hf_league_id": 11,
+      "kickoff_utc": "2026-11-21T14:30:00+00:00",
+      "league": "德甲",
+      "matchId": "2042911",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.43838452553736823,
+          0.24703863892738875,
+          0.31457683553524296
+        ],
+        "league_poisson": [
+          0.3783842398318328,
+          0.21903753403023196,
+          0.40257822613793526
+        ],
+        "pooled_elo_davidson": [
+          0.3136172629756117,
+          0.2569030836120456,
+          0.42947965341234273
+        ]
+      },
+      "official_away_id": "158",
+      "official_home_id": "170"
+    },
+    {
+      "hf_away_id": 261,
+      "hf_home_id": 268,
+      "hf_league_id": 11,
+      "kickoff_utc": "2026-11-21T14:30:00+00:00",
+      "league": "德甲",
+      "matchId": "2042912",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.43838452553736823,
+          0.24703863892738875,
+          0.31457683553524296
+        ],
+        "league_poisson": [
+          0.35387760638207943,
+          0.24000296852774458,
+          0.406119425090176
+        ],
+        "pooled_elo_davidson": [
+          0.2948162781249218,
+          0.2550130330573449,
+          0.4501706888177335
+        ]
+      },
+      "official_away_id": "1619",
+      "official_home_id": "1270"
+    },
+    {
+      "hf_away_id": 4,
+      "hf_home_id": 5,
+      "hf_league_id": 1,
+      "kickoff_utc": "2026-11-21T15:00:00+00:00",
+      "league": "英超",
+      "matchId": "2042913",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.42697531094064195,
+          0.2725716839204588,
+          0.3004530051388992
+        ],
+        "league_poisson": [
+          0.42386195309044106,
+          0.2532483516646775,
+          0.3228896952448815
+        ],
+        "pooled_elo_davidson": [
+          0.4557590336211469,
+          0.25441158666112673,
+          0.2898293797177263
+        ]
+      },
+      "official_away_id": "52",
+      "official_home_id": "67"
+    },
+    {
+      "hf_away_id": 43,
+      "hf_home_id": 14,
+      "hf_league_id": 1,
+      "kickoff_utc": "2026-11-21T15:00:00+00:00",
+      "league": "英超",
+      "matchId": "2042915",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.42697531094064195,
+          0.2725716839204588,
+          0.3004530051388992
+        ],
+        "league_poisson": [
+          0.5349145519977024,
+          0.24905313230916187,
+          0.21603231569313563
+        ],
+        "pooled_elo_davidson": [
+          0.5409337140486846,
+          0.24062381398500304,
+          0.21844247196631233
+        ]
+      },
+      "official_away_id": "60",
+      "official_home_id": "2"
+    },
+    {
+      "hf_away_id": 21,
+      "hf_home_id": 17,
+      "hf_league_id": 1,
+      "kickoff_utc": "2026-11-21T15:00:00+00:00",
+      "league": "英超",
+      "matchId": "2042917",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.42697531094064195,
+          0.2725716839204588,
+          0.3004530051388992
+        ],
+        "league_poisson": [
+          0.4854693512936397,
+          0.24498104099568707,
+          0.2695496077106731
+        ],
+        "pooled_elo_davidson": [
+          0.4566092934396221,
+          0.2543167222098674,
+          0.28907398435051057
+        ]
+      },
+      "official_away_id": "49",
+      "official_home_id": "7"
+    },
+    {
+      "hf_away_id": 161,
+      "hf_home_id": 177,
+      "hf_league_id": 7,
+      "kickoff_utc": "2026-11-21T17:00:00+00:00",
+      "league": "意甲",
+      "matchId": "2042919",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.3971863357587367,
+          0.2489038920190314,
+          0.3539097722222318
+        ],
+        "league_poisson": [
+          0.19793538987103426,
+          0.262080138081758,
+          0.5399844720472077
+        ],
+        "pooled_elo_davidson": [
+          0.30642429953635725,
+          0.2562492092360832,
+          0.43732649122755957
+        ]
+      },
+      "official_away_id": "132",
+      "official_home_id": "130"
+    },
+    {
+      "hf_away_id": 3,
+      "hf_home_id": 13,
+      "hf_league_id": 1,
+      "kickoff_utc": "2026-11-21T17:30:00+00:00",
+      "league": "英超",
+      "matchId": "2042920",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.42697531094064195,
+          0.2725716839204588,
+          0.3004530051388992
+        ],
+        "league_poisson": [
+          0.24025245871544787,
+          0.22681336347409972,
+          0.5329341778104524
+        ],
+        "pooled_elo_davidson": [
+          0.22080793158666112,
+          0.24125263495750415,
+          0.5379394334558347
+        ]
+      },
+      "official_away_id": "1",
+      "official_home_id": "15"
+    },
+    {
+      "hf_away_id": 112,
+      "hf_home_id": 101,
+      "hf_league_id": 5,
+      "kickoff_utc": "2026-11-21T17:30:00+00:00",
+      "league": "西甲",
+      "matchId": "2042922",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.4913522712733258,
+          0.240160078247514,
+          0.2684876504791601
+        ],
+        "league_poisson": [
+          0.3538506488406561,
+          0.253710254147662,
+          0.3924390970116819
+        ],
+        "pooled_elo_davidson": [
+          0.31296481682106864,
+          0.2568472457174952,
+          0.4301879374614362
+        ]
+      },
+      "official_away_id": "505",
+      "official_home_id": "677"
+    },
+    {
+      "hf_away_id": 111,
+      "hf_home_id": 114,
+      "hf_league_id": 5,
+      "kickoff_utc": "2026-11-22T13:00:00+00:00",
+      "league": "西甲",
+      "matchId": "2042929",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.4913522712733258,
+          0.240160078247514,
+          0.2684876504791601
+        ],
+        "league_poisson": [
+          0.7779644846643359,
+          0.1439662760713945,
+          0.07806923926426963
+        ],
+        "pooled_elo_davidson": [
+          0.6101943667860246,
+          0.22319470242700712,
+          0.16661093078696815
+        ]
+      },
+      "official_away_id": "679",
+      "official_home_id": "401"
+    },
+    {
+      "hf_away_id": 167,
+      "hf_home_id": 171,
+      "hf_league_id": 7,
+      "kickoff_utc": "2026-11-22T14:00:00+00:00",
+      "league": "意甲",
+      "matchId": "2042931",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.3971863357587367,
+          0.2489038920190314,
+          0.3539097722222318
+        ],
+        "league_poisson": [
+          0.29499093397958226,
+          0.2621073499139203,
+          0.44290171610649737
+        ],
+        "pooled_elo_davidson": [
+          0.477566072637715,
+          0.25170114702484114,
+          0.27073278033744386
+        ]
+      },
+      "official_away_id": "135",
+      "official_home_id": "118"
+    },
+    {
+      "hf_away_id": 157,
+      "hf_home_id": 163,
+      "hf_league_id": 7,
+      "kickoff_utc": "2026-11-22T14:00:00+00:00",
+      "league": "意甲",
+      "matchId": "2042932",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.3971863357587367,
+          0.2489038920190314,
+          0.3539097722222318
+        ],
+        "league_poisson": [
+          0.37518403200942513,
+          0.2666841614199378,
+          0.3581318065706371
+        ],
+        "pooled_elo_davidson": [
+          0.44615781352174716,
+          0.25542121296887016,
+          0.2984209735093827
+        ]
+      },
+      "official_away_id": "26",
+      "official_home_id": "1509"
+    },
+    {
+      "hf_away_id": 269,
+      "hf_home_id": 256,
+      "hf_league_id": 11,
+      "kickoff_utc": "2026-11-22T14:30:00+00:00",
+      "league": "德甲",
+      "matchId": "2042933",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.43838452553736823,
+          0.24703863892738875,
+          0.31457683553524296
+        ],
+        "league_poisson": [
+          0.36406291661354795,
+          0.24300148364112267,
+          0.39293559974532927
+        ],
+        "pooled_elo_davidson": [
+          0.38803850810652646,
+          0.2590433488141804,
+          0.3529181430792932
+        ]
+      },
+      "official_away_id": "147",
+      "official_home_id": "808"
+    },
+    {
+      "hf_away_id": 19,
+      "hf_home_id": 18,
+      "hf_league_id": 1,
+      "kickoff_utc": "2026-11-22T16:30:00+00:00",
+      "league": "英超",
+      "matchId": "2042935",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.42697531094064195,
+          0.2725716839204588,
+          0.3004530051388992
+        ],
+        "league_poisson": [
+          0.4347668414431496,
+          0.24360363685396705,
+          0.3216295217028834
+        ],
+        "pooled_elo_davidson": [
+          0.37798410589813836,
+          0.2592188937859319,
+          0.3627970003159299
+        ]
+      },
+      "official_away_id": "13",
+      "official_home_id": "11"
+    },
+    {
+      "hf_away_id": 278,
+      "hf_home_id": 254,
+      "hf_league_id": 11,
+      "kickoff_utc": "2026-11-22T16:30:00+00:00",
+      "league": "德甲",
+      "matchId": "2042936",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.43838452553736823,
+          0.24703863892738875,
+          0.31457683553524296
+        ],
+        "league_poisson": [
+          0.39419244935618736,
+          0.2659578727782143,
+          0.3398496778655983
+        ],
+        "pooled_elo_davidson": [
+          0.3578953698443459,
+          0.2591493442204327,
+          0.3829552859352214
+        ]
+      },
+      "official_away_id": "142",
+      "official_home_id": "153"
+    },
+    {
+      "hf_away_id": 159,
+      "hf_home_id": 164,
+      "hf_league_id": 7,
+      "kickoff_utc": "2026-11-22T19:45:00+00:00",
+      "league": "意甲",
+      "matchId": "2042939",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.3971863357587367,
+          0.2489038920190314,
+          0.3539097722222318
+        ],
+        "league_poisson": [
+          0.2755346122686859,
+          0.2686119281414138,
+          0.45585345958990026
+        ],
+        "pooled_elo_davidson": [
+          0.2870017149677124,
+          0.25405135725346173,
+          0.45894692777882584
+        ]
+      },
+      "official_away_id": "123",
+      "official_home_id": "117"
+    },
+    {
+      "hf_away_id": 117,
+      "hf_home_id": 113,
+      "hf_league_id": 5,
+      "kickoff_utc": "2026-11-22T20:00:00+00:00",
+      "league": "西甲",
+      "matchId": "2042941",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.4913522712733258,
+          0.240160078247514,
+          0.2684876504791601
+        ],
+        "league_poisson": [
+          0.3590387655863493,
+          0.317030344226999,
+          0.3239308901866516
+        ],
+        "pooled_elo_davidson": [
+          0.34257772491710703,
+          0.2587073857510764,
+          0.3987148893318167
+        ]
+      },
+      "official_away_id": "172",
+      "official_home_id": "511"
+    }
+  ],
+  "published_source_commit": "6989b18574848612beb50aff0119385c39542f04",
+  "qualified": 20,
+  "record_schema": "EVLAB_TASK0046_FORWARD_V1",
+  "status": "PRE_KICKOFF_FROZEN_RESEARCH_ONLY",
+  "task": "TASK0043",
+  "training_last_date": "2026-07-04",
+  "training_published_at_utc": "2026-07-05T01:23:18+00:00"
+}
