@@ -1,0 +1,99 @@
+{
+  "commit_preflight_utc": "2026-11-21T03:15:10.729727+00:00",
+  "frozen_at_utc": "2026-11-21T03:15:09.555293+00:00",
+  "frozen_file_sha256": "a7f7d64ad93079e3bb90dbca4b155b515123fcef15ace73643a491b6e7465414",
+  "historical_fixture_sha256": "7ba90661dbed29eb940daf5ea385c7d76d5751d16be86bd9063293a982abc7b7",
+  "historical_manifest_sha256": "eb3c37793866a27f8c1520c78a69e6098fdf79f08622b37fed64070fa1f8748f",
+  "identity_extension_sha256": "9ac60ea590c0bdf0702024ccbe2712f27dfbe45445f74e70e8df34cd233056c8",
+  "identity_ledger_sha256": "749f06083b1d4a3f8eb2b972a1b09fdbc532e0faaf1802a89dd20f9c5fae2077",
+  "identity_version": "TASK0060_ADDITIVE_143",
+  "market_odds": null,
+  "market_quote_status": "UNVERIFIED_NOT_INCLUDED",
+  "market_quote_time_utc": null,
+  "minimum_kickoff_utc": "2026-11-23T20:00:00+00:00",
+  "model_keys": [
+    "global_frequency",
+    "league_frequency",
+    "pooled_elo_davidson",
+    "league_poisson"
+  ],
+  "no_bet_or_buy": true,
+  "no_market_ev_or_profit_claim": true,
+  "official_raw_sha256": "ab62008aac09a84ed2738832dee8121071033c95ec7890d933abf98565da998f",
+  "official_received_utc": "2026-11-21T03:15:09.535702+00:00",
+  "official_result_status": "PENDING",
+  "original_identity_ledger_sha256": "13d373dbab8363e606cfaf39c478b6035c35c86ad0ffcbf4c53e6e5014f63f2f",
+  "predictions": [
+    {
+      "hf_away_id": 9,
+      "hf_home_id": 15,
+      "hf_league_id": 1,
+      "kickoff_utc": "2026-11-23T20:00:00+00:00",
+      "league": "英超",
+      "matchId": "2042946",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.42697531094064195,
+          0.2725716839204588,
+          0.3004530051388992
+        ],
+        "league_poisson": [
+          0.4559335373714196,
+          0.2663564082392644,
+          0.2777100543893159
+        ],
+        "pooled_elo_davidson": [
+          0.4773716560120155,
+          0.2517278446767962,
+          0.27090049931118826
+        ]
+      },
+      "official_away_id": "9",
+      "official_home_id": "69"
+    },
+    {
+      "hf_away_id": 121,
+      "hf_home_id": 122,
+      "hf_league_id": 5,
+      "kickoff_utc": "2026-11-23T20:00:00+00:00",
+      "league": "西甲",
+      "matchId": "2042947",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.4913522712733258,
+          0.240160078247514,
+          0.2684876504791601
+        ],
+        "league_poisson": [
+          0.45735234501254196,
+          0.24050843349486536,
+          0.3021392214925927
+        ],
+        "pooled_elo_davidson": [
+          0.4158647872013364,
+          0.25785241493457306,
+          0.3262827978640904
+        ]
+      },
+      "official_away_id": "30",
+      "official_home_id": "33"
+    }
+  ],
+  "published_source_commit": "dec290d6bb51bc087d5f70976220561170f93f04",
+  "qualified": 2,
+  "record_schema": "EVLAB_TASK0046_FORWARD_V1",
+  "status": "PRE_KICKOFF_FROZEN_RESEARCH_ONLY",
+  "task": "TASK0043",
+  "training_last_date": "2026-07-04",
+  "training_published_at_utc": "2026-07-05T01:23:18+00:00"
+}
