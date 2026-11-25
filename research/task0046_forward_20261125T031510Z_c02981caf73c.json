@@ -1,0 +1,67 @@
+{
+  "commit_preflight_utc": "2026-11-25T03:15:10.776972+00:00",
+  "frozen_at_utc": "2026-11-25T03:15:09.987439+00:00",
+  "frozen_file_sha256": "c02981caf73c200cf36607760f0de1c231d4132349f4da7a787648b0f1a3f079",
+  "historical_fixture_sha256": "7ba90661dbed29eb940daf5ea385c7d76d5751d16be86bd9063293a982abc7b7",
+  "historical_manifest_sha256": "eb3c37793866a27f8c1520c78a69e6098fdf79f08622b37fed64070fa1f8748f",
+  "identity_extension_sha256": "9ac60ea590c0bdf0702024ccbe2712f27dfbe45445f74e70e8df34cd233056c8",
+  "identity_ledger_sha256": "749f06083b1d4a3f8eb2b972a1b09fdbc532e0faaf1802a89dd20f9c5fae2077",
+  "identity_version": "TASK0060_ADDITIVE_143",
+  "market_odds": null,
+  "market_quote_status": "UNVERIFIED_NOT_INCLUDED",
+  "market_quote_time_utc": null,
+  "minimum_kickoff_utc": "2026-11-25T20:00:00+00:00",
+  "model_keys": [
+    "global_frequency",
+    "league_frequency",
+    "pooled_elo_davidson",
+    "league_poisson"
+  ],
+  "no_bet_or_buy": true,
+  "no_market_ev_or_profit_claim": true,
+  "official_raw_sha256": "33842d8dfb6143fbee20e66911be887ab2aaefcc3a15a885ea1850ab66c3e9a4",
+  "official_received_utc": "2026-11-25T03:15:09.972720+00:00",
+  "official_result_status": "PENDING",
+  "original_identity_ledger_sha256": "13d373dbab8363e606cfaf39c478b6035c35c86ad0ffcbf4c53e6e5014f63f2f",
+  "predictions": [
+    {
+      "hf_away_id": 32,
+      "hf_home_id": 36,
+      "hf_league_id": 2,
+      "kickoff_utc": "2026-11-25T20:00:00+00:00",
+      "league": "英冠",
+      "matchId": "2043014",
+      "models_1x2_home_draw_away": {
+        "global_frequency": [
+          0.4395062188128398,
+          0.2514336784091755,
+          0.3090601027779847
+        ],
+        "league_frequency": [
+          0.41731390706456983,
+          0.26521433893965946,
+          0.31747175399577066
+        ],
+        "league_poisson": [
+          0.32134119772886094,
+          0.2742595291601442,
+          0.4043992731109949
+        ],
+        "pooled_elo_davidson": [
+          0.27137248853480334,
+          0.2518026949057453,
+          0.4768248165594515
+        ]
+      },
+      "official_away_id": "51",
+      "official_home_id": "59"
+    }
+  ],
+  "published_source_commit": "e7b52457c647f0e73babb3781be3e314e7cf761f",
+  "qualified": 1,
+  "record_schema": "EVLAB_TASK0046_FORWARD_V1",
+  "status": "PRE_KICKOFF_FROZEN_RESEARCH_ONLY",
+  "task": "TASK0043",
+  "training_last_date": "2026-07-04",
+  "training_published_at_utc": "2026-07-05T01:23:18+00:00"
+}
